@@ -1,0 +1,251 @@
+alergenos:
+  altramuz: Altramuz
+  apio: Apio
+  cacahuete: Cacahuete
+  crustaceo: Crustaceo
+  frutos: Frutos secos
+  gluten: Gluten
+  huevo: Huevo
+  lacteo: Lácteo
+  molusco: Molusco
+  mostaza: Mostaza
+  pescado: Pescado
+  sesamo: Sésamo
+  soja: Soja
+  sulfitos: Sulfito
+
+bebida:
+  7puntas: 
+    - "Selección de vinos que refleja el potencial de los grandes vinos españoles."
+    - "Este vino ha sido escogido por su elegancia y frescura para ser disfrutado en toda clase de reuniones, siempre en buena compañia."
+    - "Contiene sulfitos."
+  albarino:
+    - "Vino blanco Cosechero, producido a la manera tradicional."
+    - "Tiene una graduación alcohólica elevada y una acidez notable, con un gran potencial aromático afrutado con matices florales."
+    - "Contiene sulfitos."
+  bierzo:
+    - "Vino tinto de uva Mencia, con un aroma frutal muy intenso, vinos aterciopelados y con una gran capacidad de expresión del terroir, debido a la gran influencia que tienen de la tierra en la que se cultivan."
+    - "Con un grado alcohólico alto y una acidez baja, es habitual para la elaboración de vinos jóvenes, maceraciones carbónicas o vinos con cortas crianzas."
+    - "Contiene sulfitos."
+  bierzo_god:
+    - "Vino blanco Cosechero, producido a la manera tradicional."
+    - "De color amarillo pajizo con matices verdosos y en nariz resulta fragante, con fruta madura y especias y un fondo terroso y floral."
+    - "En la boca es delicado, sedoso y mineral, evoca los recuerdos y el deseo."
+    - "Contiene sulfitos."
+  feroes:
+    - "Muestra un tono cereza intenso con aromas a madera, vainilla, balsámico, frutales y cafes tostados."
+    - "La entrada en boca es agradable y estructurada, donde el tanino dulce aporta plenitud en boca, obteniendo un post gusto duradero."
+    - "Cinco meses en barrica."
+    - "Contiene sulfitos."
+  lagartijo:
+    - "Es de color dorado pálido, limpio y brillante."
+    - "En nariz es expresivo y varietal, con los aromas anisados del hinojo, toques herbáceos, manzana verde, toques de banana y recuerdos de piña."
+    - "En boca es ligero, fresco, fácil de beber, con buena fruta en el centro de la boca y un final de persistencia media con recuerdos tropicales en retronasal."
+    - "Contiene sulfitos."
+  menina:
+    - "Vino criado 8 meses en barrica nueva de roble francés, que le aporta sedosidad y un paso en boca complejo y elegante."
+    - "Perfecto para carnes estofadas y rojas a la brasa."
+    - "Contiene sulfitos."
+  mureda:
+    - "Vino ecológico de la tierra de Castilla, procedente de viñedos propios."
+    - "Sus 2 meses en barrica le proporcionan un color frambuesa, con ribetes violáceos y aromas a violeta y fruta negra (ciruela y zarzamora)."
+    - "En retrogusto, recuerda a frutas negras. Equilibrado, untuoso y cálido."
+    - "Contiene sulfitos."
+  muriel:
+    - "Genuina y honesta expresión de la variedad Tempranillo de Rioja, presenta la frescura y la elegancia que aportan sus 12 meses de maduración en barricas nuevas de roble."
+    - "Un color cereza muy sugerente anticipa matices aromáticos de gran finura, con notas de frutas rojas, vainilla, coco y torrefactos."
+    - "De paladar amplio y persistente, combina muy bien con aperitivos, tapas, carnes de caza menor y quesos no muy curados."
+    - "Contiene sulfitos."
+  nuviana_blanco:
+    - "Vino fresco y equilibrado, con notas de frutas exóticas y de notable persistencia."
+    - "Contiene sulfitos."
+  nuviana_tinto:
+    - "Vino intenso y original, con aroma a bayas rojas con notas especiadas y ligero toque tostado."
+    - "Contiene sulfitos."
+  sastreria:
+    - "Colección Estampado Alta costura. Este vino ha sido tejido con uvas de Garnacha blanca."
+    - "Conjuga modernidad y caracter frutal con la elegancia del estilo mediterráneo de esta variedad."
+    - "Contiene sulfitos."
+  vermouth:
+    - "El auténtico vermouth de Reus, elaborado a base de vinos de primera calidad y plantas aromáticas escogidas cuidadosamente de la zona mediterranea."
+    - "Muy apropiado para tomar solo, con hielo o en cocktail."
+    - "Contiene sulfitos."
+  vinaldena:
+    - "Vino blanco elaborado a partir de la selección de uva de la variedad Verdejo procedente de los viñedos propios en Pozaldez y Rueda."
+    - "De color amarillo verdoso, aroma intenso y complejo de frutas y cítricos, con volumen y persistencia en boca."
+    - "Contiene sulfitos."
+  zinio:
+    - "Elaborado exclusivamente con uvas Garnacha, resalta todas las cualidades intrínsecas de su gran variedad, con un color púrpura intenso y de capa alta.", "En nariz muestra toda su frescura desarrollando un conjunto aromático marcado por la presencia de fruta en confitura, notas de tarta de fresa y recuerdos de frambuesa."
+    - "En boca se manifiesta vivo, fresco y frutal, con taninos maduros que aportan cuerpo y estructura en su elegante final."
+    - "Contiene sulfitos."
+
+ingrediente:
+  aceite: Aceite de oliva
+  ajo: Ajo
+  atun: Atún
+  arroz: Arroz
+  azucar: Azucar
+  bacalao: Bacalao
+  bechamel: Bechamel
+  berenjena: Berenjena
+  calabacin: Calabacín
+  carne_picada: Carne de cerdo y ternera
+  cayena: Cayena
+  cebolla: Cebolla
+  cecina: Cecina
+  cerveza: Cerveza
+  chorizo: Chorizo
+  cilantro: Cilantro
+  coliflor: Coliflor
+  comino: Comino
+  crema_queso: Crema de queso
+  eneldo: Eneldo
+  garbanzo: Garbanzo
+  guisante: Guisante
+  harina: Harina
+  huevos: Huevos
+  huevo_duro: Huevo duro
+  judia_blanca: Judia blanca
+  judia_pinta: Judia pinta
+  judion: Judión
+  ketchup: Ketchup
+  laurel: Laurel
+  leche: Leche
+  lechuga: Lechuga
+  lenteja: Lentejas
+  lomo: Lomo de cerdo
+  lomo_embuchado: Lomo embuchado
+  mahonesa: Mahonesa
+  mantequilla: Mantequilla
+  manzana: Manzana
+  miel: Miel
+  mojo: "Mojos:"
+  morcilla: Morcilla
+  mostaza: Mostaza
+  nata: Nata
+  nuez_moscada: Nuez moscada
+  oregano: Orégano
+  pan_rallado: Pan rallado
+  panceta: Panceta
+  patata: Patata
+  pate_shiitake: Paté de shiitake
+  pasta_integral: Pasta integral
+  pasta_trigo: Pasta de trigo
+  pepino: Pepino
+  perejil: Perejil
+  perrins: Salsa Perrins
+  pimenton: Pimentón
+  pimenton_cilantro: Pimentón o Cilantro y Perejil
+  pimienta_blanca: Pimienta blanca
+  pimienta_negra: Pimienta negra
+  pimiento_piquillo: Pimiento del piquillo
+  pimiento_rojo: Pimiento rojo
+  pimiento_verde: Pimiento verde
+  pollo: Pollo
+  queso: Queso
+  queso_azul: Queso azul
+  queso_oveja: Queso curado de oveja
+  queso_cabra: Queso de cabra
+  quinoa: Quinoa
+  remolacha: Remolacha
+  rucula: Rúcula
+  romero: Romero
+  sal: Sal
+  sal_gorda: Sal gorda
+  salmon_ahumado: Salmón ahumado
+  salmon_fresco: Salmón fresco
+  salsa: "Salsa:"
+  salsa_agridulce: Salsa agridulce
+  salsa_soja: Salsa de soja
+  salsa_tomate: Salsa de tomate
+  salsa_tomate_casera: Salsa de tomate casera
+  sesamo: Sésamo
+  setas: Setas
+  solomillo: Solomillo de cerdo
+  ternera: Ternera
+  tomate: Tomate
+  tomate_deshi: Tomate deshidratado
+  tomate_frito: Tomate frito
+  tomillo: Tomillo
+  ventresca_atun: Ventresca de atún
+  verduras: Verduras
+  vinagre: Vinagre
+  vinagre_jerez: Vinagre de Jerez
+  vinagre_man: Vinagre de manzana
+  zanahoria: Zanahoria
+  zumo_lima: Zumo de lima
+  zumo_limon: Zumo de limón
+  zumo_naranja: Zumo de naranja
+
+nombre:
+  atun: Atún en salazón
+  babaganoush: Babaganoush
+  berenjenas: Berenjenas rellenas
+  brandada_bacalao: Brandada de bacalao
+  carpaccio: Carpaccio de Calabacín
+  cecina: Cecina de Léón
+  ensalada_remo: Ensalada de remolacha con rúcula y queso de cabra eco
+  hummus: Hummus
+  lasagna: Lasagna de setas
+  lomo_embuchado: Lomo embuchado
+  pastel_salmon: Pastel de salmón
+  patata_mojo: 'Papas arrugas' con 2 mojos
+  patata_rellena: Patatas rellenas
+  roastbeef: Roastbeef
+  ragout: Ragout de ternera
+  rusos: Filetes rusos con salsa de tomate
+  solomillo: Solomillo a la cerveza y manzana
+  tortilla: Tortilla de patata
+  tosta_cecina: Tosta de cecina de Léon
+  tosta_salmon: Tosta de salmón
+  tosta_ventresca: Tosta de ventresca de atún
+  ventresca: Ventresca de atún con pimientos de piquillo
+  # Nombres de Menu
+  berenjena: Berenjenas rellenas de pisto
+  calabacin_relleno: Calabacines rellenos
+  canelones_verduras: Canelones rellenos de verduras y paté de shiitake
+  carne_mechada: Carne mechada con puré de patatas
+  ensalada_alubias: Ensalada de alubias 
+  ensalada_campera: Ensalada campera
+  ensalada_garbanzo: Ensalada de garbanzos en vinagreta de tomillo
+  ensalada_pollo: Ensalada de pollo
+  judia_vinagreta: Judías con vinagreta de tomate deshidratado
+  judiones_compango: Judiones con compango
+  lasagna_setas: Lasagna de setas
+  lentejas_verduras: Lentejas guisadas con verduras
+  macarron_verdura: Macarrones integrales con verdura y salsa de tomate casera
+  mousaka: Mousaka
+  ragout_arroz: Ragout de ternera con arroz blanco
+  rusos_arroz: Filetes rusos con arroz blanco
+
+
+mapa:
+  info: "es un bar de tapeo y vinos junto al <strong>Rastro de Madrid</strong> entre las paradas de metro de La Latina y Tirso de Molina"
+
+aviso:
+  agosto:
+    titular: Nos vamos de vacaciones.
+    vuelta: Volvemos el 1 de septiembre.
+
+menu:
+  hoy: Hoy
+  tenemos: tenemos
+  alergeno: Alérgenos
+  sin_aler: "Sin alérgenos"
+  enlace: "Ver ingredientes"
+  legend: "Plato del día"
+  leyenda1: "Los platos de esta semana:"
+  leyenda2: "Los platos de la próxima semana:"
+  entresemana: "Esta semana tenemos:"
+  finde: "Hoy <span id='dia'></span> no ofrecemos plato del dia. Sacia tu apetito con nuestras tostas y raciones y acompáñalas de un buen vino."
+
+dia:
+  domingo: Domingo
+  lunes: Lunes
+  martes: Martes
+  miercoles: Miércoles
+  jueves: Jueves
+  viernes: Viernes
+  sabado: Sábado
+
+

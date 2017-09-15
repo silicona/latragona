@@ -1,0 +1,789 @@
+body {
+	background-color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 14pt;
+	overflow-x: hidden;
+}
+
+/* Menu Movil */
+	#menumovil {
+		position: fixed;
+		top: 45px;
+
+		background-color: #000;
+		color: #fff;
+		width: 100%;
+		height: 14em;
+		opacity: 0;
+		z-index: 5;
+
+		display: none;
+	}
+
+	#menuidiomas {
+		position: fixed;
+		top: 45px;
+
+		background-color: #000;
+		color: #fff;
+		width: 100%;
+		height: 12em;
+		opacity: 0;
+		z-index: 5;
+
+		display: none;
+	}
+
+	#menuidiomas span {
+		position: relative;
+		top: -0.25ex;
+		margin-left: 1em;
+	}
+
+	#menuidiomas ul, #menumovil ul {
+		margin: 1em;
+		margin-left: 2em;
+		line-height: 3ex;
+		font-size: 1.3em;
+	}
+
+/* Menus navegacion*/
+	#superior {
+		background-color: #000;
+		color: #fff;
+		position: fixed;
+		top: 0px;
+		z-index: 2;
+		width: 100%;
+	}
+
+	#superior li {
+		display: inline;
+		padding: 10px;
+		float: right;
+		font-size: 1.2em;
+	}
+
+	#superior li:first-child {
+		float: left;
+	}
+
+	#superior #logo_superior {
+		padding: 0.15ex;
+		cursor: pointer;
+	}
+
+	#logo_superior span {
+		position: relative;
+		top: 9px;
+	}
+
+	#superior img {
+		width: 40px;
+	}
+
+	#superior .movil, #superior .ipad {
+		display: none;
+	}
+
+	#superior .desktop {
+		display: block;
+	}
+
+	#superior span {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.bandera {
+		float: left;
+		margin-left: 5px;
+	}
+
+	#multi {
+		cursor: pointer;
+	}
+
+	#lateral {
+		background-color: transparent;
+		position: fixed;
+		z-index: 2;
+		transform: rotate(90deg);
+		visibility: hidden;
+	}
+
+	#lateral ul {
+		background-color: #fff;
+		display: inline-block;
+	}
+
+	#lateral li {
+		display: inline-block;
+		padding-right: 5px;
+		/*margin-right: 20px;*/
+		font-size: 1.2em;
+	}
+
+/* Cabecera */
+	header {
+		background-color: #000;
+		background: url("../media/cabeceras/tragar.png") 50% 9% no-repeat fixed;
+		height: 220px;
+		padding-top: 46px;
+	}
+
+	.logo{
+		position: relative;
+		left: 25%;
+		margin-left: -100px;
+		margin: 66px 0px 20px -100px;
+
+		border-radius: 120px;
+	}
+
+/* Aviso */
+	#contenedor_alerta {
+		width: 40ex;
+		height: 20ex;
+		position: absolute;
+		left: 10ex;
+		top: 35ex;
+		background: rgba(100, 100, 100, 0.6) none repeat scroll 0% 0%;
+		border: 5px solid #fff;
+		border-radius: 5pt;
+		font-size: 20pt;
+		color: #f00;
+	}
+
+	#caja_alerta {
+		margin: 3ex;
+		background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0%;
+		height: calc(100% - 6ex);
+		border-radius: 5pt;
+		text-decoration: underline;
+		text-align: center;
+	}
+
+	#titulo_alerta {
+		font-weight: bold;
+		padding: 2ex;
+	}
+
+	#mensaje_alerta {
+		padding: 2ex;
+	}
+
+section {
+	width: 100%;	
+	float:left;			
+}
+
+.movil {
+	display: none;
+}
+
+/* Foto de seccion */
+	.foto, #foto_plato {
+		width: 50%;
+		float: left;
+		display: inline;
+		height: 100%;
+	}
+
+	.foto p, #foto_plato p {
+		color: #fff;
+		font-size: 4em;
+		text-align: center;
+		text-shadow: 0px 0px 20px #000;
+
+		position: relative;
+		top: 50px;
+
+		width: 500px;
+		margin: 0 auto;
+	}
+
+	#tosta .foto{
+		background: url("../imag_ejemplos/comida/foto_tosta.jpg") right center;
+	}
+
+	#racion .foto{
+		background: url("../imag_ejemplos/comida/foto_racion.jpg") center center;
+		background-size: cover;
+	}
+
+	#plato #foto_plato {
+		background: url('../imag_ejemplos/comida/foto_plato.jpg') right center;
+	}
+
+	#reservas .foto {
+		background: url('../imag_ejemplos/comida/foto_reserva.jpg') center center;
+	}
+
+/* Contenido */
+	.contenido, #contenido_plato {
+		width: 50%;
+		background-color: #fff;
+		float: left;
+
+		display: inline;
+		position: relative;
+	}
+
+	#aviso_pan {
+		display: block;
+		text-align: center;
+		font-size: 1.5em;
+		margin: 1ex;
+	}
+
+	legend {
+		margin: 10px;
+		margin-left: 20px;
+		font-size: 1.7em;
+		text-decoration: underline;
+	}
+
+	.contenido div {
+		background-color: #eee;
+		clear: both;
+		margin: 10px;
+		margin-right: 40px;
+		height: 110px;
+		padding: 10px;
+		/*border-radius: 100px 0 0 100px;*/
+		position: relative;
+	}
+
+	.contenido p {
+		font-size: 1.1em;
+		line-height: 2.3ex;
+	}
+
+	.contenido a[data-fancybox], #contenido_plato a[data-fancybox] {
+		display: inline-block;
+		color: #008;
+		text-decoration: underline;
+		padding: 0.5ex;
+		/*font-size: 1.2em;*/
+	}
+
+	/*.ingredientes {
+		display: inline-block;
+		margin: 0.5ex;
+	}
+
+	.ingredientes a {
+		color: #008;
+		text-decoration: underline;
+	}*/
+
+	.imagen, .imagen_plato {
+		/*border-radius: 120px;*/
+		width: 100px;
+		height: 100px;
+		margin: 5px 10px;
+
+		float: right;
+		display: inline;
+	}
+
+	.imagen_plato {
+		float: left;
+	}
+
+	.contenido div:nth-child(even) .imagen {
+		float: left;
+	}
+
+/* Tooltip */
+	img[data-tooltip] {
+		display: inline-block;/*bug fix*/
+		position: relative;
+		text-decoration: none;
+		color: #000;
+	}
+
+	img[data-tooltip]:after {
+		content: attr(data-tooltip);
+		position: absolute;
+		bottom: 140%;
+		left: 20%;
+		background: #ffcb66;
+		padding: 5px 15px;
+		color: black;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		-ms-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+		white-space: nowrap;
+		opacity: 0;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-ms-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+	}
+
+	img[data-tooltip]:before {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 20px solid #ffcb66;
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-ms-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+		opacity: 0;
+		left: 30%;
+		bottom: 90%;
+
+	}
+
+	img[data-tooltip]:hover:after {
+		bottom: 110%;
+	}
+
+	img[data-tooltip]:hover:before {
+		bottom: 80%;
+	}
+
+	img[data-tooltip]:hover:after,	img[data-tooltip]:hover:before {
+		opacity: 1;
+		z-index: 6;
+	}
+
+/* Alergenos */
+	.alergeno {
+		position: absolute;
+		bottom: 0px;
+		left: 130px;
+		display: block;
+	}
+
+	.alergeno .nombre { 
+		position: absolute;
+		top: -27px;
+		font-size: 0.8em;
+	}
+
+	.alerizquierda {
+		left: 10px;
+	}
+
+	.alergeno img {
+		position: absolute;
+		top: -34px;
+		width: 30px;	
+	}
+
+	.alergeno:first-child {
+		left: 0px;
+	}
+
+	.alergeno img:nth-child(2) {
+		left: 83px;
+	}
+
+	.alergeno img:nth-child(3) {
+		left: 116px;
+	}
+
+	.alergeno img:nth-child(4) {
+		left: 149px;
+	}
+
+	.alergeno img:nth-child(5) {
+		left: 182px;
+	}
+
+	.alergeno img:nth-child(6) {
+		left: 215px;
+	}
+
+	.alergeno img:hover {
+		animation: ver_alergeno 1s forwards linear 1;
+	}
+
+	@keyframes ver_alergeno {
+		25% {	width: 50px; top: -54px; z-index: 3;}
+		50% { width: 75px; top: -79px; z-index: 3;}
+		75% { width: 100px; top: -104px; z-index: 3;}
+		100% { width: 132px; top: -136px; background-color: #fff; z-index: 3;}
+	}
+
+/* plato del dia */
+	#entresemana, #finde {
+		margin: 10px;
+		margin-right: 40px;
+		background-color: #eeeeee;
+		clear: both;
+		padding: 10px;
+		position: relative;
+		height: 200px;
+		font-size: 1.2em;
+	}
+
+	#finde p {
+		line-height: 2ex;
+		font-size: 1.2em;
+		margin: 30px;
+	}
+
+	.pasarela {
+		margin: 10px;
+	}
+
+	#semana, #proxima_semana {
+		display: none;
+	}
+
+/*compartir */
+	#compartir {
+		display: none;
+		background-color: #fff;
+		float: left;
+		width: 100%;
+	}
+
+	#compartir div {
+		margin: 10px 4px;
+		float: left;
+		display: inline-block;
+	}
+
+/* reserva */
+	.mitad {
+		margin: 1em;
+		width: 40%;
+		float: left;
+		line-height: 2ex;
+	}
+
+	#wasap {
+		width: 20px;
+	}
+
+	#reservas form {
+		margin: 0.5em;
+		clear: both;
+		width: 90%;
+		border: 2px solid #FB6750;
+		background-color: #FB8F50;
+		padding: 5px;
+		position: relative;
+	}
+
+	#reservas label {
+		display: block;
+		margin-top: 0.5ex;
+		font-size: 0.9em;
+	}
+
+	#reservas .impar {
+		margin-left: 100px;
+	}
+
+	#reservas input {
+		background-color: #fff;
+		margin-top: 1ex;
+		border: unset;
+		border-bottom: 1px solid #000;
+		line-height: 1.2em;
+		padding: 5px;
+	}
+
+	#reservas input:hover {
+		background-color: #eee;
+	}
+
+	#reservas #fecha {
+		display: inline-block;
+		margin-right: 20px;
+	}
+
+	#reservas textarea {
+		width: 90%;
+		padding: 5px;
+	}
+
+	#reservas input[type="submit"] {
+		margin-bottom: 10px;
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		display: inline;
+	}
+
+	.error_form {
+		visibility: hidden;
+		background-color: #f88;
+		color: #f00;
+		padding: 5px;
+		margin-left: 10px;
+		border: 1px solid #f00;
+	}
+
+	#confirmacion {
+		padding: 5px;
+		margin-left: 10px;
+	}
+
+	#reservas #etiquetaTexto {
+		font-size: 1.1em;
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+		display: inline-block;
+	}
+
+/* legal */
+	#legal {
+		height: 55px;
+		background-color: #000;
+		color: #fff;
+		position: relative;
+		text-align: center;
+		clear: both;
+		z-index: 3;
+	}
+
+	#legal img {
+		background-color: #fff;
+		border-radius: 14px;
+		position: relative;
+		top: 9px;
+	}
+
+	#legal .ipad { display: none;	}
+
+/* Smartphones (portrait) ----------- */
+	/*@media only screen and (min-device-width : 300px) and (max-device-width: 650px) {*/
+	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
+		header {				
+			height: 120px;
+			background: url("../media/cabeceras/tragar_sin.png") 50% 0% no-repeat fixed;
+		}
+
+		#superior {
+			position: fixed;
+			top: 0px;
+		}
+
+		#lateral {
+			transform: unset;
+			text-align: center;
+			width: 100%;
+		}
+
+		#lateral li {
+			padding: 0 5px;
+		}
+
+		#contenedor_alerta {
+			width: 34ex;
+			height: 18ex;
+			font-size: 14pt;
+			left: 0.5ex;
+			top: 0ex;
+		}
+
+		/* contenido */
+			.contenido, #contenido_plato {
+				width: 100%;
+			}
+
+			legend {
+				font-size: 1.3em;
+				margin-left: 20px;
+				clear: both;
+			}
+
+			.contenido div, .contenido div:nth-child(even) {
+				margin-right: 10px;
+				border-radius: unset;
+			}
+
+			.contenido p {
+				font-size: 1em;
+				line-height: 2ex;
+			}
+
+			.imagen {
+				width: 70px;
+				height: 70px;
+				margin: 0 10px 0 0px;
+			}
+
+			.alergeno {
+				left: 10px;
+			}
+
+		/* Plato del dia */
+			#contenido_plato {
+				height: unset;
+			}
+
+			#entresemana, #finde {
+				margin-right: 10px;
+			}
+
+			#finde p {
+				margin: unset;
+				font-size: unset;
+
+			}
+
+			.camera_caption {
+				font-size: 1em;
+			}
+
+		#compartir div {
+			float: unset;
+			margin-left: 50px;
+		}
+
+		/* reservas */
+			.mitad {
+				width: 100%;
+				margin: 0.5em;
+				
+			}
+
+			#reservas input[type="submit"] {
+				margin-left: 20px;
+			}
+
+			.error_form {
+				padding: 2px;
+				position: absolute;
+				left: 100px;
+				top: 430px;
+				z-index: 2;	
+			}
+
+		#contenedor .desktop, #superior .desktop, .desktop, .foto, #foto_plato { display: none; }
+
+		#contenedor .movil, #superior .movil, #compartir, .movil { display: block; }
+
+		#legal { height: 30px; }
+
+		#legal img { top: 2px; width: 20px; }
+	}
+
+/* Smartphones (landscape) ----------- */
+	/*@media only screen and (min-device-width : 300px) and (max-device-width: 650px) and (orientation: landscape) {*/
+	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
+
+		.camera_caption {
+			font-size: initial;
+		}
+
+		#contenedor_alerta {
+			left: 28ex;
+			top: 13ex;
+		}
+
+		#compartir { padding-left: 50px; }
+	}
+
+/* iPads (portrait) ----------- */
+	/*@media only screen and (min-device-width : 651px)	and (max-device-width : 1024px) {*/
+	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
+		header {
+			background: url("../media/cabeceras/tragar_sin.png") 50% 0% no-repeat fixed;
+			height: 150px;
+		}
+
+		#contenedor_alerta {
+			width: 34ex;
+			height: 20ex;
+			font-size: 15pt;
+			left: 0ex;
+			top: 40ex;
+		}
+
+		#superior .desktop, #legal .desktop, .desktop { display: none; }
+
+		#superior .ipad, .ipad {	display: block;	}
+
+		#logo_superior img { margin-right: 30px; }
+
+		.foto p, #foto_plato p {
+			font-size: 3em;
+			width: 100%;
+		}
+
+		.contenido p {
+			font-size: 1em;
+			line-height: 1.2em;
+		}
+
+		.ingredientes {
+			font-size: 0.8em;
+			margin: 0ex !important;
+		}
+
+		#tosta .ingredientes span{
+			display: none;
+		}
+
+		/* Plato del dia */
+			legend {
+				font-size: 1.5em;
+			}
+			
+			#contenido_plato {
+				height: unset;
+			}
+
+			#entresemana, #finde {
+				margin-right: 40px;
+			}
+
+			#finde p {
+				margin: unset;
+				font-size: unset;
+
+			}
+
+		.mitad {
+			width: 80%;
+		}
+
+		#reservas input[type="submit"] {
+			margin-left: 20px;
+		}
+
+		.error_form {
+			padding: 2px;
+			position: absolute;
+			left: 100px;
+			top: 430px;
+			z-index: 2;	
+		}
+
+		#legal .ipad { display: inline; }			
+	}
+
+	@media screen and (min-width : 651px)	and (max-width : 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
+		.foto, #foto_plato {
+			width: 40%;
+		}
+
+		.contenido, #contenido_plato {
+			width: 60%;
+		}
+
+/* iPads (landscape) ----------- */
+	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
+		
+		#contenedor_alerta {
+			left: 6ex;
+		}
+	}

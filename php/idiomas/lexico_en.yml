@@ -1,0 +1,250 @@
+alergenos:
+  altramuz: Lupine
+  apio: Celery
+  cacahuete: Peanut
+  crustaceo: Crustacean
+  frutos: Dry fruit
+  gluten: Gluten
+  huevo: Egg
+  lacteo: Dairy
+  molusco: Mollusk
+  mostaza: Mustard
+  pescado: Fish
+  sesamo: Sesame
+  soja: Soja
+  sulfito: Sulphite 
+
+bebida:
+  7puntas: 
+    - "Selection of wines that reflects the great potential of modern spanish wines."
+    - "This wine has been specially selected for its elegance and freshness to be enjoyed in all kinds of meetings, always in good company."
+    - "Contains sulfites."
+  albarino:
+    - "White wine Harvest, produced in the traditional way."
+    - "It has a high alcoholic degree and a remarkable acidity, with great aromatic potential fruity with floral nuances."
+    - "Contains sulfites."
+  bierzo:
+    - "Mencia grape red wine, with a very intense fruity aroma, velvety wines and a great capacity of expression of the terroir, due to the great influence they have of the land in which they are cultivated."
+    - "With a high alcohol content and low acidity, it is common for the production of young wines, carbonic macerations or wines with short crianza."
+    - "Contains sulfites."
+  bierzo_god:
+    - "White wine Harvest, produced in the traditional way."
+    - "Straw yellow color with greenish hues and nose is fragrant, with ripe fruit and spices and an earthy and floral background."
+    - "In the mouth is delicate, silky and mineral, evokes memories and desire."
+    - "Contains sulfites."
+  feroes:
+    - "It shows an intense cherry tone with aromas of wood, vanilla, balsamic, fruit and toasted cafes."
+    - "The entrance in the mouth is pleasant and structured, where the sweet tannin brings fullness in the mouth, obtaining a durable taste post."
+    - "Five months in barrel."
+    - "Contains sulfites."
+  lagartijo:
+    - "It is pale golden color, clean and bright."
+    - "On the nose it is expressive and varietal, with the aniseed aromas of fennel, herbaceous touches, green apple, banana touches and pineapple souvenirs."
+    - "On the palate it is light, fresh, easy to drink, with good fruit in the center of the mouth and a finish of medium persistence with tropical memories in retronasal."
+    - "Contains sulfites."
+  menina:
+    - "Wine created 8 months in new French oak barrels, which brings sediment and a complex and elegant step in the mouth."
+    - "Perfect for grilled steak and red meats."
+    - "Contains sulfites."
+  mureda:
+    - "Ecological wine from the land of Castilla, from its own vineyards."
+    - "Its 2 months in barrel give it a raspberry color, with violet fringes and aromas of violet and black fruit (plum and blackberry)."
+    - "In aftertaste, it remembers to black fruits. Balanced, unctuous and warm."
+    - "Contains sulfites."
+  muriel:
+    - "Genuine and honest expression of the Tempranillo variety of Rioja, it presents the freshness and the elegance that contribute its 12 months of maturation in new oak barrels."
+    - "A very suggestive cherry color anticipates aromatic nuances of great fineness, with notes of red fruits, vanilla, coconut and roasted."
+    - "Of wide and persistent palate, it combines very well with appetizers, tapas, meats of small game and cheeses not very cured."
+    - "Contains sulfites."
+  nuviana_blanco:
+    - "Fresh, with peach and floral aromas and a bright tropical fruit character."
+    - "Contains sulfites."
+  nuviana_tinto:
+    - "Intense and original wine, with red berries aroma with spicy notes and light toasted touch."
+    - "Contains sulfites."
+  sastreria:
+    - "Estampado Alta Costura collection. This wine has been woven with white Garnacha grapes."
+    - "It combines modernity and fruit character with the elegance of the Mediterranean style of this variety."
+    - "Contains sulfites."
+  vermouth:
+    - "The authentic vermouth of Reus, made on the basis of first quality wines and aromatic plants, carefully chosen from the Mediterranean zone."
+    - "Very adequate to drinking it alone, with ice or cocktail."
+    - "Contains sulfites."
+  vinaldena:
+    - "White wine made from the selection of grapes of the Verdejo variety from its own vineyards in Pozaldez and Rueda."
+    - "Yellowish-green color, intense and complex aroma of fruits and citrus fruits, with volume and persistence in the mouth."
+    - "Contains sulfites."
+  zinio:
+    - "This wine is made exclusively from Garnacha grapes, demostrates the inherit qualities of that great variety."
+    - "With an intense purple color, the wine has fresh aromas revealing a ripe jam-like fruit with more vibrant notes of red berries."
+    - "Initial sensation in the mouth is one of lively, fresh fruits that gives way to a warmer roundness characterized by ripe round tannins that fill out the palate as the wine leaves"
+    - "Contains sulfites."
+
+ingrediente:
+  aceite: Olive oil
+  ajo: Garlic
+  atun: Tuna
+  arroz: Rice
+  azucar: Sugar
+  bacalao: Cod
+  bechamel: Bechamel
+  berenjena: Egg plant
+  calabacin: Zuchinni
+  carne_picada: Pork and beef meat
+  cayena: Cayenne
+  cebolla: Onion
+  cecina: Smoked beef
+  cerveza: Beer
+  chorizo: Pork sausage
+  cilantro: Coriander
+  coliflor: Cauliflower
+  comino: Cumin
+  crema_queso: Cream cheese
+  eneldo: Dill
+  garbanzo: Chickpea
+  guisante: Pea
+  harina: Flour
+  huevos: Eggs
+  huevo_duro: Hard-boiled egg
+  judia_blanca: White bean
+  judia_pinta: Pinto bean
+  judion: Judo
+  ketchup: Ketchup
+  laurel: Laurel
+  leche: Milk
+  lechuga: Lettuce
+  lenteja: Lentils
+  lomo: Pork loin
+  lomo_embuchado: Pork loin
+  mahonesa: Mayonnaise
+  mantequilla: Butter
+  manzana: Apple
+  miel: Honey
+  mojo: "Mojos:"
+  mostaza: Mustard
+  morcilla: Blood sausage
+  nata: Cream
+  nuez_moscada: Nutmeg
+  oregano: Oregano
+  pan_rallado: Bread crumbs
+  panceta: Bacon
+  patata: Potatoe
+  pate_shiitake: Shiitake pate
+  pasta_integral: Whole wheat pasta
+  pasta_trigo: Wheat pasta
+  pepino: Cucumber
+  perejil: Parsley
+  perrins: Sauce perrins
+  pimenton: Paprika
+  pimenton_cilantro: Paprika or Coriander and Parsley
+  pimienta_blanca: White pepper
+  pimienta_negra: Black pepper
+  pimiento_piquillo: Piquillo pepper
+  pimiento_rojo: Red pepper
+  pimiento_verde: Green pepper
+  pollo: Chicken
+  queso: Cheese
+  queso_azul: Blue cheese
+  queso_cabra: Goat cheese
+  queso_oveja: Cured sheep cheese
+  quinoa: Quinoa
+  remolacha: Beet
+  rucula: Arugula
+  romero: Rosemary
+  sal: Salt
+  sal_gorda: Fat salt
+  salmon_ahumado: Smoked salmon
+  salmon_fresco: Fresh salmon
+  salsa: "Sauce:"
+  salsa_agridulce: Sweet and sour sauce
+  salsa_soja: Soy sauce
+  salsa_tomate: Tomato sauce
+  salsa_tomate_casera: Homemade tomato sauce
+  sesamo: Sesame
+  setas: Arrows
+  solomillo: Pork tenderloin
+  ternera: Veal
+  tomate: Tomato
+  tomate_deshi: Dehydrated tomato
+  tomate_frito: Fried tomato
+  tomillo: Thyme
+  ventresca_atun: Tuna ventresca
+  verduras: Vegetables
+  vinagre: Vinegar
+  vinagre_jerez: Sherry vinager
+  vinagre_man: Apple vinager
+  zanahoria: Carrot
+  zumo_lima: Lime juice
+  zumo_limon: Lemon juice
+  zumo_naranja: Orange juice
+
+nombre:
+  atun: Tuna in salami
+  babaganoush: Babaganoush
+  berenjenas: Stuffed eggplant
+  brandada_bacalao: Brandade of cod
+  carpaccio: Zuchinni carpaccio
+  cecina: Smoked beef from León
+  ensalada_remo: Beet salad with arugula and goat cheese eco
+  hummus: Hummus
+  lasagna: Arrows lasagna
+  lomo_embuchado: Pork loin
+  pastel_salmon: Salmon cake
+  patata_mojo: 'Papas arrugas' with 2 mojos
+  patata_rellena: Stuffed potatoes
+  roastbeef: Roastbeef
+  ragout: Veal ragout
+  rusos: Russian steaks with tomato sauce
+  solomillo: Sirloin with beer and apple
+  tortilla: Potatoes omelette
+  tosta_cecina: Toast of pork loin from León
+  tosta_salmon: Toast of salmon
+  tosta_ventresca: Toast of tuna belly
+  ventresca: Tuna belly with piquillo pepper
+  # Nombres de Menu
+  berenjena: Eggplants stuffed with pisto
+  calabacin_relleno: Stuffed courgettes
+  canelones_verduras: Canilones stuffed with vegetables and shiitake pate
+  carne_mechada: Grilled meat with potato puree
+  ensalada_alubias: Bean salad
+  ensalada_campera: Country salad
+  ensalada_garbanzo: Chickpea salad with thyme vinaigrette
+  ensalada_pollo: Chicken salad
+  judia_vinagreta: Beans with dehydrated tomato vinaigrette
+  judiones_compango: Judo with partner
+  lasagna_setas: Mushroom lasagna
+  lentejas_verduras: Lentils stewed with vegetables
+  macarron_verdura: Whole-grain macaroni with vegetables and homemade tomato sauce
+  mousaka: Mousaka
+  ragout_arroz: Veal Ragout with White Rice
+  rusos_arroz: Russian steaks with white rice
+
+mapa:
+  info: "is a tapas bar and wines along the <strong> Rastro de Madrid </strong> between the subway stops of La Latina and Tirso de Molina"
+
+aviso:
+  agosto:
+    titular: We are going on vacation.
+    vuelta: We return on September 1.
+
+menu:
+  hoy: Today
+  tenemos: we have
+  alergeno: Allergens
+  sin_aler: "No allergens"
+  enlace: "See ingredients"
+  legend: "Dish of the day"
+  leyenda1: "This week's dishes:"
+  leyenda2: "Next week's dishes:"
+  entresemana: "This week we have:"
+  finde: "Today <span id = 'dia'></span> we do not offer dish of the day. Quench your appetite with our toasts and rations and accompany them with a good wine."
+
+dia:
+  domingo: Sunday
+  lunes: Monday
+  martes: Tuesday
+  miercoles: Wednesday
+  jueves: Thursday
+  viernes: Friday
+  sabado: Saturday
+

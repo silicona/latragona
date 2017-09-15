@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fracaso del tipo 404</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+		  overflow: hidden;
+	    font-family: verdana, sans-serif;
+	    font-size: 18pt;
+		}
+
+    h1 {
+      margin: 1em;
+      text-align: center;
+    }      
+
+		img {
+			position: absolute;
+			left: 40%;
+			top: 30%;
+      width: 300px;
+			z-index: 0;
+		}
+
+		h2 {
+			position: absolute;
+			font-size: 2.5em;
+			margin: 20px;
+			margin-bottom: 0px;
+			padding-left: 30px;
+			z-index: 1;
+		}
+
+		p {
+		  margin: 2em;
+		  z-index: 1;
+		  line-height: 1.5em;
+		  font-size: 1.2em;
+		}
+
+		p:first-letter {
+		  margin-left: 1em;
+		  font-size: 1.5em;
+		  color: #a00;
+		}
+  </style>
+</head>
+<body>
+  <h1>La página se está formando</h1>
+
+  <p>La pagina que buscas, se está construyendo. Vuelve más tarde.</p>
+  <img src='../media/logo_red.jpg' alt="La tragona">
+
+  <p>Ven a <a href='http://latragona.com/'>La Tragona</a></p>
+
+</body>
+</html>

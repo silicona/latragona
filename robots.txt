@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /js/
+Disallow: /css/
+Disallow: /media/
+Disallow: /adjunto.php
+DisalloW: /imag_ejemplos/
+Disallow: /error_log
+Disallow: /php/
+Disallow: /cgi-bin/

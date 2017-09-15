@@ -1,0 +1,250 @@
+alergenos:
+  altramuz: Lupino
+  apio: Sedano
+  cacahuete: Arachide
+  crustaceo: Crustaceo
+  frutos: Noccioline
+  gluten: Glutine
+  huevo: Uovo
+  lacteo: Lácteo
+  molusco: Mollusco
+  mostaza: Senape
+  pescado: Pesce
+  sesamo: Sesamo
+  soja: Soia
+  sulfitos: Solfito
+
+bebida:
+  7puntas: 
+    - "Selezione di vini che riflette il potenziale di grandi vini spagnoli, scelto per la sua eleganza e freschezza da gustare in tutti i tipi di incontri, sempre in buona compagnia."
+    - "Contiene solfiti."
+  albarino:
+    - "Cosechero vino bianco, prodotto in modo tradizionale."
+    - "Ha un alto contenuto alcolico e acidità evidente, con sentori floreali fruttati potenziale aromatico."
+    - "Contiene solfiti."
+  bierzo:
+    - "Mencia di uva da vino rosso con un aroma fruttato intenso, vino vellutato, con una grande capacità di espressione del terroir, a causa della grande influenza del terreno su cui sono coltivati."
+    - "Con un alto contenuto di alcol e bassa acidità, è consuetudine preparare i giovani vini, con macerazione carbonica o alzate brevi."
+    - "Contiene solfiti."
+  bierzo_god:
+    - "Cosechero vino bianco, prodotto in modo tradizionale."
+    - "Colore giallo con riflessi verdognoli ed è fragrante, con frutta matura e spezie e lo sfondo terroso e floreale."
+    - "In bocca è delicato, setoso e minerali, evoca ricordi e il desiderio."
+    - "Contiene solfiti."
+  feroes:
+    - "Essa mostra un tono ciliegia intenso con aromi di legno, vaniglia, balsamico, fruttato e caffè tostati."
+    - "L'ingresso è bello e strutturato, dove il tannino dolce porta la pienezza al palato, ottenendo un gusto messaggio duraturo."
+    - "Cinque mesi in botti."
+    - "Contiene solfiti."
+  lagartijo:
+    - "È pallida, oro pulito e luminoso."
+    - "Il naso è espressivo, varietale con il sapore di anice di finocchio, tocchi a base di erbe, verde mela, sentori di banana e ananas ricordi."
+    - "Al palato è leggero, fresco, facile da bere, con buoni frutti nel centro della bocca e una media persistenza finale con ricordi retronasali tropicali."
+    - "Contiene solfiti."
+  menina:
+    - "Vino di età compresa tra 8 mesi in barriques nuove di rovere francese, che dà setosità e un passo nella bocca complesso ed elegante."
+    - "Perfetto per carni rosse brasate e grigliate."
+    - "Contiene solfiti."
+  mureda:
+    - "Vino biologico dalla terra di Castiglia, da vigneti."
+    - "I suoi 2 mesi in rovere forniranno un colore lampone con riflessi violacei e aromi di violetta e frutta nera (prugna e mora)."
+    - "Nel retrogusto, che ricorda la frutta nera. Equilibrato, morbido e caldo."
+    - "Contiene solfiti."
+  muriel:
+    - "Espressione genuina e onesta di Tempranillo Rioja presenta la freschezza e l'eleganza che portano i loro 12 mesi di invecchiamento in barriques nuove di rovere."
+    - "Una ciliegia anticipa sfumature aromatiche di grande suggestione di grande finezza, con note di frutti rossi, vaniglia, noce di cocco e arrosto."
+    - "Palato ampio e persistente con antipasti, tapas, piccola selvaggina e formaggi curato."
+    - "Contiene solfiti."
+  nuviana_blanco:
+    - "Vino fresco ed equilibrato, con note di frutta esotica e notevole persistenza."
+    - "Contiene solfiti."
+  nuviana_tinto:
+    - "Vino intenso e originale, con sentori di frutti rossi con note tostate piccanti e tocco leggero."
+    - "Contiene solfiti."
+  sastreria:
+    - "Stampa Haute Couture Collection. Questo vino è stato tessuto con uve Grenache."
+    - "Fruttato unisce modernità e l'eleganza dello stile mediterraneo di questa varietà."
+    - "Contiene solfiti."
+  vermouth:
+    - "El auténtico vermouth de Reus, elaborado a base de vinos de primera calidad y plantas aromáticas escogidas cuidadosamente de la zona mediterranea."
+    - "Muy apropiado para tomar solo, con hielo o en cocktail."
+    - "Contiene solfiti."
+  vinaldena:
+    - "Vino bianco ottenuto dalla selezione delle uve Verdejo dai vigneti in Pozaldez e Rueda."
+    - "Colore giallo verdolino, profumo intenso e frutta complessa e agrumi, con il volume e la persistenza in bocca."
+    - "Contiene solfiti."
+  zinio:
+    - "Ottenuto esclusivamente da uve Garnacha, evidenzia tutte le qualità intrinseche della sua varietà, con un colore rosso porpora e strato alto."
+    - "Il naso presenta la sua freschezza sviluppare un gruppo aromatico caratterizzato dalla presenza di aromi di frutta e note torta di fragole e lamponi ricordi."
+    - "Si manifesta in bocca dal vivo, fresco e fruttato, con tannini maturi che forniscono la struttura nel vostro corpo e finiture eleganti."
+    - "Contiene solfiti."
+
+ingrediente:
+  aceite: Olio d'oliva
+  ajo: Aglio
+  atun: Tonno
+  arroz: Riso
+  azucar: Zucchero
+  bacalao: Merluzzo
+  bechamel: Besciamella
+  berenjena: Melanzana
+  calabacin: Zuchinni
+  carne_picada: Carne di maiale e manzo
+  cayena: Caienna
+  cebolla: Cipolla
+  cecina: Carne secca
+  cerveza: Birra
+  chorizo: Chorizo
+  cilantro: Coriandolo
+  coliflor: Cavolfiore
+  comino: Cumino
+  crema_queso: Formaggio cremoso
+  eneldo: Aneto
+  garbanzo: Cece
+  guisante: Pisello
+  harina: Farina
+  huevos: Uova
+  huevo_duro: Uovo sodo
+  judia_blanca: Fagiolo bianco
+  judia_pinta: Pinte ebraica
+  judion: Judion
+  ketchup: Ketchup
+  laurel: Alloro
+  leche: Latte
+  lechuga: Lattuga
+  lenteja: Lenticchie
+  lomo: Carne di maiale
+  lomo_embuchado: Lombo
+  mahonesa: Mahonesa
+  mantequilla: Burro
+  manzana: Mela
+  miel: Miele
+  mojo: "Mojos:"
+  morcilla: Budino di sangue
+  mostaza: Senape
+  nata: Crema
+  nuez_moscada: Noce moscata
+  oregano: Origano
+  pan_rallado: Mollica di pane
+  panceta: Pancetta
+  patata: Patata
+  pate_shiitake: Pate shiitake
+  pasta_integral: Pasta di grano intero
+  pasta_trigo: Pasta di grano
+  pepino: Cetriolo
+  perejil: Prezzemolo
+  perrins: Salsa perrins
+  pimenton: Caienna
+  pimenton_cilantro: Caienna o Coriandolo y Prezzemolo
+  pimienta_blanca: Pepe bianco
+  pimineta_negra: Pepe nero
+  pimiento_piquillo: Peperoni
+  pimiento_rojo: Peperone
+  pimiento_verde: Pepe verde
+  pollo: Pollo
+  queso: Formaggio
+  queso_azul: Formaggio blu
+  queso_cabra: Formaggio di capra
+  queso_oveja: Formaggio pecorino
+  quinoa: Quinoa
+  remolacha: Barbabietola
+  rucula: Rucula
+  romero: Rosmarino
+  sal: Sale
+  sal_gorda: Sale grosso
+  salmon_ahumado: Salmone affumicato
+  salmon_fresco: Salmone fresco
+  salsa: "Salsa:"
+  salsa_agridulce: Salsa dolce e acida
+  salsa_soja: Salsa di soia
+  salsa_tomate: Salsa di pomodoro
+  salsa_tomate_casera: Salsa di pomodoro fatta in casa
+  sesamo: Sesamo
+  setas: Funghi
+  solomillo: Filetto di maiale
+  ternera: Vitello
+  tomate: Pomodoro
+  tomate_deshi: Pomodoro disidratato
+  tomate_frito: Salsa di pomodoro
+  tomillo: Timo
+  ventresca_atun: Ventresca di tonno
+  verduras: Verdure
+  vinagre: Aceto
+  vinagre_jerez: Acido di Sherry
+  vinagre_man: Aceto di mele
+  zanahoria: Carota
+  zumo_lima: Zumo di lime
+  zumo_limon: succo di limone
+  zumo_naranja: Succo d'arancia
+
+nombre:
+  atun: Tonno salato
+  babaganoush: Babaganoush
+  berenjenas: Melanzane ripiene
+  brandada_bacalao: Brandade di merluzzo bianco
+  carpaccio: Zucchini carpaccio
+  cecina: Carne secca da León
+  ensalada_remo: Insalata di barbabietola con rucola e formaggio di capra eco
+  hummus: Hummus
+  lasagna: Fungo lasagne
+  lomo_embuchado: Lombo
+  pastel_salmon: Torta di salmone
+  patata_mojo: 'Papas arrugas' con due mojos
+  patata_rellena: Patate ripiene
+  roastbeef: Roastbeef
+  ragout: Ragù di vitello
+  rusos: Bistecche russe con salsa di pomodoro
+  solomillo: Controfiletto birra e mele
+  tortilla: Frittata
+  tosta_cecina: Tosta di carne secca da León
+  tosta_salmon: Tosta di salmone
+  tosta_ventresca: Tosta de ventresca di tonno
+  ventresca: Ventresca di tonno con peperoni
+  # Nombres de Menu
+  berenjena: Melanzane ripiene di pisto
+  calabacin_relleno: Zuchinne farcite
+  canelones_verduras: Cannoni ripieni di verdure e pate shiitake
+  carne_mechada: Carne alla griglia con purè di patate
+  ensalada_alubias: Insalata di fagioli
+  ensalada_campera: Insalata campera
+  ensalada_garbanzo: Insalata di garbanzo con timo vinaigrette
+  ensalada_pollo: Insalata di pollo
+  judia_vinagreta: Fagioli con vinaigrette di pomodoro disidratato
+  judiones_compango: Judi con il partner
+  lasagna_setas: Lasagna con funghi
+  lentejas_verduras: Lenticchie stufate di verdure
+  macarron_verdura: Maccheroni a grani interi con verdure e salsa di pomodori fatti in casa
+  mousaka: Mousaka
+  ragout_arroz: Ragazzo di vitello con riso bianco
+  rusos_arroz: Bistecche russe con riso bianco
+
+mapa:
+  info: "è un tapas e wine bar accanto al <strong> Rastro </ strong> tra le stazioni della metropolitana di La Latina e Tirso de Molina."
+
+aviso:
+  agosto:
+    titular: Andiamo in vacanza.
+    vuelta: Si torna il 1° settembre.
+
+menu:
+  hoy: Oggi
+  tenemos: abbiamo
+  alergeno: Allergeni
+  sin_aler: "Senza allergeni"
+  enlace: "Vedere gli ingredienti"
+  legend: "Piatto del giorno"
+  leyenda1: "I piatti della settimana:"
+  leyenda2: "Piatti prossima settimana:"
+  entresemana: "Questa settimana abbiamo:"
+  finde: "Oggi <span id = 'dia'></span> offrire nessun piatto del giorno. Placare il vostro appetito con il nostro pane tostato e razioni e unirsi a loro un buon vino."
+
+dia:
+  domingo: Domenica
+  lunes: Lunedi
+  martes: Martedì
+  miercoles: Mercoledì
+  jueves: Giovedi
+  viernes: Venerdì
+  sabado: Sabato
+
+

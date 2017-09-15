@@ -1,0 +1,251 @@
+alergenos:
+  altramuz: Lupin
+  apio: Céleri
+  cacahuete: Arachide
+  crustaceo: Crustáceo
+  frutos: Fruits secs
+  gluten: Gluten
+  huevo: Aeuf
+  lacteo: Lacteo
+  molusco: Mollusque
+  mostaza: Moutarde
+  pescado: Poisson
+  sesamo: Sésame
+  soja: Soja
+  sulfitos: Sulfite
+
+bebida:
+  7puntas: 
+    - "Sélection de vins qui reflète le potentiel des grands vins espagnols, choisi pour son élégance et de fraîcheur à déguster dans toutes sortes de réunions, toujours en bonne compagnie."
+    - "Contient des sulfites."
+  albarino:
+    - "Cosechero vin blanc, produit de manière traditionnelle."
+    - "Il a une forte teneur en alcool et une acidité notable, avec fruité potentiel aromatique des nuances florales."
+    - "Contient des sulfites."
+  bierzo:
+    - "Vin rouge raisin Mencia avec un arôme fruité intense, vin velouté avec une grande capacité d'expression du terroir, en raison de la grande influence du terrain sur lequel sont cultivées."
+    - "Avec une teneur élevée en alcool et une faible acidité, il est habituel de préparer les jeunes vins, des vins avec macération carbonique ou court vaissellieres."
+    - "Contient des sulfites."
+  bierzo_god:
+    - "Cosechero vin blanc, produit de manière traditionnelle."
+    - "Couleur jaune avec des reflets verdâtres et nez parfumé, avec des fruits mûrs et d'épices et de fond terreux et floral."
+    - "En bouche, il est délicat, soyeux et minéral, évoque des souvenirs et le désir."
+    - "Contient des sulfites."
+  feroes:
+    - "Il montre un ton de cerise intense avec des arômes de bois, de vanille, balsamique, fruité et cafés torréfiés."
+    - "L'entrée est agréable et structuré, où les tanins doux apporte la plénitude en bouche, l'obtention d'un goût durable après."
+    - "Cinq mois en fûts."
+    - "Contient des sulfites."
+  lagartijo:
+    - "Il est pâle, or propre et lumineux."
+    - "Le nez est expressif, cépage avec le goût anisé du fenouil, des touches de fines herbes, pomme verte, des notes de souvenirs de bananes et d'ananas."
+    - "La bouche est légère, fraîche, facile à boire, avec de bons fruits dans le centre de la bouche et une persistance moyenne finale avec des souvenirs rétronasale tropicales."
+    - "Contient des sulfites."
+  menina:
+    - "Vin âgés de 8 mois en fûts de chêne français, ce qui donne une étape et soyeux en bouche complexe et élégante."
+    - "Parfait pour les viandes rouges braisées et grillées."
+    - "Contient des sulfites."
+  mureda:
+    - "Vin biologique de la terre de Castille, de vignes."
+    - "Ses 2 mois en fûts de chêne fourniront une couleur framboise avec des tons violets et des arômes de violette et de fruits noirs (prune et de mûre)."
+    - "En arrière-goût, rappelant les fruits noirs. Équilibrée, lisse et chaud."
+    - "Contient des sulfites."
+  muriel:
+    - "Expression authentique et honnête de Tempranillo Rioja présente la fraîcheur et l'élégance qui apportent leurs 12 mois de vieillissement en fûts de chêne neufs."
+    - "Une cerise anticipe des nuances aromatiques très évocateurs d'une grande finesse, avec des notes de fruits rouges, de vanille, noix de coco et rôti."
+    - "Palais large et persistant bien avec amuse-gueules, tapas, viande de petits gibiers et fromages guéri."
+    - "Contient des sulfites."
+  nuviana_blanco:
+    - "Vin frais et équilibré, avec des notes de fruits exotiques et la persistance remarquable."
+    - "Contient des sulfites."
+  nuviana_tinto:
+    - "Vin intense et original avec des notes de fruits rouges avec des notes épicées et grillées frôlement."
+    - "Contient des sulfites."
+  sastreria:
+    - "Imprimer Haute Couture Collection. Ce vin a été tissé avec des raisins Grenache."
+    - "Fruité allie modernité et l'élégance du style méditerranéen de cette variété."
+    - "Contient des sulfites."
+  vermouth:
+    - "L'authentique vermouth de Reus, elaboré sur la base de vins de première qualité et de plantes aromatiques, soigneusement choisies de la zone méditerranenne."
+    - "Très adéquat pour le pendre seul, avec glaçons ou cocktail."
+    - "Contient des sulfites."
+  vinaldena:
+    - "Vin blanc issu de raisins Verdejo sélection du vignoble de Pozaldez et Rueda."
+    - "Couleur jaune verdâtre, un arôme intense et complexe de fruits et d'agrumes, avec le volume et la persistance dans la bouche."
+    - "Contient des sulfites."
+  zinio:
+    - "Fabriqué exclusivement à partir de raisins Garnacha, met en évidence toutes les qualités intrinsèques de sa variété, avec une couleur pourpre profond et la couche haute."
+    - "Le nez montre sa fraîcheur développement un groupe aromatique marqué par la présence d'arômes de fruits et des notes gâteau aux fraises et les souvenirs de framboise."
+    - "Se manifeste dans la bouche en direct, frais et fruité, avec des tanins mûrs qui structurent dans votre corps et la finition élégante."
+    - "Contient des sulfites."
+    
+ingrediente:
+  aceite: Huile d'olive
+  ajo: Ail
+  atun: Thon
+  arroz: Riz
+  azucar: Sucre
+  bacalao: Morue
+  bechamel: Béchamel
+  berenjena: Aubergine
+  calabacin: Courgette
+  carne_picada: Porc et boeuf
+  cayena: Cayena
+  cebolla: Oignon
+  cecina: Viande séchée
+  cerveza: Bière
+  chorizo: Chorizo
+  cilantro: Coriandre
+  coliflor: Chou-fleur
+  comino: Cumin
+  crema_queso: Fromage à la crème
+  eneldo: Aneth
+  garbanzo: Pois chiche
+  guisante: Pois
+  harina: Farine
+  huevos: Aeufs
+  huevo_duro: Oeuf bouilli
+  judia_blanca: Haricot blanc
+  judia_pinta: Pinte juive
+  judion: Blagues
+  ketchup: Ketchup
+  laurel: Laurier
+  leche: Lait
+  lechuga: Laitue
+  lenteja: Lentilles
+  lomo: Longe de porc
+  lomo_embuchado: Longe de porc guéri
+  mahonesa: Mayonnaise
+  mantequilla: Beurre
+  manzana: Pomme
+  miel: Miel
+  mojo: "Mojos:"
+  morcilla: Boudin de sang
+  mostaza: Moutarde
+  nata: Crème
+  nuez_moscada: Noix de muscade
+  oregano: Origan
+  pan_rallado: Chapelure
+  panceta: Bacon
+  patata: Pomme de terre
+  pate_shiitake: Shiitake pate
+  pasta_integral: Pate de blé entier
+  pasta_trigo: Pâtes de blé
+  pepino: Concombre
+  perejil: Persil
+  perrins: Sauce perrins
+  pimenton: Cayenne
+  pimenton_cilantro: Cayenne ou Coriandre et Persil
+  pimienta_blanca: Poivre blanc
+  pimienta_negra: Poivre noir
+  pimiento_piquillo: Piquillos
+  pimiento_rojo: Piment rouge
+  pimiento_verde: Poivre vert
+  pollo: Poulet
+  queso: Fromage
+  queso_azul: Fromage bleu
+  queso_cabra: Fromage de chèvre
+  queso_oveja: Fromage de brebis
+  quinoa: Quinoa
+  remolacha: Betterave
+  rucula: Roquette
+  romero: Romarin
+  sal: Sel
+  sal_gorda: Gros sel
+  salmon_ahumado: Saumon fumé
+  salmon_fresco: Saumon frais
+  salsa: "Sauce:"
+  salsa_agridulce: Sauce aigre-douce
+  salsa_soja: Sauce de soja
+  salsa_tomate: Sauce tomate
+  salsa_tomate_casera: Suace tomate maison
+  sesamo: Sésame
+  setas: Champignons
+  solomillo: Filet mignon de porc
+  ternera: Veau
+  tomate: Tomate
+  tomate_deshi: Tomate déshydratée
+  tomate_frito: Sauce tomate
+  tomillo: Thym
+  ventresca_atun: Ventre de thon
+  verduras: Légumes
+  vinagre: Vinaigre
+  vinagre_jerez: Vinaigre de Sherry
+  vinagre_man: Vinaigre de pomme
+  zanahoria: Carotte
+  zumo_lima: Jus de citron vert
+  zumo_limon: Jus de citron
+  zumo_naranja: Jus d'orange
+
+nombre:
+  atun: Thon salé
+  babaganoush: Babaganoush
+  berenjenas: Aubergines farcies
+  brandada_bacalao: Brandade de morue
+  carpaccio: Courgette carpaccio
+  cecina: Viande séchée de León
+  ensalada_remo: Salade de betteraves à la roquette et au fromage de chèvre eco
+  hummus: Hummus
+  lasagna: Lasagnes aux champignons
+  lomo_embuchado: Longe de porc guéri
+  pastel_salmon: Gâteau de saumon
+  patata_mojo: 'Papas arrugas' avec deux Mojos
+  patata_rellena: Pommes de terre farcies
+  roastbeef: Roastbeef
+  ragout: Ragoût de veau
+  rusos: Steak de Russie avec sauce tomate
+  solomillo: Bière surlonge et pomme
+  tortilla: Omelette de pomme de terre
+  tosta_cecina: Tosta de Viande séchée de León
+  tosta_salmon: Tosta de saumon
+  tosta_ventresca: Tosta de ventre de thon
+  ventresca: Ventre de thon avec piquillos
+  # Nombres de Menu
+  berenjena: Aubergines farcies
+  calabacin_relleno: Courgettes farcies
+  canelones_verduras: Canilones farcies de légumes et de patates shiitake
+  carne_mechada: Viande grillée avec purée de pommes de terre
+  ensalada_alubias: Salade de haricots
+  ensalada_campera: Veste
+  ensalada_garbanzo: Salade garbanzo à la vinaigrette au thym
+  ensalada_pollo: Salade de poulet
+  judia_vinagreta: Haricots à la vinaigrette à la tomate déshydratée
+  judiones_compango: Blagues avec partenaire
+  lasagna_setas: Lasagnes aux champignons
+  lentejas_verduras: Lentilles ravies de légumes
+  macarron_verdura: Macaroni à grains entiers aux légumes et sauce tomate maison
+  mousaka: Mousaka
+  ragout_arroz: Ragout de veau au riz blanc
+  rusos_arroz: Steaks russes au riz blanc
+
+mapa:
+  info: "est un bar à tapas et de vin à côté du <strong>Rastro</ strong> entre les stations de métro de La Latina et Tirso de Molina."
+
+aviso:
+  agosto:
+    titular: Nous allons en vacances.
+    vuelta: Nous reviendrons le 1er Septembre.
+
+menu:
+  hoy: Aujourd'hui
+  tenemos: nous avons
+  alergeno: Allergènes
+  sin_aler: "Sans allergènes"
+  enlace: "Voir ingrédients"
+  legend: "Plat du jour"
+  leyenda1: "Plats cette semaine:"
+  leyenda2: "Plats la semaine prochaine:"
+  entresemana: "Cette semaine, nous avons:"
+  finde: "Aujourd'hui <span id = 'dia'></span> offre pas plat du jour. Étancher votre appétit avec notre pain grillé et des rations et Joignez-les un bon vin."
+
+dia:
+  domingo: Dimanche
+  lunes: Lundi
+  martes: Mardi
+  miercoles: Mercredi
+  jueves: Jeudi
+  viernes: Vendredi
+  sabado: Samedi
+
+
+

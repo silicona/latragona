@@ -1,0 +1,185 @@
+alergenos:
+  altramuz: Altramuz
+  apio: Apio
+  cacahuete: Cacahuete
+  crustaceo: Crustaceo
+  frutos: Frutos secos
+  gluten: Gluten
+  huevo: Huevo
+  lacteo: Lácteo
+  molusco: Molusco
+  mostaza: Mostaza
+  pescado: Pescado
+  sesamo: Sésamo
+  soja: Soja
+  sulfitos: Sulfito
+
+bebida:
+  7puntas: 
+    - "Selección de vinos que refleja el potencial de los grandes vinos españoles, escogido por su elegancia y frescura para ser disfrutado en toda clase de reuniones, siempre en buena compañia."
+    - "Enthält Sulfite."
+  albarino:
+    - "Vino blanco Cosechero, producido a la manera tradicional."
+    - "Tiene una graduación alcohólica elevada y una acidez notable, con un gran potencial aromático afrutado con matices florales."
+    - "Enthält Sulfite."
+  bierzo:
+    - "Vino tinto de uva Mencia, con un aroma frutal muy intenso, vinos aterciopelados y con una gran capacidad de expresión del terroir, debido a la gran influencia que tienen de la tierra en la que se cultivan."
+    - "Con un grado alcohólico alto y una acidez baja, es habitual para la elaboración de vinos jóvenes, maceraciones carbónicas o vinos con cortas crianzas."
+    - "Enthält Sulfite."
+  bierzo_god:
+    - "Vino blanco Cosechero, producido a la manera tradicional."
+    - "De color amarillo pajizo con matices verdosos y en nariz resulta fragante, con fruta madura y especias y un fondo terroso y floral."
+    - "En la boca es delicado, sedoso y mineral, evoca los recuerdos y el deseo."
+    - "Enthält Sulfite."
+  feroes:
+    - "Muestra un tono cereza intenso con aromas a madera, vainilla, balsámico, frutales y cafes tostados."
+    - "La entrada en boca es agradable y estructurada, donde el tanino dulce aporta plenitud en boca, obteniendo un post gusto duradero"
+    - "Cinco meses en barrica."
+    - "Enthält Sulfite."
+  lagartijo:
+    - "Es de color dorado pálido, limpio y brillante."
+    - "En nariz es expresivo y varietal, con los aromas anisados del hinojo, toques herbáceos, manzana verde, toques de banana y recuerdos de piña."
+    - "En boca es ligero, fresco, fácil de beber, con buena fruta en el centro de la boca y un final de persistencia media con recuerdos tropicales en retronasal."
+    - "Enthält Sulfite."
+  menina:
+    - "Vino criado 8 meses en barrica nueva de roble francés, que le aporta sedosidad y un paso en boca complejo y elegante."
+    - "Perfecto para carnes estofadas y rojas a la brasa."
+    - "Enthält Sulfite."
+  mureda:
+    - "Vino ecológico de la tierra de Castilla, procedente de viñedos propios."
+    - "Sus 2 meses en barrica le proporcionan un color frambuesa, con ribetes violáceos y aromas a violeta y fruta negra (ciruela y zarzamora)."
+    - "En retrogusto, recuerda a frutas negras. Equilibrado, untuoso y cálido."
+    - "Enthält Sulfite."
+  muriel:
+    - "Genuina y honesta expresión de la variedad Tempranillo de Rioja, presenta la frescura y la elegancia que aportan sus 12 meses de maduración en barricas nuevas de roble."
+    - "Un color cereza muy sugerente anticipa matices aromáticos de gran finura, con notas de frutas rojas, vainilla, coco y torrefactos."
+    - "De paladar amplio y persistente, combina muy bien con aperitivos, tapas, carnes de caza menor y quesos no muy curados."
+    - "Enthält Sulfite."
+  nuviana_blanco:
+    - "Harmonisch und frisch, mit pfirsich und blumen aromen."
+    - "Enthält Sulfite."
+  nuviana_tinto:
+    - "Intensives aroma roter beeren mit gewürznoten und einem leichten hauch von geröstetem."
+    - "Enthält Sulfite."
+  sastreria:
+    - "Colección Estampado Alta costura. Este vino ha sido tejido con uvas de Garnacha blanca."
+    - "Conjuga modernidad y caracter frutal con la elegancia del estilo mediterráneo de esta variedad."
+    - "Enthält Sulfite."
+  vermouth:
+    - "Der echte wermut aus Reus, aus erstqualität weinen und aromatischen pflanzen, dir sorgfältig im Mittermeerraum aussortiert wurden, hergestellt."
+    - "Sehr geeignet, um ihn pur, mit eis oder als cocktail zu trinken."
+    - "Enthält Sulfite."
+  vinaldena:
+    - "Vino blanco elaborado a partir de la selección de uva de la variedad Verdejo procedente de los viñedos propios en Pozaldez y Rueda."
+    - "De color amarillo verdoso, aroma intenso y complejo de frutas y cítricos, con volumen y persistencia en boca."
+    - "Enthält Sulfite."
+  zinio:
+    - "Elaborado exclusivamente con uvas Garnacha, resalta todas las cualidades intrínsecas de su gran variedad, con un color púrpura intenso y de capa alta.", "En nariz muestra toda su frescura desarrollando un conjunto aromático marcado por la presencia de fruta en confitura, notas de tarta de fresa y recuerdos de frambuesa."
+    - "En boca se manifiesta vivo, fresco y frutal, con taninos maduros que aportan cuerpo y estructura en su elegante final."
+    - "Enthält Sulfite."
+
+ingrediente:
+  aceite: Aceite de oliva
+  ajo: Ajo
+  atun: Atún
+  arroz: Arroz
+  azucar: Azucar
+  bacalao: Bacalao
+  bechamel: Bechamel
+  berenjena: Berenjena
+  calabacin: Calabacín
+  cayena: Cayena
+  cebolla: Cebolla
+  cecina: Cecina
+  cerveza: Cerveza
+  cilantro: Cilantro
+  coliflor: Coliflor
+  comino: Comino
+  crema_queso: Crema de queso
+  eneldo: Eneldo
+  garbanzo: Garbanzo
+  guisante: Guisante
+  harina: Harina
+  huevos: Huevos
+  judia_blanca: Judia blanca
+  leche: Leche
+  lomo_embuchado: Lomo embuchado
+  mantequilla: Mantequilla
+  manzana: Manzana
+  miel: Miel
+  mojo: "Mojos:"
+  mostaza: Mostaza
+  nata: Nata
+  nuez_moscada: Nuez moscada
+  oregano: Orégano
+  patata: Patata
+  pasta_trigo: Pasta de trigo
+  perejil: Perejil
+  pimenton: Pimentón
+  pimenton_cilantro: Pimentón o Cilantro y Perejil
+  pimienta_blanca: Pimienta blanca
+  pimiento_piquillo: Pimiento del piquillo
+  pimiento_rojo: Pimiento rojo
+  pimiento_verde: Pimiento verde
+  queso: Queso
+  queso_oveja: Queso curado de oveja
+  romero: Romero
+  sal: Sal
+  sal_gorda: Sal gorda
+  salmon_ahumado: Salmón ahumado
+  salmon_fresco: Salmón fresco
+  salsa: "Salsa:"
+  salsa_soja: Salsa de soja
+  salsa_tomate: Salsa de tomate
+  sesamo: Sésamo
+  setas: Setas
+  solomillo: Solomillo de cerdo
+  ternera: Ternera
+  tomate: Tomate
+  tomate_frito: Tomate frito
+  tomillo: Tomillo
+  ventresca_atun: Ventresca de atún
+  vinagre: Vinagre
+  zanahoria: Zanahoria
+  zumo_lima: Zumo de lima
+  zumo_limon: Zumo de limón
+  zumo_naranja: Zumo de naranja
+
+nombre:
+  atun: Atún en salazón
+  babaganoush: Babaganoush
+  berenjenas: Berenjenas rellenas
+  brandada_bacalao: Brandada de bacalao
+  carpaccio: Carpaccio de Calabacín
+  cecina: Cecina de Léón
+  hummus: Hummus
+  lasagna: Lasagna de setas
+  lomo_embuchado: Lomo embuchado
+  pastel_salmon: Pastel de salmón
+  patata_mojo: Patatas con 2 mojos
+  patata_rellena: Patatas rellenas
+  roastbeef: Roastbeef
+  ragout: Ragout de ternera
+  solomillo: Solomillo a la cerveza y manzana
+  tortilla: Tortilla de patata
+  tosta_cecina: Tosta de cecina de Léon
+  tosta_salmon: Tosta de salmón
+  tosta_ventresca: Tosta de ventresca de atún
+  ventresca: Ventresca de atún con pimientos de piquillo
+# Menu
+  ver: Siehe Zutaten
+  decoracion: decoracion
+  pasta: Mejor pasta, imposible
+  comida: Comida cuadrada
+
+mapa:
+  info: "es un bar de tapeo y vinos junto al <strong>Rastro de Madrid</strong> entre las paradas de metro de La Latina y Tirso de Molina"
+
+aviso:
+  agosto:
+    titular: Nos vamos de vacaciones.
+    vuelta: Volvemos el 1 de septiembre.
+
+  
+
+
