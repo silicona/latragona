@@ -2,33 +2,16 @@
 <html>
 <head>
 	<title>Welcome to La Tragona</title>
-
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, wine, homemade liquor, cañas, Rastro, next to the Rastro, two minutes from the Rastro, La Latina, Tirso de Molina, oasis in Madrid, Bar area, meeting point, near to theater, Lavapies, theater, cabaret, good price, affordable price, gluten free, allergen menu, caring food, fresh food, fresh produce, market products, nearby market, ecological bread, Artisan bread, organic wine, alternative press, free wifi">
-	<meta name="description" content ="Tapas bar where you can enjoy toasts and gluten-free rations made with market products and organic wine, as well as artisan and combined liquors that remove hiccups. Located next to the Rastro, in the center of Madrid, between La Latina and Tirso de Molina.">
-	
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	
 	<?php
+		include 'basic_head.php';
 		require_once('../php/lib/spyc/spyc.php');
-		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml');
-		$vacaciones = $datos['aviso']['agosto']['titular'];
-		$vuelta = $datos['aviso']['agosto']['vuelta'];
+		$navidad = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml')['aviso']['navidad'];
 	?>
-	<script type="text/javascript">
-		titular = '<?= $vacaciones; ?>';
-		vuelta = '<?= $vuelta; ?>';
-	</script>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<script type="text/javascript" src="../js/index.js"></script>
+	
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -83,44 +66,36 @@
 		</nav>
 
 		<h1>Welcome to La Tragona</h1>
-			<section class="desktop">
-				<p>
-					We have rebuilt this space to get a neighborhood bar with a pleasant atmosphere. Here you can enjoy a <a href="swallow.php" alt="To swallow" title="The food of La Tragona">caring food</a>, made with market products, homemade bread and <a href="push.php" alt="To push" title="The drinks of La Tragona">ecological wines</a>.<br>
-					<br>
-					From Tuesday to Sunday, we are an oasis in Madrid, <a href="whereweare.php" alt="Where we are" title="Where we are">a quiet place between Tirso de molina and La Latina</a> where to take cañas and gluten-free rations at an affordable price, surrounded by bookstores and theaters, where you can also find the alternative press.<br>
-					<br>
-					In addition to wines, homemade liqueurs, toasts and rations, on weekdays we have a dish of the day, prepared with fresh products from the nearby markets, fruit of the <a href="whoweare.php" alt="Who we are" title="Who we are">good work from Luis y Pilar</a>.<br>
-					<br>
-					A meeting point of traditional flavors, good atmosphere and simple innovation, next to the Rastro. That's <a href="contactus.php" alt="Contact us" title="Contact us">La Tragona</a>.	
-				</p>
-				<img src="../media/logo_grande.jpg" alt="logo" title="La Tragona" id="fotolateral">
-			</section>
+		<section class="derecha">
+			<!--<img src="../media/logo_grande.jpg" alt="logo" title="La Tragona" id="fotolateral">-->
+			<?php include '../php/plantillas/cartel_navidades.php' ?>
+		</section>
 
-			<section class="movil">
-				<p>
-					Neighborhood bar with a pleasant atmosphere. Here you can enjoy a <a href="swallow.php" alt="To swallow" title="The food of La Tragona">caring food</a>, made with market products, homemade bread and <a href="push.php" alt="To push" title="The drinks of La Tragona">ecological wines</a>.<br>
-					<br>
-					From Tuesday to Sunday, we are an oasis in Madrid, <a href="whereweare.php" alt="Where we are" title="Where we are">a quiet place between Tirso de molina and La Latina</a>, where to take cañas and gluten-free rations at an affordable price.<br>
-					<br>
-					At weekdays, there is a dish of the day, with fresh produce from nearby markets, fruit of <a href="whoweare.php" alt="Who we are" title="Who we are">good work from Luis y Pilar</a>.<br>
-					<br>
-					A meeting point of traditional flavors, good atmosphere and simple innovation, next to the Rastro. That's <a href="contactus.php" alt="Contact us" title="Contact us">La Tragona</a>.
-				</p>
-			</section>
+		<section class="izquierda">
+			<p>
+				We have rebuilt this space to get a neighborhood bar with a pleasant atmosphere. Here you can enjoy a <a href="swallow.php" alt="To swallow" title="The food of La Tragona">caring food</a>, made with market products, homemade bread and <a href="push.php" alt="To push" title="The drinks of La Tragona">ecological wines</a>.<br>
+				<br>
+				From Tuesday to Sunday, we are an oasis in Madrid, <a href="whereweare.php" alt="Where we are" title="Where we are">a quiet place between Tirso de molina and La Latina</a> where to take cañas and gluten-free rations at an affordable price, surrounded by bookstores and theaters, where you can also find the alternative press.<br>
+				<br>
+				In addition to wines, homemade liqueurs, toasts and rations, on weekdays we have a dish of the day, prepared with fresh products from the nearby markets, fruit of the <a href="whoweare.php" alt="Who we are" title="Who we are">good work from Luis y Pilar</a>.<br>
+				<br>
+				A meeting point of traditional flavors, good atmosphere and simple innovation, next to the Rastro. That's <a href="contactus.php" alt="Contact us" title="Contact us">La Tragona</a>.	
+			</p>
+		</section>
 
-			<section id="compartir" class="movil">
-				<div class="fb-like" data-href="http://latragona.com" data-width="50px" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
-				<div><a href="https://twitter.com/intent/tweet?button_hashtag=latragonalavapies" class="twitter-hashtag-button" data-show-count="false"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>	
-			</section>
+		<section id="compartir" class="movil">
+			<div class="fb-like" data-href="http://latragona.com" data-width="50px" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+			<div><a href="https://twitter.com/intent/tweet?button_hashtag=latragonalavapies" class="twitter-hashtag-button" data-show-count="false"></a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div>	
+		</section>
 
-			<section id="rrss">
-				<ul class="desktop">
-					<li><span>Follow us:</span></li>
-					<li><a href="https://www.facebook.com/latragonalavapies"><img src="../media/iconos/fb.jpg" alt="Facebook" title="facebook.com/latragonalavapies"><span>@latragonalavapies</span></a></li>
-					<li><a href="https://twitter.com/TragonaBar"><img src="../media/iconos/twitter.png" alt="Twitter" title="@TragonaBar"><span>@tragonabar</span></a></li>
-				</ul>
-			</section>
-			<div style="clear: both;"></div>
+		<section id="rrss" class="desktop">
+			<ul>
+				<li><span>Follow us:</span></li>
+				<li><a href="https://www.facebook.com/latragonalavapies"><img src="../media/iconos/fb.jpg" alt="Facebook" title="facebook.com/latragonalavapies"><span>@latragonalavapies</span></a></li>
+				<li><a href="https://twitter.com/TragonaBar"><img src="../media/iconos/twitter.png" alt="Twitter" title="@TragonaBar"><span>@tragonabar</span></a></li>
+			</ul>
+		</section>
+		<div style="clear: both;"></div>
 	</div>
 
 	<footer id="legal">

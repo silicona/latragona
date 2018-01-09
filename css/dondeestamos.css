@@ -1,3 +1,9 @@
+* {
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+}
+
+html, body { height: 100%; }
 
 body {
 	background-color: #000000;
@@ -81,7 +87,19 @@ body {
 	}
 
 	#leer:hover {
-		animation: colorearFondo 1s forwards;
+		-webkit-animation: colorearFondo 1s forwards;
+		        animation: colorearFondo 1s forwards;
+	}
+
+	@-webkit-keyframes colorearFondo {
+		from {
+			background-color: #000;
+			border: #ffff00 solid 3px;
+		}
+		to {
+			background-color: #6A0C7B;
+			border: #6A0C7B 3px solid;
+		}
 	}
 
 	@keyframes colorearFondo {
@@ -95,46 +113,18 @@ body {
 		}
 	}
 
-/* Aviso */
-	#contenedor_alerta {
-		width: 40ex;
-		height: 20ex;
-		position: absolute;
-		left: 36ex;
-		top: 30ex;
-		background: rgba(100, 100, 100, 0.6) none repeat scroll 0% 0%;
-		border: 5px solid #fff;
-		border-radius: 5pt;
-		font-size: 20pt;
-		color: #f00;
-	}
-
-	#caja_alerta {
-		margin: 3ex;
-		background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0%;
-		height: calc(100% - 6ex);
-		border-radius: 5pt;
-		text-decoration: underline;
-		text-align: center;
-	}
-
-	#titulo_alerta {
-		font-weight: bold;
-		padding: 2ex;
-	}
-
-	#mensaje_alerta {
-		padding: 2ex;
-	}
-
 /* contenedor */
 	#contenedor {
 		background-color: #fff;
 		position: relative;
 		padding: 20px;
 		visibility: hidden;
-		width: calc(100% - 40px);
+		top: 100%;
 	}
+
+	#contenedor .desktop { display: block; }
+
+	#contenedor .movil { display: none; }
 
 /* Superior */
 	#superior {
@@ -142,7 +132,6 @@ body {
 		color: #fff;
 		font-size: 1.2em;
 		height: 45px;
-		/*width: inherit;*/
 		
 		z-index: 2;
 	}
@@ -154,14 +143,10 @@ body {
 
 	}
 
-	#superior li a {
-		color: #fff;
-	}
+	#superior li a { color: #fff;	}
 
-	#superior li:first-child {
-		float: left;
-	}
-
+	#superior li:first-child { float: left;	}
+	
 	#superior #logo_superior {
 		padding: 0.15ex;
 		cursor: pointer;
@@ -172,13 +157,9 @@ body {
 		top: 9px;
 	}
 
-	#superior img {
-		width: 40px;
-	}
+	#superior img {	width: 40px; }
 
-	#superior .movil, #superior .ipad {
-		display: none;
-	}
+	#superior .movil { display: none;	}
 
 	#superior span {
 		float: left;
@@ -190,9 +171,7 @@ body {
 		margin-left: 5px;
 	}
 
-	#multi {
-		cursor: pointer;
-	}
+	#multi { cursor: pointer;	}
 
 /* contenido */
 	h1 {
@@ -202,25 +181,77 @@ body {
 	}
 
 	#contenedor p {
-		margin: 20px;
-		padding: 1em;
+		padding: 2em 1.5em;
 		font-size: 1.2em;
 		line-height: 2.7ex;
-		width: calc(50% - 40px - 2em);
+		width: 50%;
 		float: left;
+		text-align: justify;
 	}
 
-	#contenedor a {
-		color: #008;
-	}
+	#contenedor a {	color: #008; }
 
-	#contenedor .desktop {
-		display: block;
-	}
+	/* Cartel_evento */
+		#cartel_evento {
+			float: right;
+			width: 50%;
+			background-color: #E0F2F7;
+			border: 11px double #ccc;
+			border-radius: 100pt;
+			padding: 3ex 0;
+		}
 
-	#contenedor .movil {
-		display: none;
-	}
+		#cartel_evento a { color: inherit; }
+
+		#cartel_evento p {
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			padding: 1ex;
+			font-size: 1.7em;
+			font-weight: bold;
+			line-height: 1.2em;
+		}
+
+		#cartel_evento p:first-of-type {
+			font-size: 2em;
+			font-weight: bold;
+			color: #f00;	
+		}
+
+	/* Cartel Navidad */
+		#cartel_navidad {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10pt;
+			width: unset;
+			margin: 1em;
+			border: 2px solid #fff;
+			height: 400px;
+		}
+
+		#cartel_navidad img { 
+			width: 150%;
+			margin-left: -25%;
+			margin-bottom: -10px;
+		}
+
+		#cartel_navidad p {
+			background: rgba(255,255,255,0.7);
+			font: 1.3em/1.3 sans-serif;
+			display: inline-block;
+			padding: 1ex !important;
+			border-radius: 10pt;
+			text-align: justify;
+			width: unset !important;
+
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			right: 10%;
+		}
+
+		#cartel_navidad a {	color: #008; }
 
 	/* mapa */
 		#mapa {
@@ -244,14 +275,15 @@ body {
 		}
 
 		#info_contenido p {
-			margin: 10px;
 			width: unset;
+			font-size: 1.5em;
 		}
 
 		#aviso {
 			color: #ff0000;
 			font-size: 1.5em;
 			text-align: center;
+			padding: 1ex;
 		}
 
 /*compartir */
@@ -268,7 +300,6 @@ body {
 /* RR SS */
 	#rrss {
 		font-size: 1.2em;
-		/*width: inherit;*/
 		display: inline-block;
 		float: right;
 	}
@@ -299,13 +330,13 @@ body {
 
 /* Legal */
 	#legal {
-		/*width: 100%;*/
 		height: 55px;
 		background-color: #000;
 		color: #fff;
 		position: relative;
 		text-align: center;
 		visibility: hidden;
+		top: 100%;
 	}
 
 	#legal img {
@@ -319,15 +350,13 @@ body {
 
 /* Smartphones (portrait) ----------- */
 	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#logo_superior span {
-			display: none;
-		}
+		
+		#logo_superior span {	display: none; }
 	}
 
 	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		header {				
-			font-size: 2em;
-		}
+		
+		header { font-size: 2em; }
 
 		#leer {
 			font-size: 1.5em;
@@ -353,20 +382,25 @@ body {
 			width: 100%;
 		}
 
-		#contenedor_alerta {
-			width: 34ex;
-			height: 18ex;
-			left: 0.5ex;
-			top: 44ex;
-			font-size: 14pt;
-		}
-
 		#contenedor p {
 			font-size: 1em;
-			line-height: 2ex;
+			line-height: 2.5ex;
 			margin-bottom: 0px;
 			width: unset;
-			padding: unset;
+			padding: 1ex 2ex;
+		}
+
+		#cartel_evento {
+			width: unset;
+			margin: 2ex;
+		}
+
+		#cartel_evento p {
+			width: 100%;
+		}
+
+		#cartel_evento p:first-of-type {
+			font-size: 1.5em;
 		}
 
 		#mapa {
@@ -403,14 +437,7 @@ body {
 
 /* Smartphones (landscape) ----------- */
 	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		h1 {
-			padding-top: 10%;
-		}
-
-		#contenedor_alerta {
-			left: 26ex;
-			top: 16ex;
-		}
+		h1 { padding-top: 10%; }
 
 		#compartir {
 			position: relative;
@@ -419,30 +446,16 @@ body {
 			float: right;
 		}
 
-		#mapa {
-			width: 400px;
-		}
+		#mapa {	width: 400px;	}
 	}
 
 /* iPads (portrait) ----------- */
 	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		header {
-			font-size: 2.5em;
-		}
+		header { font-size: 2.5em; }
 
-		#menumovil { 
-			position: absolute;
-		}
+		#menumovil { position: absolute; }
 
-		h1 {
-			font-size: 2em; 
-		}
-
-		#contenedor_alerta {
-			font-size: 18pt;
-			left: 8ex;
-			top: 54ex;
-		}
+		h1 { font-size: 2em; }
 
 		#superior .desktop, #legal .desktop, #info_contenido, #imagen_mapa, .ocultar_ipad { display: none; }
 
@@ -455,9 +468,7 @@ body {
 			margin: 20px;
 		}
 
-		#aviso {
-			font-size: 1.3em;
-		}
+		#aviso { font-size: 1.3em; }
 
 		#info_cabecera {
 			left: 0px;
@@ -468,7 +479,6 @@ body {
 			width: unset;
 			padding: 0 1em;
 			float: unset;
-
 		}
 	}
 
@@ -482,4 +492,44 @@ body {
 		}
 
 		#legal .ipad { display: inline; }
+	}
+
+/* Responsive Cartel_navidad */
+
+	@media screen and (max-width: 370px), screen and (max-device-width: 370px) {
+		#cartel_navidad { display: none; }
+	}
+
+	@media screen and (max-width: 550px), screen and (max-device-width: 550px) {
+		#cartel_navidad p { top: 5%; }
+	}
+
+	@media screen and (min-width : 551px)	and (max-width : 650px), screen and (min-device-width : 551px)	and (max-device-width : 650px) {
+		#cartel_navidad p { top: 10%; }
+	}
+
+	@media screen and (min-width : 651px)	and (max-width : 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
+		#cartel_navidad { height: unset; }
+
+		#cartel_navidad img { width: 200%; margin-left: -50%;}
+
+		#cartel_navidad p { top: 5%; font: 1.1em/1.3 sans-serif;}
+	}
+	
+	@media screen and (min-width : 801px)	and (max-width : 1024px), screen and (min-device-width : 801px)	and (max-device-width : 1024px) {
+		#cartel_navidad { height: unset; }
+
+		#cartel_navidad p { top: 10%; font: 1.1em/1.3 sans-serif;}
+	}
+
+	@media screen and (min-width : 1024px)	and (max-width : 1200px), screen and (min-device-width : 1024px)	and (max-device-width : 1200px) {
+		#cartel_navidad { height: unset; }
+
+		#cartel_navidad p { top: 15%; font: 1.2em/1.3 sans-serif;}
+	}
+
+	@media screen and (min-width : 1201px)	and (max-width : 1400px), screen and (min-device-width : 1201px)	and (max-device-width : 1400px) {
+		/*#cartel_navidad { height: 400px; }
+
+		#cartel_navidad p { top: 15%; font: 1.3em/1.3 sans-serif;}*/
 	}

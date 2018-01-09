@@ -2,35 +2,30 @@
 <html>
 <head>
 	<title>Trova la tragona</title>
-
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, pane tostato, nastro, porzioni, vino, liquore casalingo, cañas, Rastro, vicino al Rastro, a due minuti dal Rastro, La Latina, Tirso de Molina, oasi a Madrid, zona bar, punto di incontro, vicino al teatro, Lavapies , Teatro, cabaret, buon prezzo, prezzo a prezzi accessibili, senza glutine, menu allergenico, cibo curato, prodotti freschi, prodotti freschi, prodotti di mercato, mercato nelle vicinanze, pane ecologico, pane artigiano, vino biologico, stampa alternativa, wifi gratuito">
-	<meta name="description" content ="Tapas bar dove potrete gustare brindisi e razioni senza glutine realizzate con prodotti di mercato e vini biologici, nonché liquori artigianali e combinati che rimuovono singhiozzi. Situato vicino al Rastro, nel centro di Madrid, tra La Latina e Tirso de Molina.">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 	<?php
+		include 'basica_head.php';
 		require_once('../php/lib/spyc/spyc.php');
 		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_it.yml');
-		$vacaciones = $datos['aviso']['agosto']['titular'];
-		$vuelta = $datos['aviso']['agosto']['vuelta'];
+		$mapa = $datos['mapa'];
+		$navidad = $datos['aviso']['navidad'];
 	?>
 	<script type="text/javascript">
-		mapa_info = '<?= $datos['mapa']['info']; ?>';
-		titular = '<?= $vacaciones; ?>';
-		vuelta = '<?= $vuelta; ?>';
+		mapa_abierto = '<?= $mapa['abierto']; ?>';
+		mapa_abrimos = '<?= $mapa['abrimos']; ?>';
+		mapa_en = '<?= $mapa['en']; ?>';
+		mapa_hora = '<?= $mapa['hora']; ?>';
+		mapa_horas = '<?= $mapa['horas']; ?>';
+		mapa_mañana = '<?= $mapa['mañana']; ?>';
+		mapa_logo = '<?= $mapa['logo']; ?>';
+		mapa_info = '<?= $mapa['info']; ?>';
 	</script>
 
+	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
 	<script type="text/javascript" src="../js/dondeestamos.js"></script>
+
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokzjV_CnyuUEoa08ljyZpdhE7y3nlRUM&callback=iniciarMapa"></script>
+	
 </head>
 <body>
 
@@ -84,7 +79,8 @@
 		<h1>Intorno alla Tragona</h1>
 
 		<div id="mapa"></div>
-		<section class="desktop">
+		<section>
+			<?php include '../php/plantillas/cartel_navidades.php' ?>
 			<p>
 				Abbiamo salvato un bar di quartiere vicino al Rastro, tra La Latina, Tirso de molina e Lavapies, su Calle Juanelo, 11: un'oasi nel centro di Madrid, in un quartiere con una grande tradizione multiculturale.<span class="ocultar_ipad"> Siamo lieti di essere un punto di incontro per chi entra o lo lascia.</span>
 				<br>
@@ -96,7 +92,7 @@
 			</p>
 		</section>
 
-		<section class="movil">
+<!-- 		<section class="movil">
 			<p>
 				Abbiamo salvato un bar di quartiere a Calle Juanelo, 11, accanto al Rastro, tra La Latina, Tirso de molina e Lavapies.
 				<br>
@@ -106,7 +102,7 @@
 				<br>
 				Se stai venendo a visitare <a href="http://www.elrastro.org/" alt="La traccia" title="Elrastro.org">el Rastro</a>, partecipare al <a href="http://www.summummusic.com/" alt="Teatro Nuevo Apolo" title ="Teatro Nuevo Apolo">teatro Nuevo Apolo</a>, visita <a href ="https://www.traficantes.net" alt="panetteria Panifiesto" title="panetteria Panifiesto">Panifiesto</a>, a La Tragona troverete un posto tranquillo e una buona atmosfera per bere un vino o un tostato acologico fatto con prodotti freschi.
 			</p>
-		</section>
+		</section> -->
 
 		<section id="compartir" class="movil">
 			<div class="fb-like" data-href="http://latragona.com" data-width="50px" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>

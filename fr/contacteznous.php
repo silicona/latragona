@@ -3,31 +3,15 @@
 <head>
 	<title>Contactez La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, vin, liqueur maison, cañas, Rastro, à côté du Rastro, à deux minutes du Rastro, La Latina, Tirso de Molina, oasis de Madrid, Bar, point de rencontre, près du théâtre, Lavapies , Théâtre, cabaret, bon prix, prix abordable, sans gluten, menu allergène, nourriture décontractée, produits frais, produits frais, produits du marché, marché à proximité, pain écologique, pain artisan, vin bio, presse alternative, wifi gratuit">
-	<meta name="description" content ="Bar à tapas où vous pourrez déguster des toasts et des rations sans gluten fabriquées avec des produits du marché et du vin bio, ainsi que des boissons artisanales et combinées qui éliminent le hoquet. Situé à côté du Rastro, au centre de Madrid, entre La Latina et Tirso de Molina.">
+	<?php
+		include 'tete_base.php';
+		require "../php/formulario.php";
+	?>
 
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
 	<link rel="stylesheet" type="text/css" href="../css/contactar.css">
 
-	<?php
-		require "../php/formulario.php";
-		require_once('../php/lib/spyc/spyc.php');
-		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_fr.yml');
-	?>
-	<script type="text/javascript">
-		titular = '<?= $datos['aviso']['agosto']['titular']; ?>';
-		vuelta = '<?= $datos['aviso']['agosto']['vuelta']; ?>';
-	</script>
-
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="../js/contactar.js"></script>
+
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -89,7 +73,7 @@
 				Si vous avez des doutes, vous souhaitez faire une réservation ou si vous souhaitez commenter, n'hésitez pas à nous le dire. Faites-nous grandir avec votre avis.
 				<br>
 				<br>
-				Vous pouvez nous appeler, ou écrivez-nous un savon, au téléphone 91-148-43-76 ou 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Écrivez-nous un gâteau" id="wasap">.
+				Vous pouvez nous appeler, ou écrivez-nous un savon, au téléphone 91-148-43-76 ou 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Écrivez-nous un gâteau" id="wasap">.
 				<br>
 				<br>
 				Nous prenons également en charge l'email contactanos@latragona.com, ou vous pouvez laisser vos mots ici et notre usine carnivore nous les transmettra.
@@ -98,7 +82,7 @@
 
 		<section class="movil">
 			<p>
-				Faites-nous grandir avec votre avis. Vous pouvez nous appeler par téléphone au 91-148-43-76 ou au 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Écrivez-nous un gâteau" id="wasap">.<br>
+				Faites-nous grandir avec votre avis. Vous pouvez nous appeler par téléphone au 91-148-43-76 ou au 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Écrivez-nous un gâteau" id="wasap">.<br>
 				Vous pouvez également écrire à contactanos@latragona.com ou utiliser notre formulaire:
 			</p>
 		</section>

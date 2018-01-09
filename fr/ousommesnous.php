@@ -3,31 +3,29 @@
 <head>
 	<title>Trouver La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, vin, liqueur maison, cañas, Rastro, à côté du Rastro, à deux minutes du Rastro, La Latina, Tirso de Molina, oasis de Madrid, Bar, point de rencontre, près du théâtre, Lavapies , Théâtre, cabaret, bon prix, prix abordable, sans gluten, menu allergène, nourriture décontractée, produits frais, produits frais, produits du marché, marché à proximité, pain écologique, pain artisan, vin bio, presse alternative, wifi gratuit">
-	<meta name="description" content ="Bar à tapas où vous pourrez déguster des toasts et des rations sans gluten fabriquées avec des produits du marché et du vin bio, ainsi que des boissons artisanales et combinées qui éliminent le hoquet. Situé à côté du Rastro, au centre de Madrid, entre La Latina et Tirso de Molina.">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
 	<?php
+		include 'tete_base.php';
 		require_once('../php/lib/spyc/spyc.php');
 		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_fr.yml');
+		$mapa = $datos['mapa'];
+		$navidad = $datos['aviso']['navidad'];
 	?>
+
 	<script type="text/javascript">
-		mapa_info = '<?= $datos['mapa']['info']; ?>';
-		titular = '<?= $datos['aviso']['agosto']['titular']; ?>';
-		vuelta = '<?= $datos['aviso']['agosto']['vuelta']; ?>';
+		mapa_abierto = '<?= $mapa['abierto']; ?>';
+		mapa_abrimos = '<?= $mapa['abrimos']; ?>';
+		mapa_en = '<?= $mapa['en']; ?>';
+		mapa_hora = '<?= $mapa['hora']; ?>';
+		mapa_horas = '<?= $mapa['horas']; ?>';
+		mapa_mañana = '<?= $mapa['mañana']; ?>';
+		mapa_logo = '<?= $mapa['logo']; ?>';
+		mapa_info = '<?= $mapa['info']; ?>';
 	</script>
 
+	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
+
 	<script type="text/javascript" src="../js/dondeestamos.js"></script>
+
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokzjV_CnyuUEoa08ljyZpdhE7y3nlRUM&callback=iniciarMapa"></script>
 </head>
 <body>
@@ -75,7 +73,7 @@
 				<li class="desktop"><a href="contacteznous.php" alt="Contactez-nous" title="Contactez-nous">Contactez-nous</a></li>
 				<li class="desktop"><a href="quisommesnous.php" alt="Qui sommes nous" title="Qui sommes nous">Qui sommes nous</a></li>
 				<li class="desktop"><a href="pousser.php" alt="Pour pousser" title="Les boissons">Pour pousser</a></li>
-				<li class="desktop"><a href="avaler.php" alt="Avaler" title="Tapas and portions">ÇPour avaler</a></li>
+				<li class="desktop"><a href="avaler.php" alt="Avaler" title="Tapas and portions">Pour avaler</a></li>
 			</ul>
 		</nav>
 
@@ -83,6 +81,7 @@
 
 		<div id="mapa"></div>
 		<section class="desktop">
+			<?php include '../php/plantillas/cartel_navidades.php' ?>
 			<p>
 				Nous avons sauvé un bar de quartier à côté du Rastro, entre La Latina, Tirso de molina et Lavapies, sur la Calle Juanelo, 11: une oasis au centre de Madrid, dans un quartier avec une grande tradition multiculturelle. <span class = "ocultar_ipad "> Nous sommes heureux d'être un point de rencontre pour ceux qui entrent ou la quittent.</span>
 				<br>

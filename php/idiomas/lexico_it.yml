@@ -12,10 +12,10 @@ alergenos:
   pescado: Pesce
   sesamo: Sesamo
   soja: Soia
-  sulfitos: Solfito
+  sulfito: Solfito
 
 bebida:
-  7puntas: 
+  puntas: 
     - "Selezione di vini che riflette il potenziale di grandi vini spagnoli, scelto per la sua eleganza e freschezza da gustare in tutti i tipi di incontri, sempre in buona compagnia."
     - "Contiene solfiti."
   albarino:
@@ -78,12 +78,24 @@ bebida:
     - "Il naso presenta la sua freschezza sviluppare un gruppo aromatico caratterizzato dalla presenza di aromi di frutta e note torta di fragole e lamponi ricordi."
     - "Si manifesta in bocca dal vivo, fresco e fruttato, con tannini maturi che forniscono la struttura nel vostro corpo e finiture eleganti."
     - "Contiene solfiti."
+  #licor
+  hierbas: Herbal marc
+  blanco: White marc
+  tostado: Toast marc
+  licor_cafe: Coffee liquor
+  pacharan: Pacharan
+  crema_orujo: Marc cream
+  crema_chocolate: Chocolate cream with cherries
+  crema_cafe: Coffee cream
 
 ingrediente:
   aceite: Olio d'oliva
   ajo: Aglio
+  almendra: Mandorla
+  alubia_carilla: Germogli di fagioli
   atun: Tonno
   arroz: Riso
+  azafran: Azafran
   azucar: Zucchero
   bacalao: Merluzzo
   bechamel: Besciamella
@@ -98,6 +110,7 @@ ingrediente:
   cilantro: Coriandolo
   coliflor: Cavolfiore
   comino: Cumino
+  costilla: Coscia di maiale
   crema_queso: Formaggio cremoso
   eneldo: Aneto
   garbanzo: Cece
@@ -125,6 +138,7 @@ ingrediente:
   nata: Crema
   nuez_moscada: Noce moscata
   oregano: Origano
+  pan: Pane
   pan_rallado: Mollica di pane
   panceta: Pancetta
   patata: Patata
@@ -135,9 +149,10 @@ ingrediente:
   perejil: Prezzemolo
   perrins: Salsa perrins
   pimenton: Caienna
+  pimenton_agridulce: Paprica agrodolce
   pimenton_cilantro: Caienna o Coriandolo y Prezzemolo
   pimienta_blanca: Pepe bianco
-  pimineta_negra: Pepe nero
+  pimienta_negra: Pepe nero
   pimiento_piquillo: Peperoni
   pimiento_rojo: Peperone
   pimiento_verde: Pepe verde
@@ -167,6 +182,7 @@ ingrediente:
   tomate_deshi: Pomodoro disidratato
   tomate_frito: Salsa di pomodoro
   tomillo: Timo
+  trigo: Grano
   ventresca_atun: Ventresca di tonno
   verduras: Verdure
   vinagre: Aceto
@@ -181,30 +197,37 @@ nombre:
   atun: Tonno salato
   babaganoush: Babaganoush
   berenjenas: Melanzane ripiene
-  brandada_bacalao: Brandade di merluzzo bianco
+  brandada: Brandade di merluzzo bianco
+  canelones_morcilla: Cannelloni con sanguinaccio (vegetariano)
+  carne_mechada: Carne alla griglia
   carpaccio: Zucchini carpaccio
   cecina: Carne secca da León
   ensalada_remo: Insalata di barbabietola con rucola e formaggio di capra eco
   hummus: Hummus
   lasagna: Fungo lasagne
-  lomo_embuchado: Lombo
+  lomo: Lombo
+  migas: Migas
+  mousaka: Mousaka
   pastel_salmon: Torta di salmone
-  patata_mojo: 'Papas arrugas' con due mojos
-  patata_rellena: Patate ripiene
+  papas_2mojos: 'Papas arrugas' con due mojos
+  patatas_rellenas: Patate ripiene
+  patatas_revolconas: Revolcons le patate
   roastbeef: Roastbeef
   ragout: Ragù di vitello
   rusos: Bistecche russe con salsa di pomodoro
   solomillo: Controfiletto birra e mele
+  solomillo_sal: Controfiletto curato con sale e spezie
   tortilla: Frittata
-  tosta_cecina: Tosta di carne secca da León
-  tosta_salmon: Tosta di salmone
-  tosta_ventresca: Tosta de ventresca di tonno
+  tosta_cecina: Carne secca da León
+  salmon: Salmone
+  tosta_ventresca: Ventresca di tonno con peperoni
   ventresca: Ventresca di tonno con peperoni
   # Nombres de Menu
+  arroz_huerta: Riso dal frutteto con paprika
   berenjena: Melanzane ripiene di pisto
   calabacin_relleno: Zuchinne farcite
   canelones_verduras: Cannoni ripieni di verdure e pate shiitake
-  carne_mechada: Carne alla griglia con purè di patate
+  #carne_mechada: Carne alla griglia con purè di patate
   ensalada_alubias: Insalata di fagioli
   ensalada_campera: Insalata campera
   ensalada_garbanzo: Insalata di garbanzo con timo vinaigrette
@@ -214,17 +237,75 @@ nombre:
   lasagna_setas: Lasagna con funghi
   lentejas_verduras: Lenticchie stufate di verdure
   macarron_verdura: Maccheroni a grani interi con verdure e salsa di pomodori fatti in casa
-  mousaka: Mousaka
+  patatas_costillas: Patate con costole
+  potaje_garbanzos: Zuppa di ceci
+  potaje_punaico: Maneggiare il potage
+  pollo_chilindron: Pollo di peperoncino in pepitoria con riso
   ragout_arroz: Ragazzo di vitello con riso bianco
   rusos_arroz: Bistecche russe con riso bianco
 
+producto:
+  alergeno: Allergeni
+  descripcion: Vedi descrizione
+  tosta: "Toast di "
+  sin_aler: "Senza allergeni"
+  ver: Vedi gli ingredienti
+  # Bebidas
+  botella: Bottiglia
+  botellin: Bottiglia 1/4
+  caña: Caña
+  chupito: Chupito
+  copa: Tazza
+  doble: Doppio
+  mini: "Mini<span class='descrip'> (440ml.)</span>"
+  tercio: Bottiglia 1/3
+
+titulos:
+  rubia: Bionda
+  sin: Senza alchol
+  tostada: Tostata
+  sin_glu: Senza glutine
+  tinto: Rosso
+  blanco: Bianchi
+  vermut: Vermú
+  licor: Liquore artigianale
+  pan_sin: "Abbiamo pane senza glutine. Chiedeteci!!"
+  tostas: Tostas
+  raciones: Porzioni
+  
 mapa:
+  abierto: Abbiamo aperto le porte.
+  abrimos: Apriamo
+  en: tra
+  hora: ora
+  horas: ore
+  mañana: "domani."
+  logo: "../media/logo_red.gif"
   info: "è un tapas e wine bar accanto al <strong> Rastro </ strong> tra le stazioni della metropolitana di La Latina e Tirso de Molina."
 
 aviso:
   agosto:
     titular: Andiamo in vacanza.
     vuelta: Si torna il 1° settembre.
+  cartel:
+    url: "../php/vida_fuera_de_tapapies.php?idioma=it"
+    titular: C'è vita fuori da Tapapies
+    en: in
+    logo: "../media/la_tragona_logo.png"
+    fecha: dal 20 al 22 ottobre e dal 27 al 29
+    calle: "via Juanelo, 11."
+    productos: "Wini, birre, liquori"
+    nuevas: "¡¡Nuove razioni!!"
+    tapas: "¡Godetevi le nostre nuove razioni!"
+    sin_gluten: "¡¡Senza glutine!!"
+  tapapies: "A La Tragona è possibile ordinare un terzo, una canna, un doppio di birra, un bicchiere di vino o vermouth e assaporare la varietà di esempi di cucina preparata con cura che prepariamo tutto l'anno, ai soliti prezzi."
+  anexo: Godetevi le nostre nuove tapas
+  navidad:
+    frase: "Se vuoi celebrare questi giorni con i tuoi amici, a La Tragona abbiamo pensato a diversi menu per gruppi (con opzioni vegetariane e senza glutine)."
+    contacto:  Mettiti in contatto con noi
+    hablamos: "e noi lo parliamo."
+    enlace: "deglutire.php#reservas"
+    imagen: "../media/asamblea.jpg"
 
 menu:
   hoy: Oggi

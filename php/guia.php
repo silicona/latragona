@@ -4,10 +4,7 @@
 	<title>Bebidas de la Tragona</title>
 	<meta charset="utf-8">
 	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
+		* {	margin: 0; padding: 0; }
 
 		body {
 			width: 400px;
@@ -15,59 +12,29 @@
 			overflow: hidden;
 		}
 
-		/*
-		ul, li {
-			list-style: none;
-		}
-
-		ul {
-			font-size: 14pt;
-			line-height: 1.5em;
-			margin:20px;
-			margin-top: 0;
-			position: relative;
-			font-weight: bold;
-		}
-
-		legend {
-			position: relative;
-			font-size: 1.3em;
-			margin: 10px;
-			text-align: center;
-		}
-		*/
+		section { position: relative;	}
 
 		img {
 			position: absolute;
-			/*left: -20%;
-			top: -10%;*/
-			opacity: 0.4;
+			opacity: 0.3;
 			z-index: 0;
 		}
 
-		/*
-		li {
-			position: relative;
-			border-bottom: 1px solid blue;
-			padding-left: 30px;
-		}*/
-
 		h2 {
-			position: absolute;
-			font-size: 2.5em;
-			margin: 20px;
-			margin-bottom: 0px;
-			padding-left: 30px;
+			position: relative;
+			font-size: 1.7em;
+			padding: 1ex 0 .5ex 1ex;
 			z-index: 1;
 		}
 
 		p {
 			position: relative;
-			top: 20%;
-			margin: 0 20px 5px;
+			top: 15%;
+			padding: 0 1ex 1ex;
 			z-index: 1;
 			line-height: 1.5em;
 			font-size: 1.2em;
+			text-align: justify;
 		}
 
 		p:first-letter {
@@ -76,8 +43,34 @@
 			color: #f00;
 		}
 	</style>
+	<?php	
+		$url = $_SERVER['HTTP_REFERER'];
+		include('traductor.php');
+		include 'bodega.php';
+
+		$bebida = new Cartel;
+	?>
 </head>
 <body>
-<?php include "datos_bebidas.php" ?>
+<?php
+	if(isset($_GET["vino"])){
+		$vino = $vinos -> $_GET["vino"];
+		$bebida->beber($vino['nombre'], $vino['imagen'], $vino['descripcion']);
+		echo "<section>";
+		echo "<img src='../media/imagenes/empujar/".$bebida->imagen."' alt='".$bebida->nombre."'>";
+		echo "<h2>".$bebida->nombre."</h2>";
+		foreach($bebida->descripcion as $frase){
+			echo "<p>$frase</p>";
+		}
+		echo "</section>";
+	} else {
+		echo "<div style='position: absolute; top: 20%; left: 40%'>";
+		echo "<h2 style='position: relative'>Acceso accidental</h2>";
+		echo "<img src='../media/logo_red.jpg' width='300px' style='top:10%;'>";
+		echo "<p>Vaya, parece que has accedido a esta página de forma accidental.</p>";
+		echo "<p>Vuelve a <a href='../empujar.html'>La Tragona</a> para acceder correctamente</p>";
+		echo "</div>";
+	}
+?>
 </body>
 </html>

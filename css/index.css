@@ -1,3 +1,11 @@
+* {
+	-webkit-box-sizing: border-box; 
+	   -moz-box-sizing: border-box; 
+		 			box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
 body {
 	background-color: #000000;
 	font-family: verdana, helvetica, sans-serif;
@@ -79,7 +87,19 @@ body {
 	}
 
 	#leer:hover {
-		animation: colorearFondo 1s forwards;
+		-webkit-animation: colorearFondo 1s forwards;
+		        animation: colorearFondo 1s forwards;
+	}
+
+	@-webkit-keyframes colorearFondo {
+		from {
+			background-color: transparent;
+			border: #ff0 solid 3px;
+		}
+		to {
+			background-color: #6A0C7B;
+			border: #6A0C7B 3px solid;
+		}
 	}
 
 	@keyframes colorearFondo {
@@ -93,46 +113,18 @@ body {
 		}
 	}
 
-/* Aviso */
-	#contenedor_alerta {
-		width: 40ex;
-		height: 20ex;
-		position: absolute;
-		left: 36ex;
-		top: 30ex;
-		background: rgba(100, 100, 100, 0.6) none repeat scroll 0% 0%;
-		border: 5px solid #fff;
-		border-radius: 5pt;
-		font-size: 20pt;
-		color: #f00;
-	}
-
-	#caja_alerta {
-		margin: 3ex;
-		background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0%;
-		height: calc(100% - 6ex);
-		border-radius: 5pt;
-		text-decoration: underline;
-		text-align: center;
-	}
-
-	#titulo_alerta {
-		font-weight: bold;
-		padding: 2ex;
-	}
-
-	#mensaje_alerta {
-		padding: 2ex;
-	}
-
 /* contenedor */
 	#contenedor {
 		background-color: #fff;
 		position: relative;
 		padding: 20px;
 		visibility: hidden;
-		width: calc(100% - 40px);
+		top: 100%;
 	}
+
+	#contenedor .desktop { display: block; }
+
+	#contenedor .movil { display: none;	}
 
 /* Superior */
 	#superior {
@@ -140,7 +132,6 @@ body {
 		color: #fff;
 		font-size: 1.2em;
 		height: 45px;
-		/*width: inherit;*/
 		z-index: 2;
 	}
 
@@ -150,13 +141,9 @@ body {
 		float: right;
 	}
 
-	#superior li a {
-		color: #fff;
-	}
+	#superior li a { color: #fff; }
 
-	#superior li:first-child {
-		float: left;
-	}
+	#superior li:first-child { float: left;	}
 
 	#superior #logo_superior {
 		padding: 0.15ex;
@@ -168,13 +155,9 @@ body {
 		top: 9px;
 	}
 
-	#superior img {
-		width: 40px;
-	}
+	#superior img {	width: 40px; }
 
-	#superior .movil, #superior .ipad {
-		display: none;
-	}
+	#superior .movil { display: none; }
 
 	#superior span {
 		float: left;
@@ -186,89 +169,130 @@ body {
 		margin-left: 5px;
 	}
 
-	#multi {
-		cursor: pointer;
-	}
+	#multi { cursor: pointer;	}
 
 /* contenido */
 	h1 {
 		font-size: 3em;
 		text-align: center;
-		margin: 10px;
+		margin: .5em 0;
 	}
 
-	#contenedor p {
-		width: calc(50% - 80px);
-		margin: 20px;
-		padding: 20px;
-		font-size: 1.2em;
+	section {
+		width: 50%;
+		padding: 1ex;
+		display: block;
+		float: right;
+	}
+
+	.izquierda p {
+		padding: 2ex;
+		font-size: 1.5em;
 		line-height: 2.7ex;
-		float: left;
-
+		text-align: justify;
 	}
 
-	#contenedor a {
-		color: #008;
-	}
+	.izquierda a {	color: #008; }
 
 	#fotolateral {
-		float: right;
-		width: calc(50% - 40px);
-		margin: 20px;
-		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		   -moz-border-radius: 50%;
+		        border-radius: 50%;
+		width: 100%;
 	}
 
-	#contenedor .desktop {
-		display: block;
-	}
+	/* Cartel_evento */
+		#cartel_evento {
+			border: 11px double #ccc;
+			-webkit-border-radius: 50pt;
+			   -moz-border-radius: 50pt;
+			        border-radius: 50pt;
+			padding: 3ex 0;
+		}
 
-	#contenedor .movil {
-		display: none;
-	}
+		#cartel_evento a { color: inherit; }
 
-/*compartir */
-	#compartir {
-		display: none;
-	}
+		#cartel_evento p {
+			text-align: center;
+			padding: 0 1ex 1ex;
+			font-size: 1.7em;
+			font-weight: bold;
+			line-height: 1.2em;
+		}
 
-	#compartir div {
-		margin: 10px 5px;
-		float: left;
-		display: inline-block;
-	}
+		#cartel_evento p:first-of-type {
+			font-size: 2em;
+			font-weight: bold;
+			color: #f00;	
+		}
+
+		#cartel_evento img {
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		#cartel_evento .escalera span {
+			display: block;
+		}
+
+		#cartel_evento .escalera span:first-of-type {
+			text-align: left;
+			color: #60f;
+		}
+
+		#cartel_evento .escalera span:nth-of-type(2) {
+			color: #587B58;
+		}
+
+		#cartel_evento .escalera span:last-of-type {
+			text-align: right;
+			padding-right: 4ex;
+			color: #2EFE2E;
+		}
+
+	/* Cartel Navidad */
+		#cartel_navidad {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10pt;
+		}
+
+		#cartel_navidad img { 
+			width: 200%;
+			margin-left: -50%;
+		}
+
+		#cartel_navidad p {
+			background: rgba(255,255,255,0.7);
+			font: 1.5em/1.3 sans-serif;
+			display: inline-block;
+			padding: 1ex;
+			border-radius: 10pt;
+			text-align: justify;
+
+			position: absolute;
+			top: 33%;
+			left: 10%;
+			right: 10%;
+		}
+
+		#cartel_navidad a {	color: #008; }
 
 /* RR SS */
 	#rrss {
 		font-size: 1.2em;
-		/*height: 45px;*/
-		/*width: inherit;*/
 		display: inline-block;
-	}
-
-	#rrss ul {
-		/*float: right;*/
+		float: left;
 	}
 
 	#rrss li {
-		/*display: inline-block;*/
-		padding: 10px;
-		float: left;
-		/*margin-left: 15px;*/
-	}
-
-	#rrss li:first-child {
-		/*margin-left: 0;*/
-		float: unset;
+		padding: .5ex 0;
 	}
 
 	#rrss img {
 		width: 50px;
 		margin: 0 5px;
-	}
-
-	#rrss span {
-		position: relative;
-		top: 14px;
 	}
 
 	#rrss a span {
@@ -278,13 +302,13 @@ body {
 
 /* Legal */
 	#legal {
-		/*width: 100%;*/
 		height: 55px;
 		background-color: #000;
 		color: #fff;
 		position: relative;
 		text-align: center;
 		visibility: hidden;
+		top: 100%;
 	}
 
 	#legal img {
@@ -298,17 +322,13 @@ body {
 
 /* Smartphones (portrait) ----------- */
 	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#logo_superior span {
-			display: none;
-		}
+		#logo_superior span {	display: none; }
 	}
 		
-	/*@media only screen and (min-device-width : 300px) and (max-device-width: 650px) {*/
 	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		header {				
-			font-size: 2em;
-		}
-
+		
+		header { font-size: 2em; }
+		
 		#leer {
 			font-size: 1.5em;
 			left: 20px;
@@ -321,37 +341,41 @@ body {
 			width: 100%;
 		}
 
+		section {
+			float: unset;
+			width: 100%;
+		}
+
 		h1 { 
 			font-size: 1.5em; 
 			padding-top: 15%;
 			margin-bottom: 0px;
 		}
 
-		#contenedor_alerta {
-			width: 34ex;
-			height: 18ex;
-			left: 0.5ex;
-			top: 44ex;
-			font-size: 14pt;
-		}
+		#contenedor { padding: 0; }
 
-		#contenedor {
-			padding: 0px;
-			top: 710px;
-			width: 100%;
-		}
-
-		#contenedor p {
+		.izquierda p {
 			font-size: 1em;
-			line-height: 2ex;
-			margin-bottom: 0px;
-			width: unset;
-			padding: unset;
+			line-height: 2.3ex;
 		}
+
+		.derecha { padding: 1ex 2ex; }
+
+		#cartel_evento {
+			padding: 2ex;
+			background-color: #E0F2F7;
+		}
+
+		#cartel_evento #logo_cartel { display: none; }
+
+		#cartel_evento p:first-of-type { font-size: 1.3em; }
+
+		#cartel_evento p { font-size: 1em; }
 
 		#compartir div {
-			float: unset;
-			margin-left: 50px;
+			display: inline-block;
+			padding: 0 0 1ex 2ex;
+			float: left;
 		}
 
 		#contenedor .desktop, #superior .desktop, .desktop { display: none; }
@@ -368,19 +392,12 @@ body {
 /* Smartphones (landscape) ----------- */
 	/*@media only screen and (min-device-width : 300px) and (max-device-width: 650px) and (orientation: landscape) {*/
 	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		h1 {
-			padding-top: 10%;
-		}
-
-		#contenedor_alerta {
-			left: 26ex;
-			top: 16ex;
-		}
+		
+		h1 { padding-top: 10%; }
 	}
 
 /* iPads (portrait) ----------- */
-	/*@media only screen and (min-device-width : 651px)	and (max-device-width : 1024px) {*/
-	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
+	@media screen and (min-width: 651px)	and (max-width: 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
 		header {
 			font-size: 2.5em;
 		}
@@ -397,36 +414,107 @@ body {
 
 		h1 { font-size: 2em; }
 
+		.izquierda p {
+			font-size: 1em;
+		}
+
+		#cartel_evento {
+			padding: 2ex 0;
+			border-radius: 50pt;
+		}
+
+		#cartel_evento p {
+			font-size: 1.3em;
+		}
+
+		#cartel_evento p:first-of-type {
+			font-size: 1.6em;
+		}
+
 		#superior .desktop, #legal .desktop { display: none; }
 
 		#superior .ipad {	display: block;	}
 
 		#logo_superior img { margin-right: 30px; }
 
-		#contenedor p {
-			width: 50%;
-			padding: unset;
-		}
-
 		#fotolateral { 
-			width: 40%;
+			/*width: 40%;
 			margin-right: 0px;
 			position: relative;
-			top: 5em;
+			top: 5em;*/
 		}
 	}
 
 /* iPads (landscape) ----------- */
-	/*@media only screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {*/
-	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
-		h1 { font-size: 3em; }
-
-		#contenedor_alerta {
-			top: 32ex;
-			left: 32ex;
-		}
+	@media screen and (min-width: 651px)	and (max-width: 1024px)	and (orientation: landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
 		
-		#fotolateral img { width: 300px; }
+		h1 { font-size: 3em; }
+		
+		#fotolateral > img { width: 300px; }
 
 		#legal .ipad { display: inline; }			
 	}
+
+/* Ajustes de Menu superior */
+	@media screen and (max-width: 1200px), screen and (max-device-width: 1200px) {
+		
+		#superior li:nth-of-type(3) { display: none; }
+	}
+
+/* responsive Cartel Navidad */
+	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
+		#cartel_navidad { display: none; }
+	}	
+
+	@media screen and (min-width: 351px)	and (max-width: 450px), screen and (min-device-width : 351px)	and (max-device-width : 450px) {
+		#cartel_navidad img {
+			width: 150%;
+			margin-left: -25%;
+		}
+	}
+
+	@media screen and (max-width: 550px), screen and (max-device-width: 550px) {
+		#cartel_navidad p {	
+			font: 1em/1.3 sans-serif;	
+			top: 5%;
+		}
+	}		
+
+	@media screen and (min-width: 551px) and (max-width: 650px), screen and (min-device-width : 551px)	and (max-device-width : 650px) {
+		#cartel_navidad p {
+			top: 5%;
+			font: 1.2em/1.3 sans-serif;
+		}
+	}
+
+	@media screen and (min-width: 451px) and (max-width: 650px), screen and (min-device-width : 451px)	and (max-device-width : 650px) {
+		#cartel_navidad img {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		#cartel_navidad {	height: 300px; }
+	}
+
+	@media screen and (min-width: 651px) and (max-width: 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
+		#cartel_navidad img {
+			width: 400%;
+			margin-left: -100%;
+		}
+	}
+	
+	@media screen and (min-width: 801px) and (max-width: 925px), screen and (min-device-width : 801px)	and (max-device-width : 925px) {
+		#cartel_navidad img {
+			width: 300%;
+			margin-left: -75%;
+		}
+
+	}
+
+	@media screen and (min-width: 651px) and (max-width: 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
+		#cartel_navidad p {
+			top: 10%;
+			font: 1.2em/1.3 sans-serif;	
+		}
+	}
+

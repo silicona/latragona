@@ -32,91 +32,64 @@
 	$menu_dia = $menu['dia'];
 
 	class SemanaActual {
-		public $martes = array(
-			"nombre" => "lasagna_setas", 
-			"imagen" => "lasagna_setas.jpg", 
-			"ingredientes" => ["pasta_trigo", "bechamel", "tomate_frito", "setas"], 
-			"alergenos" => ["lacteo", "gluten"]
+  	public $martes = array(
+			"nombre" => "potaje_punaico", 
+			"imagen" => "potaje_punaico.jpg", // imagen NO
+			"ingredientes" => ["alubia_carilla", "lenteja", "trigo", "verduras"], 
+			"alergenos" => ['gluten']
 			);
 
 		public $miercoles = array(
-			"nombre" => "ragout_arroz", 
-			"imagen" => "ragout_arroz.jpg", 
-			"ingredientes" => ["ternera", "arroz", "zanahoria"], 
-			"alergenos" => ["gluten"]
+			"nombre" => "pollo_chilindron", 
+			"imagen" => "pollo_chilindron.jpg", // imagen NO
+			"ingredientes" => ["pollo", "ajo", "almendras", "azafran", "cebolla", "aceite", "sal", "huevos", "pan"], 
+			"alergenos" => ['frutos', "gluten", "huevo"]
 			);
 
 		public $jueves = array(
-			"nombre" => "macarron_verdura", 
-			"imagen" => "macarron_verdura.jpg", 
-			"ingredientes" => ["pasta_integral", "verduras", "salsa_tomate_casera"], 
-			"alergenos" => ["gluten"]
+			"nombre" => "lasagna_setas", 
+			"imagen" => "lasagna_setas.jpg", // ok
+			"ingredientes" => ["pasta_trigo", "bechamel", "tomate_frito", "setas"], 
+			"alergenos" => ["lacteos", "gluten"]
 			);
 
 		public $viernes = array(
-			"nombre" => "ensalada_campera", 
-			"imagen" => "ensalada_campera.jpg", 
-			"ingredientes" => ["patata", "tomate", "huevos", "pimiento_verde", "pepino", "huevo_duro", "cebolla", "atun"], 
-			"alergenos" => ["pescado", "huevo"]
+			"nombre" => "patatas_costillas", 
+			"imagen" => "patatas_costillas.jpg", // imagen NO
+			"ingredientes" => ["patata", "costilla", "ajo", "cebolla", "pimenton", "laurel", "sal", "aceite"], 
+			"alergenos" => []
 			);
 	}
 	
 	class ProximaSemana {
-		public $martes = array(
-			"nombre" => "lentejas_verduras", 
-			"imagen" => "lentejas_verduras.jpg", 
-			"ingredientes" => ["lenteja", "cebolla", "pimiento_rojo", "pimiento_verde", "ajo", "aceite", "pimenton"], 
+  	public $martes = array(
+			"nombre" => "arroz_huerta", 
+			"imagen" => "arroz_huerta.jpg", 
+			"ingredientes" => ["arroz", "verduras", "pimenton"], 
 			"alergenos" => []
 			);
 
 		public $miercoles = array(
-			"nombre" => "carne_mechada", 
-			"imagen" => "carne_mechada.jpg", 
-			"ingredientes" => ["lomo", "ajo", "cebolla", "zanahoria", "pimienta_negra", "patata", "mantequilla", "leche", "aceite", "sal"], 
-			"alergenos" => ["lacteo"]
+			"nombre" => "potaje_garbanzos", 
+			"imagen" => "potaje_garbanzos.jpg", 
+			"ingredientes" => ["garbanzos", "espinacas", "bacalao", "ajo", "cebolla", "pimenton", "aceite", "sal"], 
+			"alergenos" => []
 			);
 
 		public $jueves = array(
-			"nombre" => "calabacin_relleno", 
-			"imagen" => "calabacin_relleno.jpg", 
-			"ingredientes" => ["calabacin", "quinoa", "cebolla", "ajo", "aceite", "queso"], 
-			"alergenos" => ["lacteo"]
+			"nombre" => "lasagna_setas", 
+			"imagen" => "lasagna_setas.jpg", // ok
+			"ingredientes" => ["pasta_trigo", "bechamel", "tomate_frito", "setas"], 
+			"alergenos" => ["lacteos", "gluten"]
 			);
 
 		public $viernes = array(
-			"nombre" => "ensalada_alubias", 
-			"imagen" => "ensalada_alubias.jpg", 
-			"ingredientes" => ["judia_blanca", "tomate", "aceite", "pimiento_verde", "vinagre", "huevo_duro", "cebolla", "atun", "sal"], 
-			"alergenos" => ["pescado", "huevo"]
+			"nombre" => "patatas_costillas", 
+			"imagen" => "patatas_costillas.jpg", 
+			"ingredientes" => ["patata", "costilla", "ajo", "cebolla", "pimenton", "laurel", "sal", "aceite"], 
+			"alergenos" => []
 			);
 	}
-  // 		public $martes = array(
-		// 	"nombre" => "ensalada_garbanzo", 
-		// 	"imagen" => "ensalada_garbanzo.jpg", 
-		// 	"ingredientes" => ["garbanzo", "cebolla", "vinagre_jerez", "aceite", "tomillo"], 
-		// 	"alergenos" => []
-		// 	);
-
-		// public $miercoles = array(
-		// 	"nombre" => "mousaka", 
-		// 	"imagen" => "mousaka.jpg", 
-		// 	"ingredientes" => ["carne_picada", "berenjena", "tomate", "oregano", "laurel", "ajo", "cebolla", "pimiento_verde", "aceite", "sal"], 
-		// 	"alergenos" => []
-		// 	);
-
-		// public $jueves = array(
-		// 	"nombre" => "canelones_verduras", 
-		// 	"imagen" => "canelones_verduras.jpg", 
-		// 	"ingredientes" => ["pasta_trigo", "cebolla", "calabacin", "pate_shiitake", "queso", "bechamel"], 
-		// 	"alergenos" => ["lacteo", "gluten"]
-		// 	);
-
-		// public $viernes = array(
-		// 	"nombre" => "judiones_compango", 
-		// 	"imagen" => "judiones_compango.jpg", 
-		// 	"ingredientes" => ["judion", "chorizo", "morcilla", "panceta", "sal"], 
-		// 	"alergenos" => []
-		// 	);
 
 	class Menu {
 		public function crear($nombre, $imagen, $ingredientes, $alergenos, $imag){
@@ -180,7 +153,7 @@
   }
 
 	$num_dia = Date("N");
-	//$num_dia = 0;
+	//$num_dia = 1;
 	$semana = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
 	$dia = $semana[$num_dia];
 	if(($num_dia > 1) && ($num_dia < 6)){
@@ -197,41 +170,5 @@
 
 	$texto_menu = new Menu;
 	$texto_menu->textualizar('enlace', 'legend', 'leyenda1', 'leyenda2', 'entresemana', 'finde', 'alergeno', 'sin_aler', $dia, 'hoy', 'tenemos');
-
-	// $martes = $semana_actual->martes;
-	// $miercoles = $semana_actual->miercoles;
-	// $jueves = $semana_actual->jueves;
-	// $viernes = $semana_actual->viernes;
-
-	// $prox_martes = $proxima_semana->martes;
-	// $prox_miercoles = $proxima_semana->miercoles;
-	// $prox_jueves = $proxima_semana->jueves;
-	// $prox_viernes = $proxima_semana->viernes;
-	
-	// switch($num_dia){
-	// 	case 2:
-	// 		$mar = $semana_actual -> $semana[$num_dia];
-	// 		$plato_dia->emplatar($mar['nombre'], $mar['imagen'], $mar['ingredientes'], $mar['alergenos'], $mar['alergenos']);
-	// 		break;
-	// 	case 3:
-	// 		$mar = $semana_actual -> miercoles;
-	// 		$plato_dia->emplatar($mar['nombre'], $mar['imagen'], $mar['ingredientes'], $mar['alergenos'], $mar['alergenos']);
-	// 		break;
-	// 	case 4:
-	// 		$mar = $semana_actual -> jueves;
-	// 		$plato_dia->emplatar($mar['nombre'], $mar['imagen'], $mar['ingredientes'], $mar['alergenos'], $mar['alergenos']);
-	// 		break;
-	// 	case 5:
-	// 		$mar = $semana_actual -> viernes;
-	// 		$plato_dia->emplatar($mar['nombre'], $mar['imagen'], $mar['ingredientes'], $mar['alergenos'], $mar['alergenos']);
-	// 		break;
-	// 	default:
-	// 		$mar = $semana_actual -> martes;
-	// 		$plato_dia->emplatar($mar['nombre'], $mar['imagen'], $mar['ingredientes'], $mar['alergenos'], $mar['alergenos']);
-	// 		break;
-	// }
-	//var_export($plato_dia);
-
-
 
 ?>

@@ -12,7 +12,7 @@ alergenos:
   pescado: Pescado
   sesamo: Sésamo
   soja: Soja
-  sulfitos: Sulfito
+  sulfito: Sulfito
 
 bebida:
   7puntas: 
@@ -79,106 +79,183 @@ bebida:
     - "Enthält Sulfite."
 
 ingrediente:
-  aceite: Aceite de oliva
-  ajo: Ajo
-  atun: Atún
-  arroz: Arroz
-  azucar: Azucar
-  bacalao: Bacalao
+  aceite: Olive oil
+  ajo: Garlic
+  almendra: Almond
+  alubia_carilla: Bean sprout
+  atun: Tuna
+  arroz: Rice
+  azafran: Saffron
+  azucar: Sugar
+  bacalao: Cod
   bechamel: Bechamel
-  berenjena: Berenjena
-  calabacin: Calabacín
-  cayena: Cayena
-  cebolla: Cebolla
-  cecina: Cecina
-  cerveza: Cerveza
-  cilantro: Cilantro
-  coliflor: Coliflor
-  comino: Comino
-  crema_queso: Crema de queso
-  eneldo: Eneldo
-  garbanzo: Garbanzo
-  guisante: Guisante
-  harina: Harina
-  huevos: Huevos
-  judia_blanca: Judia blanca
-  leche: Leche
-  lomo_embuchado: Lomo embuchado
-  mantequilla: Mantequilla
-  manzana: Manzana
-  miel: Miel
+  berenjena: Egg plant
+  calabacin: Zuchinni
+  carne_picada: Pork and beef meat
+  cayena: Cayenne
+  cebolla: Onion
+  cecina: Smoked beef
+  cerveza: Beer
+  chorizo: Pork sausage
+  cilantro: Coriander
+  coliflor: Cauliflower
+  comino: Cumin
+  costilla: Pork rib
+  crema_queso: Cream cheese
+  eneldo: Dill
+  garbanzo: Chickpea
+  guisante: Pea
+  harina: Flour
+  huevos: Eggs
+  huevo_duro: Hard-boiled egg
+  judia_blanca: White bean
+  judia_pinta: Pinto bean
+  judion: Judo
+  ketchup: Ketchup
+  laurel: Laurel
+  leche: Milk
+  lechuga: Lettuce
+  lenteja: Lentils
+  lomo: Pork loin
+  lomo_embuchado: Pork loin
+  mahonesa: Mayonnaise
+  mantequilla: Butter
+  manzana: Apple
+  miel: Honey
   mojo: "Mojos:"
-  mostaza: Mostaza
-  nata: Nata
-  nuez_moscada: Nuez moscada
-  oregano: Orégano
-  patata: Patata
-  pasta_trigo: Pasta de trigo
-  perejil: Perejil
-  pimenton: Pimentón
-  pimenton_cilantro: Pimentón o Cilantro y Perejil
-  pimienta_blanca: Pimienta blanca
-  pimiento_piquillo: Pimiento del piquillo
-  pimiento_rojo: Pimiento rojo
-  pimiento_verde: Pimiento verde
-  queso: Queso
-  queso_oveja: Queso curado de oveja
-  romero: Romero
-  sal: Sal
-  sal_gorda: Sal gorda
-  salmon_ahumado: Salmón ahumado
-  salmon_fresco: Salmón fresco
-  salsa: "Salsa:"
-  salsa_soja: Salsa de soja
-  salsa_tomate: Salsa de tomate
-  sesamo: Sésamo
-  setas: Setas
-  solomillo: Solomillo de cerdo
-  ternera: Ternera
-  tomate: Tomate
-  tomate_frito: Tomate frito
-  tomillo: Tomillo
-  ventresca_atun: Ventresca de atún
-  vinagre: Vinagre
-  zanahoria: Zanahoria
-  zumo_lima: Zumo de lima
-  zumo_limon: Zumo de limón
-  zumo_naranja: Zumo de naranja
+  morcilla: Blood sausage
+  mostaza: Mustard
+  nata: Cream
+  nuez_moscada: Nutmeg
+  oregano: Oregano
+  pan: Bread
+  pan_rallado: Bread crumbs
+  panceta: Bacon
+  patata: Potatoe
+  pate_shiitake: Shiitake pate
+  pasta_integral: Whole wheat pasta
+  pasta_trigo: Wheat pasta
+  pepino: Cucumber
+  perejil: Parsley
+  perrins: Sauce perrins
+  pimenton: Paprika
+  pimenton_cilantro: Paprika or Coriander and Parsley
+  pimienta_blanca: White pepper
+  pimienta_negra: Black pepper
+  pimiento_piquillo: Piquillo pepper
+  pimiento_rojo: Red pepper
+  pimiento_verde: Green pepper
+  pollo: Chicken
+  queso: Cheese
+  queso_azul: Blue cheese
+  queso_cabra: Goat cheese
+  queso_oveja: Cured sheep cheese
+  quinoa: Quinoa
+  remolacha: Beet
+  rucula: Arugula
+  romero: Rosemary
+  sal: Salt
+  sal_gorda: Fat salt
+  salmon_ahumado: Smoked salmon
+  salmon_fresco: Fresh salmon
+  salsa: "Sauce:"
+  salsa_agridulce: Sweet and sour sauce
+  salsa_soja: Soy sauce
+  salsa_tomate: Tomato sauce
+  salsa_tomate_casera: Homemade tomato sauce
+  sesamo: Sesame
+  setas: Arrows
+  solomillo: Pork tenderloin
+  ternera: Veal
+  tomate: Tomato
+  tomate_deshi: Dehydrated tomato
+  tomate_frito: Fried tomato
+  tomillo: Thyme
+  trigo: Wheat
+  ventresca_atun: Tuna ventresca
+  verduras: Vegetables
+  vinagre: Vinegar
+  vinagre_jerez: Sherry vinager
+  vinagre_man: Apple vinager
+  zanahoria: Carrot
+  zumo_lima: Lime juice
+  zumo_limon: Lemon juice
+  zumo_naranja: Orange juice
 
 nombre:
-  atun: Atún en salazón
+  atun: Tuna in salami
   babaganoush: Babaganoush
-  berenjenas: Berenjenas rellenas
-  brandada_bacalao: Brandada de bacalao
-  carpaccio: Carpaccio de Calabacín
-  cecina: Cecina de Léón
+  berenjenas: Stuffed eggplant
+  brandada_bacalao: Brandade of cod
+  carpaccio: Zuchinni carpaccio
+  cecina: Smoked beef from León
+  ensalada_remo: Beet salad with arugula and goat cheese eco
   hummus: Hummus
-  lasagna: Lasagna de setas
-  lomo_embuchado: Lomo embuchado
-  pastel_salmon: Pastel de salmón
-  patata_mojo: Patatas con 2 mojos
-  patata_rellena: Patatas rellenas
+  lasagna: Arrows lasagna
+  lomo_embuchado: Pork loin
+  pastel_salmon: Salmon cake
+  patata_mojo: 'Papas arrugas' with 2 mojos
+  patata_rellena: Stuffed potatoes
   roastbeef: Roastbeef
-  ragout: Ragout de ternera
-  solomillo: Solomillo a la cerveza y manzana
-  tortilla: Tortilla de patata
-  tosta_cecina: Tosta de cecina de Léon
-  tosta_salmon: Tosta de salmón
-  tosta_ventresca: Tosta de ventresca de atún
-  ventresca: Ventresca de atún con pimientos de piquillo
-# Menu
-  ver: Siehe Zutaten
-  decoracion: decoracion
-  pasta: Mejor pasta, imposible
-  comida: Comida cuadrada
+  ragout: Veal ragout
+  rusos: Russian steaks with tomato sauce
+  solomillo: Sirloin with beer and apple
+  tortilla: Potatoes omelette
+  tosta_cecina: Toast of pork loin from León
+  tosta_salmon: Toast of salmon
+  tosta_ventresca: Toast of tuna belly
+  ventresca: Tuna belly with piquillo pepper
+# Nombres de Menu
+  arroz_huerta: Rice from the orchard with paprika
+  berenjena: Eggplants stuffed with pisto
+  calabacin_relleno: Stuffed courgettes
+  canelones_verduras: Canilones stuffed with vegetables and shiitake pate
+  carne_mechada: Grilled meat with potato puree
+  ensalada_alubias: Bean salad
+  ensalada_campera: Country salad
+  ensalada_garbanzo: Chickpea salad with thyme vinaigrette
+  ensalada_pollo: Chicken salad
+  judia_vinagreta: Beans with dehydrated tomato vinaigrette
+  judiones_compango: Judo with partner
+  lasagna_setas: Mushroom lasagna
+  lentejas_verduras: Lentils stewed with vegetables
+  macarron_verdura: Whole-grain macaroni with vegetables and homemade tomato sauce
+  mousaka: Mousaka
+  patatas_costillas: Potatoes with ribs
+  potaje_garbanzos: Chickpea soup
+  potaje_punaico: Handle potage
+  pollo_chilindron: Chillindron chicken in pepitoria with rice
+  ragout_arroz: Veal Ragout with White Rice
+  rusos_arroz: Russian steaks with white rice
 
 mapa:
-  info: "es un bar de tapeo y vinos junto al <strong>Rastro de Madrid</strong> entre las paradas de metro de La Latina y Tirso de Molina"
+  info: "is a tapas bar and wines along the <strong> Rastro de Madrid </strong> between the subway stops of La Latina and Tirso de Molina"
 
 aviso:
   agosto:
-    titular: Nos vamos de vacaciones.
-    vuelta: Volvemos el 1 de septiembre.
+    titular: We are going on vacation.
+    vuelta: We return on September 1.
+
+menu:
+  hoy: Today
+  tenemos: we have
+  alergeno: Allergens
+  sin_aler: "No allergens"
+  enlace: "See ingredients"
+  legend: "Dish of the day"
+  leyenda1: "This week's dishes:"
+  leyenda2: "Next week's dishes:"
+  entresemana: "This week we have:"
+  finde: "Today <span id = 'dia'></span> we do not offer dish of the day. Quench your appetite with our toasts and rations and accompany them with a good wine."
+
+dia:
+  domingo: Sunday
+  lunes: Monday
+  martes: Tuesday
+  miercoles: Wednesday
+  jueves: Thursday
+  viernes: Friday
+  sabado: Saturday
 
   
 

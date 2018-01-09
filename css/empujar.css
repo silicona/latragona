@@ -1,3 +1,9 @@
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
 body {
 	background-color: #000;
 	font-family: verdana, helvetica, sans-serif;
@@ -103,23 +109,28 @@ body {
 		cursor: pointer;
 	}
 
+/* Menu lateral */
 	#lateral {
-		background-color: transparent;
 		position: fixed;
 		z-index: 2;
-		transform: rotate(90deg);
-		/*display: none;*/
-		visibility: hidden;
+		width: 484px;
+		-webkit-transform: translateX(12.25em) rotate(90deg);
+		   -moz-transform: translateX(12.25em) rotate(90deg);
+		    -ms-transform: translateX(12.25em) rotate(90deg);
+		        transform: translateX(12.25em) rotate(90deg);
+		opacity: 0;
+		right: 0;
+		top: 16em;
 	}
 
 	#lateral ul {
-		background-color: #fff;
+		background-color: rgba(255, 255, 255, .5);
 		display: inline-block;
 	}
 
 	#lateral li {
 		display: inline-block;
-		padding-right: 5px;
+		padding: 4px;
 		font-size: 1.2em;
 		cursor: pointer;
 	}
@@ -127,8 +138,8 @@ body {
 /* Cabecera */
 	header {
 		background-color: #000;
-		background: url("../media/cabeceras/empujar.gif") 50% 8% no-repeat fixed;
-		height: 220px;
+		background: url("../media/cabeceras/empujar.gif") 50% 40px no-repeat fixed;
+		height: 240px;
 		padding-top: 46px;
 	}
 
@@ -137,160 +148,285 @@ body {
 		left: 25%;
 		margin-left: -100px;
 		margin: 66px 0px 20px -100px;
-
 		border-radius: 120px;
 	}
 
-/* Aviso */
-	#contenedor_alerta {
-		width: 40ex;
-		height: 20ex;
-		position: absolute;
-		left: 10ex;
-		top: 35ex;
-		background: rgba(100, 100, 100, 0.6) none repeat scroll 0% 0%;
-		border: 5px solid #fff;
-		border-radius: 5pt;
-		font-size: 20pt;
-		color: #f00;
+/* Cuerpo */
+	section {
+		width: 100%;	
+		float: left;
+		background-position: -20vw 0vh;
+		background-size: contain;
+		background-repeat: no-repeat;
 	}
 
-	#caja_alerta {
-		margin: 3ex;
-		background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0%;
-		height: calc(100% - 6ex);
-		border-radius: 5pt;
-		text-decoration: underline;
-		text-align: center;
-	}
-
-	#titulo_alerta {
-		font-weight: bold;
-		padding: 2ex;
-	}
-
-	#mensaje_alerta {
-		padding: 2ex;
-	}
-
-section {
-	width: 100%;	
-	float:left;			
-}
-
-.movil {
-	display: none;
-}
-
-/* Foto de seccion */	
-	.foto {
+	article {
 		width: 50%;
 		float: left;
-		display: inline;
 	}
 
-	.foto p {
+	.movil { display: none; }
+
+	#cerveza { background: url("../media/imagenes/empujar/fondos/cerveza.jpg") }
+	#vino {	background: url("../media/imagenes/empujar/fondos/vinos.jpg") }
+	#licores { background: url('../media/imagenes/empujar/fondos/licores.jpg') }
+	#combinados {	background: url('../media/imagenes/empujar/fondos/combinados.jpg') }
+	#sin_alcohol { background: url('../media/imagenes/empujar/fondos/sinalcohol.jpg') }
+
+/* Foto de seccion */	
+	.foto {	padding: 4ex 2ex 0;	}
+
+	.foto > a > p {
 		color: #fff;
 		font-size: 4em;
 		text-align: center;
-		text-shadow: 0px 0px 20px #000;
-
-		position: relative;
-		top: 50px;
-		margin: 0 auto;
+		text-shadow: 3px 3px 5px #333;
 	}
 
-	#cerveza .foto{
-		background: url("../media/imagenes/empujar/cerveza.jpg") center center;
-	}
+	/* Cartel_evento */
+		#cartel_evento {
+			width: 90%;
+			background-color: #fff;
+			border: 11px double #f00;
+			-webkit-border-radius: 50pt;
+			   -moz-border-radius: 50pt;
+			        border-radius: 50pt;
+			padding: 3ex 0;
+			position: relative;
+			top: 100px;
+			margin: 0 5%;
+		}
 
-	#vino .foto{
-		background: url("../imag_ejemplos/bebidas/vinos.jpg") 80% 50%;
-	}
+		#cartel_evento a { color: inherit; }
 
-	#licores .foto {
-		background: url('../media/imagenes/empujar/licores.jpg') center center;
-	}
+		#cartel_evento p {
+			text-align: center;
+			padding: 1ex;
+			font-size: 1.7em;
+			font-weight: bold;
+			line-height: 1.1em;
+			color: #000;
+		}
 
-	#combinados .foto {
-		background: url('../media/imagenes/empujar/combinados.jpg') center center;
-	}
+		#cartel_evento p:first-of-type {
+			font-size: 2em;
+			font-weight: bold;
+			color: #f00;	
+		}
 
-	#sin_alcohol .foto {
-		background: url('../media/imagenes/empujar/sinalcohol.jpg') top center;
-	}
+	/* Cartel Navidad */
+		#cartel_navidad {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10pt;
+			width: unset;
+			margin: 1em 0 0 0;
+			border: 2px solid #fff;
+		}
+
+		#cartel_navidad img { 
+			width: 100%;
+			/*margin-left: -25%;*/
+			margin-bottom: -10px;
+		}
+
+		#cartel_navidad p {
+			background: rgba(255,255,255,0.7);
+			font: 1.5em/1.3 sans-serif;
+			display: inline-block;
+			padding: 1ex;
+			border-radius: 10pt;
+			text-align: justify;
+
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			right: 10%;
+		}
+
+		#cartel_navidad a {	color: #008; }
 
 /* Contenido */
-	.contenido {
-		width: 50%;
-		background-color: #fff;
-		float: left;
-		display: inline;
-	}
+	.contenido { padding: 0 3ex 2ex 2ex; }
 
-	#cerveza ul {
-		font-size: 1.2em;
-		line-height: 2.3ex;
-	}
+	#cerveza .contenido { background-color: #efe;	}
+
+	#vino .contenido { background-color: #fee; }
+
+	#licores .contenido { background-color: #eef; }
+	
+	#combinados .contenido { background-color: #edd;	}
+
+	#sin_alcohol .contenido { background-color: #dde;	}
 
 	.contenido legend {
-		margin: 10px;
+		padding: 1ex 0ex .5ex 2ex;
 		font-size: 1.7em;
 		text-decoration: underline;
-		line-height: 2ex;
 	}
 
-	.contenido div {
-		background-color: #eeeeee;
+	.contenido:before {
+		content: "";
+		display: table;
+	}
+
+	.contenido > div:before {
+		content: '';
+		display: table-row;
+	}
+
+	.contenido > div:after {
+		content: '';
+		display: block;
 		clear: both;
-		margin: 10px;
-		margin-right: 40px;
-		height: 110px;
-		padding: 10px;
-		border-radius: 100px 0 0 100px;
-		display: flow-root;
 	}
 
-	.contenido p {
-		font-size: 1.1em;
+	.contenido > div {
+		padding: 1ex;
+		background-color: #fff;
+		border: 5px solid #666;
+		border-radius: 5pt;
+		position: relative;
+		margin-top: 1ex;
+		border-radius: 100px 0 0 100px;
+	}
+
+	.contenido > div:nth-of-type(odd) { border-radius: 0 100px 100px 0; }
+
+	.contenido div p:before, .contenido div > a:before {
+		content: '';
+		display: table-cell;
+	}
+
+	.contenido div > a {
+		padding: 1ex;
+		float: left;
+		vertical-align: middle;
+	}
+	
+	.contenido div:nth-of-type(odd) > a {	float: right;	}
+
+	.contenido div ul {
+		font-size: 1.3em;
 		line-height: 2.3ex;
+		padding: 1ex;
+		display: inline-block;
+	}
+
+	.contenido div p {
+		font-size: 1.3em;
+		line-height: 2.3ex;
+		display: inline-block;
+		vertical-align: top;
+		max-width: calc(100% - 150px);
+		position: relative;
 	}
 
 	.contenido a[data-fancybox] {
 		display: inline-block;
 		color: #008;
 		text-decoration: underline;
-		padding: 1.5ex;
-		font-size: 1.2em;
+		padding: 1ex 1.5ex;
+		font-size: 1sem;
 	}
 
-	.imagen {
-		border-radius: 120px;
-		width: 100px;
-		height: 100px;
-		margin: 5px 10px;
-		position: relative;
-
-		float: left;
-		display: inline;
-	}
-
-	.contenido div:nth-child(even) {
-		border-radius: 0 100px 100px 0;
-	}
-
-	.contenido div:nth-child(even) img {
-		float: right;
-	}
+	.imagen {	border-radius: 100px;	}
 
 	.lista_izquierda {
 		float: left;
 		margin-right: 20px;
 	}
 
-	.lista_derecha {
-		float: left;
-	}
+	.lista_derecha { float: left;	}
+
+	/* Cinta verde */
+		div.articulo_novedad {
+			border-color: #BFDC7A;
+		}
+
+		.novedad {
+			border-radius: unset;
+		  width: 85px;
+		  height: 88px;
+		  overflow: hidden;
+		  position: absolute;
+		  top: -6px;
+		  right: -6px;
+		}
+
+		.cinta_verde {
+		  font: bold 15px Sans-Serif;
+		  color: #333;
+		  text-align: center;
+		  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+		  -webkit-transform: rotate(45deg);
+		  -moz-transform:    rotate(45deg);
+		  -ms-transform:     rotate(45deg);
+		  -o-transform:      rotate(45deg);
+		  position: relative;
+		  padding: 7px 0;
+		  left: -5px;
+		  top: 15px;
+		  color: #6a6340;
+		  width: 120px;
+		  background-color: #BFDC7A;
+		  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+		  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3); box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+		}
+
+		.cinta_verde:before, .cinta_verde:after {
+		  content: "";
+		  border-top:   3px solid #6e8900;   
+		  border-left:  3px solid transparent;
+		  border-right: 3px solid transparent;
+		  position:absolute;
+		  bottom: -3px;
+		}
+
+		.cinta_verde:before { left: 0;	}
+
+		.cinta_verde:after { right: 0;	}​
+
+	/* Cartel evento */
+		#cartel_evento {
+			width: 90%;
+			background-color: #E0F2F7;
+			border: 11px double #ccc;
+			border-radius: 100pt;
+			padding: 3ex 0;
+			position: relative;
+			top: 100px;
+			margin: 0 auto;
+			-webkit-box-sizing: border-box; box-sizing: border-box;
+		}
+
+		#cartel_evento a {
+			color: inherit;
+		}
+
+		#cartel_evento p {
+			-webkit-box-sizing: border-box; box-sizing: border-box;
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			padding: 1ex;
+			font-size: 1.7em;
+			font-weight: bold;
+			line-height: 1em;
+			text-shadow: unset;
+			position: unset;
+			color: #000;
+		}
+
+		#cartel_evento p:first-of-type {
+			font-size: 2em;
+			font-weight: bold;
+			color: #f00;	
+		}
 
 /*compartir */
 	#compartir {
@@ -339,9 +475,13 @@ section {
 		}
 
 		#lateral {
-			transform: unset;
+			-webkit-transform: unset;
+			    -ms-transform: unset;
+			        transform: unset;
 			text-align: center;
 			width: 100%;
+			top: 2.5em;
+			background-color: #fff;
 		}
 
 		#lateral li {
@@ -410,7 +550,6 @@ section {
 
 /* iPads (portrait) ----------- */
 	@media screen and (min-width: 651px)and (max-width: 1024px), screen and (min-device-width: 651px)	and (max-device-width: 1024px) {
-
 		header {
 			background: url("../media/cabeceras/empujar_sin.png") 50% 0% no-repeat fixed;
 			height: 150px;
@@ -484,5 +623,32 @@ section {
 
 		#contenedor_alerta {
 			left: 6ex;
+		}
+	}
+
+/* Responsive Cartel Navidad */
+	@media screen and (min-width : 651px)	and (max-width : 900px), screen and (min-device-width : 651px)	and (max-device-width : 900px) {
+		#cartel_navidad img {
+			width: 200%;
+			margin-left: -50%;
+		}
+
+		#cartel_navidad p {
+			font: 1.1em/1.2 sans-serif;
+			width: 80%;
+		}
+	}
+
+	@media screen and (min-width : 901px)	and (max-width : 1024px), screen and (min-device-width : 901px)	and (max-device-width : 1024px) {
+		#cartel_navidad p {
+			font: 1.2em/1.3 sans-serif;
+			width: 80%;
+		}
+	}
+
+	@media screen and (min-width : 901px)	and (max-width : 1400px), screen and (min-device-width : 901px)	and (max-device-width : 1400px) {
+		#cartel_navidad img {
+			width: 150%;
+			margin-left: -25%;
 		}
 	}

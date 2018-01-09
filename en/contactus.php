@@ -3,31 +3,16 @@
 <head>
 	<title>Contact La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, wine, homemade liquor, cañas, Rastro, next to the Rastro, two minutes from the Rastro, La Latina, Tirso de Molina, oasis in Madrid, Bar area, meeting point, near to theater, Lavapies, theater, cabaret, good price, affordable price, gluten free, allergen menu, caring food, fresh food, fresh produce, market products, nearby market, ecological bread, Artisan bread, organic wine, alternative press, free wifi">
-	<meta name="description" content ="Tapas bar where you can enjoy toasts and gluten-free rations made with market products and organic wine, as well as artisan and combined liquors that remove hiccups. Located next to the Rastro, in the center of Madrid, between La Latina and Tirso de Molina.">
-
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/contactar.css">
-
 	<?php
+		include 'basic_head.php';
 		require "../php/formulario.php";
-		require_once('../php/lib/spyc/spyc.php');
-		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml');
+		//require_once('../php/lib/spyc/spyc.php');
+		//$datos = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml');
 	?>
-	<script type="text/javascript">
-		titular = '<?= $datos['aviso']['agosto']['titular']; ?>';
-		vuelta = '<?= $datos['aviso']['agosto']['vuelta']; ?>';
-	</script>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/contactar.css">
 	<script type="text/javascript" src="../js/contactar.js"></script>
+
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -88,7 +73,7 @@
 			<p>
 				If you have any doubts, you want to make a reservation or you want to comment, do not hesitate to tell us. Make us grow with your opinion.<br>
 				<br>
-				You can call us, or write us a wasap, on the phone 91-148-43-76 or 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Write us a wasap" id="wasap">.<br>
+				You can call us, or write us a wasap, on the phone 91-148-43-76 or 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Write us a wasap" id="wasap">.<br>
 				<br>
 				We also take care of the email contactanos@latragona.com, or you can leave your words here and our carnivorous plant will transmit them to us.
 			</p>
@@ -96,7 +81,7 @@
 
 		<section class="movil">
 			<p>
-				Make us grow with your opinion. You can call us on the phone 91-148-43-76 or 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Write us a wasap" id="wasap">.<br>
+				Make us grow with your opinion. You can call us on the phone 91-148-43-76 or 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Write us a wasap" id="wasap">.<br>
 				You can also write to contactanos@latragona.com or use our form:
 			</p>
 		</section>

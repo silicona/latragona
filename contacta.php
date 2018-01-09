@@ -6,19 +6,8 @@
 <head>
 	<title>Contacta con La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="tapas, tapeo, tostas, raciones, vino, licor artesanal, cañas, Rastro, junto al Rastro, a dos minutos del Rastro, La Latina, Tirso de Molina, oasis en Madrid, buen ambiente, sitio tranquilo, trato personal, ambiente agradable, bar de barrio, punto de encuentro, cercania a teatro, Lavapies, teatro, cabaret, buen precio, precio asequible, sin gluten, carta de alergenos, comida cuidada, productos frescos, productos de mercado, mercado cercano, productor cercano, pan ecologico, pan artesanal, vino ecologico, prensa alternativa, wifi gratis">
-	<meta name="description" content ="">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="css/contactar.css">
-
 	<?php
+		include 'head_basico.php';
 		require_once('php/lib/spyc/spyc.php');
 		$datos = Spyc::YAMLLoad('php/idiomas/lexico_es.yml');
 	?>
@@ -28,8 +17,8 @@
 		vuelta = '<?= $datos['aviso']['agosto']['vuelta']; ?>';
 	</script>
 	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript" src="js/contactar.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/contactar.css">
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -91,7 +80,7 @@
 			<p>
 				Si tienes alguna duda, quieres hacer una reserva o deseas comentarnos, no dudes en decirnoslo. Haznos crecer con tu opinión.<br>
 				<br>
-				Puedes llamarnos, o escribirnos un wasap, al telefono 91-148-43-76 o al 685-954-545 <img src="media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">.<br>
+				Puedes llamarnos, o escribirnos un wasap, al telefono 91-148-43-76 o al 658-954-545 <img src="media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">.<br>
 				<br>
 				Tambíen atendemos el email contactanos@latragona.com, o puedes dejar aqui mismo tus palabras y nuestra planta carnivora nos las trasmitirá.
 			</p>
@@ -99,7 +88,7 @@
 
 		<section class="movil">
 			<p>
-				Haznos crecer con tu opinión. Contáctanos a traves del teléfono 91-148-43-76 o al 685-954-545 <img src="media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">.<br>
+				Haznos crecer con tu opinión. Contáctanos a traves del teléfono 91-148-43-76 o al 658-954-545 <img src="media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">.<br>
 				Tambien puedes escribir a contactanos@latragona.com o utilizar nuestro formulario:
 			</p>
 		</section>

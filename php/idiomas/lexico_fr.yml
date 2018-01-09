@@ -12,10 +12,10 @@ alergenos:
   pescado: Poisson
   sesamo: Sésame
   soja: Soja
-  sulfitos: Sulfite
+  sulfito: Sulfite
 
 bebida:
-  7puntas: 
+  puntas: 
     - "Sélection de vins qui reflète le potentiel des grands vins espagnols, choisi pour son élégance et de fraîcheur à déguster dans toutes sortes de réunions, toujours en bonne compagnie."
     - "Contient des sulfites."
   albarino:
@@ -78,12 +78,24 @@ bebida:
     - "Le nez montre sa fraîcheur développement un groupe aromatique marqué par la présence d'arômes de fruits et des notes gâteau aux fraises et les souvenirs de framboise."
     - "Se manifeste dans la bouche en direct, frais et fruité, avec des tanins mûrs qui structurent dans votre corps et la finition élégante."
     - "Contient des sulfites."
-    
+  #licor
+  hierbas: Herbal marc
+  blanco: Marc blanc
+  tostado: Biscuit rôti
+  licor_cafe: Liqueur de café
+  pacharan: Pacharan
+  crema_orujo: Crème Marc
+  crema_chocolate: Crème au chocolat
+  crema_cafe: Crème de café
+
 ingrediente:
   aceite: Huile d'olive
   ajo: Ail
+  almendra: Amande
+  alubia_carilla: Germe de soja
   atun: Thon
   arroz: Riz
+  azafran: Safran
   azucar: Sucre
   bacalao: Morue
   bechamel: Béchamel
@@ -98,6 +110,7 @@ ingrediente:
   cilantro: Coriandre
   coliflor: Chou-fleur
   comino: Cumin
+  costilla: Côte de porc
   crema_queso: Fromage à la crème
   eneldo: Aneth
   garbanzo: Pois chiche
@@ -125,6 +138,7 @@ ingrediente:
   nata: Crème
   nuez_moscada: Noix de muscade
   oregano: Origan
+  pan: Pain
   pan_rallado: Chapelure
   panceta: Bacon
   patata: Pomme de terre
@@ -135,6 +149,7 @@ ingrediente:
   perejil: Persil
   perrins: Sauce perrins
   pimenton: Cayenne
+  pimenton: Paprika aigre-doux
   pimenton_cilantro: Cayenne ou Coriandre et Persil
   pimienta_blanca: Poivre blanc
   pimienta_negra: Poivre noir
@@ -167,6 +182,7 @@ ingrediente:
   tomate_deshi: Tomate déshydratée
   tomate_frito: Sauce tomate
   tomillo: Thym
+  trigo: Blé
   ventresca_atun: Ventre de thon
   verduras: Légumes
   vinagre: Vinaigre
@@ -181,30 +197,37 @@ nombre:
   atun: Thon salé
   babaganoush: Babaganoush
   berenjenas: Aubergines farcies
-  brandada_bacalao: Brandade de morue
+  brandada: Brandade de morue
+  canelones_morcilla: Cannelloni avec saucisse de sang (végétarien)
+  carne_mechada: Viande grillée
   carpaccio: Courgette carpaccio
   cecina: Viande séchée de León
   ensalada_remo: Salade de betteraves à la roquette et au fromage de chèvre eco
   hummus: Hummus
   lasagna: Lasagnes aux champignons
-  lomo_embuchado: Longe de porc guéri
+  lomo: Longe de porc guéri
+  migas: Miettes
+  mousaka: Mousaka
   pastel_salmon: Gâteau de saumon
-  patata_mojo: 'Papas arrugas' avec deux Mojos
-  patata_rellena: Pommes de terre farcies
+  papas_2mojos: 'Papas arrugas' avec deux Mojos
+  patatas_rellenas: Pommes de terre farcies
+  patatas_revolconas: Pommes de terre revolcons
   roastbeef: Roastbeef
   ragout: Ragoût de veau
   rusos: Steak de Russie avec sauce tomate
   solomillo: Bière surlonge et pomme
+  solomillo_sal: Surlonge traitée avec du sel et des épices
   tortilla: Omelette de pomme de terre
-  tosta_cecina: Tosta de Viande séchée de León
-  tosta_salmon: Tosta de saumon
-  tosta_ventresca: Tosta de ventre de thon
+  tosta_cecina: Viande séchée de León
+  salmon: Saumon
+  tosta_ventresca: Ventre de thon avec piquillos
   ventresca: Ventre de thon avec piquillos
   # Nombres de Menu
+  arroz_huerta: Riz du verger au paprika
   berenjena: Aubergines farcies
   calabacin_relleno: Courgettes farcies
   canelones_verduras: Canilones farcies de légumes et de patates shiitake
-  carne_mechada: Viande grillée avec purée de pommes de terre
+  #carne_mechada: Viande grillée avec purée de pommes de terre
   ensalada_alubias: Salade de haricots
   ensalada_campera: Veste
   ensalada_garbanzo: Salade garbanzo à la vinaigrette au thym
@@ -214,17 +237,75 @@ nombre:
   lasagna_setas: Lasagnes aux champignons
   lentejas_verduras: Lentilles ravies de légumes
   macarron_verdura: Macaroni à grains entiers aux légumes et sauce tomate maison
-  mousaka: Mousaka
+  patatas_costillas: Pommes de terre aux côtes
+  potaje_garbanzos: Soupe aux pois chiches
+  potaje_punaico: Potage 'au puñaico'
+  pollo_chilindron: Fricassée de volaille au chillindron avec du riz
   ragout_arroz: Ragout de veau au riz blanc
   rusos_arroz: Steaks russes au riz blanc
 
+producto:
+  alergeno: Allergens
+  descripcion: Voir description
+  tosta: "Toast de "
+  sin_aler: "No allergens"
+  ver: Voir les ingrédients
+  # Bebidas
+  botella: Bouteille
+  botellin: Bouteille 1/4
+  caña: Caña
+  chupito: Shot
+  copa: Coupe
+  doble: Double
+  mini: "Mini<span class='descrip'> (440ml.)</span>"
+  tercio: Bouteille 1/3
+
+titulos:
+  rubia: Blonde
+  sin: Sans alcool
+  tostada: Grillée
+  sin_glu: Sans gluten
+  tinto: Rouges
+  blanco: Blancs
+  vermut: Vermouth
+  licor: Liqueur artisanale
+  pan_sin: "Nous avons du pain sans gluten. Demandez-nous!!"
+  tostas: Toasties
+  raciones: Portions
+  
 mapa:
+  abierto: Nous avons ouvert les portes.
+  abrimos: Nous ouvrons
+  en: dans
+  hora: heure
+  horas: heures
+  mañana: "demain."
+  logo: "../media/logo_red.gif"
   info: "est un bar à tapas et de vin à côté du <strong>Rastro</ strong> entre les stations de métro de La Latina et Tirso de Molina."
 
 aviso:
   agosto:
     titular: Nous allons en vacances.
     vuelta: Nous reviendrons le 1er Septembre.
+  cartel:
+    url: "../php/vida_fuera_de_tapapies.php?idioma=fr"
+    titular: Il y a de la vie en dehors des Tapapies
+    en: in
+    logo: "../media/la_tragona_logo.png"
+    fecha: du 20 au 22 et du 27 au 29 octobre
+    calle: "rue Juanelo, 11"
+    productos: "Vins, bières, liqueurs"
+    nuevas: "Nouvelles chapeaux"
+    tapas: Découvrez nos nouvelles tapas
+    sin_gluten: Sans gluten
+  tapapies: "À La Tragona, vous pouvez commander un troisième, une canne, un double de bière, un verre de vin ou de vermouth et savourer la variété d'exemples de plats soigneusement préparés que nous préparons toute l'année, aux prix habituels."
+  anexo: Profitez de nos nouvelles tapas
+  navidad:
+    frase: "Si vous voulez célébrer ces jours avec vos amis, à La Tragona, nous avons pensé à différents menus pour les groupes (avec des options végétariennes et sans gluten)."
+    contacto: Contactez-nous
+    hablamos: "et nous le parlons."
+    enlace: "avaler.php#reservas"
+    imagen: "../media/asamblea.jpg"
 
 menu:
   hoy: Aujourd'hui

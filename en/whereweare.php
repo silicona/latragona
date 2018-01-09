@@ -3,34 +3,28 @@
 <head>
 	<title>Find La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, wine, homemade liquor, cañas, Rastro, next to the Rastro, two minutes from the Rastro, La Latina, Tirso de Molina, oasis in Madrid, Bar area, meeting point, near to theater, Lavapies, theater, cabaret, good price, affordable price, gluten free, allergen menu, caring food, fresh food, fresh produce, market products, nearby market, ecological bread, Artisan bread, organic wine, alternative press, free wifi">
-	<meta name="description" content ="Tapas bar where you can enjoy toasts and gluten-free rations made with market products and organic wine, as well as artisan and combined liquors that remove hiccups. Located next to the Rastro, in the center of Madrid, between La Latina and Tirso de Molina.">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
 	<?php
+		include 'basic_head.php';
 		require_once('../php/lib/spyc/spyc.php');
 		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml');
-		$info = $datos['mapa']['info'];
-		$vacaciones = $datos['aviso']['agosto']['titular'];
-		$vuelta = $datos['aviso']['agosto']['vuelta'];
+		$mapa = $datos['mapa'];
+		$navidad = $datos['aviso']['navidad'];
 	?>
+
 	<script type="text/javascript">
-		mapa_info = '<?= $info; ?>';
-		titular = '<?= $vacaciones; ?>';
-		vuelta = '<?= $vuelta; ?>';
+		mapa_abierto = '<?= $mapa['abierto']; ?>';
+		mapa_abrimos = '<?= $mapa['abrimos']; ?>';
+		mapa_en = '<?= $mapa['en']; ?>';
+		mapa_hora = '<?= $mapa['hora']; ?>';
+		mapa_horas = '<?= $mapa['horas']; ?>';
+		mapa_mañana = '<?= $mapa['mañana']; ?>';
+		mapa_logo = '<?= $mapa['logo']; ?>';
+		mapa_info = '<?= $mapa['info']; ?>';
 	</script>
 
+	<link rel="stylesheet" type="text/css" href="../css/dondeestamos.css">
 	<script type="text/javascript" src="../js/dondeestamos.js"></script>
+
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAokzjV_CnyuUEoa08ljyZpdhE7y3nlRUM&callback=iniciarMapa"></script>
 </head>
 <body>
@@ -85,7 +79,8 @@
 		<h1>Around La Tragona</h1>
 
 		<div id="mapa"></div>
-		<section class="desktop">
+		<section>
+			<?php include '../php/plantillas/cartel_navidades.php' ?>
 			<p>
 				We have rescued a neighborhood bar next to the Rastro, between La Latina, Tirso de molina and Lavapies, on Calle Juanelo, 11: an oasis in the center of Madrid, in a neighborhood with a great multicultural tradition.<span class="ocultar_ipad"> We are pleased to be a meeting point for those who enter or leave it.</span><br>
 				<br>

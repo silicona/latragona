@@ -50,6 +50,7 @@ ul, ol, dir, menu {
 
 sub, sup {
 	vertical-align: baseline;
+	font-size: .8em;
 }
 
 a {

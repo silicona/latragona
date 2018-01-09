@@ -15,7 +15,7 @@ alergenos:
   sulfito: Sulphite 
 
 bebida:
-  7puntas: 
+  puntas: 
     - "Selection of wines that reflects the great potential of modern spanish wines."
     - "This wine has been specially selected for its elegance and freshness to be enjoyed in all kinds of meetings, always in good company."
     - "Contains sulfites."
@@ -79,12 +79,24 @@ bebida:
     - "With an intense purple color, the wine has fresh aromas revealing a ripe jam-like fruit with more vibrant notes of red berries."
     - "Initial sensation in the mouth is one of lively, fresh fruits that gives way to a warmer roundness characterized by ripe round tannins that fill out the palate as the wine leaves"
     - "Contains sulfites."
+  #licor
+  hierbas: Herbal marc
+  blanco: White marc
+  tostado: Toast marc
+  licor_cafe: Coffee liquor
+  pacharan: Pacharan
+  crema_orujo: Marc cream
+  crema_chocolate: Chocolate cream with cherries
+  crema_cafe: Coffee cream
 
 ingrediente:
   aceite: Olive oil
   ajo: Garlic
+  almendra: Almond
+  alubia_carilla: Bean sprout
   atun: Tuna
   arroz: Rice
+  azafran: Saffron
   azucar: Sugar
   bacalao: Cod
   bechamel: Bechamel
@@ -99,6 +111,7 @@ ingrediente:
   cilantro: Coriander
   coliflor: Cauliflower
   comino: Cumin
+  costilla: Pork rib
   crema_queso: Cream cheese
   eneldo: Dill
   garbanzo: Chickpea
@@ -121,11 +134,12 @@ ingrediente:
   manzana: Apple
   miel: Honey
   mojo: "Mojos:"
-  mostaza: Mustard
   morcilla: Blood sausage
+  mostaza: Mustard
   nata: Cream
   nuez_moscada: Nutmeg
   oregano: Oregano
+  pan: Bread
   pan_rallado: Bread crumbs
   panceta: Bacon
   patata: Potatoe
@@ -136,6 +150,7 @@ ingrediente:
   perejil: Parsley
   perrins: Sauce perrins
   pimenton: Paprika
+  pimenton_agridulce: Bittersweet paprika
   pimenton_cilantro: Paprika or Coriander and Parsley
   pimienta_blanca: White pepper
   pimienta_negra: Black pepper
@@ -168,6 +183,7 @@ ingrediente:
   tomate_deshi: Dehydrated tomato
   tomate_frito: Fried tomato
   tomillo: Thyme
+  trigo: Wheat
   ventresca_atun: Tuna ventresca
   verduras: Vegetables
   vinagre: Vinegar
@@ -182,30 +198,37 @@ nombre:
   atun: Tuna in salami
   babaganoush: Babaganoush
   berenjenas: Stuffed eggplant
-  brandada_bacalao: Brandade of cod
+  brandada: Brandade of cod
+  canelones_morcilla: Cannelloni with blood sausage (vegetarian)
+  carne_mechada: Grilled meat
   carpaccio: Zuchinni carpaccio
   cecina: Smoked beef from León
   ensalada_remo: Beet salad with arugula and goat cheese eco
   hummus: Hummus
   lasagna: Arrows lasagna
-  lomo_embuchado: Pork loin
+  lomo: Pork loin
+  migas: Crumbs
+  mousaka: Mousaka
   pastel_salmon: Salmon cake
-  patata_mojo: 'Papas arrugas' with 2 mojos
-  patata_rellena: Stuffed potatoes
+  papas_2mojos: 'Papas arrugas' with 2 mojos
+  patatas_rellenas: Stuffed potatoes
+  patatas_revolconas: Revolcons potatoes
   roastbeef: Roastbeef
   ragout: Veal ragout
   rusos: Russian steaks with tomato sauce
   solomillo: Sirloin with beer and apple
+  solomillo_sal: Sirloin cured with salt with spices
   tortilla: Potatoes omelette
-  tosta_cecina: Toast of pork loin from León
-  tosta_salmon: Toast of salmon
-  tosta_ventresca: Toast of tuna belly
+  tosta_cecina: Smoked beef from León
+  salmon: Salmon
+  tosta_ventresca: Tuna belly with piquillo pepper
   ventresca: Tuna belly with piquillo pepper
   # Nombres de Menu
+  arroz_huerta: Rice from the orchard with paprika
   berenjena: Eggplants stuffed with pisto
   calabacin_relleno: Stuffed courgettes
   canelones_verduras: Canilones stuffed with vegetables and shiitake pate
-  carne_mechada: Grilled meat with potato puree
+  #carne_mechada: Grilled meat with potato puree
   ensalada_alubias: Bean salad
   ensalada_campera: Country salad
   ensalada_garbanzo: Chickpea salad with thyme vinaigrette
@@ -215,17 +238,75 @@ nombre:
   lasagna_setas: Mushroom lasagna
   lentejas_verduras: Lentils stewed with vegetables
   macarron_verdura: Whole-grain macaroni with vegetables and homemade tomato sauce
-  mousaka: Mousaka
+  patatas_costillas: Potatoes with ribs
+  potaje_garbanzos: Chickpea soup
+  potaje_punaico: Handle potage
+  pollo_chilindron: Chillindron chicken in pepitoria with rice
   ragout_arroz: Veal Ragout with White Rice
   rusos_arroz: Russian steaks with white rice
 
+producto:
+  alergeno: Allergens
+  descripcion: See description
+  tosta: "Toast "
+  sin_aler: "No allergens"
+  ver: See ingredients
+  # Bebidas
+  botella: Bottle
+  botellin: Bottle 1/4
+  caña: Caña
+  chupito: Shot
+  copa: Glass
+  doble: Double
+  mini: "Pint<span class='descrip'> (440ml.)</span>"
+  tercio: Bottle 1/3
+
+titulos:
+  rubia: Lager
+  sin: Alcohol free
+  tostada: Ale
+  sin_glu: Gluten free
+  tinto: Reds
+  blanco: Whites
+  vermut: Vermouth
+  licor: Craft liquor
+  pan_sin: "We have gluten-free bread. Ask us!!"
+  tostas: Toats
+  raciones: Portions
+
 mapa:
+  abierto: We have opened the doors.
+  abrimos: We will open
+  en: in
+  hora: hour
+  horas: hours
+  mañana: "tomorrow."
+  logo: "../media/logo_red.gif"
   info: "is a tapas bar and wines along the <strong> Rastro de Madrid </strong> between the subway stops of La Latina and Tirso de Molina"
 
 aviso:
   agosto:
     titular: We are going on vacation.
     vuelta: We return on September 1.
+  cartel:
+    url: "../php/vida_fuera_de_tapapies.php?idioma=en"
+    titular: There is life outside Tapapies
+    en: in
+    logo: "../media/la_tragona_logo.png"
+    fecha: in October, 20 to 22 and October,27 to 29
+    calle: "Juanelo street, 11"
+    productos: "Wines, beers, liquors"
+    nuevas: "New portions"
+    tapas: Enjoy our new portions
+    sin_gluten: Gluten free
+  tapapies: "In La Tragona you can order a third, a cane, a double of beer, a glass of wine or vermouth and savor the variety of examples of carefully prepared cuisine that we prepare all year round, at the usual prices."
+  anexo: Enjoy our new tapas
+  navidad:
+    frase: "If you want to celebrate these days with your friends, in La Tragona we have thought about different menus for groups (with vegetarian and gluten-free options)."
+    contacto: Get in touch with us
+    hablamos: "and we talk about it."
+    enlace: "swallow.php#reservas"
+    imagen: "../media/asamblea.jpg"
 
 menu:
   hoy: Today
@@ -247,4 +328,6 @@ dia:
   jueves: Thursday
   viernes: Friday
   sabado: Saturday
+
+
 

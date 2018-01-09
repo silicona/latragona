@@ -2,46 +2,35 @@
 <html>
 <head>
 	<title>For push in La Tragona</title>
-
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, toasts, tapeo, portions, wine, homemade liquor, cañas, Rastro, next to the Rastro, two minutes from the Rastro, La Latina, Tirso de Molina, oasis in Madrid, Bar area, meeting point, near to theater, Lavapies, theater, cabaret, good price, affordable price, gluten free, allergen menu, caring food, fresh food, fresh produce, market products, nearby market, ecological bread, Artisan bread, organic wine, alternative press, free wifi">
-	<meta name="description" content ="Tapas bar where you can enjoy toasts and gluten-free rations made with market products and organic wine, as well as artisan and combined liquors that remove hiccups. Located next to the Rastro, in the center of Madrid, between La Latina and Tirso de Molina.">
-	
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" href="../css/lightbox.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/jquery.fancybox.min.css">
 	
 	<?php
+		include 'basic_head.php';
 		require_once('../php/lib/spyc/spyc.php');
 		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_en.yml');
-		$vacaciones = $datos['aviso']['agosto']['titular'];
-		$vuelta = $datos['aviso']['agosto']['vuelta'];
-	?>
-	<script type="text/javascript">
-		titular = '<?= $vacaciones; ?>';
-		vuelta = '<?= $vuelta; ?>';
-	</script>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="../js/lightbox.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.fancybox.min.js"></script>
-	
+		$producto = $datos['producto'];
+		$titulos = $datos['titulos'];
+		$bebidas = $datos['bebida'];
+		$inter = true;
+		include '../php/presentarProductos.php';
+
+		$navidad = $datos['aviso']['navidad'];
+	?>
+
+	<link rel="stylesheet" href="../css/lightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/empujar.css">
+
+	<script src="../js/lightbox.min.js"></script>
 	<script type="text/javascript" src="../js/empujar.js"></script>
+	
 	<style type="text/css">
 		header {
-			background: url("../media/cabeceras/push.png") 50% 8% no-repeat fixed;
+			background-image: url("../media/cabeceras/push.png");
 		}
 
 		@media screen and (max-width: 650px), screen and (max-device-width: 650px), screen and (min-width: 651px)and (max-width: 1024px), screen and (min-device-width: 651px)	and (max-device-width: 1024px) {
 			header {
-				background: url("../media/cabeceras/push_sin.png") 50% 0% no-repeat fixed;
+				background-image: url("../media/cabeceras/push_sin.png");
 			}
 		}
 	</style>
@@ -100,175 +89,22 @@
 		<header></header>
 
 		<section id="cerveza">
-			<div class="foto">
+			<article class="foto">
 				<a name="cerveza"><p id="espumoso">The foamy drink</p></a>
-			</div>	
+				<?php include '../php/plantillas/cartel_navidades.php' ?>
+			</article>	
 
-			<div class="contenido">	
-				<legend>Estrella de Levante <span class="desktop">(Lager)</span></legend>
-				<div id="estrella">
-					<a href="../media/imagenes/empujar/rubia.jpg" data-lightbox="example-1" data-title="Estrella Levante">
-						<img src="../media/imagenes/empujar/minis/rubia.jpg" class="imagen" alt="Estrella Levante" title="Estrella Levante">
-					</a>
-					<ul>
-						<li>Caña - 1.50&euro;</li>
-						<li>Double - 2.50&euro;</li>
-						<li>Bottle 1/3 - 2.50&euro;</li>
-						<li>Mini<span class="descrip"> (500ml.) </span>- 3.50&euro;</li>
-					</ul>
-				</div>
+			<?= mostrarProductos($cervezas) ?>
 
-				<legend>Estrella de levante <span class="desktop">(Alcohol free)</span></legend>
-				<div id="estrella_sin">
-					<a href="../imag_ejemplos/bebidas/estrella_sin.jpg" data-lightbox="example-1" data-title="Estrella Alcohol free">
-						<img src="../imag_ejemplos/bebidas/mini_estrella_sin.jpg" class="imagen" alt="Estrella Alcohol free" title="Estrella Alcohol free">
-					</a>
-					<ul>
-						<li>Bottle 1/4 - 1.50&euro;</li>
-					</ul>
-				</div>
-
-				<legend>Punta Este <span class="desktop">(Ale)</span></legend>
-				<div>
-					<a href="../media/imagenes/empujar/tostada.jpg" data-lightbox="example-1" data-title="Punta Este">
-						<img src="../media/imagenes/empujar/minis/tostada.jpg" class="imagen" alt="Punta Este" title="Punta Este">
-					</a>
-					<ul>
-						<li>Caña - 1.70&euro;</li>
-						<li>Double - 3.00&euro;</li>
-						<li>Mini<span class="descrip"> (500ml.) </span>- 4.00&euro;</li>
-					</ul>
-				</div>
-
-				<legend>Daura Damm <span class="desktop">(Gluten free)</span></legend>
-				<div>
-					<a href="../media/imagenes/empujar/daura.jpg" data-lightbox="example-1" data-title="Daura Damm">
-						<img src="../media/imagenes/empujar/minis/daura.jpg" class="imagen" alt="Daura Damm" title="Daura Damm">
-					</a>
-					<ul>
-						<li>Bottle 1/3 - 2.50&euro;</li>
-					</ul>
-				</div>
-			</div>
 		</section>
 
 		<section id="vino">
-			<div class="foto">
+			<article class="foto">
 				<a name="vino"><p id="uva">The taste of the grape</p></a>
-			</div>	
+			</article>	
 
-			<div class="contenido">
-				<legend>Reds</legend>
-				<div>
-					<a href="../media/imagenes/empujar/7puntas.jpg" data-lightbox="example-1" data-title="7 puntas">
-						<img src="../media/imagenes/empujar/minis/7puntas.jpg" class="imagen" alt="7 Puntas" title="7 Puntas">
-					</a>
-					<p>7 puntas (Castilla) (Glass: 1.50&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=puntas" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/zinio.jpg" data-lightbox="example-1" data-title="Zinio">
-						<img src="../media/imagenes/empujar/minis/zinio.jpg" class="imagen" alt="Zinio" title="Zinio">
-					</a>
-					<p>Zinio (La Rioja) (Glass: 1.80&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=zinio" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/muriel.jpg" data-lightbox="example-1" data-title="Muriel">
-						<img src="../media/imagenes/empujar/minis/muriel.jpg" class="imagen" alt="Muriel" title="Muriel">
-					</a>
-					<p>Muriel Crianza (La Rioja) (Glass: 2.40&euro;; Bottle: 15&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=muriel" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/menina.jpg" data-lightbox="example-1" data-title="Menina">
-						<img src="../media/imagenes/empujar/minis/menina.jpg" class="imagen" alt="Menina" title="Menina">
-					</a>
-					<p>Menina Crianza (Madrid) (Glass: 2.80&euro;; Bottle: 18&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=menina" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/feroes.jpg" data-lightbox="example-1" data-title="Feroes">
-					  <img src="../media/imagenes/empujar/minis/feroes.jpg" class="imagen" alt="Feroes" title="Feroes">
-					</a>
-					<p>Feroes (Ribera) (Glass: 2.40&euro;; Bottle: 15&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=feroes" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/mureda.jpg" data-lightbox="example-1" data-title="Mureda">
-						<img src="../media/imagenes/empujar/minis/mureda.jpg" class="imagen" alt="Mureda" title="Mureda">
-					</a>
-					<p>Mureda (Syrah) (Glass: 2.40&euro;; Bottle: 15&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=mureda" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/bierzo.jpg" data-lightbox="example-1" data-title="Cosechero">
-						<img src="../media/imagenes/empujar/minis/bierzo.jpg" class="imagen" alt="Cosechero" title="Cosechero">
-					</a>
-					<p>Bierzo (Mencia) (Glass: 2.80&euro;; Bottle: 18&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=bierzo" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/nuviana_tinto.jpg" data-lightbox="example-1" data-title="Nuviana">
-						<img src="../media/imagenes/empujar/minis/nuviana_tinto.jpg" class="imagen" alt="Nuviana" title="Nuviana">
-					</a>
-					<p>Nuviana (Glass: 2.40&euro;; Bottle: 15&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=nuviana_tinto" data-type="iframe" href="javascript:;">See description</a>
-				</div>
+			<?= mostrarProductos($vinos) ?>
 
-				<legend>Whites</legend>
-				<div>
-					<a href="../media/imagenes/empujar/albarino.jpg" data-lightbox="example-1" data-title="Albariño">
-						<img src="../media/imagenes/empujar/minis/albarino.jpg" class="imagen" alt="Albariño" title="Albariño">
-					</a>
-					<p>Albariño (Cosechero) (Glass: 2.20&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=albarino" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/bierzo_godello.jpg" data-lightbox="example-1" data-title="Bierzo Godello">
-						<img src="../media/imagenes/empujar/minis/bierzo_godello.jpg" class="imagen" alt="Bierzo Godello" title="Bierzo Godello">
-					</a>
-					<p>Bierzo Godello (Glass: 2.80&euro;; Bottle: 18&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=bierzo_god" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/lagartijo.jpg" data-lightbox="example-1" data-title="Lagartijo">
-						<img src="../media/imagenes/empujar/minis/lagartijo.jpg" class="imagen" alt="Lagartijo" title="Lagartijo">
-					</a>
-					<p>Lagartijo (Verdejo) (Glass: 2.20&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=lagartijo" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/nuviana_blanco.jpg" data-lightbox="example-1" data-title="Nuviana">
-						<img src="../media/imagenes/empujar/minis/nuviana_blanco.jpg" class="imagen" alt="Nuviana" title="Nuviana">
-					</a>
-					<p>Nuviana (Glass: 2.20&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=nuviana_blanco" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/vinaldena.jpg" data-lightbox="example-1" data-title="Viñaldena">
-						<img src="../media/imagenes/empujar/minis/vinaldena.jpg" class="imagen" alt="Viñaldena" title="Viñaldena">
-					</a>
-					<p>Viñaldena (Verdejo) (Glass: 2.20&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=vinaldena" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-				<div>
-					<a href="../media/imagenes/empujar/sastreria.jpg" data-lightbox="example-1" data-title="La sastreria">
-						<img src="../media/imagenes/empujar/minis/sastreria.jpg" class="imagen" alt="La sastreria" title="La sastreria">
-					</a>
-					<p>La sastreria (Garnacha) (Glass: 2.20&euro;; Bottle: 12&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=sastreria" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-
-				<legend>Vermú</legend>
-				<div>
-					<a href="../media/imagenes/empujar/vermouth.jpg" data-lightbox="example-1" data-title="Vermu">
-						<img src="../media/imagenes/empujar/minis/vermouth.jpg" class="imagen" alt="Vermu" title="Vermu">
-					</a>
-					<p>Vermú (glass: 2&euro;)</p>
-					<a data-fancybox data-src="../php/guia.php?vino=vermouth" data-type="iframe" href="javascript:;">See description</a>
-				</div>
-			</div>
 		</section>	
 
 		<section id="compartir" class="movil">
@@ -277,11 +113,14 @@
 		</section>
 
 		<section id="licores">
-			<div class="foto">
+			<article class="foto">
 				<a name="licor"><p id="aguardiente">Craft liquor</p></a>
-			</div>
+			</article>
 
-			<div class="contenido">
+			<?= mostrarProductos($licores); ?>
+
+			<!--
+			<article class="contenido">
 				<legend>Craft liquor</legend>
 				<div>
 					<a href="../media/imagenes/empujar/lic_hierbas.jpg" data-lightbox="example-1" data-title="Herbal marc">
@@ -331,15 +170,16 @@
 					</a>
 					<p>Coffee cream.<br>(Shot: 2&euro;; Glass: 4&euro;)</p>
 				</div>
-			</div>
+			</article>
+			-->
 		</section>
 
 		<section id="combinados">
-			<div class="foto">
+			<article class="foto">
 				<a name="cubata"><p id="cuba_libre">Combined</p></a>
-			</div>
+			</article>
 
-			<div class="contenido">
+			<article class="contenido">
 				<legend>White combined (6&euro;)</legend>
 				<div>
 					<a href="../media/imagenes/empujar/combi_claro.jpg" data-lightbox="example-1" data-title="White combined">
@@ -371,15 +211,15 @@
 						Ballantines<br>
 					</p>
 				</div>
-			</div>
+			</article>
 		</section>
 
 		<section id="sin_alcohol">
-			<div class="foto">
+			<article class="foto">
 				<a name="sin"><p id="sin_alc">Alcohol free</p></a>
-			</div>
+			</article>
 
-			<div class="contenido">
+			<article class="contenido">
 				<legend>Organic juice (2.50&euro;)</legend>
 				<div>
 					<a href="../media/imagenes/empujar/zumos_org.jpg" data-lightbox="example-1" data-title="Organic juice">
@@ -423,7 +263,7 @@
 						Nestea
 					</p>
 				</div>
-			</div>
+			</article>
 		</section>
 
 		<section id="compartir" class="movil">

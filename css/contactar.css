@@ -1,3 +1,7 @@
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
 body {
 	background-color: #000000;
 	font-family: verdana, helvetica, sans-serif;
@@ -79,9 +83,7 @@ body {
 		padding: 10px;
 	}
 
-	#leer:hover {
-		animation: colorearFondo 1s forwards;
-	}
+	#leer:hover {	animation: colorearFondo 1s forwards;	}
 
 	@keyframes colorearFondo {
 		from {
@@ -94,45 +96,13 @@ body {
 		}
 	}
 
-/* Aviso */
-	#contenedor_alerta {
-		width: 40ex;
-		height: 20ex;
-		position: absolute;
-		left: 36ex;
-		top: 30ex;
-		background: rgba(100, 100, 100, 0.6) none repeat scroll 0% 0%;
-		border: 5px solid #fff;
-		border-radius: 5pt;
-		font-size: 20pt;
-		color: #f00;
-	}
-
-	#caja_alerta {
-		margin: 3ex;
-		background: rgba(255, 255, 255, 0.8) none repeat scroll 0% 0%;
-		height: calc(100% - 6ex);
-		border-radius: 5pt;
-		text-decoration: underline;
-		text-align: center;
-	}
-
-	#titulo_alerta {
-		font-weight: bold;
-		padding: 2ex;
-	}
-
-	#mensaje_alerta {
-		padding: 2ex;
-	}
-
 /* contenedor */
 	#contenedor {
 		background-color: #fff;
 		position: relative;
 		padding: 20px;
 		visibility: hidden;
-		width: calc(100% - 40px);
+		top: 100%;
 	}
 
 /* Superior */
@@ -140,9 +110,7 @@ body {
 		background-color: #000;
 		color: #fff;
 		font-size: 1.2em;
-		height: 45px;
-		/*width: inherit;*/
-		
+		height: 45px;		
 		z-index: 2;
 	}
 
@@ -150,16 +118,11 @@ body {
 		display: inline;
 		padding: 10px;
 		float: right;
-
 	}
 
-	#superior li a {
-		color: #fff;
-	}
+	#superior li a { color: #fff;	}
 
-	#superior li:first-child {
-		float: left;
-	}
+	#superior li:first-child { float: left;	}
 
 	#superior #logo_superior {
 		padding: 0.15ex;
@@ -171,17 +134,11 @@ body {
 		top: 9px;
 	}
 
-	#superior img {
-		width: 40px;
-	}
+	#superior img {	width: 40px; }
 
-	#superior .movil, #superior .ipad {
-		display: none;
-	}
+	#superior .movil, #superior .ipad {	display: none; }
 
-	#superior .desktop {
-		display: block;
-	}
+	#superior .desktop { display: block; }
 
 	#superior span {
 		float: left;
@@ -193,9 +150,7 @@ body {
 		margin-left: 5px;
 	}
 
-	#multi {
-		cursor: pointer;
-	}
+	#multi { cursor: pointer;	}
 
 /* contenido */
 	h1 {
@@ -209,8 +164,6 @@ body {
 		font-size: 1.2em;
 		line-height: 2.7ex;
 		padding: 1em;
-		/*width: calc(45%);
-		float: left;*/
 	}
 
 	#fotolateral {
@@ -219,20 +172,13 @@ body {
 		margin: 20px;
 	}
 
-	#fotolateral img {
-		width: 100%;
-	}
+	#fotolateral img { width: 100%;	}
 
-	#contenedor a {
-		color: #008;
-	}
-	.movil, .ipad {
-		display: none;
-	}
+	#contenedor a {	color: #008; }
 
-	.desktop {
-		display: inline;
-	}
+	.movil, .ipad {	display: none; }
+
+	.desktop { display: inline;	}
 
 	#contenedor p #wasap {
 		width: 20px;
@@ -257,9 +203,7 @@ body {
 		font-size: 0.9em;
 	}
 
-	.impar {
-		margin-left: 150px;
-	}
+	.impar { margin-left: 150px; }
 
 	input {
 		margin-top: 1ex;
@@ -270,9 +214,7 @@ body {
 	
 	}
 
-	input:hover {
-		background-color: #eee;
-	}
+	input:hover {	background-color: #eee;	}
 
 	textarea {
 		width: 90%;
@@ -309,9 +251,7 @@ body {
 	}
 
 /* compartir */
-	#compartir {
-		display: none;
-	}
+	#compartir { display: none;	}
 
 	#compartir div {
 		margin: 10px 5px;
@@ -332,9 +272,7 @@ body {
 		float: left;
 	}
 
-	#rrss li:first-child {
-		float: unset;
-	}
+	#rrss li:first-child { float: unset; }
 
 	#rrss img {
 		width: 50px;
@@ -359,6 +297,7 @@ body {
 		position: relative;
 		text-align: center;
 		visibility: hidden;
+		top: 100%;
 	}
 
 	#legal img {
@@ -372,15 +311,13 @@ body {
 
 /* Smartphones (portrait) ----------- */
 	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#logo_superior span {
-			display: none;
-		}
+		
+		#logo_superior span {	display: none; }
 	}
 
 	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		header {				
-			font-size: 2em;
-		}
+		
+		header { font-size: 2em; }
 
 		#leer {
 			font-size: 1.5em;
@@ -388,9 +325,7 @@ body {
 			top: 70%;
 		}
 
-		#leer .movil {
-			display: inline;
-		}
+		#leer .movil { display: inline;	}
 
 		#superior {
 			position: fixed;
@@ -404,17 +339,8 @@ body {
 			margin-bottom: 0px;
 		}
 
-		#contenedor_alerta {
-			width: 34ex;
-			height: 18ex;
-			left: 0.5ex;
-			top: 44ex;
-			font-size: 14pt;
-		}
-
 		#contenedor {
 			padding: 0px;
-			top: 710px;
 			width: 100%;
 		}
 
@@ -444,9 +370,7 @@ body {
 			z-index: 2;	
 		}
 
-		#p {
-			display: inline;
-		}
+		#p { display: inline;	}
 
 		#compartir div {
 			float: unset;
@@ -457,23 +381,15 @@ body {
 
 		#contenedor .movil, #superior .movil, .movil { display: block; }
 
-		#legal {
-			height: 30px;
-		}
+		#legal { height: 30px; }
 
 		#legal img { top: 2px; width: 20px; }
 	}
 
 /* Smartphones (landscape) ----------- */
 	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		h1 {
-			padding-top: 10%;
-		}
-
-		#contenedor_alerta {
-			left: 26ex;
-			top: 16ex;
-		}
+		
+		h1 { padding-top: 10%; }
 
 		#compartir {
 			position: relative;
@@ -485,17 +401,12 @@ body {
 
 /* iPads (portrait) ----------- */
 	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		header {
-			font-size: 2.5em;
-		}
+		
+		header { font-size: 2.5em; }
 
-		header span.ipad {
-			display: inline;
-		}
+		header span.ipad { display: inline;	}
 
-		#menumovil { 
-			position: absolute;
-		}
+		#menumovil { position: absolute; }
 
 		h1 { font-size: 2em; }
 
@@ -544,10 +455,6 @@ body {
 /* iPads (landscape) ----------- */
 	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
 
-		#contenedor_alerta {
-			top: 32ex;
-			left: 32ex;
-		}
-
 		h1 { font-size: 3em; }
 	}
+

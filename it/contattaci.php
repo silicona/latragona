@@ -3,31 +3,16 @@
 <head>
 	<title>Contattate La Tragona</title>
 
-	<meta charset="utf-8">
-	<meta name="author" content="alejoizquierdomartinez@gmail.com">
-	<meta name="keywords" content="Tapas, pane tostato, nastro, porzioni, vino, liquore casalingo, cañas, Rastro, vicino al Rastro, a due minuti dal Rastro, La Latina, Tirso de Molina, oasi a Madrid, zona bar, punto di incontro, vicino al teatro, Lavapies , Teatro, cabaret, buon prezzo, prezzo a prezzi accessibili, senza glutine, menu allergenico, cibo curato, prodotti freschi, prodotti freschi, prodotti di mercato, mercato nelle vicinanze, pane ecologico, pane artigiano, vino biologico, stampa alternativa, wifi gratuito">
-	<meta name="description" content ="Tapas bar dove potrete gustare brindisi e razioni senza glutine realizzate con prodotti di mercato e vini biologici, nonché liquori artigianali e combinati che rimuovono singhiozzi. Situato vicino al Rastro, nel centro di Madrid, tra La Latina e Tirso de Molina.">
-	
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-
-	<link rel="shortcut icon" href="../media/icono.ico" type="image/x-icon">
-	<link rel="icon" href="../media/icono.ico" type="image/x-icon">
-	
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/contactar.css">
-
 	<?php
+		include 'basica_head.php';
 		require "../php/formulario.php";
-		require_once('../php/lib/spyc/spyc.php');
-		$datos = Spyc::YAMLLoad('../php/idiomas/lexico_it.yml');
+		//require_once('../php/lib/spyc/spyc.php');
+		//$datos = Spyc::YAMLLoad('../php/idiomas/lexico_it.yml');
 	?>
-	<script type="text/javascript">
-		titular = '<?= $datos['aviso']['agosto']['titular']; ?>';
-		vuelta = '<?= $datos['aviso']['agosto']['vuelta']; ?>';
-	</script>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/contactar.css">
 	<script type="text/javascript" src="../js/contactar.js"></script>
+
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -89,7 +74,7 @@
 				Se hai qualche dubbio, vuoi fare una prenotazione o vuoi commentare, non esitate a dirci. Farci crescere con la tua opinione.
 				<br>
 				<br>
-				Potete chiamarci o scrivere una risciacquatura al telefono 91-148-43-76 o 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Scrivici un wasap" id="wasap">.
+				Potete chiamarci o scrivere una risciacquatura al telefono 91-148-43-76 o 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Scrivici un wasap" id="wasap">.
 				<br>
 				<br>
 				Ci occupiamo anche dell'e-mail contactanos@latragona.com oppure potete lasciare qui le tue parole e la nostra pianta carnivora li trasmetterà.
@@ -98,7 +83,7 @@
 
 		<section class="movil">
 			<p>
-				Farci crescere con la tua opinione. Potete chiamarci al telefono 91-148-43-76 o 685-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Scrivici un wasap" id="wasap">.<br>
+				Farci crescere con la tua opinione. Potete chiamarci al telefono 91-148-43-76 o 658-954-545 <img src="../media/iconos/wasap.png" alt="wasap" title="Scrivici un wasap" id="wasap">.<br>
 				Puoi anche scrivere a contactanos@latragona.com oppure utilizzare il nostro modulo:
 			</p>
 		</section>

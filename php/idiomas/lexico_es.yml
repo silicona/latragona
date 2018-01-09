@@ -12,10 +12,10 @@ alergenos:
   pescado: Pescado
   sesamo: Sésamo
   soja: Soja
-  sulfitos: Sulfito
+  sulfito: Sulfito
 
 bebida:
-  7puntas: 
+  puntas: 
     - "Selección de vinos que refleja el potencial de los grandes vinos españoles."
     - "Este vino ha sido escogido por su elegancia y frescura para ser disfrutado en toda clase de reuniones, siempre en buena compañia."
     - "Contiene sulfitos."
@@ -78,12 +78,24 @@ bebida:
     - "Elaborado exclusivamente con uvas Garnacha, resalta todas las cualidades intrínsecas de su gran variedad, con un color púrpura intenso y de capa alta.", "En nariz muestra toda su frescura desarrollando un conjunto aromático marcado por la presencia de fruta en confitura, notas de tarta de fresa y recuerdos de frambuesa."
     - "En boca se manifiesta vivo, fresco y frutal, con taninos maduros que aportan cuerpo y estructura en su elegante final."
     - "Contiene sulfitos."
+  #licor
+  hierbas: Orujo de hierbas
+  blanco: Orujo blanco
+  tostado: Orujo tostado
+  licor_cafe: Licor de café
+  pacharan: Pacharán
+  crema_orujo: Crema de orujo
+  crema_chocolate: Crema de chocolate con cerezas
+  crema_cafe: Crema de café
 
 ingrediente:
   aceite: Aceite de oliva
   ajo: Ajo
+  almendra: Almendras
+  alubia_carilla: Alubia carilla
   atun: Atún
   arroz: Arroz
+  azafran: Azafrán
   azucar: Azucar
   bacalao: Bacalao
   bechamel: Bechamel
@@ -98,6 +110,7 @@ ingrediente:
   cilantro: Cilantro
   coliflor: Coliflor
   comino: Comino
+  costilla: Costilla de cerdo
   crema_queso: Crema de queso
   eneldo: Eneldo
   garbanzo: Garbanzo
@@ -125,6 +138,7 @@ ingrediente:
   nata: Nata
   nuez_moscada: Nuez moscada
   oregano: Orégano
+  pan: Pan
   pan_rallado: Pan rallado
   panceta: Panceta
   patata: Patata
@@ -135,6 +149,7 @@ ingrediente:
   perejil: Perejil
   perrins: Salsa Perrins
   pimenton: Pimentón
+  pimenton_agridulce: Pimentón agridulce
   pimenton_cilantro: Pimentón o Cilantro y Perejil
   pimienta_blanca: Pimienta blanca
   pimienta_negra: Pimienta negra
@@ -144,8 +159,8 @@ ingrediente:
   pollo: Pollo
   queso: Queso
   queso_azul: Queso azul
-  queso_oveja: Queso curado de oveja
   queso_cabra: Queso de cabra
+  queso_oveja: Queso curado de oveja
   quinoa: Quinoa
   remolacha: Remolacha
   rucula: Rúcula
@@ -167,6 +182,7 @@ ingrediente:
   tomate_deshi: Tomate deshidratado
   tomate_frito: Tomate frito
   tomillo: Tomillo
+  trigo: Trigo
   ventresca_atun: Ventresca de atún
   verduras: Verduras
   vinagre: Vinagre
@@ -181,30 +197,37 @@ nombre:
   atun: Atún en salazón
   babaganoush: Babaganoush
   berenjenas: Berenjenas rellenas
-  brandada_bacalao: Brandada de bacalao
+  brandada: Brandada de bacalao
+  canelones_morcilla: Canelones de morcilla de guerra (vegetariano)
+  carne_mechada: Carne mechada
   carpaccio: Carpaccio de Calabacín
   cecina: Cecina de Léón
   ensalada_remo: Ensalada de remolacha con rúcula y queso de cabra eco
   hummus: Hummus
   lasagna: Lasagna de setas
-  lomo_embuchado: Lomo embuchado
+  lomo: Lomo embuchado
+  migas: Migas
+  mousaka: Mousaka
   pastel_salmon: Pastel de salmón
-  patata_mojo: 'Papas arrugas' con 2 mojos
-  patata_rellena: Patatas rellenas
+  papas_2mojos: 'Papas arrugas' con 2 mojos
+  patatas_rellenas: Patatas rellenas
+  patatas_revolconas: Patatas revolconas
   roastbeef: Roastbeef
   ragout: Ragout de ternera
   rusos: Filetes rusos con salsa de tomate
   solomillo: Solomillo a la cerveza y manzana
+  solomillo_sal: Solomillo curado a la sal
   tortilla: Tortilla de patata
-  tosta_cecina: Tosta de cecina de Léon
-  tosta_salmon: Tosta de salmón
-  tosta_ventresca: Tosta de ventresca de atún
-  ventresca: Ventresca de atún con pimientos de piquillo
+  tosta_cecina: Cecina de Léon
+  salmon: Salmón
+  tosta_ventresca: Ventresca de atún con pimi. de piquillo
+  ventresca: Ventresca de atún con pimi. de piquillo
   # Nombres de Menu
+  arroz_huerta: Arroz de la Huerta con pimentón
   berenjena: Berenjenas rellenas de pisto
   calabacin_relleno: Calabacines rellenos
   canelones_verduras: Canelones rellenos de verduras y paté de shiitake
-  carne_mechada: Carne mechada con puré de patatas
+  # carne_mechada: Carne mechada con puré de patatas
   ensalada_alubias: Ensalada de alubias 
   ensalada_campera: Ensalada campera
   ensalada_garbanzo: Ensalada de garbanzos en vinagreta de tomillo
@@ -214,18 +237,87 @@ nombre:
   lasagna_setas: Lasagna de setas
   lentejas_verduras: Lentejas guisadas con verduras
   macarron_verdura: Macarrones integrales con verdura y salsa de tomate casera
-  mousaka: Mousaka
+  patatas_costillas: Patatas con costillas
+  potaje_garbanzos: Potaje de garbanzos
+  potaje_punaico: Potaje de puñaico
+  pollo_chilindron: Pollo al chilindrón en pepitoria con arroz blanco
   ragout_arroz: Ragout de ternera con arroz blanco
   rusos_arroz: Filetes rusos con arroz blanco
 
+producto:
+  alergeno: Alérgenos
+  descripcion: Ver descripción
+  tosta: "Tosta de "
+  sin_aler: Sin alérgenos
+  ver: Ver los ingredientes
+  # Bebidas
+  botella: Botella
+  botellin: Botellín
+  caña: Caña
+  chupito: Chupito
+  copa: Copa
+  doble: Doble
+  mini: "Mini<span class='descrip'> (440ml.)</span>"
+  tercio: Tercio
+
+titulos:
+  rubia: Rubia
+  sin: Sin alcohol
+  tostada: Tostada
+  sin_glu: sin gluten
+  tinto: Tintos
+  blanco: Blancos
+  vermut: Vermút
+  licor: Licor artesanal
+  pan_sin: "Tenemos pan sin gluten. Pídenoslo!!"
+  tostas: Tostas
+  raciones: Raciones
+
+tapas:
+  arroz_zamorana: Arroz a la zamorana
+  ensalada_alubias: Ensalada templada de alubias con vinagreta de tomate deshidratado
+  patata_niscalos: Patatas con níscalos
+  guacamole: Guacamole
+  pimiento_asado: Pimientos asados caseros
+  garbanzos_shiitake: garbanzos con shiitake
+  patatas_revolcon: Patatas revolconas
+  patel_verdures: Pastel de verduras
+  pate_pimientos: Pate de pimientos caseros
+  ensalada_pollo: Ensalada de pollo
 
 mapa:
+  abierto: Hemos abierto las puertas.
+  abrimos: Abrimos
+  en: en
+  hora: hora
+  horas: horas
+  mañana: "mañana."
+  logo: "media/logo_red.gif"
   info: "es un bar de tapeo y vinos junto al <strong>Rastro de Madrid</strong> entre las paradas de metro de La Latina y Tirso de Molina"
 
 aviso:
   agosto:
     titular: Nos vamos de vacaciones.
     vuelta: Volvemos el 1 de septiembre.
+  cartel:
+    url: "php/vida_fuera_de_tapapies.php?idioma=es"
+    titular: Hay vida fuera del Tapapies
+    en: en
+    logo: "media/la_tragona_logo.png"
+    fecha: de los días 20 al 22 y del 27 al 29 de Octubre
+    calle: "calle Juanelo, 11"
+    productos: "Vinos, cervezas, licores"
+    nuevas: "Nuevas tapas"
+    tapas: Descubre nuestras nuevas tapas
+    sin_gluten: Sin gluten
+  tapapies: "En La Tragona puedes pedir un tercio, una caña, un doble de cerveza, una copa de vino o un vermut y saborear toda la variedad de ejemplos de cuidada cocina que preparamos durante todo el año, a los precios habituales."
+  anexo: Prueba nuestras nuevas tapas
+  navidad:
+    frase: "Si quieres celebrar estos días con tus amistades, en La Tragona hemos pensado diferentes menús para grupos (con opciones vegetariana y sin gluten)."
+    contacto: Ponte en contacto con nosotras
+    hablamos: "y lo hablamos."
+    enlace: "tragar.php#reservas"
+    imagen: "media/asamblea.jpg"
 
 menu:
   hoy: Hoy
