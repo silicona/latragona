@@ -1,5 +1,32 @@
 RewriteEngine On
+
 RewriteCond %{ENV:HTTPS} !on [NC]
 RewriteCond %{HTTP_HOST} ^latragona\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.latragona\.com$
-RewriteRule ^(.*)$ https://latragona.com/$1 [R,L]
+# RewriteRule ^(.*)$ https://latragona.com/$1 [R,L]
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ https://latragona.com/$1 [R]
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/$ index.php [L]
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(\w{2})/$ index.php?id=$1 [L]
+# RewriteRule ^([^/.]+)/$ index.php?id=$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(\w{3,})$ index.php?seccion=$1 [L]
+# RewriteRule ^([^/.]+)$ $1.php [L] # Redireccion bonita
+
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(\w{2})/(\w+)$ index.php?id=$1&seccion=$2 [L]
+# RewriteRule ^([^/.]+)/(\w+)$ $2.php?id=$1 [L]
+
+
+

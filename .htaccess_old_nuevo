@@ -1,0 +1,24 @@
+RewriteEngine On
+
+RewriteCond %{ENV:HTTPS} !on [NC]
+RewriteCond %{HTTP_HOST} ^latragona\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.latragona\.com$
+# RewriteRule ^(.*)$ https://latragona.com/$1 [R,L]
+RewriteRule ^(.*)$ https://latragona.com/$1 [R]
+
+
+RewriteRule ^/$ index.php [L]
+
+RewriteRule ^([^/.]+)$ $1.php [L] # Redireccion bonita
+
+# RewriteRule ^([^/.]+)/$ index.php?id=$1 [L]
+
+RewriteRule ^([^/.]\w{2})/$ index.php?id=$1 [L]
+
+# RewriteRule ^([^/.]+)/$ index.php?id=$1 [L]
+
+RewriteRule ^([^/.]+)/(\w+)$ index.php?id=$1&seccion=$2 [L]
+
+# RewriteRule ^([^/.]+)/(\w+)$ $2.php?id=$1 [L]
+# RewriteRule ^([^/.]+)/(\w+)$ seccion=$2.php?id=$1 [L]
+

@@ -1,539 +1,83 @@
-* {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
-html, body { height: 100%; }
-
+/* Colores */
 body {
-	background-color: #000000;
-	font-family: verdana, helvetica, sans-serif;
-	font-size: 14pt;
-	background: url("../media/cabeceras/quienessomos.jpg") fixed center center;
-	background-size: cover;
-	width: 100%;
-}
-
-/*Menu Movil */
-	#menumovil {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 14em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 12em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas span {
-		position: relative;
-		top: -0.25ex;
-		margin-left: 1em;
-	}
-
-	#menuidiomas ul, #menumovil ul {
-		margin: 1em;
-		margin-left: 2em;
-		line-height: 3ex;
-		font-size: 1.3em;
-	}
-
-/* Cabecera */	
-	header {
-		font-size: 3em;
-		color: #fff;
-		text-shadow: #000 0px 0px 10px;
-
-		position: absolute;
-		top: 3ex;
-		text-align: center;
-		line-height: 2em;
-		width: 100%;
-	}
-
-/* Leer */
-	#leer {
-		position: absolute;
-		top: 60%;
-		left: 100px;
-
-		color: #ff0;
-		font-size: 2em;
-
-		border: #ff0 solid 3px;
-		border-radius: 10px;
-		display: inline-block;
-		padding: 10px;
-	}
-
-	#leer:hover {
-		-webkit-animation: colorearFondo 1s forwards;
-		   -moz-animation: colorearFondo 1s forwards;
-		        animation: colorearFondo 1s forwards;
-	}
-
-	@-webkit-keyframes colorearFondo {
-		from {
-			background-color: transparent;
-			border: #ff0 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-	@keyframes colorearFondo {
-		from {
-			background-color: transparent;
-			border: #ff0 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-/* contenedor */
-	#contenedor {
-		background-color: #ffffff;
-		position: relative;
-		padding: 20px;
-		visibility: hidden;
-		overflow: hidden;
-		top: 100%;
-	}
-
-	#contenedor .desktop { display: block; }
-
-	#contenedor .movil { display: none;	}
-
-/* Superior */
-	#superior {
-		background-color: #000;
-		color: #fff;
-		font-size: 1.2em;
-		height: 45px;		
-		z-index: 2;
-	}
-
-	#superior li {
-		display: inline;
-		padding: 10px;
-		float: right;
-	}
-
-	#superior li a { color: #fff;	}
-
-	#superior li:first-child { float: left;	}
-
-	#superior #logo_superior {
-		padding: 0.15ex;
-		cursor: pointer;
-	}
-
-	#logo_superior span {
-		position: relative;
-		top: 9px;
-	}
-
-	#superior img {	width: 40px; }
-
-	#superior .movil { display: none; }
-
-	#superior span {
-		float: left;
-		margin-right: 10px;
-	}
-
-	.bandera {
-		float: left;
-		margin-left: 5px;
-	}
-
-	#multi { cursor: pointer;	}
-
-/* contenido */
-	h1 {
-		font-size: 3em;
-		text-align: center;
-		margin: 10px;
-	}
-
-	h2 {
-		font-size: 2.5em;
-		text-align: center;
-		margin: 10px;
-		clear: both;
-	}
-
-	#contenedor p {
-		margin: 20px;
-		font-size: 1.2em;
-		line-height: 2.7ex;
-		padding: 1em;
-	}
-
-	#contenedor a {	color: #008; }
-
-	#fotolateral {
-		float: right;
-		width: 50%;
-		padding: 2ex;
-	}
-
-	#fotolateral iframe {
-		max-width: unset !important;
-		width: 100% !important;
-	}
-
-	#descripcion {
-		list-style: none;
-		width: 70%;
-		line-height: 2ex;
-		padding: 1em;
-	}
-
-	#descripcion li {	margin: 10px;	}
-
-	#descripcion p { display: inline;	}
-
-	.retrato {
-		width: 50px;
-		border-radius: 25px;
-		margin: 0 10px;
-		float: left;
-	}
-	
-	/* Cartel_evento */
-		#cartel_evento {
-			width: 45%;
-			border: 11px double #ccc;
-			border-radius: 100pt;
-			background-color: #E0F2F7;
-			padding: 3ex 0;
-			margin-left: 2.5%;
-		}
-
-		#cartel_evento a { color: inherit; }
-
-		#cartel_evento p {
-			width: 100%;
-			text-align: center;
-			margin: 0;
-			padding: 1ex;
-			font-size: 1.7em;
-			font-weight: bold;
-			line-height: 1.2em;
-		}
-
-		#cartel_evento p:first-of-type {
-			font-size: 2em;
-			font-weight: bold;
-			color: #f00;	
-		}
-
-	/* Cartel Navidad */
-		#cartel_navidad {
-			position: relative;
-			overflow: hidden;
-			border-radius: 10pt;
-		}
-
-		#cartel_navidad img { width: 100%; margin-bottom: -10px;}
-
-		#cartel_navidad p {
-			background: rgba(255,255,255,0.7);
-			font: 1.5em/1.3 sans-serif;
-			display: inline-block;
-			padding: 1ex !important;
-			margin: 0 !important;
-			border-radius: 10pt;
-			text-align: justify;
-
-			position: absolute;
-			top: 20%;
-			left: 10%;
-			right: 10%;
-		}
-
-		#cartel_navidad a {	color: #008; }
-
-/* redes */
-	#redes {
-		border: 2px solid #FB6750;
-		background-color: #FB8F50;
-		position: relative;
-		overflow: hidden;
-		width: 100%;
-	}
-
-	#redes div {
-		float: left;
-		margin: 20px calc((100% - 360px*2)/4);
-		width: 360px;
-	}
-
-	#frame_facebook {
-		width: 360px;
-		height: 500px;
-		border: none;
-		overflow: hidden;
-	}
-	
-/* RR SS */
-	#rrss {
-		font-size: 1.2em;
-		width: inherit;
-		display: inline-block;
-	}
-
-	#rrss ul {
-		float: right;
-	}
-
-	#rrss li {
-		display: inline-block;
-		padding: 10px;
-		float: left;
-	}
-
-	#rrss img {
-		width: 50px;
-	}
-
-	#rrss span {
-		position: relative;
-		top: 14px;
-	}
-
-/* Legal */
-	#legal {
-		height: 55px;
-		background-color: #000;
-		color: #fff;
-		position: relative;
-		text-align: center;
-		visibility: hidden;
-		top: 100%;
-	}
-
-	#legal img {
-		background-color: #fff;
-		border-radius: 14px;
-		position: relative;
-		top: 9px;
-	}
-
-	#legal .ipad { display: none;	}
-
-/* Smartphones (portrait) ----------- */
-	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#logo_superior span {	display: none; }
-	}
-
-	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		
-		body { overflow-x: auto; }
-
-		header { font-size: 2em; }
-
-		#leer {
-			font-size: 1.5em;
-			left: 20px;
-			top: 70%;
-		}
-
-		#superior {
-			position: fixed;
-			top: 0px;
-			width: 100%;
-		}
-
-		h1 {
-			font-size: 1.5em; 
-			padding-top: 15%; 
-		}
-
-		h2 { font-size: 1.3em; }
-
-		#contenedor {
-			padding: 0px;
-			width: 100%;
-			overflow: unset;
-		}
-
-		#contenedor p {
-			font-size: 1em;
-			line-height: 2.4ex;
-			margin-bottom: 0px;
-			padding: 0;
-		}
-
-		#cartel_evento { width: unset; }
-
-		#cartel_evento p:first-of-type { font-size: 1.5em; }
-
-		#descripcion {
-			width: 100%;
-			padding: 0;
-		}
-
-		#redes {
-			margin: auto;
-			padding: 5px;
-			width: calc(100% - 24px);
-			overflow: visible;
-		}
-
-		#redes div {
-			position: absolute;
-			float: unset;
-			margin: 0;
-			bottom: -260px;
-			left: 100%;
-		}
-
-		/* RRSS */
-			#rrss ul {
-				float: unset;
-				margin: 0 auto;
-				width: 300px;
-			}
-
-			#rrss li {
-				display: block;
-				float: unset;
-				color: #008;
-				text-decoration: underline;
-			}
-
-			#rrss img {
-				width: 25px;
-				position: relative;
-				top: 5px;
-				left: -5px;
-			}
-
-			#rrss img:first-child{ border-radius: 15px;	}
-
-			.cierre {
-				position: absolute;
-				top: 0px;
-				right: 10px;
-			}
-
-			.cierre img {
-				width: 40px;
-				background-color: #ff0000;
-				border-radius: 20px;
-			}
-
-			.red { display: none;	}
-
-		#contenedor .desktop, #superior .desktop, .desktop, aside { display: none; }
-
-		#contenedor .movil, #superior .movil, .movil { display: block; }
-
-		#legal { height: 30px; }
-
-		#legal img { top: 2px; width: 20px; }
-	}
-
-/* Smartphones (landscape) ----------- */
-	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		
-		h1 { padding-top: 10%; }
-		
-		#compartir {
-			position: relative;
-			top: 10px;
-			right: 10px;
-			float: right;
-		}
-		
-		#frame_facebook {	width: 340px;	}
-	}
-
-/* iPads (portrait) ----------- */
-	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		
-		header { font-size: 2.5em; }
-
-		#menumovil { position: absolute; }
-
-		h1, h2 { font-size: 2em; }
-
-		#superior .desktop, #legal .desktop { display: none; }
-
-		#superior .ipad {	display: block;	}
-
-		#logo_superior img { margin-right: 30px; }
-
-		#fotolateral { margin-right: 0px;	}
-
-		#descripcion { width: 100%; }
-	}
-
-/* iPads (landscape) ----------- */
-	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
-
-		h1 { font-size: 3em; }
-
-		h2 { font-size: 2.5em; }
-		
-		#fotolateral > img { width: 300px; }
-
-		#legal .ipad { display: inline; }	
-	}
-
-/* responsive Cartel Navidad */
-	@media screen and (min-width : 651px)	and (max-width : 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
-		#cartel_navidad img { 
-			width: 200%; 
-			margin-left: -50%;
-		}
-
-		#cartel_navidad p {
-			top: 10%;
-			font: 1em/1.2 sans-serif;		
-		}
-	}
-	
-	@media screen and (min-width : 801px)	and (max-width : 1200px), screen and (min-device-width : 801px)	and (max-device-width : 1200px) {
-		#cartel_navidad img { width: 150%; margin-left: -25%;}
-
-		#cartel_navidad p {	top: 10%;	}
-	}
-
-	@media screen and (min-width : 801px)	and (max-width : 900px), screen and (min-device-width : 801px)	and (max-device-width : 900px) {
-		#cartel_navidad p {	font: 1em/1.2 sans-serif;	}
-	}
-
-	@media screen and (min-width : 901px)	and (max-width : 1024px), screen and (min-device-width : 901px)	and (max-device-width : 1024px) {
-		#cartel_navidad p {	font: 1.2em/1.2 sans-serif;	}
-
-	}
-
-	@media screen and (min-width : 1201px)	and (max-width : 1400px), screen and (min-device-width : 1201px)	and (max-device-width : 1400px) {
-		#cartel_navidad p {	top: 10%; font: 1.3em/1.3 sans-serif;	}
-	}
+  background: url("../media/cabeceras/quienessomos.jpg") fixed center center;
+  background-size: cover; }
+
+#contenedor section.redes {
+  position: relative;
+  padding: 1ex;
+  border: 2px solid #FB6750;
+  background-color: #FB8F50;
+  margin: 0 0 .5em;
+  clear: both; }
+  #contenedor section.redes h2 {
+    font: 1.2em/1.3em sans-serif;
+    padding: .5ex;
+    border-bottom: 2px solid #000000;
+    margin: 0 auto 1em; }
+  #contenedor section.redes p {
+    font: 1em/1.2 sans-serif;
+    margin: 0 auto .5em; }
+  #contenedor section.redes .panel_redes {
+    position: relative;
+    margin: 0 auto; }
+    #contenedor section.redes .panel_redes .rrss_tragona {
+      padding-top: 2em; }
+      #contenedor section.redes .panel_redes .rrss_tragona li {
+        cursor: pointer;
+        font: 1em/1.2em sans-serif;
+        padding: .6em .3em;
+        margin-bottom: .6ex;
+        border-radius: 10px;
+        background-color: #F5B38C; }
+        #contenedor section.redes .panel_redes .rrss_tragona li img {
+          width: 40px;
+          border-radius: 40px;
+          margin-right: .3em;
+          vertical-align: middle; }
+    #contenedor section.redes .panel_redes .red {
+      margin: 1.5ex auto;
+      width: calc(100% - 2ex);
+      height: 400px;
+      overflow: auto;
+      border-radius: 5px; }
+      #contenedor section.redes .panel_redes .red #frame_facebook {
+        height: inherit;
+        width: 100%; }
+
+@media screen and (min-device-width: 480px) {
+  #contenedor section.redes {
+    margin: 0 1em 1em; }
+    #contenedor section.redes .panel_redes .red {
+      width: 340px; } }
+@media screen and (min-device-width: 576px) {
+  #contenedor section.redes h2 {
+    font: 1.3em/1.3em sans-serif; }
+  #contenedor section.redes p {
+    font: 1.1em/1.2 sans-serif; }
+  #contenedor section.redes .panel_redes .red {
+    left: 10%;
+    right: 10%; } }
+@media screen and (min-device-width: 768px) {
+  #contenedor section.redes {
+    width: 80%;
+    margin: 0 auto 1em; } }
+@media screen and (min-device-width: 992px) {
+  #contenedor section.redes h2, #contenedor section.redes p {
+    width: 80%; }
+  #contenedor section.redes .panel_redes {
+    width: 725px; }
+    #contenedor section.redes .panel_redes .red {
+      display: inline-block;
+      margin: 1.5ex 10px; } }
+@media screen and (min-device-width: 1024px) {
+  #contenedor .menu {
+    display: none; } }
+@media screen and (min-device-width: 1200px) {
+  #contenedor section.contenido .texto > p, #contenedor section.contenido .texto .protagonistas {
+    font: 1.3em/1.4 sans-serif; }
+  #contenedor section.contenido .texto .anuncio {
+    /*width: unset;*/
+    /*height: 250px;*/ } }
+
+/*# sourceMappingURL=quienessomos.css.map */

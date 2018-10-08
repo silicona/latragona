@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{ENV:HTTPS} !on [NC]
+RewriteCond %{HTTP_HOST} ^latragona\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.latragona\.com$
+RewriteRule ^(.*)$ https://latragona.com/$1 [R,L]

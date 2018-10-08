@@ -1,38 +1,37 @@
 <?php
 	$url = $_SERVER["REQUEST_URI"];
 	//require('traductor.php');
-	if(preg_match("/(\/en\/)/", $url) != 0){
-		$idioma = 'lexico_en.yml';
-	}
-	else if(preg_match("/(\/fr\/)/", $url) != 0){
-		$idioma = 'lexico_fr.yml';
-	}
-	else if(preg_match("/(\/it\/)/", $url) != 0){
-		$idioma = 'lexico_it.yml';
-	}
-	else if(preg_match("/(\/de\/)/", $url) != 0){
-		$idioma = 'lexico_de.yml';
-	}
-	else {
-		$idioma = 'lexico_es.yml';
-	}
+
+	if( preg_match("/(\/en\/)/", $url) != 0 ){ $idioma = 'lexico_en.yml'; }
+
+	else if( preg_match("/(\/fr\/)/", $url) != 0 ){	$idioma = 'lexico_fr.yml'; }
+
+	else if( preg_match("/(\/it\/)/", $url) != 0 ){	$idioma = 'lexico_it.yml'; }
+
+	else if( preg_match("/(\/de\/)/", $url) != 0 ){	$idioma = 'lexico_de.yml'; }
+	
+	else { $idioma = 'lexico_es.yml'; }
 
 	if($idioma == 'lexico_es.yml'){
+
 		require_once('php/lib/spyc/spyc.php');
 		$menu = Spyc::YAMLLoad('php/idiomas/'.$idioma);
-	}
-	else {
+	
+	} else {
+
 		require_once('../php/lib/spyc/spyc.php');
 		$menu = Spyc::YAMLLoad('../php/idiomas/'.$idioma);	
 	}
-	$menu_nombre = $menu['nombre'];
+
+	$menu_nombre       = $menu['nombre'];
 	$menu_ingredientes = $menu['ingrediente'];
-	$menu_alergenos = $menu['alergenos'];
-	$menu_texto = $menu['menu'];
-	$menu_dia = $menu['dia'];
+	$menu_alergenos    = $menu['alergenos'];
+	$menu_texto        = $menu['menu'];
+	$menu_dia          = $menu['dia'];
 
 	class SemanaActual {
-  	public $martes = array(
+		
+		public $martes = array(
 			"nombre" => "potaje_punaico", 
 			"imagen" => "potaje_punaico.jpg", // imagen NO
 			"ingredientes" => ["alubia_carilla", "lenteja", "trigo", "verduras"], 
@@ -62,7 +61,8 @@
 	}
 	
 	class ProximaSemana {
-  	public $martes = array(
+
+		public $martes = array(
 			"nombre" => "arroz_huerta", 
 			"imagen" => "arroz_huerta.jpg", 
 			"ingredientes" => ["arroz", "verduras", "pimenton"], 
@@ -92,75 +92,89 @@
 	}
 
 	class Menu {
+
 		public function crear($nombre, $imagen, $ingredientes, $alergenos, $imag){
+
 			$this->nombre = $nombre;
-      $this->imagen = $imagen;
-      $this->ingredientes = $ingredientes;
-      $this->alergenos = $alergenos;
-      $this->aler_imag = $imag;
-    }
+			$this->imagen = $imagen;
+			$this->ingredientes = $ingredientes;
+			$this->alergenos = $alergenos;
+			$this->aler_imag = $imag;
+		}
 
-    public function hacer($nombre, $imagen){
-    	$this->nombre = $this->traducir($nombre, 'menu_nombre');
-    	$this->imagen = $imagen;
-    }
+		public function hacer($nombre, $imagen){
 
-    public function emplatar(){
-      $this->nombre = $this->traducir($this->nombre, 'menu_nombre');
-      $this->ingredientes = $this->traducirVarios($this->ingredientes, 'menu_ingredientes');
-      $this->alergenos = $this->traducirVarios($this->alergenos, 'menu_alergenos');
-    }
+			$this->nombre = $this->traducir($nombre, 'menu_nombre');
+			$this->imagen = $imagen;
+		}
 
-    public function textualizar($enlace, $legend, $leyenda1, $leyenda2, $entresemana, $finde, $alergeno, $sin_alerg, $dia, $hoy, $tenemos){
-    	$this->enlace = $this->traducir($enlace, 'menu_texto');
-    	$this->legend = $this->traducir($legend, 'menu_texto');
-    	$this->leyenda1 = $this->traducir($leyenda1, 'menu_texto');
-    	$this->leyenda2 = $this->traducir($leyenda2, 'menu_texto');
-    	$this->entresemana = $this->traducir($entresemana, 'menu_texto');
-    	$this->finde = $this->traducir($finde, 'menu_texto');
-    	$this->alergeno = $this->traducir($alergeno, 'menu_texto');
-    	$this->sin_alerg = $this->traducir($sin_alerg, 'menu_texto');
-    	$this->hoy = $this->traducir($hoy, 'menu_texto');
-    	$this->tenemos = $this->traducir($tenemos, 'menu_texto');
-    	$this->dia = $this->traducir($dia, 'menu_dia');
-    }
+		public function emplatar(){
 
-    private function traducirVarios($elemento, $libreria){
-      $retorno = [];
-      foreach($elemento as $ing){
-        $valor = $GLOBALS[$libreria][$ing];
-        array_push($retorno, $valor);
-      }
-      return $retorno;
-    }
+			$this->nombre = $this->traducir($this->nombre, 'menu_nombre');
+			$this->ingredientes = $this->traducirVarios($this->ingredientes, 'menu_ingredientes');
+			$this->alergenos = $this->traducirVarios($this->alergenos, 'menu_alergenos');
+		}
 
-    private function traducir($elemento, $libreria){
-    	return $GLOBALS[$libreria][$elemento];
-    }
-  }
+		public function textualizar($enlace, $legend, $leyenda1, $leyenda2, $entresemana, $finde, $alergeno, $sin_alerg, $dia, $hoy, $tenemos){
+
+			$this->enlace = $this->traducir($enlace, 'menu_texto');
+			$this->legend = $this->traducir($legend, 'menu_texto');
+			$this->leyenda1 = $this->traducir($leyenda1, 'menu_texto');
+			$this->leyenda2 = $this->traducir($leyenda2, 'menu_texto');
+			$this->entresemana = $this->traducir($entresemana, 'menu_texto');
+			$this->finde = $this->traducir($finde, 'menu_texto');
+			$this->alergeno = $this->traducir($alergeno, 'menu_texto');
+			$this->sin_alerg = $this->traducir($sin_alerg, 'menu_texto');
+			$this->hoy = $this->traducir($hoy, 'menu_texto');
+			$this->tenemos = $this->traducir($tenemos, 'menu_texto');
+			$this->dia = $this->traducir($dia, 'menu_dia');
+		}
+
+		private function traducirVarios($elemento, $libreria){
+
+			$retorno = [];
+			foreach($elemento as $ing){
+				$valor = $GLOBALS[$libreria][$ing];
+				array_push($retorno, $valor);
+			}
+			return $retorno;
+		}
+
+		private function traducir($elemento, $libreria){
+			return $GLOBALS[$libreria][$elemento];
+		}
+	}
 
 	$semana_actual = new SemanaActual();
+
 	$proxima_semana = new ProximaSemana();
 
-  foreach($semana_actual as $clave=>$dia){
-  	${$clave} = new Menu;
-  	${$clave} -> hacer($dia['nombre'], $dia['imagen']);
-  }
+	foreach( $semana_actual as $clave => $dia ){
 
-  foreach($proxima_semana as $clave=>$dia){
-  	${"prox_".$clave} = new Menu;
-  	${"prox_".$clave} -> hacer($dia['nombre'], $dia['imagen']);
-  }
+		${$clave} = new Menu;
+
+		${$clave} -> hacer( $dia['nombre'], $dia['imagen'] );
+	}
+
+	foreach( $proxima_semana as $clave => $dia ){
+
+		${"prox_".$clave} = new Menu;
+
+		${"prox_".$clave} -> hacer($dia['nombre'], $dia['imagen']);
+	}
 
 	$num_dia = Date("N");
 	//$num_dia = 1;
 	$semana = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
 	$dia = $semana[$num_dia];
-	if(($num_dia > 1) && ($num_dia < 6)){
+
+	if( ($num_dia > 1) && ($num_dia < 6) ){	
+
 		$mar = $semana_actual->$dia;
-	}
-	else { 
-	  $num_dia = 2;
+	
+	} else { 
+		
+		$num_dia = 2;
 		$mar = $semana_actual->$semana[$num_dia];
 	}
 	

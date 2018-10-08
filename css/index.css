@@ -1,520 +1,148 @@
-* {
-	-webkit-box-sizing: border-box; 
-	   -moz-box-sizing: border-box; 
-		 			box-sizing: border-box;
-}
-
-html, body { height: 100%; }
-
-body {
-	background-color: #000000;
-	font-family: verdana, helvetica, sans-serif;
-	font-size: 14pt;
-	background: url("../media/cabeceras/tragona_entrada.jpg") fixed center center;
-	background-size: cover;
-	overflow-x: hidden;
-	width: 100%;
-}
-
-/*Menu Movil */
-	#menumovil {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 14em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 12em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas span {
-		position: relative;
-		top: -0.25ex;
-		margin-left: 1em;
-	}
-
-	#menuidiomas ul, #menumovil ul {
-		margin: 1em;
-		margin-left: 2em;
-		line-height: 3ex;
-		font-size: 1.3em;
-	}
-
-/* Cabecera */	
-	header {
-		font-size: 3em;
-		color: #fff;
-		text-shadow: #000 0px 0px 10px;
-
-		position: absolute;
-		top: 3ex;
-		line-height: 2em;
-		text-align: center;
-		width: 100%;
-	}
-
-/* Leer */
-	#leer {
-		position: absolute;
-		top: 60%;
-		left: 100px;
-
-		color: #ff0;
-		font-size: 2em;
-
-		border: #ff0 solid 3px;
-		border-radius: 10px;
-		display: inline-block;
-		padding: 10px;
-	}
-
-	#leer:hover {
-		-webkit-animation: colorearFondo 1s forwards;
-		        animation: colorearFondo 1s forwards;
-	}
-
-	@-webkit-keyframes colorearFondo {
-		from {
-			background-color: transparent;
-			border: #ff0 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-	@keyframes colorearFondo {
-		from {
-			background-color: transparent;
-			border: #ff0 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-/* contenedor */
-	#contenedor {
-		background-color: #fff;
-		position: relative;
-		padding: 20px;
-		visibility: hidden;
-		top: 100%;
-	}
-
-	#contenedor .desktop { display: block; }
-
-	#contenedor .movil { display: none;	}
-
-/* Superior */
-	#superior {
-		background-color: #000;
-		color: #fff;
-		font-size: 1.2em;
-		height: 45px;
-		z-index: 2;
-	}
-
-	#superior li {
-		display: inline;
-		padding: 10px;
-		float: right;
-	}
-
-	#superior li a { color: #fff; }
-
-	#superior li:first-child { float: left;	}
-
-	#superior #logo_superior {
-		padding: 0.15ex;
-		cursor: pointer;
-	}
-
-	#logo_superior span {
-		position: relative;
-		top: 9px;
-	}
-
-	#superior img {	width: 40px; }
-
-	#superior .movil { display: none; }
-
-	#superior span {
-		float: left;
-		margin-right: 10px;
-	}
-
-	.bandera {
-		float: left;
-		margin-left: 5px;
-	}
-
-	#multi { cursor: pointer;	}
-
-/* contenido */
-	h1 {
-		font-size: 3em;
-		text-align: center;
-		margin: .5em 0;
-	}
-
-	section {
-		width: 50%;
-		padding: 1ex;
-		display: block;
-		float: right;
-	}
-
-	.izquierda p {
-		padding: 2ex;
-		font-size: 1.5em;
-		line-height: 2.7ex;
-		text-align: justify;
-	}
-
-	.izquierda a {	color: #008; }
-
-	#fotolateral {
-		-webkit-border-radius: 50%;
-		   -moz-border-radius: 50%;
-		        border-radius: 50%;
-		width: 100%;
-	}
-
-	/* Cartel_evento */
-		#cartel_evento {
-			border: 11px double #ccc;
-			-webkit-border-radius: 50pt;
-			   -moz-border-radius: 50pt;
-			        border-radius: 50pt;
-			padding: 3ex 0;
-		}
-
-		#cartel_evento a { color: inherit; }
-
-		#cartel_evento p {
-			text-align: center;
-			padding: 0 1ex 1ex;
-			font-size: 1.7em;
-			font-weight: bold;
-			line-height: 1.2em;
-		}
-
-		#cartel_evento p:first-of-type {
-			font-size: 2em;
-			font-weight: bold;
-			color: #f00;	
-		}
-
-		#cartel_evento img {
-			width: 50%;
-			display: block;
-			margin: 0 auto;
-		}
-
-		#cartel_evento .escalera span {
-			display: block;
-		}
-
-		#cartel_evento .escalera span:first-of-type {
-			text-align: left;
-			color: #60f;
-		}
-
-		#cartel_evento .escalera span:nth-of-type(2) {
-			color: #587B58;
-		}
-
-		#cartel_evento .escalera span:last-of-type {
-			text-align: right;
-			padding-right: 4ex;
-			color: #2EFE2E;
-		}
-
-	/* Cartel Navidad */
-		#cartel_navidad {
-			position: relative;
-			overflow: hidden;
-			border-radius: 10pt;
-		}
-
-		#cartel_navidad img { 
-			width: 200%;
-			margin-left: -50%;
-		}
-
-		#cartel_navidad p {
-			background: rgba(255,255,255,0.7);
-			font: 1.5em/1.3 sans-serif;
-			display: inline-block;
-			padding: 1ex;
-			border-radius: 10pt;
-			text-align: justify;
-
-			position: absolute;
-			top: 33%;
-			left: 10%;
-			right: 10%;
-		}
-
-		#cartel_navidad a {	color: #008; }
-
-/* RR SS */
-	#rrss {
-		font-size: 1.2em;
-		display: inline-block;
-		float: left;
-	}
-
-	#rrss li {
-		padding: .5ex 0;
-	}
-
-	#rrss img {
-		width: 50px;
-		margin: 0 5px;
-	}
-
-	#rrss a span {
-		position: relative;
-		top: -18px;
-	}
-
-/* Legal */
-	#legal {
-		height: 55px;
-		background-color: #000;
-		color: #fff;
-		position: relative;
-		text-align: center;
-		visibility: hidden;
-		top: 100%;
-	}
-
-	#legal img {
-		background-color: #fff;
-		border-radius: 14px;
-		position: relative;
-		top: 9px;
-	}
-
-	#legal .ipad { display: none;	}
-
-/* Smartphones (portrait) ----------- */
-	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#logo_superior span {	display: none; }
-	}
-		
-	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		
-		header { font-size: 2em; }
-		
-		#leer {
-			font-size: 1.5em;
-			left: 20px;
-			top: 70%; 
-		}
-
-		#superior {
-			position: fixed;
-			top: 0px;
-			width: 100%;
-		}
-
-		section {
-			float: unset;
-			width: 100%;
-		}
-
-		h1 { 
-			font-size: 1.5em; 
-			padding-top: 15%;
-			margin-bottom: 0px;
-		}
-
-		#contenedor { padding: 0; }
-
-		.izquierda p {
-			font-size: 1em;
-			line-height: 2.3ex;
-		}
-
-		.derecha { padding: 1ex 2ex; }
-
-		#cartel_evento {
-			padding: 2ex;
-			background-color: #E0F2F7;
-		}
-
-		#cartel_evento #logo_cartel { display: none; }
-
-		#cartel_evento p:first-of-type { font-size: 1.3em; }
-
-		#cartel_evento p { font-size: 1em; }
-
-		#compartir div {
-			display: inline-block;
-			padding: 0 0 1ex 2ex;
-			float: left;
-		}
-
-		#contenedor .desktop, #superior .desktop, .desktop { display: none; }
-
-		#contenedor .movil, #superior .movil, .movil { display: block; }
-
-		#legal {
-			height: 30px;
-		}
-
-		#legal img { top: 2px; width: 20px; }
-	}
-
-/* Smartphones (landscape) ----------- */
-	/*@media only screen and (min-device-width : 300px) and (max-device-width: 650px) and (orientation: landscape) {*/
-	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		
-		h1 { padding-top: 10%; }
-	}
-
-/* iPads (portrait) ----------- */
-	@media screen and (min-width: 651px)	and (max-width: 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		header {
-			font-size: 2.5em;
-		}
-
-		#menumovil { 
-			position: absolute;
-		}
-
-		#contenedor_alerta {
-			font-size: 18pt;
-			left: 8ex;
-			top: 54ex;
-		}
-
-		h1 { font-size: 2em; }
-
-		.izquierda p {
-			font-size: 1em;
-		}
-
-		#cartel_evento {
-			padding: 2ex 0;
-			border-radius: 50pt;
-		}
-
-		#cartel_evento p {
-			font-size: 1.3em;
-		}
-
-		#cartel_evento p:first-of-type {
-			font-size: 1.6em;
-		}
-
-		#superior .desktop, #legal .desktop { display: none; }
-
-		#superior .ipad {	display: block;	}
-
-		#logo_superior img { margin-right: 30px; }
-
-		#fotolateral { 
-			/*width: 40%;
-			margin-right: 0px;
-			position: relative;
-			top: 5em;*/
-		}
-	}
-
-/* iPads (landscape) ----------- */
-	@media screen and (min-width: 651px)	and (max-width: 1024px)	and (orientation: landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
-		
-		h1 { font-size: 3em; }
-		
-		#fotolateral > img { width: 300px; }
-
-		#legal .ipad { display: inline; }			
-	}
-
-/* Ajustes de Menu superior */
-	@media screen and (max-width: 1200px), screen and (max-device-width: 1200px) {
-		
-		#superior li:nth-of-type(3) { display: none; }
-	}
-
-/* responsive Cartel Navidad */
-	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		#cartel_navidad { display: none; }
-	}	
-
-	@media screen and (min-width: 351px)	and (max-width: 450px), screen and (min-device-width : 351px)	and (max-device-width : 450px) {
-		#cartel_navidad img {
-			width: 150%;
-			margin-left: -25%;
-		}
-	}
-
-	@media screen and (max-width: 550px), screen and (max-device-width: 550px) {
-		#cartel_navidad p {	
-			font: 1em/1.3 sans-serif;	
-			top: 5%;
-		}
-	}		
-
-	@media screen and (min-width: 551px) and (max-width: 650px), screen and (min-device-width : 551px)	and (max-device-width : 650px) {
-		#cartel_navidad p {
-			top: 5%;
-			font: 1.2em/1.3 sans-serif;
-		}
-	}
-
-	@media screen and (min-width: 451px) and (max-width: 650px), screen and (min-device-width : 451px)	and (max-device-width : 650px) {
-		#cartel_navidad img {
-			width: 100%;
-			margin-left: 0;
-		}
-
-		#cartel_navidad {	height: 300px; }
-	}
-
-	@media screen and (min-width: 651px) and (max-width: 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
-		#cartel_navidad img {
-			width: 400%;
-			margin-left: -100%;
-		}
-	}
-	
-	@media screen and (min-width: 801px) and (max-width: 925px), screen and (min-device-width : 801px)	and (max-device-width : 925px) {
-		#cartel_navidad img {
-			width: 300%;
-			margin-left: -75%;
-		}
-
-	}
-
-	@media screen and (min-width: 651px) and (max-width: 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		#cartel_navidad p {
-			top: 10%;
-			font: 1.2em/1.3 sans-serif;	
-		}
-	}
-
+html body {
+  background: url("../media/cabeceras/tragona_entrada.jpg") fixed center center;
+  background-size: cover; }
+
+#contenedor section.contenido p {
+  padding: 1ex 2ex;
+  font-size: 1em;
+  line-height: 1.2em;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto; }
+#contenedor section.contenido .imagen_lateral {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10pt;
+  float: right;
+  width: 45%;
+  margin: 10px 20px; }
+  #contenedor section.contenido .imagen_lateral img {
+    width: 100%; }
+  #contenedor section.contenido .imagen_lateral p {
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    border-radius: 10pt;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    right: 10%;
+    bottom: 5%; }
+    #contenedor section.contenido .imagen_lateral p a {
+      color: #008; }
+#contenedor section.pasarelas:after {
+  content: '';
+  display: block;
+  clear: both; }
+#contenedor section.pasarelas article {
+  padding: 1ex 0;
+  margin: 0 auto;
+  width: 100%; }
+  #contenedor section.pasarelas article:after {
+    content: '';
+    display: block;
+    clear: both; }
+  #contenedor section.pasarelas article h2 {
+    font: 1.1em/1.2 sans-serif;
+    padding: 0 1ex 1ex;
+    text-align: left;
+    clear: both;
+    border-bottom: 2px solid #000000;
+    margin: 0 0 1em; }
+  #contenedor section.pasarelas article > div {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    float: none; }
+    #contenedor section.pasarelas article > div .camera_caption {
+      font: 1.1em/1.4 sans-serif; }
+      #contenedor section.pasarelas article > div .camera_caption > div {
+        padding: 10px; }
+  #contenedor section.pasarelas article:last-of-type .marco_bebida {
+    overflow: hidden;
+    position: relative; }
+    #contenedor section.pasarelas article:last-of-type .marco_bebida > div {
+      overflow: hidden;
+      height: inherit;
+      width: 25%;
+      height: 100%;
+      display: inline-block;
+      background-position: 45% 60%;
+      background-repeat: no-repeat; }
+      #contenedor section.pasarelas article:last-of-type .marco_bebida > div:hover p {
+        height: 1.4em; }
+      #contenedor section.pasarelas article:last-of-type .marco_bebida > div p {
+        font: 1.1em/1.4 sans-serif;
+        position: absolute;
+        bottom: 0em;
+        left: 0;
+        z-index: 10;
+        background-color: #000000;
+        color: #FFFFFF;
+        width: 100%;
+        height: 0;
+        padding-left: .4em;
+        transition: 1s linear all; }
+
+/* Ocultos desde la version movil */
+#contenedor .imagen_lateral {
+  display: none; }
+
+@media screen and (min-device-width: 576px) {
+  #contenedor section.contenido > p {
+    font-size: 1.2em;
+    line-height: 1.2em; }
+  #contenedor section.contenido .imagen_lateral {
+    display: block; }
+    #contenedor section.contenido .imagen_lateral img {
+      height: 400px; }
+    #contenedor section.contenido .imagen_lateral p {
+      font-size: 1.1em; }
+  #contenedor section.pasarelas article > div {
+    width: 80%;
+    height: 300px; } }
+@media screen and (min-device-width: 768px) {
+  #contenedor section.contenido > p {
+    font-size: 1.4em; }
+  #contenedor section.contenido .imagen_lateral {
+    font-size: 1.2em; }
+  #contenedor section.pasarelas {
+    padding: 1ex;
+    width: calc( 100% - 2ex ); }
+    #contenedor section.pasarelas article h2 {
+      font: 1.4em/1.5 sans-serif; } }
+@media screen and (min-device-width: 992px) {
+  #contenedor section.contenido .imagen_lateral {
+    height: 400px; } }
+@media screen and (min-device-width: 1024px) {
+  #contenedor section.contenido .imagen_lateral p {
+    padding: 1em;
+    line-height: 1.5em; }
+  #contenedor section.pasarelas article {
+    width: 48%;
+    float: left; }
+    #contenedor section.pasarelas article:last-of-type {
+      float: right; }
+    #contenedor section.pasarelas article h2 {
+      font: 1.3em/1.3 sans-serif; }
+    #contenedor section.pasarelas article > div {
+      height: 200px !important;
+      width: 90%; }
+    #contenedor section.pasarelas article:last-of-type .bebida {
+      text-align: right; }
+    #contenedor section.pasarelas article:last-of-type .marco_bebida > div:hover p {
+      height: 2em; }
+    #contenedor section.pasarelas article:last-of-type .marco_bebida > div p {
+      font: 1.3em/2 sans-serif; } }
+@media screen and (min-device-width: 1200px) {
+  #contenedor section.contenido .imagen_lateral {
+    margin: 20px 2ex 20px 20px;
+    height: unset; }
+    #contenedor section.contenido .imagen_lateral p {
+      padding: 1.5em 2em; }
+  #contenedor section.pasarelas article > div {
+    height: 250px !important; } }
+@media screen and (min-device-width: 1350px) {
+  #contenedor section.pasarelas article > div {
+    height: 300px !important; } }
+
+/*# sourceMappingURL=index.css.map */

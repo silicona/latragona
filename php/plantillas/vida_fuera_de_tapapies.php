@@ -4,17 +4,17 @@
 	<title>Vida fuera del Tapapies</title>
 	<meta charset="utf-8">
 
-	<link rel="stylesheet" type="text/css" href="../css/tripoli_index.css">
-	<link rel="stylesheet" type="text/css" href="../css/camera.css">
+	<link rel="stylesheet" type="text/css" href="../../css/tripoli_index.css">
+	<link rel="stylesheet" type="text/css" href="../../css/camera.css">
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="../js/camera.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="../js/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="../../js/camera.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="../../js/jquery.mobile.customized.min.js"></script>
 
 	<?php
-		require_once('lib/spyc/spyc.php');
-		$datos = Spyc::YAMLLoad('idiomas/lexico_'.$_GET['idioma'].'.yml');
+		require_once('../lib/spyc/spyc.php');
+		$datos = Spyc::YAMLLoad('../idiomas/lexico_'.$_GET['idioma'].'.yml');
 		$titulo = $datos['aviso']['cartel']['titular'];
 		$tapapies = $datos['aviso']['tapapies'];
 		$anexo = $datos['aviso']['anexo'];

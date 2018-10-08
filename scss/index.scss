@@ -1,0 +1,270 @@
+
+html { 
+
+	body {
+		background: url("../media/cabeceras/tragona_entrada.jpg") fixed center center;
+		background-size: cover;
+	}
+}
+
+#contenedor {
+
+	section {
+		
+		&.contenido {
+
+			p {
+				padding: 1ex 2ex;
+				font-size: 1em;
+				line-height: 1.2em;
+				text-align: justify;
+				word-break: break-word;
+				hyphens: auto;
+			}
+
+			.imagen_lateral {
+				position: relative;
+				overflow: hidden;
+				border-radius: 10pt;
+				float: right;
+				width: 45%;
+				margin: 10px 20px;
+		
+				img { width: 100%; }
+				
+				p {
+					background: rgba(255,255,255,0.7);
+					display: inline-block;
+					border-radius: 10pt;
+
+					position: absolute;
+					top: 5%;
+					left: 10%;
+					right: 10%;
+					bottom: 5%;
+					
+					a {	color: #008; }
+				}
+			}
+		}
+
+		&.pasarelas {
+
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
+
+			article {
+				padding: 1ex 0;
+				margin: 0 auto;
+				width: 100%;
+	
+				&:after {
+					content: '';
+					display: block;
+					clear: both;
+				}
+
+
+				h2 {
+					font: 1.1em/1.2 sans-serif;
+					padding: 0 1ex 1ex;
+					text-align: left;
+					clear: both;
+					border-bottom: 2px solid #000000;
+					margin: 0 0 1em;
+				}
+
+				> div { 
+					width: 100%;
+					height: 200px;
+					margin: 0 auto;
+					float: none;
+
+					.camera_caption { 
+						font: 1.1em/1.4 sans-serif;	
+
+						> div { padding: 10px; }
+
+					}
+				}
+
+				&:last-of-type {
+
+					.marco_bebida{
+						overflow: hidden;
+						position: relative;
+
+						> div {
+							overflow: hidden;
+							height: inherit;
+							width: 25%;
+							height: 100%;
+							display: inline-block;
+							background-position: 45% 60%;
+							background-repeat: no-repeat;
+
+							&:hover p {	height: 1.4em; }
+
+							p { 
+								font: 1.1em/1.4 sans-serif;
+
+								position: absolute;
+								bottom: 0em;
+								left: 0;
+								z-index: 10;
+
+								background-color: #000000;
+								color: #FFFFFF;
+								width: 100%;
+								height: 0;
+								padding-left: .4em;
+
+								transition: 1s linear all;
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+	/* Ocultos desde la version movil */
+#contenedor {
+	.imagen_lateral { display: none; }
+}
+
+@media screen and (min-device-width: 280px) {}
+
+
+@media screen and (min-device-width: 576px) {
+
+	#contenedor {
+
+		section.contenido {
+
+			> p {
+				font-size: 1.2em;
+				line-height: 1.2em;
+			}
+
+			.imagen_lateral {
+				display: block;
+
+				img { height: 400px; }
+
+				p { font-size: 1.1em;	}
+			}
+		}
+
+		section.pasarelas article { 
+
+			> div { 
+				width: 80%; 
+				height: 300px; 
+			}
+
+		}
+	}	
+}
+
+@media screen and (min-device-width: 768px) {
+
+	#contenedor {
+
+		section.contenido	{
+
+			> p { font-size: 1.4em; }
+
+			.imagen_lateral{ font-size: 1.2em;	}
+		}
+
+		section.pasarelas {
+
+			padding: 1ex;
+			width: calc( 100% - 2ex );
+
+			article h2 { font: 1.4em/1.5 sans-serif; }
+
+		}
+	}
+}
+
+@media screen and (min-device-width: 992px) {
+
+	#contenedor {
+
+		section.contenido .imagen_lateral{ height: 400px;	}
+	
+	}
+}
+
+@media screen and (min-device-width: 1024px) {
+
+	#contenedor {
+
+		section.contenido .imagen_lateral p { 
+			padding: 1em;
+			line-height: 1.5em;
+		}
+
+		section.pasarelas article {	
+			width: 48%;
+			float: left;
+
+			&:last-of-type { float: right; }
+
+			h2 { font: 1.3em/1.3 sans-serif; }
+
+			> div {
+				height: 200px !important;
+				width: 90%;
+
+			}
+
+			&:last-of-type {
+
+				.bebida { text-align: right; }
+
+				.marco_bebida > div {
+				
+					&:hover p { height: 2em; }
+
+					p { font: 1.3em/2 sans-serif; }
+
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-device-width: 1200px) {
+
+	#contenedor {
+
+		section.contenido .imagen_lateral { 
+			margin: 20px 2ex 20px 20px;
+			height: unset;
+
+			p {
+				padding: 1.5em 2em;
+			}
+		}
+
+		section.pasarelas article > div {	height: 250px !important; }
+	}
+}
+
+@media screen and (min-device-width: 1350px) {
+
+	#contenedor {
+
+		section.pasarelas article > div {	height: 300px !important; }
+
+	}
+}

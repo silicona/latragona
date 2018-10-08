@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+
+		html { height: 100%; }
+		
+		body{
+			width: 100%;
+			height: 100%;
+			/*background: #efefef;*/
+		}
+
+		#menu {
+			height: 50px;
+			text-align:center;
+			background: aqua;
+		}
+
+		#lat_izq {
+			float: left;
+			width: 10%;
+			height: inherit;
+			background: rgba( 0,0,0,.3);
+		}
+
+
+		#contenido {
+			float: right;
+			width: 80%;
+		}
+
+		.texto {
+			float: left;
+			width: 70%;
+		}
+		.imagen {
+			background: whitesmoke;
+			width: calc( 30% - 4ex);
+			margin: 2ex;
+			float: right;
+			height: 150px;
+			text-align: center;
+			color: red;
+		}
+
+		.imagen:before {
+			content: 'Imagen';
+		}
+		/*
+		#caballo {
+			float: left;
+			background: red;
+			height: 500px;
+			width:25%;
+			margin: 5ex 0;
+			font-size: 1.5em;
+			text-align: center;
+			padding-top: 2em;
+		}
+		#contenido div p { width: 70%; float: left }
+
+		*/
+		#contenido div span { float: right; margin-right: 2ex; }
+
+		.rotulo { background: blue;	height: 50px; color: white; text-align: center; font-size: 2em; }
+
+		.ase { height: 200px; }
+		.pri { background: yellow; }
+
+		.pri .texto { float: right; }
+		.pri .imagen { float: left; }
+
+		.seg { background: brown; }
+		.ter { background: black; color: white; }
+
+		.ter .texto { width: 300px; }
+
+		.cua { background: pink; }
+		.cua .texto { width: 50%; padding: 1ex; }
+
+		#lat_der {
+			width: 10%;
+			float: right;
+			background: rgba( 0,0,0,.3);
+			height: inherit;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div id="menu">
+		MENU<br>
+		<a href="prueba.html">General</a>
+	</div>
+
+	<div id="lat_izq">Aviso Legal</div>
+
+	<!-- <div id="caballo">Caballo - Formulario de contacto</div> -->
+
+	<div id="lat_der">RRSS</div>
+
+	<div id="contenido">
+		<div class="rotulo">Titulo Contenido</div>
+		<div class="seg clearfix ase">
+			<div class="texto">
+				<p>
+					Modalidades.<br>
+					Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia? Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? 
+				</p>
+			</div>
+			<div class="imagen"></div>
+		</div>
+		<div class="pri clearfix ase">
+
+			<div class="texto clearfix">
+				<p>
+					Modalidades.<br>
+					Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia? Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? 
+				</p>
+				<span class="btn btn-success">Contratar</span>
+				<span class="btn btn-primary pull_right">Saber más</span>
+			</div>
+			<div class="imagen"></div>
+		</div>
+		<div class="ter clearfix ase">
+			<div class="imagen" style="float: left"></div>
+			<div class="texto">
+				Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia?
+			</div>
+			<div class="imagen"></div>
+		</div>
+		<div class="cua clearfix ase">
+			<div class="texto">
+				<p>
+					Modalidades.<br>
+					Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia? Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? 
+				</p>
+			</div>
+			<div class="texto">
+				<p>
+					Más modalidades.<br>
+					Algunos de los servicios ofrecidos a los Usuarios a través de PLATAFORMA ABHOGAR se encuentra sometida a condiciones particulares propias, que según los casos, sustituyen, completan y/o modifican el presente Aviso Legal. Por lo tanto, con anterioridad a la utilización de dichos servicios, el Usuario también habrá de leer las correspondientes Condiciones Particulares.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

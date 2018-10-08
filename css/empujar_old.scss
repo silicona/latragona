@@ -1,0 +1,376 @@
+
+$rojo: #FB8F50;
+
+$rojo_oscuro: #FB6750;
+
+$rojo_claro: #F5B38C;
+
+$azul: #50EDFB;
+
+$azul_claro: #D7FDFF;
+
+$azul_oscuro: #0398A5;
+
+$morado: #B749DE;
+
+$morado_claro: #F1CFFD;
+
+$morado_oscuro: #881DAE;
+
+$verde: #54E31D;
+
+$verde_claro: #9CE083;
+
+$verde_oscuro: #51C526;
+
+$error: #F60D0D;
+
+$error_claro: #F0C6C6;
+
+$error_oscuro: #A91515;
+
+$naranja_menu: #F4CC70;
+
+
+#contenedor{
+	
+
+	header { background: url("../media/cabeceras/empujar_sin.png") 50% 0% no-repeat fixed; }
+
+	section {
+
+		&#cerveza {	
+			background: url("../media/imagenes/empujar/fondos/cerveza.jpg") -10em 0% no-repeat;
+			background-size: cover;
+
+			.contenido { 
+				background-color: $azul_claro;
+				padding-bottom: 6.5em;
+			}
+		}  
+
+		&#vino {
+			background: url("../media/imagenes/empujar/fondos/vinos.jpg") 60% 0% no-repeat;
+			background-size: cover;
+
+			.contenido { 
+				background-color: $rojo_claro;
+				padding-bottom: 6.5em;
+			}
+		}
+
+		&#licores {
+			background: url("../media/imagenes/empujar/fondos/licores.jpg") 60% 0% no-repeat;
+			background-size: cover;
+
+			.contenido { 
+				background-color: $morado_claro;
+				padding-bottom: 6.5em;
+
+			}
+		}
+
+		&#combinados {
+			background: url("../media/imagenes/empujar/fondos/combinados.jpg") 60% 0% no-repeat;
+			background-size: cover;
+
+			.contenido { background-color: $azul_claro; }
+	
+		}
+
+		&#sin_alcohol {	
+			background: url('../media/imagenes/empujar/fondos/sinalcohol.jpg') 80% 80%;
+			background-size: cover;
+
+			.contenido { background-color: $rojo_claro;	}
+		}
+
+
+		article {
+
+			&.contenido { 
+				
+				div {
+
+					> a {
+						padding: 1ex;
+						float: left;
+						vertical-align: middle;
+						display: none;
+
+						.imagen {	border-radius: 100px;	}
+					}
+
+					&:nth-of-type(odd) > a {	float: right;	}
+
+					&:nth-of-type(even) .descripcion {	float: right;	}
+
+					.celda { display: table-cell; }
+
+
+					p {
+						font: 1.1em/1.2em sans-serif;
+						vertical-align: top;
+						position: relative;
+						hyphens: auto;
+
+						&.lista_izquierda {
+							float: left;
+							/*margin-right: 20px;*/
+						}
+
+						&.lista_derecha { float: left;	}
+
+					}
+
+					.descripcion {
+						display: block;
+
+						a {
+							display: inline-block;
+							color: #000088;
+							text-decoration: underline;
+							padding: 0.5ex;
+							font-size: 1em;
+						}
+					}
+
+						/* Cervezas */
+					ul { font: 1.1em/1.2em sans-serif; }
+
+				}
+			}
+		}
+	}
+	
+}
+
+
+@media screen and (min-device-width: 280px) {}
+
+
+@media screen and (min-device-width: 350px) {
+
+	#contenedor {
+
+		section article.contenido {
+
+			> div {
+				border-radius: 100px 0 0 100px;
+				
+				&:nth-of-type(odd) { border-radius: 0 100px 100px 0; }
+
+				&.compartir { border-radius: 0px; }
+				
+			}
+
+			div {
+
+				> a { display: block; }
+
+				.descripcion a { font-size: 1.1em; }
+
+				&.articulo_novedad {	
+					border-radius: 0 100px 100px 0;
+
+					.cinta_verde { display: block; }
+
+				}
+			}
+		}
+	}
+}
+
+/* Salto */
+@media screen and (min-device-width: 576px) {
+
+	#contenedor {
+
+		#lateral {
+
+			-webkit-transform: translateX(14em) rotate(90deg);
+			-moz-transform   : translateX(14em) rotate(90deg);
+			-ms-transform    : translateX(14em) rotate(90deg);
+			transform        : translateX(14em) rotate(90deg);
+
+			top: 16.5em;
+			left: unset;
+			width: 560px;
+
+			ul li {	margin: 0 .5ex 0 0;	}
+		}
+
+		section {
+
+			article {
+				
+				&.contenido {
+					
+					div p { 
+						font: 1.2em/1.2 sans-serif;	
+						width: calc( 100% - ( 100px + 2ex ) );
+						float: left;
+
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-device-width: 768px) {
+
+	#contenedor {
+
+		section {
+
+			
+			article.contenido {
+
+				div {
+
+					p { 
+						font: 1.3em/1.3 sans-serif; 
+					}
+
+					.descripcion a  { font: 1.2em/1.3 sans-serif; }
+
+				}
+			}
+
+		}
+	}
+}
+
+@media screen and (min-device-width: 992px) {
+
+	#contenedor {
+
+		section {
+
+			article {
+
+				&.contenido {
+
+					div {
+
+							p.lista_izquierda { margin-right: 20px; }
+
+							p.lista_izquierda,
+							p.lista_derecha { width: unset; }
+							
+							ul { 
+							font: 1.2em/1.3em sans-serif; 
+							padding: .5ex;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+	/* Salto */
+@media screen and (min-device-width: 1024px) {
+
+	#contenedor {
+	
+		header {				
+			/*height: 240px;*/
+			background: url("../media/cabeceras/empujar.gif") 50% 45px no-repeat fixed;
+		}
+
+		/*#logo_superior,
+		.ipad { display: none; }
+
+		#tosta .ingredientes span,
+		.superior li:nth-of-type(3),
+		.desktop { display: block; }*/
+
+		section {
+
+			article {
+
+				/*&.foto {	
+					width: 50%;			
+
+					p {	font-size: 4em;	}
+				}*/
+
+				&.contenido {	
+					/*width: 50%;*/	
+
+					div {
+
+						ul { font: 1.3em/1.3em sans-serif; }
+
+						p { font: 1.4em/1.3 sans-serif; }
+
+						.descripcion a  { font: 1.3em/1.3 sans-serif; }
+
+					}
+				
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-device-width: 1200px) {
+
+	#contenedor {
+
+		section {
+
+			article {
+				
+				/**&.foto {
+					.cartel_lateral {
+						
+						img {	margin-left: 0;	}
+
+						p { padding: 2ex; }
+					}
+				}*/
+
+				/*&.contenido .mitad { width: 50%; float: left;}*/
+			}
+
+
+		}
+	}
+}
+
+@media screen and (min-device-width: 1400px) {
+
+	#contenedor {
+
+		section {
+
+			article {
+
+				/*&.foto .cartel_lateral p { padding: 3em 2em; }
+
+				&.contenido form {
+
+					input[type=text] { 
+						width: 80%;
+						margin: 0 auto;
+					}
+
+					label {
+						width: 80%;
+						margin: .5ex auto 2ex;
+					}
+
+					.error_form {
+						left: 5ex;
+						right: 6ex;
+					}
+				}*/
+			}
+		}
+	}
+}
+
+/*@media screen and (max-device-width: 315px) {	#logo_superior span {	display: none; } }*/

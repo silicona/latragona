@@ -1,535 +1,66 @@
-* {
-	-webkit-box-sizing: border-box;
-					box-sizing: border-box;
-}
-
-html, body { height: 100%; }
-
 body {
-	background-color: #000000;
-	font-family: verdana, helvetica, sans-serif;
-	font-size: 14pt;
-	background: url("../media/cabeceras/fachada.jpg") fixed left center;
-	background-size: cover;
-	overflow-x: hidden;
-	width: 100%;
-}
-
-/*Menu Movil */
-	#menumovil {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 14em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas {
-		position: fixed;
-		top: 45px;
-
-		background-color: #000;
-		color: #fff;
-		width: 100%;
-		height: 12em;
-		opacity: 0;
-		z-index: 5;
-
-		display: none;
-	}
-
-	#menuidiomas span {
-		position: relative;
-		top: -0.25ex;
-		margin-left: 1em;
-	}
-
-	#menuidiomas ul, #menumovil ul {
-		margin: 1em;
-		margin-left: 2em;
-		line-height: 3ex;
-		font-size: 1.3em;
-	}
-
-/* Cabecera */
-	header {
-		font-size: 3em;
-		color: #fff;
-		text-shadow: #000 0px 0px 10px;
-		width: 100%;
-
-		position: absolute;
-		top: 3ex;
-		text-align: center;
-		line-height: 2em;
-	}
-
-/* Leer */
-	#leer {
-		position: absolute;
-		top: 60%;
-		left: 100px;
-		
-		color: #ff0;
-		font-size: 2em;
-		background-color: #000;
-
-		border: #ff0 solid 3px;
-		border-radius: 10px;
-		display: inline-block;
-		padding: 10px;
-	}
-
-	#leer:hover {
-		-webkit-animation: colorearFondo 1s forwards;
-		        animation: colorearFondo 1s forwards;
-	}
-
-	@-webkit-keyframes colorearFondo {
-		from {
-			background-color: #000;
-			border: #ffff00 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-	@keyframes colorearFondo {
-		from {
-			background-color: #000;
-			border: #ffff00 solid 3px;
-		}
-		to {
-			background-color: #6A0C7B;
-			border: #6A0C7B 3px solid;
-		}
-	}
-
-/* contenedor */
-	#contenedor {
-		background-color: #fff;
-		position: relative;
-		padding: 20px;
-		visibility: hidden;
-		top: 100%;
-	}
-
-	#contenedor .desktop { display: block; }
-
-	#contenedor .movil { display: none; }
-
-/* Superior */
-	#superior {
-		background-color: #000;
-		color: #fff;
-		font-size: 1.2em;
-		height: 45px;
-		
-		z-index: 2;
-	}
-
-	#superior li {
-		display: inline;
-		padding: 10px;
-		float: right;
-
-	}
-
-	#superior li a { color: #fff;	}
-
-	#superior li:first-child { float: left;	}
-	
-	#superior #logo_superior {
-		padding: 0.15ex;
-		cursor: pointer;
-	}
-
-	#logo_superior span {
-		position: relative;
-		top: 9px;
-	}
-
-	#superior img {	width: 40px; }
-
-	#superior .movil { display: none;	}
-
-	#superior span {
-		float: left;
-		margin-right: 10px;
-	}
-
-	.bandera {
-		float: left;
-		margin-left: 5px;
-	}
-
-	#multi { cursor: pointer;	}
-
-/* contenido */
-	h1 {
-		font-size: 3em;
-		text-align: center;
-		margin: 10px;
-	}
-
-	#contenedor p {
-		padding: 2em 1.5em;
-		font-size: 1.2em;
-		line-height: 2.7ex;
-		width: 50%;
-		float: left;
-		text-align: justify;
-	}
-
-	#contenedor a {	color: #008; }
-
-	/* Cartel_evento */
-		#cartel_evento {
-			float: right;
-			width: 50%;
-			background-color: #E0F2F7;
-			border: 11px double #ccc;
-			border-radius: 100pt;
-			padding: 3ex 0;
-		}
-
-		#cartel_evento a { color: inherit; }
-
-		#cartel_evento p {
-			width: 100%;
-			text-align: center;
-			margin: 0;
-			padding: 1ex;
-			font-size: 1.7em;
-			font-weight: bold;
-			line-height: 1.2em;
-		}
-
-		#cartel_evento p:first-of-type {
-			font-size: 2em;
-			font-weight: bold;
-			color: #f00;	
-		}
-
-	/* Cartel Navidad */
-		#cartel_navidad {
-			position: relative;
-			overflow: hidden;
-			border-radius: 10pt;
-			width: unset;
-			margin: 1em;
-			border: 2px solid #fff;
-			height: 400px;
-		}
-
-		#cartel_navidad img { 
-			width: 150%;
-			margin-left: -25%;
-			margin-bottom: -10px;
-		}
-
-		#cartel_navidad p {
-			background: rgba(255,255,255,0.7);
-			font: 1.3em/1.3 sans-serif;
-			display: inline-block;
-			padding: 1ex !important;
-			border-radius: 10pt;
-			text-align: justify;
-			width: unset !important;
-
-			position: absolute;
-			top: 20%;
-			left: 10%;
-			right: 10%;
-		}
-
-		#cartel_navidad a {	color: #008; }
-
-	/* mapa */
-		#mapa {
-			float: left;
-			width: calc(50% - 40px);
-			height: 700px;
-			margin: 10px 20px;
-		}
-
-		#info_cabecera {
-			position: relative;
-			left: -30px;
-		}
-
-		#imagen_mapa {
-			width: 70px;
-			margin: 0 10px;
-			position: absolute;
-			top: 50%;
-			margin-top: -35px;
-		}
-
-		#info_contenido p {
-			width: unset;
-			font-size: 1.5em;
-		}
-
-		#aviso {
-			color: #ff0000;
-			font-size: 1.5em;
-			text-align: center;
-			padding: 1ex;
-		}
-
-/*compartir */
-	#compartir {
-		display: none;
-	}
-
-	#compartir div {
-		margin: 10px 5px;
-		float: left;
-		display: inline-block;
-	}
-
-/* RR SS */
-	#rrss {
-		font-size: 1.2em;
-		display: inline-block;
-		float: right;
-	}
-
-	#rrss li {
-		padding: 10px;
-		float: left;
-	}
-
-	#rrss li:first-child {
-		float: unset;
-	}
-
-	#rrss img {
-		width: 50px;
-		margin: 0 5px;
-	}
-
-	#rrss span {
-		position: relative;
-		top: 14px;
-	}
-
-	#rrss a span {
-		position: relative;
-		top: -18px;
-	}
-
-/* Legal */
-	#legal {
-		height: 55px;
-		background-color: #000;
-		color: #fff;
-		position: relative;
-		text-align: center;
-		visibility: hidden;
-		top: 100%;
-	}
-
-	#legal img {
-		background-color: #fff;
-		border-radius: 14px;
-		position: relative;
-		top: 9px;
-	}
-
-	#legal .ipad { display: none;	}
-
-/* Smartphones (portrait) ----------- */
-	@media screen and (max-width: 300px), screen and (max-device-width: 300px) {
-		
-		#logo_superior span {	display: none; }
-	}
-
-	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
-		
-		header { font-size: 2em; }
-
-		#leer {
-			font-size: 1.5em;
-			left: 20px;
-			top: 70%;
-		}
-
-		#superior {
-			position: fixed;
-			top: 0px;
-			width: 100%;
-		}
-
-		h1 {
-			font-size: 1.5em; 
-			padding-top: 15%; 
-			margin-bottom: 0px;
-		}
-
-		#contenedor {
-			padding: 0px;
-			top: 710px;
-			width: 100%;
-		}
-
-		#contenedor p {
-			font-size: 1em;
-			line-height: 2.5ex;
-			margin-bottom: 0px;
-			width: unset;
-			padding: 1ex 2ex;
-		}
-
-		#cartel_evento {
-			width: unset;
-			margin: 2ex;
-		}
-
-		#cartel_evento p {
-			width: 100%;
-		}
-
-		#cartel_evento p:first-of-type {
-			font-size: 1.5em;
-		}
-
-		#mapa {
-			width: 250px;
-			height: 300px;
-			float: unset;
-			margin: 10px auto;
-		}
-
-		#aviso {
-			font-size: 1.3em;
-		}
-
-		#info_cabecera {
-			left: 0px;
-			padding: 0px;
-		}
-
-		#contenedor .desktop, #superior .desktop, .desktop, #imagen_mapa, #info_contenido { display: none; }
-
-		#contenedor .movil, #superior .movil, .movil { display: block; }
-
-		#compartir div {
-			float: unset;
-			margin-left: 50px;
-		}
-
-		#legal {
-			height: 30px;
-		}
-
-		#legal img { top: 2px; width: 20px; }
-	}
-
-/* Smartphones (landscape) ----------- */
-	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
-		h1 { padding-top: 10%; }
-
-		#compartir {
-			position: relative;
-			top: 10px;
-			right: 10px;
-			float: right;
-		}
-
-		#mapa {	width: 400px;	}
-	}
-
-/* iPads (portrait) ----------- */
-	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
-		header { font-size: 2.5em; }
-
-		#menumovil { position: absolute; }
-
-		h1 { font-size: 2em; }
-
-		#superior .desktop, #legal .desktop, #info_contenido, #imagen_mapa, .ocultar_ipad { display: none; }
-
-		#superior .ipad {	display: block;	}
-
-		#logo_superior img { margin-right: 30px; }
-
-		#mapa {
-			height: 450px;
-			margin: 20px;
-		}
-
-		#aviso { font-size: 1.3em; }
-
-		#info_cabecera {
-			left: 0px;
-			padding: 0px;
-		}
-
-		#contenedor p {
-			width: unset;
-			padding: 0 1em;
-			float: unset;
-		}
-	}
-
-/* iPads (landscape) ----------- */
-	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
-		h1 { font-size: 2.5em; }
-
-		#contenedor_alerta {
-			top: 32ex;
-			left: 32ex;
-		}
-
-		#legal .ipad { display: inline; }
-	}
-
-/* Responsive Cartel_navidad */
-
-	@media screen and (max-width: 370px), screen and (max-device-width: 370px) {
-		#cartel_navidad { display: none; }
-	}
-
-	@media screen and (max-width: 550px), screen and (max-device-width: 550px) {
-		#cartel_navidad p { top: 5%; }
-	}
-
-	@media screen and (min-width : 551px)	and (max-width : 650px), screen and (min-device-width : 551px)	and (max-device-width : 650px) {
-		#cartel_navidad p { top: 10%; }
-	}
-
-	@media screen and (min-width : 651px)	and (max-width : 800px), screen and (min-device-width : 651px)	and (max-device-width : 800px) {
-		#cartel_navidad { height: unset; }
-
-		#cartel_navidad img { width: 200%; margin-left: -50%;}
-
-		#cartel_navidad p { top: 5%; font: 1.1em/1.3 sans-serif;}
-	}
-	
-	@media screen and (min-width : 801px)	and (max-width : 1024px), screen and (min-device-width : 801px)	and (max-device-width : 1024px) {
-		#cartel_navidad { height: unset; }
-
-		#cartel_navidad p { top: 10%; font: 1.1em/1.3 sans-serif;}
-	}
-
-	@media screen and (min-width : 1024px)	and (max-width : 1200px), screen and (min-device-width : 1024px)	and (max-device-width : 1200px) {
-		#cartel_navidad { height: unset; }
-
-		#cartel_navidad p { top: 15%; font: 1.2em/1.3 sans-serif;}
-	}
-
-	@media screen and (min-width : 1201px)	and (max-width : 1400px), screen and (min-device-width : 1201px)	and (max-device-width : 1400px) {
-		/*#cartel_navidad { height: 400px; }
-
-		#cartel_navidad p { top: 15%; font: 1.3em/1.3 sans-serif;}*/
-	}
+  background: url("../media/cabeceras/fachada.jpg") fixed left center;
+  background-size: cover; }
+
+#contenedor section.contenido #mapa {
+  /*float: left;
+  width: calc(50% - 40px);
+  height: 700px;*/
+  height: 350px;
+  margin: 1ex 2ex; }
+  #contenedor section.contenido #mapa #aviso {
+    color: #ff0000;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1ex; }
+  #contenedor section.contenido #mapa #info_cabecera {
+    position: relative;
+    left: -30px; }
+    #contenedor section.contenido #mapa #info_cabecera #imagen_mapa {
+      width: 70px;
+      margin: 0 10px;
+      position: absolute;
+      top: 50%;
+      margin-top: -35px; }
+  #contenedor section.contenido #mapa #info_contenido p {
+    width: unset;
+    font-size: 1.5em; }
+  #contenedor section.contenido #mapa .mapa_marcador {
+    padding: 1ex;
+    background: rgba(255, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 2em; }
+#contenedor section.contenido .horario {
+  margin: 2ex auto;
+  width: 90%;
+  display: block; }
+
+/* Ocultos desde la version movil */
+#contenedor {
+  /*.imagen_lateral,*/
+  /*.anuncio { display: none; }*/ }
+
+@media screen and (min-device-width: 768px) {
+  #contenedor section.contenido .horario {
+    width: 70%;
+    /*
+    margin: 10px auto;*/ } }
+@media screen and (min-device-width: 992px) {
+  #contenedor section.contenido #mapa {
+    float: left;
+    width: calc( 50% - 4ex );
+    height: 400px;
+    /*
+    display: inline-block;
+    */ }
+  #contenedor section.contenido .texto {
+    /*padding: 1ex 2ex;*/ }
+    #contenedor section.contenido .texto .horario {
+      width: 40%; } }
+@media screen and (min-device-width: 1200px) {
+  #contenedor section.contenido #mapa {
+    height: 600px; }
+  #contenedor section.contenido .texto .horario {
+    width: 30%; } }
+
+/*# sourceMappingURL=dondeestamos.css.map */

@@ -1,0 +1,128 @@
+body {
+	background: url("../media/cabeceras/fachada.jpg") fixed left center;
+	background-size: cover;
+}
+
+#contenedor {
+	
+	section {
+	
+		&.contenido {
+
+			#mapa {
+				/*float: left;
+				width: calc(50% - 40px);
+				height: 700px;*/
+				height: 350px;
+				margin: 1ex 2ex;
+			
+				#aviso {
+					color: #ff0000;
+					font-size: 1.5em;
+					text-align: center;
+					padding: 1ex;
+				}
+
+				#info_cabecera {
+					position: relative;
+					left: -30px;
+
+					#imagen_mapa {
+						width: 70px;
+						margin: 0 10px;
+						position: absolute;
+						top: 50%;
+						margin-top: -35px;
+					}
+				}
+
+				#info_contenido p {
+					width: unset;
+					font-size: 1.5em;
+				}
+
+				.mapa_marcador {
+
+					padding: 1ex;
+					background: rgba(255, 0, 0, .6);
+					border-radius: 10px;
+					font-size: 2em;
+
+
+				}
+
+			}
+
+			.horario {
+				margin: 2ex auto;
+				width: 90%;
+				display: block;
+			}
+		}
+	}
+}
+
+	/* Ocultos desde la version movil */
+#contenedor {
+
+	/*.imagen_lateral,*/
+	/*.anuncio { display: none; }*/
+}
+
+@media screen and (min-device-width: 280px) {}
+
+
+@media screen and (min-device-width: 576px) {}
+
+
+@media screen and (min-device-width: 768px) {
+
+	#contenedor section.contenido .horario {
+		width: 70%; 
+		/*
+		margin: 10px auto;*/
+	}
+			
+}
+
+
+@media screen and (min-device-width: 992px) {
+
+	#contenedor section.contenido {
+
+		#mapa { 
+			float: left; 
+			width: calc( 50% - 4ex );
+			height: 400px; 
+			/*
+			display: inline-block;
+			*/
+		}
+
+		.texto {
+			/*padding: 1ex 2ex;*/
+
+			.horario {
+				width: 40%;
+			}
+		}
+	}
+
+}
+
+
+@media screen and (min-device-width: 1024px) {}
+
+
+@media screen and (min-device-width: 1200px) {
+
+	#contenedor section.contenido {
+
+		#mapa { height: 600px; }
+
+		.texto .horario {
+			width: 30%;
+		}
+	}
+}
+

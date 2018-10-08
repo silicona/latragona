@@ -1,18 +1,20 @@
 alergenos:
-  altramuz: Altramuz
-  apio: Apio
-  cacahuete: Cacahuete
-  crustaceo: Crustaceo
-  frutos: Frutos secos
-  gluten: Gluten
-  huevo: Huevo
-  lacteo: Lácteo
-  molusco: Molusco
-  mostaza: Mostaza
-  pescado: Pescado
-  sesamo: Sésamo
-  soja: Soja
-  sulfito: Sulfito
+  altramuz  : Altramuz
+  apio      : Apio
+  cacahuete : Cacahuete
+  crustaceo : Crustaceo
+  frutos    : Frutos secos
+  gluten    : Gluten
+  huevo     : Huevo
+  lacteo    : Lácteo
+  molusco   : Molusco
+  mostaza   : Mostaza
+  pescado   : Pescado
+  sesamo    : Sésamo
+  soja      : Soja
+  sulfito   : Sulfito
+  sin_aler  : Sin alérgenos
+  alergeno  : Alérgenos
 
 bebida:
   puntas: 
@@ -74,8 +76,15 @@ bebida:
     - "Vino blanco elaborado a partir de la selección de uva de la variedad Verdejo procedente de los viñedos propios en Pozaldez y Rueda."
     - "De color amarillo verdoso, aroma intenso y complejo de frutas y cítricos, con volumen y persistencia en boca."
     - "Contiene sulfitos."
+  vizconde:
+    - "Color rojo picota intenso con potentes aromas a frutas del bosque y ciruelas, con notas de vainilla y especias."
+    - "Es la elección ideal para aquellos que buscan un vino que aún conserve la fruta de los vinos jóvenes combinado con un sutil toque de madera."
+    - "Ideal para acompañar legumbres, setas, verduras, carnes blancas y rojas y estofados ligeros."
+    - "Contiene sulfitos."
   zinio:
-    - "Elaborado exclusivamente con uvas Garnacha, resalta todas las cualidades intrínsecas de su gran variedad, con un color púrpura intenso y de capa alta.", "En nariz muestra toda su frescura desarrollando un conjunto aromático marcado por la presencia de fruta en confitura, notas de tarta de fresa y recuerdos de frambuesa."
+    - "Elaborado exclusivamente con uvas Garnacha, resalta todas las cualidades intrínsecas de su gran variedad, con un color púrpura intenso y de capa alta."
+    - "En nariz muestra toda su frescura desarrollando un conjunto aromático marcado por la presencia de fruta en confitura, notas de tarta de fresa y recuerdos de frambuesa."
+    - "Con un intenso color púrpura, el vino tiene aromas frescos que revelan una fruta madura a la mermelada con notas más vibrantes de bayas rojas."
     - "En boca se manifiesta vivo, fresco y frutal, con taninos maduros que aportan cuerpo y estructura en su elegante final."
     - "Contiene sulfitos."
   #licor
@@ -269,7 +278,8 @@ titulos:
   blanco: Blancos
   vermut: Vermút
   licor: Licor artesanal
-  pan_sin: "Tenemos pan sin gluten. Pídenoslo!!"
+  pan_sin: "¡¡Tenemos pan sin gluten. Pídenoslo!!"
+  rac_sin: "¡Nuestras raciones son SIN gluten!"
   tostas: Tostas
   raciones: Raciones
 
@@ -316,8 +326,7 @@ aviso:
     frase: "Si quieres celebrar estos días con tus amistades, en La Tragona hemos pensado diferentes menús para grupos (con opciones vegetariana y sin gluten)."
     contacto: Ponte en contacto con nosotras
     hablamos: "y lo hablamos."
-    enlace: "tragar.php#reservas"
-    imagen: "media/asamblea.jpg"
+    semana: "Cerramos el 26 de Marzo hasta el 2 de Abril. ¡¡Que tengais buen puente!!"
 
 menu:
   hoy: Hoy
@@ -340,4 +349,141 @@ dia:
   viernes: Viernes
   sabado: Sábado
 
+nav:
+  inicio: "La tragona"
+  tragar: "Para tragar"
+  empujar: "Para empujar"
+  donde: "Donde estamos"
+  quienes: "Quienes somos"
+  contacto: "Contacta"
+  ir: "Ir a "
+
+lateral:
+  tostas: "Tostas"
+  raciones: "Raciones"
+  reservas: "Reservas"
+  cervezas: "Cervezas"
+  vinos: 'Vinos'
+  licores: 'Licores'
+  combis: 'Combinados'
+  sin_alcohol: 'Sin alcohol'
+
+foto:
+  reservas: "Reserva tu mesa"
+  cerveza: "El trago espumoso"
+  vino: "El sabor de la uva"
+  licor: "Aguardientes artesanales"
+  combi: "Combinados"
+  sin: "Sin alcohol"
+
+form:
+  reservas: "Para reservas de 4 o más personas, contacta con nosotras en el teléfono 91-148-43-76 o 685-954-545"
+  llevar: "Si quieres que te preparemos comida para llevar, utiliza el formulario."
+  nombre: "Nombre (requerido)"
+  email: "Email (requerido)"
+  email_place: "miemail@dominio.com"
+  telefono: "Telefono (requerido)"
+  fecha_place: "día/mes/año"
+  fecha: "Fecha del evento"
+  mensaje: "Dinos qué necesitas:"
+  comentario: "Dejanos tus comentarios:"
+  boton: "Enviar"
+  error_nombre: "Escribe tu nombre, por favor."
+  error_email: "Escribe un email válido, por favor."
+  error_telefono: "Escribe tu telefono, por favor."
+  error_mensaje: "No has escrito nada."
+  respuesta_error: "Hubo un error que impidió enviar tu mensaje."
+  reserva_ok: "Tu reserva ha sido enviada."
+  comentario_ok: "Tu comentario ha sido enviado."
+
+legal:
+  desktop: " Se autoriza la difusión y copia del contenido de este sitio web, manteniendo la autoría del mismo."
+  ipad: " Copia el contenido de esta web, conservando la autoría."
+
+rrss:
+  siguenos: "Siguenos en"
+  
+meta:
+  keywords: "tapas, tapeo, tostas, raciones, vino, licor artesanal, cañas, Rastro, junto al Rastro, a dos minutos del Rastro, La Latina, Tirso de Molina, oasis en Madrid, buen ambiente, sitio tranquilo, trato personal, ambiente agradable, bar de barrio, punto de encuentro, cercania a teatro, Lavapies, teatro, cabaret, buen precio, precio asequible, sin gluten, carta de alergenos, comida cuidada, productos frescos, productos de mercado, mercado cercano, productor cercano, pan ecologico, pan artesanal, voni ecologico, prensa alternativa, wifi gratis"
+  description: "Bar de tapas, donde se sirven tostas y raciones sin gluten elaboradas con productos de mercado y vino ecologico, ademas de licores artesanales y combinados que quitan el hipo. Situado junto al Rastro, en el centro de Madrid, entre La Latina y Tirso de Molina."
+
+index: 
+  title: "Bienvenidas a La Tragona"
+  leer: "Conócenos"
+  header: "Bienvenidas a </span>La Tragona"
+  h1: "Bienvenidas a La Tragona"
+  p1: "Hemos reconstruido este espacio hasta conseguir un bar de barrio con un ambiente agradable. Aquí puedes disfrutar de una "
+  p12: "comida cuidada"
+  p13: ", elaborada con productos de mercado, pan artesanal y "
+  p14: "vinos ecológicos."
+  p2: "De martes a domingo, somos un oasis en Madrid, "
+  p21: "un sitio tranquilo entre Tirso de molina y La Latina</a> donde tomar cañas y raciones sin gluten a un precio asequible, rodeado de librerias y teatros, donde también puedes encontrar la prensa alternativa."
+  p3: "Además de vinos, licores artesanales, tostas y raciones, los días laborables tenemos un plato del día, preparado con productos frescos de los mercados cercanos, fruto del "
+  p31: "buen hacer de Luis y Pilar"
+  p4: "Un punto de encuentro de sabores tradicionales, buen ambiente y sencilla innovación, junto al Rastro. Eso es "
+  pasarela1: "Prueba nuestras "
+  pasarela12: "raciones y tapas sin gluten"
+  pasarela2: "Saborea "
+  pasarela22: "un buen vino o una cerveza espumosa"
+
+tragar:
+  title: "Para tragar en La Tragona"
+
+empujar:
+  title: "Para empujar en La Tragona"
+  combi_claro: "Bebidas claras"
+  combi_oscuro: "Bebidas oscuras"
+  zum_org: "Zumos orgánicos"
+  zum: "Zumos"
+  refresco: "Refrescos"
+  mandarina: "Mandarina y romero"
+  limonada: "Limonada y jengibre"
+  pera_pim: "Pera y pimienta de Sichuan"
+  tom_was: "Tomate y wasabi"
+  melocoton: "Melocotón"
+  naranja: "Naranja"
+  pina: "Piña"
+  tomate: "Tomate"
+  frixen: "Frixen cola"
+  limon: "Limon"
+  tonica: "Tónica"
+  mosto: "Mosto"
+  aquarius: "Aquarius"
+  nestea: "Nestea"
+  
+dondeestamos:
+  title: "Encuentra La Tragona"
+  leer: "Encuéntranos"
+  header: "La Tragona<span class="desktop"> te abre sus puertas</span>"
+  h1: "Los alrededores de La Tragona"
+  p1: "Hemos rescatado un bar de barrio junto al Rastro, entre La Latina, Tirso de molina y Lavapies, en la calle Juanelo, 11: un oasis en el centro de Madrid, en un barrio de gran tradición multicultural."
+  p2: "Permanecemos abiertos de martes a sabado, de 1 a 4 de la tarde y de 8 a 12 de la noche. Los domingos estamos desde las 12 de la mañana hasta las 4 de la tarde."
+  p3: "Si vienes de visitar <a href="http://www.elrastro.org/" alt="El rastro" title="elrastro.org">el Rastro</a>, asistes al <a href="http://www.summummusic.com/" alt="Teatro Nuevo Apolo" title="Web del Nuevo Apolo">Teatro Nuevo Apolo</a>, pasas por <a href="https://www.traficantes.net/" alt="Traficantes de sueños" title="traficantes.net">libreria Traficantes de sueños</a> o simplemente compras el pan en <a href="http://panifiesto.es/" alt="Panifiesto.org" title="Panifiesto.org">Panifiesto</a>, en La Tragona encontrarás un sitio tranquilo y un buen ambiente para tomar un vino ecológico o una tosta sin gluten hecha con productos frescos."
+  horario: "Horario de apertura de La Tragona"
+
+quienessomos:
+  title: "Quien es La Tragona"
+  leer: "Conócenos"
+  header: "Quien es La Tragona"
+  h1: "Quién es La Tragona"
+  instagram: "Una publicación compartida de Maribel Torregrosa (@maribeltorregrosa) el "
+  ins_fecha: "17 de Enero de 2017"
+  p1: "La Tragona es un oasis en Madrid con un ambiente agradable, gracias al trato personal que ponemos a la hora de servir nuestras"
+  p12: "raciones"
+  p13: ", tostas y"
+  p14: "vinos"
+  ul1: "Pilar - Lo que más le gusta a Pilar es que los platos vuelvan vacios y que quede una sonrisa en la cara del comensal. Por eso disfruta en La Tragona dando un trato amable y cercano a todo el que se quiera pasar por aquí."
+  ul2: "Luis - Un actor que, en un momento de paro en su profesión, se puso a estudiar cocina. Ahora ha descubierto las emociones que una comida cuidada con productos de mercado puede provocar."
+  p2: "Trabajamos con productos frescos y ecologicos, para ofrecer una comida cuidada y sana. Por ello, nos abastecemos en los mercados cercanos que nos rodean, como el de Antón Martín, La Latina o San Fernando."
+  redes: "La Tragona en las redes"
+  redes_p: "Estas son nuestras últimas publicaciones"
+  cerrar: "Cerrar"
+  
+contacta:
+  title: "Contacta con La Tragona"
+  leer: "Contacta con nosotras"
+  header: "La Tragona<span class="desktop ipad"> está a la escucha</span>"
+  h1: "Contacta con La Tragona"
+  p1: "Si tienes alguna duda, quieres hacer una reserva o deseas comentarnos, no dudes en decirnoslo. Haznos crecer con tu opinión.<br><br>Puedes llamarnos, o escribirnos un wasap, al telefono 91-148-43-76 o al 658-954-545 "
+  p12: "Tambíen atendemos el email contactanos@latragona.com, o puedes dejar aqui mismo tus palabras y nuestra planta carnivora nos las trasmitirá."
 

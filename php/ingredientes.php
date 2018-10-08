@@ -1,3 +1,25 @@
+<?php
+
+	require_once 'config.php';
+	require_once BASE_FILE . 'php/lib/Cartel.php';
+
+	//$url = $_SERVER['HTTP_REFERER'];
+	$arr_url = explode('/', $_SERVER['HTTP_REFERER']);
+	//$idioma = $arr_url[4];
+
+	array_pop($arr_url);
+	$idioma = array_pop($arr_url);
+
+	if( strlen($idioma) > 2 ){ $idioma = 'es'; }
+
+	$lexico = Spyc::YAMLLoad( BASE_FILE . 'php/idiomas/lexico_' .  $idioma . '.yml' );
+
+	$cartel = new Cartel($lexico);
+
+	$solicitud = $_GET["comida"];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,36 +63,64 @@
 			padding-left: 30px;
 		}
 	</style>
-	
-	<?php
-		$url = $_SERVER['HTTP_REFERER'];
-		include 'traductor.php';
-		include 'despensa.php';
-		
-		$comida = new Cartel;
-	?>
+
 </head>
 <body>
-<?php 
-	if(isset($_GET["comida"])){
-		$com = ($tostas -> $_GET["comida"]) ? $tostas -> $_GET["comida"] : $raciones -> $_GET['comida'];
-		$comida->comer($com['descripcion'], "../media/imagenes/tragar/".$com['imagen'], $com['ingredientes']);
 
-		echo '<section>';
-		echo "<img src='".$comida->imagen."' alt='imagen de ".$comida->nombre."'>";
-		echo "<h2>".$comida->nombre."</h2>";
-		echo "<ul>";
-		foreach($comida->ingredientes as $linea){	echo "<li>$linea</li>";	}
-		echo "</ul></section>";
-	}
-	else {
-		echo "<section style='position: absolute; top: 20%; left: 40%'>";
-		echo "<h2 style='position: relative'>Acceso accidental</h2>";
-		echo "<img src='../media/logo_red.jpg' width='300px' style='top:10%;'>";
-		echo "<p>Vaya, parece que has accedido a esta página de forma accidental.</p>";
-		echo "<p>Vuelve a <a href='../tragar.php'>La Tragona</a> para acceder correctamente</p>";
-		echo "</section>";
-	}
-?>
+	<?php
+
+		if( $solicitud != '' ){
+
+			//echo $solicitud;
+			
+			if( $tostas -> $solicitud ){
+
+				$comida = $tostas -> $solicitud;
+
+			} else {
+
+				$comida = $raciones -> $solicitud;
+			}
+
+			//$com = ($tostas -> $_GET["comida"]) ? $tostas -> $_GET["comida"] : $raciones -> $_GET['comida'];
+			// $cartel -> comer($com['descripcion'], "../media/imagenes/tragar/" . $com['imagen'], $com['ingredientes']);
+
+			$cartel -> preparar_comida( $comida['descripcion'], 
+										BASE_URL . 'media/imagenes/tragar/' . $comida['imagen'], 
+										$comida['ingredientes'] );
+
+			$salida = array(
+				'<section>',
+				'<img src="' . $cartel -> imagen . '" alt="imagen de ' . $cartel -> nombre . '">',
+				'<h2>' . $cartel -> nombre . '</h2>',
+				'<ul>'
+			);
+
+			foreach( $cartel -> ingredientes as $linea ){ 
+
+				$salida[] = '<li>' . $linea . '</li>'; 
+			}
+			
+			$salida[] = '</ul></section>';
+
+			echo implode('', $salida);
+
+		
+		} else {
+
+			$aviso = array(
+				'<section style="position: absolute; top: 20%; left: 40%"">',
+					'<h2 style="position: relative">Acceso accidental</h2>',
+					'<img src="' . BASE_URL . 'media/logo_red.jpg" width="300px" style="top: 10%;">',
+					'<p>Vaya, parece que has accedido a esta página de forma accidental.</p>',
+					'<p>Vuelve a <a href=' . BASE_URL . '>La Tragona</a> para acceder correctamente</p>',
+				'</section>'
+			);
+
+			echo implode('', $aviso);
+		}
+
+	?>
+
 </body>
 </html>

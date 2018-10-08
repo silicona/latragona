@@ -1,0 +1,756 @@
+body {
+	background-color: #000;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 14pt;
+	overflow-x: hidden;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* Menu Movil */
+	#menumovil {
+		position: fixed;
+		top: 45px;
+
+		background-color: #000;
+		color: #fff;
+		width: 100%;
+		height: 14em;
+		opacity: 0;
+		z-index: 5;
+
+		display: none;
+	}
+
+	#menuidiomas {
+		position: fixed;
+		top: 45px;
+
+		background-color: #000;
+		color: #fff;
+		width: 100%;
+		height: 12em;
+		opacity: 0;
+		z-index: 5;
+
+		display: none;
+	}
+
+	#menuidiomas span {
+		position: relative;
+		top: -0.25ex;
+		margin-left: 1em;
+	}
+
+	#menuidiomas ul, #menumovil ul {
+		margin: 1em;
+		margin-left: 2em;
+		line-height: 3ex;
+		font-size: 1.3em;
+	}
+
+/* Menu Superior */
+	#superior {
+		background-color: #000;
+		color: #fff;
+		position: fixed;
+		top: 0px;
+		z-index: 2;
+		width: 100%;
+	}
+
+	#superior li {
+		display: inline;
+		padding: 10px;
+		float: right;
+		font-size: 1.2em;
+	}
+
+	#superior li:first-child {
+		float: left;
+	}
+
+	#superior #logo_superior {
+		padding: 0.15ex;
+		cursor: pointer;
+	}
+
+	#logo_superior span {
+		position: relative;
+		top: 9px;
+	}
+
+	#superior img {
+		width: 40px;
+	}
+
+	#superior .movil, #superior .ipad {
+		display: none;
+	}
+
+	#superior .desktop {
+		display: block;
+	}
+
+	#superior span {
+		float: left;
+		margin-right: 10px;
+	}
+
+	.bandera {
+		float: left;
+		margin-left: 5px;
+	}
+
+	#multi {
+		cursor: pointer;
+	}
+
+/* Menu lateral */
+	#lateral {
+		position: fixed;
+		z-index: 2;
+		width: 300px;
+		-webkit-transform: translateX(7.25em) rotate(90deg);
+		   -moz-transform: translateX(7.25em) rotate(90deg);
+		    -ms-transform: translateX(7.25em) rotate(90deg);
+		        transform: translateX(7.25em) rotate(90deg);
+		opacity: 0;
+		right: 0;
+		top: 10em;
+	}
+
+	#lateral ul {
+		background-color: rgba(255, 255, 255, .5);
+		display: inline-block;
+	}
+
+	#lateral li {
+		display: inline-block;
+		padding: 4px;
+		font-size: 1.2em;
+	}
+
+/* Cabecera */
+	header {
+		background-color: #000;
+		background: url("../media/cabeceras/tragar.png") 50% 40px no-repeat fixed;
+		height: 220px;
+		padding-top: 46px;
+	}
+
+	.logo{
+		position: relative;
+		left: 25%;
+		margin-left: -100px;
+		margin: 66px 0px 20px -100px;
+
+		border-radius: 120px;
+	}
+
+/* Contenido */
+	section {
+		width: 100%;	
+		float:left;
+	}
+
+	article {
+		width: 50%;
+		float: left;
+	}
+
+	.movil { display: none; }
+
+	#tosta {	background: url("../media/imagenes/tragar/fondos/foto_tosta.jpg") -10em 0% no-repeat;	}  /* Imagen Ajena */
+
+	#racion {
+		background: url("../media/imagenes/tragar/fondos/foto_racion.jpg") 60% 0% no-repeat;  /* Imagen Ajena */
+		background-size: cover;
+	}
+
+	#reservas {	background: url('../media/imagenes/tragar/fondos/foto_reserva.jpg') 80% 80%; }  /* Imagen Ajena */
+
+/* Seccion de Foto */
+	.foto {	padding: 4ex 2ex 0;	}
+
+	.foto > a > p {
+		color: #fff;
+		font-size: 4em;
+		text-align: center;
+		text-shadow: 3px 3px 5px #333;
+	}
+
+	/* Cartel_evento */
+		#cartel_evento {
+			width: 90%;
+			background-color: #fff;
+			border: 11px double #f00;
+			-webkit-border-radius: 50pt;
+			   -moz-border-radius: 50pt;
+			        border-radius: 50pt;
+			padding: 3ex 0;
+			position: relative;
+			top: 100px;
+			margin: 0 5%;
+		}
+
+		#cartel_evento a { color: inherit; }
+
+		#cartel_evento p {
+			text-align: center;
+			padding: 1ex;
+			font-size: 1.7em;
+			font-weight: bold;
+			line-height: 1.1em;
+			color: #000;
+		}
+
+		#cartel_evento p:first-of-type {
+			font-size: 2em;
+			font-weight: bold;
+			color: #f00;	
+		}
+
+		#cartel_evento #logo_cartel {
+			width: 50%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		#cartel_evento .escalera span {
+			display: block;
+		}
+
+		#cartel_evento .escalera span:first-of-type {
+			text-align: left;
+			color: #60f;
+		}
+
+		#cartel_evento .escalera span:nth-of-type(2) {
+			color: #587B58;
+		}
+
+		#cartel_evento .escalera span:last-of-type {
+			text-align: right;
+			padding-right: 4ex;
+			color: #2EFE2E;
+		}
+
+	/* Cartel Navidad */
+		#cartel_navidad {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10pt;
+			width: unset;
+			margin: 1em 0 0 0;
+			border: 2px solid #fff;
+		}
+
+		#cartel_navidad img { 
+			width: 150%;
+			margin-left: -25%;
+			margin-bottom: -10px;
+		}
+
+		#cartel_navidad p {
+			background: rgba(255,255,255,0.7);
+			font: 1.5em/1.3 sans-serif;
+			display: inline-block;
+			padding: 1ex;
+			border-radius: 10pt;
+			text-align: justify;
+
+			position: absolute;
+			top: 20%;
+			left: 10%;
+			right: 10%;
+		}
+
+		#cartel_navidad a {	color: #008; }
+
+/* Contenido */
+	.contenido { padding: 0 3ex 2ex 2ex; }
+
+	section:first-of-type .contenido { background-color: #efe;	}
+
+	section:nth-of-type(3) .contenido { background-color: #eef; }
+	
+	section:last-of-type .contenido { background-color: #edd;	}
+
+	#aviso_pan, #aviso_rac {
+		text-align: center;
+		font-size: 1.8em;
+		padding: 1.5ex 0 1ex;
+	}
+
+	legend {
+		margin: 10px;
+		margin-left: 20px;
+		font-size: 1.7em;
+		text-decoration: underline;
+	}
+
+	.contenido:before {
+		content: "";
+		display: table;
+	}
+
+	.contenido > div:before {
+		content: '';
+		display: table-row;
+	}
+
+	.contenido > div:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	.contenido > div {
+		padding: 1ex;
+		background-color: #fff;
+		border: 5px solid #666;
+		border-radius: 5pt;
+		position: relative;
+		margin-top: 1ex;
+	}
+
+	.contenido div p:before, .contenido div > a:before {
+		content: '';
+		display: table-cell;
+	}
+
+	.contenido div > a {
+		padding: 1ex;
+		/*height: 100px;*/
+		float: left;
+		vertical-align: middle;
+	}
+	
+	.contenido div:nth-of-type(even) > a{	float: right;	}
+	/*.contenido div:nth-of-type(even) span.alergeno { position: relative; }*/
+
+	.contenido div p {
+		font-size: 1.3em;
+		line-height: 2.3ex;
+		display: inline-block;
+		vertical-align: top;
+		max-width: calc(100% - 150px);
+		position: relative;
+	}
+
+	.ingredientes a[data-fancybox] {
+		display: inline-block;
+		color: #008;
+		text-decoration: underline;
+		padding: 0.5ex;
+		font-size: .8em;
+	}
+		
+	.imagen {	width: 100px;	}
+
+	/* Cinta verde */
+		div.articulo_novedad { border-color: #BFDC7A;	}
+
+		.novedad {
+			border-radius: unset;
+		  width: 85px;
+		  height: 88px;
+		  overflow: hidden;
+		  position: absolute;
+		  top: -6px;
+		  right: -6px;
+		}
+
+		.cinta_verde {
+		  font: bold 15px Sans-Serif;
+		  color: #333;
+		  text-align: center;
+		  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+		  -webkit-transform: rotate(45deg);
+		  -moz-transform:    rotate(45deg);
+		  -ms-transform:     rotate(45deg);
+		  -o-transform:      rotate(45deg);
+		  position: relative;
+		  padding: 7px 0;
+		  left: -5px;
+		  top: 15px;
+		  color: #6a6340;
+		  width: 120px;
+		  background-color: #BFDC7A;
+		  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+		  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+		  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3); box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+		}
+
+		/*.cinta_verde:before, .cinta_verde:after {
+		  content: "";
+		  border-top:   3px solid #6e8900;   
+		  border-left:  3px solid transparent;
+		  border-right: 3px solid transparent;
+		  position:absolute;
+		  bottom: -3px;
+		}
+
+		.cinta_verde:before { left: 0; }
+
+		.cinta_verde:after { right: 0; }​*/
+
+/* Alergenos */
+	span.alergeno {
+		display: block;
+		padding-top: 1ex;
+	}
+
+	.alergeno .nombre { 
+		position: relative;
+		top: -10px;
+		display: inline-block;
+	}
+
+	.alergeno .sin_alergeno {	
+		position: unset;
+		height: 30px; 
+	}
+
+	.alergeno img {
+		position: relative;
+		width: 30px;	
+		background-color: #fff;
+		border-radius: 50%;
+		left: 10px;
+		margin-right: 10px;
+	}
+
+	.alergeno img:hover {
+		-webkit-animation: ver_alergeno 1s forwards linear 1;
+		        animation: ver_alergeno 1s forwards linear 1;
+	}
+
+	@-webkit-keyframes ver_alergeno {
+		25% { -webkit-transform: scale(1.5); z-index: 3;}
+		50% { -webkit-transform: scale(2); z-index: 3;}
+		75% { -webkit-transform: scale(2.5);  z-index: 3; }
+		100% { -webkit-transform: scale(3.3);  z-index: 3; }
+	}
+
+	@keyframes ver_alergeno {
+		25% { -webkit-transform: scale(1.5); transform: scale(1.5); z-index: 3;}
+		50% { -webkit-transform: scale(2); transform: scale(2); z-index: 3;}
+		75% { -webkit-transform: scale(2.5); transform: scale(2.5); z-index: 3; }
+		100% { -webkit-transform: scale(3.3); transform: scale(3.3); z-index: 3; }
+	}
+
+/* Compartir */
+	#compartir {
+		display: none;
+		background-color: #fff;
+		float: left;
+		width: 100%;
+	}
+
+	#compartir div {
+		margin: 10px 4px;
+		float: left;
+		display: inline-block;
+	}
+
+/* Reserva */
+	.mitad {
+		max-width: unset;
+		padding: 1em;
+		float: left;
+		line-height: 2.2ex;
+		display: block;
+		width: 50%;
+		font-size: 1.2em;
+	}
+
+	#wasap { width: 20px;	}
+
+	.contenido form {
+		background-color: #FB8F50;
+		border: 2px solid #FB6750;
+		float: left;
+		margin: 0 5%;
+		padding: 1ex;
+		position: relative;
+		width: 90%;
+	}
+
+	.contenido label {
+		display: block;
+		margin-top: 0.5ex;
+		font-size: 0.9em;
+	}
+
+	.contenido label.impar { padding-left: 120px; }
+
+	.contenido input {
+		background-color: #fff;
+		margin-top: 1ex;
+		border: unset;
+		border-bottom: 1px solid #000;
+		line-height: 1.2em;
+		padding: .5ex;
+	}
+
+	.contenido input:hover {	background-color: #eee;	}
+
+	.contenido #fecha {
+		display: inline-block;
+		margin-right: 20px;
+	}
+
+	.contenido textarea {
+		width: 90%;
+		padding: .5ex;
+	}
+
+	.contenido input[type="submit"] {
+		margin-bottom: 10px;
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 100px;
+		display: inline;
+	}
+
+	.error_form {
+		visibility: hidden;
+		background-color: #f88;
+		color: #f00;
+		padding: 5px;
+		margin-left: 10px;
+		border: 1px solid #f00;
+	}
+
+	.contenido #confirmacion {
+		padding: 5px;
+		margin-left: 10px;
+	}
+
+	.contenido #etiquetaTexto {
+		font-size: 1.1em;
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+		display: inline-block;
+	}
+
+/* legal */
+	#legal {
+		height: 55px;
+		background-color: #000;
+		color: #fff;
+		position: relative;
+		text-align: center;
+		clear: both;
+		z-index: 3;
+	}
+
+	#legal img {
+		background-color: #fff;
+		border-radius: 14px;
+		position: relative;
+		top: 9px;
+	}
+
+	#legal .ipad { display: none;	}
+
+/* Smartphones (portrait) ----------- */
+	@media screen and (max-width: 315px) { 
+		#logo_superior span,
+		.contenido div > a {	display: none; } 
+
+		.contenido div p { 
+			max-width: unset; 
+			font-size: 1.2em;
+		}
+	}
+
+	@media screen and (max-width: 380px) { .contenido input[type='text'] {	width: 100%; } }
+
+	@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
+		header {				
+			height: 120px;
+			background: url("../media/cabeceras/tragar_sin.png") 50% 0% no-repeat fixed;
+		}
+
+		#superior {
+			position: fixed;
+			top: 0px;
+		}
+
+		#logo_superior span {	display: inline; }
+
+		#lateral {
+			-webkit-transform: unset;
+			    -ms-transform: unset;
+			        transform: unset;
+			text-align: center;
+			width: 100%;
+			top: 47px;
+			background-color: #fff;
+		}
+
+		#lateral li {	padding: 0 5px;	}
+
+		article, .contenido .mitad { width: unset; }
+
+		/* contenido */
+			.contenido { 
+				width: 100%;
+				padding: 2ex;	
+			}
+
+			legend {
+				font-size: 1.3em;
+				margin-left: 20px;
+				clear: both;
+			}
+
+			.contenido p {
+				font-size: 1em;
+				line-height: 2ex;
+			}
+
+			.imagen {
+				width: 70px;
+				height: 70px;
+				margin: 0 10px 0 0px;
+			}
+
+			.alergeno {	left: 10px;	}
+
+		#compartir { background-color: #F6E3CE }	
+		
+		#compartir div {
+			float: unset;
+			margin-left: 50px;
+		}
+
+		/* reservas */
+			.contenido input[type="submit"] { margin-left: 20px;	}
+
+			.contenido textarea { width: 100%; }
+
+			.error_form {
+				padding: 2px;
+				position: absolute;
+				left: 100px;
+				top: 430px;
+				z-index: 2;	
+			}
+
+		#contenedor .desktop, 
+		#superior .desktop, 
+		.desktop, 
+		.foto { display: none; }
+
+		#contenedor .movil, 
+		#superior .movil, 
+		#compartir, 
+		.movil { display: block; }
+
+		#legal { height: 30px; }
+
+		#legal img { top: 2px; width: 20px; }
+	}
+
+/* Smartphones (landscape) ----------- */
+	@media screen and (max-width: 650px) and (orientation: landscape), screen and (max-device-width: 650px) and (orientation: landscape) {
+
+		.camera_caption {	font-size: initial;	}
+
+		/*#contenedor_alerta { left: 28ex; top: 13ex;	}*/
+
+		#compartir { padding-left: 50px; }
+	}
+
+/* iPads (portrait) ----------- */
+	/*@media only screen and (min-device-width : 651px)	and (max-device-width : 1024px) {*/
+	@media screen and (min-width : 651px)	and (max-width : 1024px), screen and (min-device-width : 651px)	and (max-device-width : 1024px) {
+		header {
+			background: url("../media/cabeceras/tragar_sin.png") 50% 0% no-repeat fixed;
+			height: 150px;
+		}
+
+		#superior .desktop, #legal .desktop, .desktop { display: none; }
+
+		#superior .ipad, .ipad {	display: block;	}
+
+		#logo_superior img { margin-right: 30px; }
+
+		.foto { width: 40%; }
+
+		.contenido { width: 60%; }
+
+		.foto p {
+			font-size: 3em;
+			width: 100%;
+		}
+
+		.contenido p {
+			font-size: 1em;
+			line-height: 1.2em;
+		}
+
+		#tosta .ingredientes span { display: none;	}
+
+		.mitad { width: 80%; }
+
+		#reservas input[type="submit"] { margin-left: 20px;	}
+
+		.error_form {
+			padding: 2px;
+			position: absolute;
+			left: 100px;
+			top: 430px;
+			z-index: 2;	
+		}
+
+		#legal .ipad { display: inline; }			
+	}
+
+/* iPads (landscape) ----------- */
+	@media screen and (min-width : 651px)	and (max-width : 1024px)	and (orientation : landscape), screen and (min-device-width : 651px)	and (max-device-width : 1024px)	and (orientation : landscape) {
+		
+	}
+
+/* Responsive Cartel Navidad */
+	@media screen and (min-width : 651px)	and (max-width : 900px), screen and (min-device-width : 651px)	and (max-device-width : 900px) {
+		#cartel_navidad img {
+			width: 400%;
+			margin-left: -100%;
+		}
+
+		#cartel_navidad p {
+			font: 1.1em/1.2 sans-serif;
+			width: 80%;
+		}
+	}
+
+	@media screen and (min-width : 901px)	and (max-width : 1024px), screen and (min-device-width : 901px)	and (max-device-width : 1024px) {		
+		#cartel_navidad img {
+			width: 300%;
+			margin-left: -75%;
+		}
+
+		#cartel_navidad p {
+			top: 5%;
+			font: 1.3em/1.4 sans-serif;
+			width: 80%;
+		}
+	}
+
+	@media screen and (min-width : 1025px)	and (max-width : 1200px), screen and (min-device-width : 1025px)	and (max-device-width : 1200px) {
+		#cartel_navidad img {
+			width: 200%;
+			margin-left: -50%;
+		}
+	}

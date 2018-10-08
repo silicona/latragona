@@ -13,6 +13,8 @@ alergenos:
   sesamo: Sesame
   soja: Soja
   sulfito: Sulphite 
+  alergeno: Allergens
+  sin_aler: "No allergens"
 
 bebida:
   puntas: 
@@ -74,10 +76,15 @@ bebida:
     - "White wine made from the selection of grapes of the Verdejo variety from its own vineyards in Pozaldez and Rueda."
     - "Yellowish-green color, intense and complex aroma of fruits and citrus fruits, with volume and persistence in the mouth."
     - "Contains sulfites."
+  vizconde:
+    - "Deep cherry red with intense aromas of berries and black plums, hints of vanilla and spices."
+    - "It is the ideal selection for those seeking a wine that still retains the fruit of yuong wines combined with a subtle touch of oak."
+    - "Ideal with mushrooms, vegetables, white and red meats and light stews."
+    - "Contains sulfites."
   zinio:
     - "This wine is made exclusively from Garnacha grapes, demostrates the inherit qualities of that great variety."
     - "With an intense purple color, the wine has fresh aromas revealing a ripe jam-like fruit with more vibrant notes of red berries."
-    - "Initial sensation in the mouth is one of lively, fresh fruits that gives way to a warmer roundness characterized by ripe round tannins that fill out the palate as the wine leaves"
+    - "Initial sensation in the mouth is one of lively, fresh fruits that gives way to a warmer roundness characterized by ripe round tannins that fill out the palate as the wine leaves."
     - "Contains sulfites."
   #licor
   hierbas: Herbal marc
@@ -271,8 +278,21 @@ titulos:
   vermut: Vermouth
   licor: Craft liquor
   pan_sin: "We have gluten-free bread. Ask us!!"
-  tostas: Toats
+  rac_sin: "Our portions are without Gluten"
+  tostas: Toasts
   raciones: Portions
+
+tapas:
+  arroz_zamorana: Arroz a la zamorana
+  ensalada_alubias: Ensalada templada de alubias con vinagreta de tomate deshidratado
+  patata_niscalos: Patatas con níscalos
+  guacamole: Guacamole
+  pimiento_asado: Pimientos asados caseros
+  garbanzos_shiitake: garbanzos con shiitake
+  patatas_revolcon: Patatas revolconas
+  patel_verdures: Pastel de verduras
+  pate_pimientos: Pate de pimientos caseros
+  ensalada_pollo: Ensalada de pollo
 
 mapa:
   abierto: We have opened the doors.
@@ -282,7 +302,7 @@ mapa:
   horas: hours
   mañana: "tomorrow."
   logo: "../media/logo_red.gif"
-  info: "is a tapas bar and wines along the <strong> Rastro de Madrid </strong> between the subway stops of La Latina and Tirso de Molina"
+  info: "is a tapas bar and wines along the <strong> Rastro de Madrid </strong> between La Latina and Tirso de Molina metro station."
 
 aviso:
   agosto:
@@ -305,8 +325,7 @@ aviso:
     frase: "If you want to celebrate these days with your friends, in La Tragona we have thought about different menus for groups (with vegetarian and gluten-free options)."
     contacto: Get in touch with us
     hablamos: "and we talk about it."
-    enlace: "swallow.php#reservas"
-    imagen: "../media/asamblea.jpg"
+    semana: "We close on March 26 until April 2. Have a good holidays!"
 
 menu:
   hoy: Today
@@ -329,5 +348,141 @@ dia:
   viernes: Friday
   sabado: Saturday
 
+nav:
+  inicio: "La tragona"
+  tragar: "For swallow"
+  empujar: "For push"
+  donde: "Where we are"
+  quienes: "Who we are"
+  contacto: "Contact us"
+  ir: "Go to "
 
+lateral:
+  tostas: "Toasts"
+  raciones: "Portions"
+  reservas: "Booking"
+  cervezas: "Beers"
+  vinos: 'Wines'
+  licores: 'Liquors'
+  combis: 'Combined'
+  sin_alcohol: 'Alcohol free'
+
+foto:
+  reservas: "Book your place"
+  cerveza: "The foamy drink"
+  vino: "The taste of the grape"
+  licor: "Craft liquor"
+  combi: "Combined"
+  sin: "Alcohol free"
+
+form:
+  reservas: "For bookings of 4 or more people, contact us on the phone 91-148-43-76 o 685-954-545 "
+  llevar: "If you want us to prepare take-out, use the form."
+  nombre: "Name (required)"
+  email: "Email (required)"
+  email_place: "myemail@domain.com"
+  telefono: "Phone (required)"
+  fecha_place: "day/month/year"
+  fecha: "Date of the event"
+  mensaje: "Tell us what you need:"
+  comentario: "Leave us your comments:"
+  boton: "Submit"
+  error_nombre: "Write your name, please."
+  error_email: "Write a valid email, please."
+  error_telefono: "Write your phone, please."
+  error_mensaje: "You haven´t asked anything."
+  respuesta_error: "There was an error that prevented you from sending your message."
+  reserva_ok: "Your reservation has been sent."
+  comentario_ok: "Your comment has been sent."
+
+legal:
+  desktop: " Authorization to disseminate and copy the content of this website, The authorship of the same."
+  ipad: " Copy the contents of this web, conserving the authorship."
+
+rrss:
+  siguenos: "Follow us"
+
+meta:
+  keywords: "Tapas, toasts, tapeo, portions, wine, homemade liquor, cañas, Rastro, next to the Rastro, two minutes from the Rastro, La Latina, Tirso de Molina, oasis in Madrid, Bar area, meeting point, near to theater, Lavapies, theater, cabaret, good price, affordable price, gluten free, allergen menu, caring food, fresh food, fresh produce, market products, nearby market, ecological bread, Artisan bread, organic wine, alternative press, free wifi"
+  description: "Tapas bar where you can enjoy toasts and gluten-free rations made with market products and organic wine, as well as artisan and combined liquors that remove hiccups. Located next to the Rastro, in the center of Madrid, between La Latina and Tirso de Molina."
+
+index: 
+  title: "Welcome to La Tragona"
+  leer: "Know us"
+  header: "Welcome to </span>La Tragona"
+  h1: "Welcome to La Tragona"
+  p1: "We have rebuilt this space to get a neighborhood bar with a pleasant atmosphere. Here you can enjoy a "
+  p12: "caring food"
+  p13: ", made with market products, homemade bread and "
+  p14: "ecological wines."
+  p2: "From Tuesday to Sunday, we are an oasis in Madrid, "
+  p21: "a quiet place between Tirso de molina and La Latina</a> where to take cañas and gluten-free rations at an affordable price, surrounded by bookstores and theaters, where you can also find the alternative press."
+  p3: "In addition to wines, homemade liqueurs, toasts and rations, on weekdays we have a dish of the day, prepared with fresh products from the nearby markets, fruit of the "
+  p31: "good work from Luis y Pilar"
+  p4: "A meeting point of traditional flavors, good atmosphere and simple innovation, next to the Rastro. That's "
+  pasarela1: "Try our "
+  pasarela12: "gluten-free portions and tapas"
+  pasarela2: "Savor "
+  pasarela22: "a good wine or a frothy beer"
+
+tragar:
+  title: "For swallow in La Tragona"
+
+empujar:
+  title: "For push in La Tragona"
+  combi_claro: "White combined"
+  combi_oscuro: "Dark combined"
+  zum_org: "Organic juice"
+  zum: "Juice"
+  refresco: "Freshen"
+  mandarina: "Tangerine and rosemary"
+  limonada: "Lemonade and ginger"
+  pera_pim: "Sichuan pear and pepper"
+  tom_was: "Tomato and wasabi"
+  melocoton: "Peach"
+  naranja: "Orange"
+  pina: "Pineapple"
+  tomate: "Tomato"
+  frixen: "Frixen cola"
+  limon: "Lemon"
+  tonica: "Tonic"
+  mosto: "Must"
+  aquarius: "Aquarius"
+  nestea: "Nestea"
+
+dondeestamos:
+  title: "Find La Tragona"
+  leer: "Find us"
+  header: "La Tragona<span class="desktop"> opens the doors</span>"
+  h1: "Around La Tragona"
+  p1: "We have rescued a neighborhood bar next to the Rastro, between La Latina, Tirso de molina and Lavapies, on Calle Juanelo, 11: an oasis in the center of Madrid, in a neighborhood with a great multicultural tradition."
+  p2: "We remain open from Tuesday to Saturday, from 1 to 4 in the afternoon and from 8 to 12 at night. On Sundays we are from 12 in the morning until 4 in the afternoon."
+  p3: "If you are coming to visit <a href="http://www.elrastro.org/" alt="El rastro" title="elrastro.org">el Rastro</a><span class="ocultar_ipad">, attend The <a href="http://www.summummusic.com/" alt="Teatro Nuevo Apolo" title="Web del Nuevo Apolo">Teatro Nuevo Apolo theater</a>, go through <a href="https://www.traficantes.net/" alt="Traficantes de sueños" title="traficantes.net">Traficantes de sueños bookshop</a> or just buy bread at <a href="http://panifiesto.es/" alt="Panifiesto.org" title="Panifiesto.org">Panifiesto</a></span>, in La Tragona you will find a quiet place and a good environment to drink an organic wine or a gluten-free tosta made with fresh products."
+  horario: "Opening hours for La Tragona"
+  
+quienessomos:
+  title: "Who is La Tragona"
+  leer: "Know us"
+  header: "Who La Tragona is"
+  h1: "Who La Tragona is"
+  instagram: "A shared publication by Maribel Torregrosa (@maribeltorregrosa) at "
+  ins_fecha: "January 17, 2017"
+  p1: "La Tragona is an oasis in Madrid with a pleasant atmosphere, thanks to the personal treatment that we put in serving our "
+  p12: "portions"
+  p13: ", toasts and "
+  p14: "wines"
+  ul1: "Pilar - What Pilar likes most is that the dishes come back empty and that there is a smile on the face of the diner. That is why she enjoys giving a friendly and close treatment to anyone who wants to stop in La Tragona."
+  ul2: "Luis - An actor who, at a time of unemployment in his profession, started to study cooking. Now he has discovered the emotions that a food with market products can cause."
+  p2: "We work with fresh and ecological products, to offer a careful and healthy food. For this reason, we supply ourselves in the nearby markets that surround us, such as Antón Martín, La Latina or San Fernando."
+  redes: "La Tragona in internet"
+  redes_p: "These are our latest publications"
+  cerrar: "Close"
+  
+contacta:
+  title: "Contact La Tragona"
+  leer: "Contact us"
+  header: "La Tragona<span class="desktop ipad"> is listening</span>"
+  h1: "Contact La Tragona"
+  p1: "If you have any doubts, you want to make a reservation or you want to comment, do not hesitate to tell us. Make us grow with your opinion.<br><br>You can call us, or write us a wasap, on the phone 91-1484376 or 658-954-545 "
+  p12: "We also take care of the email contactanos@latragona.com, or you can leave your words here and our carnivorous plant will transmit them to us."
 
