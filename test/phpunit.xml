@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<phpunit bootstrap="vendor/autoload.php"
+         verbose="false"
+         colors="true">
+<!--          convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true" -->
+
+    <testsuites>
+        <testsuite name = "TestSuite Tragona">
+            <directory>tests/</directory> 
+            <!-- 
+            <directory>tests/entidades/</directory>
+            <directory>tests/app/</directory>
+            -->
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <!-- 
+        <var name="DB_HOST" value="localhost"/>
+        <var name="DB_NAME" value="oclemlopd_bbdd"/>
+        <var name="DB_USER" value="usuario"/>
+        <var name="DB_PASS" value="pass"/>
+        <var name="BASE_FILE" value=""/>
+
+        <var name="DB_HOST" value="127.0.0.1"/>
+        <var name="DB_NAME" value="oclemlop_bbdd"/>
+        <var name="DB_USER" value="root"/>
+        <var name="DB_PASS" value=""/>
+        -->
+
+        <var name = 'BASE_URL' value = '//localhost/tragona/'/>
+        <var name = 'BASE_FILE' value = '/var/www/html/tragona/'/>
+
+        <!-- 
+        <var name="DB_USER" value="root"/>
+        <var name="DB_PASS" value="" />
+        -->
+    </php>
+
+    <filter>
+        <whitelist>
+            <!-- 
+            <directory suffix=".php">lib/</directory>
+                <directory suffix=".php">src/MasTest/</directory> ¿Inutil? 
+            -->
+        </whitelist>
+    </filter>
+
+
+</phpunit>

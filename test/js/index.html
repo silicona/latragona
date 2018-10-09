@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pruebas en js</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<script type="text/javascript" src = "index.js"></script>
+
+</head>
+<body>
+
+	<h1>Test básicos en JS</h1>
+
+	<h2>Comprobación de API</h2>
+
+	<output id="deteccion"></output>
+
+	<h2>Selecionar archivos</h2>
+
+	<input type="file" id="archivos" name="archivos[]" multiple>
+	<output id="lista"></output>
+
+	<script type="text/javascript">
+
+		function gestionarArchivosSeleccionados(evento){
+
+			var archivos = evento.target.files; // Objeto FileList
+			var salida = [];
+			for(i=0; i<archivos.length; i++){
+				for(a in archivos[i]){
+					console.log(a + ": " + archivos[i][a]);
+				}
+			}
+			//console.log(evento.target.files);
+
+			for (var i = 0, a; a= archivos[i]; i++){
+				salida.push('<li><strong>', escape(a.name), '</strong>(', a.type || 'n/a', ') -',
+					a.size, 'bytes, modificado: ',
+					a.lastModified.toLocaleString(), '</li>');
+			}
+			document.getElementById('lista').innerHTML = '<ul>' + salida.join('') + '</ul>';
+		}
+
+		document.getElementById('archivos').addEventListener('change', gestionarArchivosSeleccionados, false)
+		
+	</script>
+
+	<h2>Opcion de arrastrar y soltar</h2>
+
+	<div id="destino">Soltar archivos aqui</div>
+	<output id="lista_soltados"></output>
+
+	<script type="text/javascript">
+
+		function gestionarArchivoSoltado(evento){
+			evento.stopPropagation();
+			evento.preventDefault();
+
+			var archivos = evento.dataTransfer.files;
+			var salida = [];
+			for(var i = 0, a; a = archivos[i]; i++){
+				salida.push('<li><strong>', escape(a.name), '</strong>(', a.type || 'n/a', ') -',
+					a.size, 'bytes, modificado: ',
+					a.lastModified.toLocaleString(), '</li>');
+			}
+			document.getElementById('lista_soltados').innerHTML = '<ul>' + salida.join('') + '</ul>';
+		}
+
+		function arrastrarSoltarArchivo(evento){
+			evento.stopPropagation();
+			evento.preventDefault();
+			evento.dataTransfer.dropEffect = 'copy'
+		}
+
+		var destino = document.getElementById('destino');
+		destino.addEventListener('dragover', arrastrarSoltarArchivo, false);
+		destino.addEventListener('drop', gestionarArchivoSoltado, false);
+
+	</script>
+
+	<h3>Leer Archivo de imagen</h3>
+
+	<input type="file" id="leer_archivos" name="leer_archivos[]" multiple>
+	<output id="lista_leidos"></output>
+
+	<script type="text/javascript">
+
+		function gestionarArchivoElegido(evento){
+
+			var archivos = evento.target.files
+			for( var i = 0, a; a = archivos[i]; i++ ){
+
+			// Solo procesa imagenes
+			if( !a.type.match('image.*') ){
+
+				continue;
+			}
+			var lector = new FileReader();
+
+				// Closure para capturar informacion
+				lector.onload = (function(archivo_leido){
+
+					return function(eve){
+
+					// Renderiza la imagen mini
+					var span = document.createElement('span');
+					span.innerHTML = [
+					'<img class="mini" src="',
+					eve.target.result,
+					'" title="', escape(archivo_leido.name), '">'
+					].join('');
+
+					document.getElementById('lista_leidos').insertBefore(span, null);
+				};
+
+			})(a);
+
+				// Leer imagen con datos de URL
+				lector.readAsDataURL(a);
+			}
+		}
+
+		document.getElementById('leer_archivos').addEventListener('change', gestionarArchivoElegido, false)
+
+	</script>
+
+	<h2>Fragmentacion de archivos</h2>
+
+	<input type="file" id="fragmentar_archivos" name="fragmentar_archivos[]">
+
+	<br>
+	Leer Bytes:
+
+	<span class="botones_leer_bytes">
+		<button data-startbyte="0" data-endbyte="4">1-5</button>
+		<button data-startbyte="5" data-endbyte="14">6-15</button>
+		<button data-startbyte="6" data-endbyte="7">1-5</button>
+	</span>
+
+	<div id="byte_rango"></div>
+	<div id="byte_contenido"></div>
+
+	<script type="text/javascript">
+
+		function leerBlob(opt_startbyte, opt_endbyte){
+
+			var archivos = document.getElementById('fragmentar_archivos').files;
+
+			if(!archivos.length){
+				alert("Por favor, selecciona un archivo")
+				return;
+			}
+
+			var archivo = archivos[0];
+			var inicio = parseInt(opt_startbyte) || 0;
+			var final = parseInt(opt_endbyte) || archivo.size - 1;
+
+			var lector = new FileReader();
+
+			// volver a comprobar el status al usar onloadend
+			lector.onloadend = function(evento){
+				if(evento.target.readyState == FileReader.DONE){
+					document.getElementById('byte_contenido').textContent = evento.target.result;
+					document.getElementById('byte_rango').textContent = ['Leer bytes: ', inicio + 1, ' - ', final + 1, ' de los ', archivo.size, ' bytes del archivo'].join('');
+				}
+			};
+
+			if( archivo.webkitSlice ){
+
+				var masa = archivo.webkitSlice(inicio, final + 1);
+
+			} else if( archivo.mozSlice ){
+
+				var masa = archivo.mozSlice(inicio, final + 1);
+
+			} else {
+
+				var masa = archivo.slice(inicio, final + 1);
+			}
+
+			console.log(masa);
+			lector.readAsBinaryString(masa);
+		}
+
+		document.querySelector('.botones_leer_bytes').addEventListener('click', function(evento){
+
+			if( evento.target.tagName.toLowerCase() == 'button' ){
+
+				var byte_inicio = evento.target.getAttribute('data-startbyte');
+				var byte_final = evento.target.getAttribute('data-endbyte');
+
+				leerBlob(byte_inicio, byte_final);
+			}
+
+		}, false)
+
+	</script>
+
+	<h2>Progreso de lectura de archivo</h2>
+
+	<input type="file" id="progreso_archivos" name="progreso_archivos[]">
+	<button onclick="abortarLectura();">Cancelar lectura</button>
+
+	<div id="barra_progreso">
+		<div class="porcentaje">0%</div>
+	</div>
+
+	<div id="error"></div>
+
+	<script type="text/javascript">
+
+		var lector;
+		var progreso = document.querySelector('.porcentaje');
+
+		function abortarLectura(){
+
+			lector.abort();
+		}
+
+		function gestionarErrores(evento){
+
+			campo = document.querySelector('#error');
+
+			switch(evento.target.error.code){
+
+				case evento.target.error.NOT_FOUND_ERR:
+				campo.innerHTML = "Archivo no encontrado";
+				break;
+
+				case evento.target.error.NOT_READABLE_ERR:
+				campo.innerHTML = "Archivo no legible";
+				break;
+
+				case evento.target.error.ABORT_ERR:
+				break;
+
+				default:
+				campo.innerHTML = "Ha ocurrido un error."
+			}
+		}
+
+		function actualizarProgreso(evento){
+
+		// evento es un ProgressEvent
+		if( evento.lenghtComputable ){
+
+			var porcentaje_cargado = Math.round((evento.loaded / evento.total) * 100);
+
+			// Incrementa la barra de progreso				
+			if( porcentaje_cargado < 100 ){
+
+				progreso.style.width = porcentaje_cargado + '%';
+				progreso.textContent = porcentaje_cargado + '%';
+			}
+		}
+	}
+
+	function gestionarArchivoEnProgreso(evento){
+
+		campo = document.querySelector('#error');
+
+		// Resetablece la barra con una nueva seleccion de archivo
+		progreso.style.width = '0%';
+		progreso.textContent = '0%';
+
+		lector = new FileReader();
+		lector.onerror = gestionarErrores;
+		lector.onprogress = actualizarProgreso;
+
+		lector.onabort = function(evento){
+
+			campo.innerHTML = "Lectura de archivo cancelada";
+		}
+
+		lector.onloadstart = function(evento){
+
+			document.getElementById('barra_progreso').className = 'cargando';
+		}
+
+		lector.onload = function(evento){
+			
+			// Asegura que la barra esta al 100% al final
+			progreso.style.width = '100%';
+			progreso.textContent = '100%';
+
+			setTimeout("document.getElementById('barra_progreso').className='';", 2000);
+		}
+
+		// Leer un archivo de imagen con un string binario
+		lector.readAsBinaryString(evento.target.files[0]);
+	}
+
+	document.getElementById('progreso_archivos').addEventListener('change', gestionarArchivoEnProgreso, false);
+
+</script>
+
+</body>
+</html>

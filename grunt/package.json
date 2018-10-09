@@ -1,0 +1,16 @@
+{
+	"name": "tragona",
+	"version": "1.0.0",
+	"devDependencies": {
+		"grunt": "",
+		"grunt-contrib-jshint": "",
+		"grunt-contrib-qunit": "",
+		"grunt-contrib-connect": "",
+		"grunt-contrib-uglify": "",
+		"grunt-contrib-sass": "",
+		"grunt-contrib-watch": "",
+		"grunt-contrib-cssmin": "",
+		"grunt-contrib-imagemin": "",
+		"grunt-newer": ""
+	}
+}
