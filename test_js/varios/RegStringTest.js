@@ -36,7 +36,7 @@
 
 	QUnit.test('String.prototype.search debería devolver un índice.', function (assert) {
 		var re = /\d/g;
-		assert.deepEqual('l4da'.search(re), 1);
+		assert.deepEqual('l4da'.search(re), 1, 'mensaje de test');
 		assert.deepEqual('dyibm'.search(re), -1);
 	});
 
@@ -47,7 +47,7 @@
 		// If the regular expression does not include the g flag, returns the same result as RegExp.exec().
 		assert.deepEqual(str.match(/ab*/), ['abb']);
 		
-		// If the regular expression includes the g flag, the method returns an Array containing all matches.
+		// If thecd regular expression includes the g flag, the method returns an Array containing all matches.
 		assert.deepEqual(str.match(/ab*/g), ['abb', 'ab']);
 		assert.deepEqual(str.match(/a(b*)/), ['abb', 'bb']);
 		assert.deepEqual(str.match(/a(b*)/g), ['abb', 'ab']);  

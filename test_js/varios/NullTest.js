@@ -10,7 +10,8 @@
 			
 			var variable = null;
 			assert.equal( variable, undefined, 'Equal' );
-			//assert.deepEqual( variable , null, 'DeepEqual' );
+			assert.deepEqual( variable , null, 'DeepEqual' );
+			assert.deepEqual( variable , 'a', 'DeepEqual' );
 			assert.strictEqual( variable , null, 'StrictEqual' );
 			assert.equal( typeof(variable) , 'object', 'Equal + typeof' );
 
