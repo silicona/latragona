@@ -5,7 +5,7 @@
 ### Grunt
 
 Carpeta: /grunt
-Instalación: borra el archivo package-lock.json y ejecuta `npm install`.
+Instalación: Desde su carpeta, borra el archivo package-lock.json y ejecuta `npm install`.
 Ejecución: Desde su carpeta, ejecutar en consola `grunt`
 
 ### PHPUnit

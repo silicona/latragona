@@ -175,12 +175,12 @@ module.exports = function(grunt) {
 
     // Default task.
     
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['watch']);
     //grunt.registerTask('default', ['jshint','qunit']);
 
     grunt.registerTask( 'test', ['connect','qunit'] );
 
-    grunt.registerTask( '', ['watch'] );
+    //grunt.registerTask( '', ['watch'] );
 
     grunt.event.on('watch', function(action, filepath, target) {
       grunt.log.writeln(target + ': ' + filepath + ' has ' + action);

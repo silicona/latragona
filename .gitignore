@@ -1,10 +1,10 @@
+
 /carta/*
+/contrato/*
 
 google8a69886d05c6af8c.html
 
-.gitignore
+/grunt/node_modules/*
+/grunt/package-lock.json
 
-
-/contrato/*
-/grunt/*
 

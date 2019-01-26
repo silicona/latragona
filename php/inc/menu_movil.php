@@ -1,5 +1,9 @@
 
-<?php $nav_ir = $lexico['nav']['ir']; ?>
+<?php 
+	$nav_ir = $lexico['nav']['ir']; 
+	$direccion = $lexico['nav'];
+
+?>
 
 <section id="menumovil" class="movil ipad">
 
@@ -7,39 +11,39 @@
 
 		<!-- 			
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>index" alt="<?php echo $nav_ir . $datos['nav']['inicio']; ?>" title="<?php echo $nav_ir . $datos['nav']['inicio']; ?>">
-				<?php echo $datos['nav']['inicio']; ?>
+			<a href="<?php  //echo BASE_URL . $idioma[0] ?>index" alt="<?php //echo $nav_ir . $datos['nav']['inicio']; ?>" title="<?php //echo $nav_ir . $datos['nav']['inicio']; ?>">
+				<?php //echo $datos['nav']['inicio']; ?>
 			</a>
 		</li>
 		-->
 
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>tragar" alt="<?php echo $nav_ir . $datos['nav']['tragar']; ?>" title="<?php echo $nav_ir . $datos['nav']['tragar']; ?>">
-				<?php echo $lexico['nav']['tragar']; ?>
+			<a href="<?php  echo BASE_URL . $idioma[0] ?>tragar" alt="<?php echo $nav_ir . $direccion['tragar']; ?>" title="<?php echo $nav_ir . $direccion['tragar']; ?>">
+				<?php echo $direccion['tragar']; ?>
 			</a>
 		</li>
 
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>empujar" alt="<?php echo $nav_ir . $datos['nav']['empujar']; ?>" title="<?php echo $nav_ir . $datos['nav']['empujar']; ?>">
-				<?php echo $lexico['nav']['empujar']; ?>
+			<a href="<?php  echo BASE_URL . $idioma[0] ?>empujar" alt="<?php echo $nav_ir . $direccion['empujar']; ?>" title="<?php echo $nav_ir . $direccion['empujar']; ?>">
+				<?php echo $direccion['empujar']; ?>
 			</a>
 		</li>
 
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>dondeestamos" alt="<?php echo $nav_ir . $datos['nav']['donde']; ?>" title="<?php echo $nav_ir . $datos['nav']['donde']; ?>">
-				<?php echo $lexico['nav']['donde']; ?>
+			<a href="<?php  echo BASE_URL . $idioma[0] ?>dondeestamos" alt="<?php echo $nav_ir . $direccion['donde']; ?>" title="<?php echo $nav_ir . $direccion['donde']; ?>">
+				<?php echo $direccion['donde']; ?>
 			</a>
 		</li>
 
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>quienessomos" alt="<?php echo $nav_ir . $datos['nav']['quienes']; ?>" title="<?php echo $nav_ir . $datos['nav']['quienes']; ?>">
-				<?php echo $lexico['nav']['quienes']; ?>
+			<a href="<?php  echo BASE_URL . $idioma[0] ?>quienessomos" alt="<?php echo $nav_ir . $direccion['quienes']; ?>" title="<?php echo $nav_ir . $direccion['quienes']; ?>">
+				<?php echo $direccion['quienes']; ?>
 			</a>
 		</li>
 
 		<li>
-			<a href="<?php  echo BASE_URL . $idioma[0] ?>contacta" alt="<?php echo $nav_ir . $datos['nav']['contacto']; ?>" title="<?php echo $nav_ir . $datos['nav']['contacto']; ?>">
-				<?php echo $lexico['nav']['contacto']; ?>
+			<a href="<?php  echo BASE_URL . $idioma[0] ?>contacta" alt="<?php echo $nav_ir . $direccion['contacto']; ?>" title="<?php echo $nav_ir . $direccion['contacto']; ?>">
+				<?php echo $direccion['contacto']; ?>
 			</a>
 		</li>
 

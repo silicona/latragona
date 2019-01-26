@@ -3,8 +3,8 @@
 
 <meta charset="utf-8">
 <meta name="author" content="alejoizquierdomartinez@gmail.com">
-<meta name="keywords" content="<?php echo $datos['meta']['keywords'] ?>">
-<meta name="description" content ="<?php echo $datos['meta']['description'] ?>">
+<meta name="keywords" content="<?php echo $lexico['meta']['keywords'] ?>">
+<meta name="description" content ="<?php echo $lexico['meta']['description'] ?>">
 <meta http-equiv="content-language" content="<?php echo $idioma[0] ?>">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -3,7 +3,7 @@
 class Tragona {
 
 	// Test
-	public function asignar_alergenos($arr_alergenos, $nom_alergenos){
+	public static function asignar_alergenos($arr_alergenos, $nom_alergenos){
 
 		//$titulo = $GLOBALS['producto']['alergeno'];
 		$aler = '<span class="alergeno">';
@@ -29,7 +29,7 @@ class Tragona {
 	}
 
 	// Test
-	public function comprobar_entrada($dato){
+	public static function comprobar_entrada($dato){
 
 		$dato = trim($dato);
 		$dato = stripslashes($dato);
@@ -39,7 +39,7 @@ class Tragona {
 	}
 
 	// Test
-	public function crear_pasarela_comida($tostas, $raciones, $nombres){
+	public static function crear_pasarela_comida($tostas, $raciones, $nombres){
 
 		$arr_productos = (array) array_merge_recursive( (array) $tostas, (array) $raciones );
 		$arr_nombres = array_keys($arr_productos);
@@ -72,7 +72,7 @@ class Tragona {
 	}
 
 	// Test
-	public function crear_pasarela_bebida($cervezas, $vinos, $lexico){
+	public static function crear_pasarela_bebida($cervezas, $vinos, $lexico){
 
 		$titulos = $lexico['titulos'];
 		$bebidas = $lexico['bebida'];
@@ -217,7 +217,7 @@ class Tragona {
 	}
 
 	// Test
-	public function formatear_titulo($nombre, $titulos, $objeto = ['nombre' => 'nil', "tipo" => 'nil']){
+	public static function formatear_titulo($nombre, $titulos, $objeto = ['nombre' => 'nil', "tipo" => 'nil']){
 
 		switch($nombre){
 
@@ -259,7 +259,7 @@ class Tragona {
 	}
 
 	// Test
-	public function formatear_precio($producto, $material = ''){
+	public static function formatear_precio($producto, $lex_prod, $material = ''){
 
 		$datos = $producto['precio'];
 		$resultado = '';
@@ -268,8 +268,7 @@ class Tragona {
 
 			foreach($datos as $envase => $precio){
 
-				$resultado .= "<li>" . ucfirst($envase) . " <sub>(" . $precio . "&euro;)</sub></li>"; 
-				//$resultado .= "<li>".$GLOBALS['producto'][$envase]." <sub>(".$precio."&euro;)</sub></li>"; 
+				$resultado .= "<li>" . ucfirst($lex_prod[$envase]) . " <sub>(" . $precio . "&euro;)</sub></li>"; 
 			}
 
 		} else {
@@ -277,18 +276,17 @@ class Tragona {
 			$resultado = "<sub>(";
 			$token = 0;
 
-			foreach($datos as $envase => $precio){
+			foreach( $datos as $envase => $precio ){
 
-				if($material == "Comida") { 
+				if( $material == "Comida" ){ 
 
 					$resultado .= $precio . "<sub>&euro;</sub>";	
 
-				}	else { 
+				} else { 
 
 					$resultado .= $token > 0 ? ', ' : '';
 
-					$resultado .= ucfirst($envase) . ': <sub>' . $precio . '&euro;</sub>';
-					// $resultado .= $GLOBALS['producto'][$envase] . ': <sub>' . $precio . '&euro;</sub>';
+					$resultado .= ucfirst($lex_prod[$envase]) . ': <sub>' . $precio . '&euro;</sub>';
 					$token++;	
 				}
 			}
@@ -300,21 +298,22 @@ class Tragona {
 	}
 
 	// Test
-	public function formatear_cerveza($producto){
+	public static function formatear_cerveza($producto, $lexico){
 
 		$prod = '<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . '">';
 
 		$prod .= '<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $producto['nombre'] . '" title="' . $producto['nombre'] . '">';
 
-		$prod .= '</a><ul>' . Tragona::formatear_precio($producto, 'cerveza') . '</ul></div>';
+		$prod .= '</a><ul>' . Tragona::formatear_precio($producto, $lexico['producto'], 'cerveza') . '</ul></div>';
 
 		return $prod;
 	}
 
 	// Test
-	public function formatear_vino($producto, $ver_descripcion){
+	public static function formatear_vino($producto, $lexico){
 
 		$nombre = $producto['nombre'];
+		//$ver = $lexico['producto']['descripcion'];
 
 		$prod = array(
 			'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $nombre . '">',
@@ -323,10 +322,10 @@ class Tragona {
 
 			//$prod .= '<div class="celda">';
 			'<p>' . $nombre . '</p>',
-			'<p class= "precio">' . Tragona::formatear_precio($producto) . '</p>',
+			'<p class= "precio">' . Tragona::formatear_precio($producto, $lexico['producto']) . '</p>',
 			// '<p class= "precio">' . Tragona::formatear_precio($producto['precio']) . '</p>',
 
-			'<span class="descripcion"><a data-fancybox data-src="' . BASE_URL . 'php/guia.php?vino=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $ver_descripcion . '</a></span>',
+			'<span class="descripcion"><a data-fancybox data-src="' . BASE_URL . 'php/guia.php?vino=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['descripcion'] . '</a></span>',
 			//$prod .= '</div>';
 
 			'</div>'
@@ -336,23 +335,23 @@ class Tragona {
 	}
 
 	// Test
-	public function formatear_licor($producto, $nom_bebidas){
+	public static function formatear_licor($producto, $lexico){
 
-		$licor = $nom_bebidas[$producto['nombre']];
+		$licor = $lexico['bebida'][$producto['nombre']];
 
 		$prod = array(
 			'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $licor . '">',
 			'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" alt="' . $licor . '" title="' . $licor . '" class="imagen">',
 			'</a>',
 			'<p>' . $licor . '</p>',
-			'<p class="precio">' . Tragona::formatear_precio($producto) . '</p></div>'
+			'<p class="precio">' . Tragona::formatear_precio($producto, $lexico['producto']) . '</p></div>'
 		);
 		
 		return implode('', $prod);
 	}
 
 	// Test
-	public function formatear_comida($producto, $lexico, $tosta = false){
+	public static function formatear_comida($producto, $lexico, $tosta = false){
 
 		if( $tosta ){
 
@@ -366,34 +365,23 @@ class Tragona {
 		}
 
 		$nombre = $lexico['nombre'][$producto['descripcion']];
-		// $nombre = $GLOBALS['nombres'][$producto['descripcion']];
 
 		$prod = array(
 			'<a href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">',
 			'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
 			'</a>',
-			'<p>' . $nombre . ' ' . Tragona::formatear_precio($producto, 'Comida') . '<br>',
+			'<p>' . $nombre . ' ' . Tragona::formatear_precio($producto, $lexico['producto'], 'Comida') . '<br>',
 			'<span class="ingredientes">',
 			'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['ver'] . '</a></span>',
 			'</p>',
 			Tragona::asignar_alergenos($producto['alergenos'], $lexico['alergenos']) . '</div>'
 		);
-		/*
-		$prod = '<a href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">';
-		$prod .= '<img src="' . BASE_FILE . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">';
-		$prod .= '</a>';
-		$prod .= '<p>' . $nombre . ' ' . Tragona::formatear_precio($producto, 'Comida') . '<br>';
-		$prod .= '<span class="ingredientes">';
-		$prod .= '<a data-fancybox data-src="' . BASE_FILE . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $GLOBALS['producto']['ver'] . '</a></span>';
-		$prod .= '</p>';
-		$prod .= asignarAlergenos($producto['alergenos']) . '</div>';
-		*/
 
 		return implode('', $prod);
 	}
 
 	// Test
-	public function mostrar_novedad($producto){
+	public static function mostrar_novedad($producto){
 
 		if( isset($producto['novedad']) ){
 
@@ -403,9 +391,8 @@ class Tragona {
 		return '<div>';	
 	}
 
-	// $listado proviene de despensa o bodega
-
-	public function mostrar_productos($obj_productos, $lexico){
+	// Test
+	public static function mostrar_productos($obj_productos, $lexico){
 
 		$titulos = $lexico['titulos'];
 
@@ -445,15 +432,15 @@ class Tragona {
  			switch( $material ){
 
 				case "Cervezas":
-					$lista .= Tragona::formatear_cerveza($producto);
+					$lista .= Tragona::formatear_cerveza($producto, $lexico);
 					break;
 
 				case "Vinos":	
-					$lista .= Tragona::formatear_vino($producto, $lexico['producto']['descripcion']);
+					$lista .= Tragona::formatear_vino($producto, $lexico);
 					break;
 
 				case "Licores":
-					$lista .= Tragona::formatear_licor($producto, $lexico['bebida']);
+					$lista .= Tragona::formatear_licor($producto, $lexico);
 					break;
 
 				case "Tostas":
@@ -468,7 +455,6 @@ class Tragona {
 					break;
 			}
 		}
-
 
 		$lista .= $compartir;
 		$lista .= "</article>";	

@@ -125,6 +125,17 @@ class Vinos {
 		)
 	);
 
+	public $vizconde = array(
+		"nombre"      => "Vizconde de la Villa",
+		"imagen"      => "vizconde.jpg",
+		"descripcion" => "vizconde",
+		"precio"      => array(
+			"copa"    => "2.4", 
+			"botella" => "15"
+		),
+		'novedad' => true
+	);
+
 	// Blancos
 	public $albarino = array(
 		"nombre"      => "Albariño (Cosechero)",
@@ -279,7 +290,7 @@ class Tostas {
 		"imagen" => "tosta_brandada.jpg",
 		"precio" => ["4,5"],
 		"descripcion" => "brandada",
-		"ingredientes" => ["bacalao", "ajo", "cayena", "aceite", "patata", "leche"],
+		"ingredientes" => ["bacalao", "ajo", "cayena", "aceite", "patata"],
 		"alergenos" => ["gluten", "pescado"]
 	);
 	
@@ -318,6 +329,25 @@ class Tostas {
 		"ingredientes" => ["salmon_ahumado", "crema_queso", "pimienta_blanca", "eneldo"],
 		"alergenos" => ["gluten", "pescado", "lacteo"]
 	);
+	/*
+	public $tosta_shiitake = array(
+		"nombre"       => "Pate de shiitake",
+		"imagen"       => "patatas_revolconas.jpg",
+		"precio"       => array("4,5"),
+		"descripcion"  => "tosta_shiitake",
+		"ingredientes" => array(
+			"patata", 
+			"chorizo", 
+			"panceta", 
+			"aceite", 
+			"ajo", 
+			"pimenton", 
+			"sal"
+		),
+		"alergenos"    => array("gluten", "soja"),
+		"novedad"      => true
+	);
+	*/
 
 	public $tosta_ventresca = array(
 		"nombre" => "Ventresca con pimientos del piquillo",
@@ -368,7 +398,7 @@ class Raciones {
 	public $berenjena = array(
 		"nombre"       => "Berenjenas rellenas",
 		"imagen"       => "berenjena.jpg",
-		"precio"       => array( "7" ),
+		"precio"       => array( "7,5" ),
 		"descripcion"  => "berenjena",
 		"ingredientes" => array(
 			"berenjena", 
@@ -384,10 +414,19 @@ class Raciones {
 		"alergenos"    => array()
 	);
 
+	public $brandada = array(
+		"nombre" => "Brandada de bacalao",
+		"imagen" => "brandada.jpg",
+		"precio" => array('9'),
+		"descripcion" => "brandada",
+		"ingredientes" => ["bacalao", "ajo", "cayena", "aceite", "patata"],
+		"alergenos" => ["pescado"]
+	);
+
 	public $canelones_morcilla = array(
 		"nombre"       => "Canelones de morcilla de guerra",
 		"imagen"       => "canelones_morcilla.jpg",
-		"precio"       => array( "7" ),
+		"precio"       => array( "7,5" ),
 		"descripcion"  => "canelones_morcilla",
 		"ingredientes" => array(
 			"pasta_trigo", 
@@ -410,7 +449,7 @@ class Raciones {
 	public $carne_mechada = array(
 		"nombre"       => "Carne mechada",
 		"imagen"       => "carne_mechada.jpg", // imagen de menu
-		"precio"       => array( "7" ),
+		"precio"       => array( "7,5" ),
 		"descripcion"  => "carne_mechada",
 		"ingredientes" => array(
 			"lomo", 
@@ -426,7 +465,7 @@ class Raciones {
 		), 
 		"alergenos"    => array(),
 		"novedad"      => true
-		);
+	);
 
 	public $carpaccio = array(
 		"nombre"       => "Carpaccio de calabacín",
@@ -463,7 +502,7 @@ class Raciones {
 		),
 		"alergenos"    => array()
 	);
-
+	/*
 	public $ensalada_remo = array( 
 		"nombre"       => "Ensalada de remolacha, rúcula y queso de cabra eco",
 		"imagen"       => "ensalada_remo.jpg",  // Imagen Ajena
@@ -478,29 +517,34 @@ class Raciones {
 		),
 		"alergenos"    => array( "soja" )
 	);
-
-	public $ventresca = array(
-		"nombre"       => "Ensalada de ventresca con p. del piquillo",
-		"imagen"       => "ensalada_ventresca.jpg",
-		"precio"       => ["9", " - ½: 4,5"],
-		"descripcion"  => "ventresca",
-		"ingredientes" => ["ventresca", "pimiento_piquillo", "sal_gorda", "aceite"],
-		"alergenos"    => ["pescado"]
-	);
+	*/
 	
 	public $hummus = array(
 		"nombre"       => "Hummus",
 		"imagen"       => "racion_hummus.jpg",
-		"precio"       => ["6", " - ½: 3"],
+		"precio"       => array(
+			"6",
+			" - ½: 3"
+		),
 		"descripcion"  => "hummus",
 		"ingredientes" => ["garbanzo", "ajo", "comino", "sal", "aceite", "zumo_limon", "pimenton"],
 		"alergenos"    => []
 	);
+	/*
+	public $judiones = array(
+		"nombre"       => "Judiones con compango",
+		"imagen"       => "judiones.jpg",
+		"precio"       => array("8"),
+		"descripcion"  => "judiones",
+		"ingredientes" => ["judias", "ajo", "comino", "sal", "aceite", "zumo_limon", "pimenton"],
+		"alergenos"    => []
+	);
+	*/
 
 	public $lasagna = array(
 		"nombre"       => "Lasagna de setas",
 		"imagen"       => "lasagna_setas.jpg",
-		"precio"       => ["7"],
+		"precio"       => ["7,5"],
 		"descripcion"  => "lasagna",
 		"ingredientes" => ["pasta_trigo", "setas", "harina", "mantequilla", "nuez_moscada", "sal", "pimienta_blanca", "leche", "tomate_frito", "cayena", "ajo", "aceite"],
 		"alergenos"    => []
@@ -518,17 +562,17 @@ class Raciones {
 	public $migas = array(
 		"nombre"       => "Migas",
 		"imagen"       => "migas.jpg",
-		"precio"       => ["6"],
+		"precio"       => ["6,5"],
 		"descripcion"  => "migas",
 		"ingredientes" => ["pan", "chorizo", "panceta", "aceite", "ajo", "pimenton", "sal"],
-		"alergenos"    => ["gluten"],
+		"alergenos"    => array("gluten"),
 		"novedad"      => true
 	);
 
 	public $mousaka = array(
 		"nombre"       => "Mousaka",
 		"imagen"       => "mousaka.jpg", // Imagen Ajena
-		"precio"       => array( "7" ),
+		"precio"       => array( "7,5" ),
 		"descripcion"  => "mousaka",
 		"ingredientes" => array(
 			"carne_picada", 
@@ -549,7 +593,7 @@ class Raciones {
 	public $papas_2mojos = array(
 		"nombre"       => "'Papas arrugás' con 2 mojos",
 		"imagen"       => "racion_papa_mojo.jpg",
-		"precio"       => array( "6" ),
+		"precio"       => array( "6,5" ),
 		"descripcion"  => "papas_2mojos",
 		"ingredientes" => array(
 			"patata", 
@@ -583,7 +627,24 @@ class Raciones {
 			"lacteo"
 		)
 	);
-
+	/*
+	public $patatas_cabrales = array(
+		"nombre"       => "Patatas revolconas",
+		"imagen"       => "patatas_cabrales.jpg",
+		"precio"       => array( "5" ),
+		"descripcion"  => "patatas_cabrales",
+		"ingredientes" => array(
+			"patata", 
+			"chorizo", 
+			"panceta", 
+			"aceite", 
+			"ajo", 
+			"pimenton", 
+			"sal"
+		),
+		"alergenos"    => array('lacteo'),
+	);
+	*/
 	public $patatas_rellenas = array(
 		"nombre"       => "Patatas rellenas de pisto o cabrales",
 		"imagen"       => "racion_patata_rellena.jpg",
@@ -604,7 +665,7 @@ class Raciones {
 	public $patatas_revolconas = array(
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_revolconas.jpg",
-		"precio"       => array( "6" ),
+		"precio"       => array( "6,5" ),
 		"descripcion"  => "patatas_revolconas",
 		"ingredientes" => array(
 			"patata", 
@@ -616,15 +677,38 @@ class Raciones {
 			"sal"
 		),
 		"alergenos"    => array(),
+	);
+	/*
+	public $pate_shiitake = array(
+		"nombre"       => "Pate de shiitake",
+		"imagen"       => "patatas_revolconas.jpg",
+		"precio"       => array(
+			"7",
+			" - ½: 3,5"
+		),
+		"descripcion"  => "pate_shiitake",
+		"ingredientes" => array(
+			"patata", 
+			"chorizo", 
+			"panceta", 
+			"aceite", 
+			"ajo", 
+			"pimenton", 
+			"sal"
+		),
+		"alergenos"    => array(
+			"soja",
+		),
 		"novedad"      => true
 	);
+	*/
 
 	public $ragout = array(
 		"nombre"       => "Ragout de ternera",
 		"imagen"       => "ragout.jpg",
 		"precio"       => array(
-			"7", 
-			" - ½: 3,5" 
+			"8", 
+			" - ½: 4" 
 		),
 		"descripcion"  => "ragout",
 		"ingredientes" => array(
@@ -658,6 +742,26 @@ class Raciones {
 		),
 		"alergenos"    => array( "mostaza" )
 	);
+	/*
+	public $solomillo_aji = array(
+		"nombre"       => "Solomillo al aji amarillo",
+		"imagen"       => "solomillo_aji.jpg",
+		"precio"       => array( "8" ),
+		"descripcion"  => "solomillo",
+		"ingredientes" => array(
+			"solomillo", 
+			"cebolla", 
+			"cerveza", 
+			"manzana", 
+			"mostaza", 
+			"aceite", 
+			"sal",
+			"patata cocida",
+			"huevo",
+		),
+		"alergenos"    => array( "huevo" )
+	);
+	*/
 
 	public $solomillo_sal = array(
 		"nombre"       => "Solomillo curado a la sal con especias",
@@ -678,7 +782,7 @@ class Raciones {
 	public $rusos = array(
 		"nombre"       => "Filetes rusos con salsa de tomate",
 		"imagen"       => "rusos.jpg",
-		"precio"       => array( "7" ),
+		"precio"       => array( "7,5" ),
 		"descripcion"  => "rusos",
 		"ingredientes" => array(
 			"carne_picada", 
@@ -693,6 +797,15 @@ class Raciones {
 			"cebolla"
 		),
 		"alergenos" => array( "huevo" )
+	);
+
+	public $ventresca = array(
+		"nombre"       => "Ensalada de ventresca con p. del piquillo",
+		"imagen"       => "ensalada_ventresca.jpg",
+		"precio"       => ["9", " - ½: 4,5"],
+		"descripcion"  => "ventresca",
+		"ingredientes" => ["ventresca", "pimiento_piquillo", "sal_gorda", "aceite"],
+		"alergenos"    => ["pescado"]
 	);
 }
 
