@@ -4,7 +4,8 @@
 
 google8a69886d05c6af8c.html
 
-/grunt/node_modules/*
 /grunt/package-lock.json
+/grunt/node_modules/*
 
-
+/test/composer.lock
+/test/vendor/*
