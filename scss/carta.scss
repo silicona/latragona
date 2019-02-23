@@ -292,7 +292,8 @@ body {
 					}
 				}
 
-				div.articulo_novedad { 
+				div.articulo_novedad {
+
 					border-color: #BFDC7A;	
 
 					> a { float: right; }
@@ -399,7 +400,6 @@ body {
 	#contenedor {
 
 		#lateral ul li { margin: 0 .5ex; }
-
 	}
 }
 
@@ -464,7 +464,6 @@ body {
 			article.foto .cartel_lateral p { font-size: 1.3em; }
 		}
 	}
-
 }
 
 @media screen and (min-device-width: 992px) {
@@ -538,7 +537,7 @@ body {
 
 @media screen and (min-device-width: 1200px) {
 	
-		#contenedor {
+	#contenedor {
 
 		section {
 

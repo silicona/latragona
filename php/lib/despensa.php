@@ -466,7 +466,7 @@ class Raciones {
 		"alergenos"    => array(),
 		"novedad"      => true
 	);
-
+	/*
 	public $carpaccio = array(
 		"nombre"       => "Carpaccio de calabacín",
 		"imagen"       => "carpaccio_calabacin.jpg",
@@ -486,7 +486,7 @@ class Raciones {
 		),
 		"alergenos"    => array( "soja" )
 	);
-
+	*/
 	public $cecina = array(
 		"nombre"       => "Cecina de León",
 		"imagen"       => "racion_cecina.jpg",
@@ -549,7 +549,7 @@ class Raciones {
 		"ingredientes" => ["pasta_trigo", "setas", "harina", "mantequilla", "nuez_moscada", "sal", "pimienta_blanca", "leche", "tomate_frito", "cayena", "ajo", "aceite"],
 		"alergenos"    => []
 	);
-	
+	/*
 	public $lomo = array(
 		"nombre"       => "Lomo embuchado",
 		"imagen"       => "lomo.jpg",	// Imagen Ajena
@@ -558,7 +558,7 @@ class Raciones {
 		"ingredientes" => ["lomo_embuchado"],
 		"alergenos"    => []
 	);
-
+	*/
 	public $migas = array(
 		"nombre"       => "Migas",
 		"imagen"       => "migas.jpg",
@@ -609,7 +609,7 @@ class Raciones {
 		),
 		"alergenos"    => array()
 	);
-
+	/*
 	public $pastel_salmon = array(
 		"nombre"       => "Pastel de salmón",
 		"imagen"       => "pastel_salmon.jpg",
@@ -627,7 +627,7 @@ class Raciones {
 			"lacteo"
 		)
 	);
-	/*
+	
 	public $patatas_cabrales = array(
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_cabrales.jpg",
@@ -644,7 +644,7 @@ class Raciones {
 		),
 		"alergenos"    => array('lacteo'),
 	);
-	*/
+	
 	public $patatas_rellenas = array(
 		"nombre"       => "Patatas rellenas de pisto o cabrales",
 		"imagen"       => "racion_patata_rellena.jpg",
@@ -661,11 +661,11 @@ class Raciones {
 		),
 		"alergenos"    => array()
 	);
-	
+	*/
 	public $patatas_revolconas = array(
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_revolconas.jpg",
-		"precio"       => array( "6,5" ),
+		"precio"       => array( "7" ),
 		"descripcion"  => "patatas_revolconas",
 		"ingredientes" => array(
 			"patata", 
@@ -725,7 +725,7 @@ class Raciones {
 		),
 		"alergenos"    => array()
 	);
-
+	/*
 	public $solomillo = array(
 		"nombre"       => "Solomillo con 2 salsas (cerveza y manzana)",
 		"imagen"       => "solomillo.jpg",
@@ -742,10 +742,11 @@ class Raciones {
 		),
 		"alergenos"    => array( "mostaza" )
 	);
-	/*
+	*/
 	public $solomillo_aji = array(
 		"nombre"       => "Solomillo al aji amarillo",
-		"imagen"       => "solomillo_aji.jpg",
+		"imagen"       => "solomillo.jpg",
+		//"imagen"       => "solomillo_aji.jpg",
 		"precio"       => array( "8" ),
 		"descripcion"  => "solomillo",
 		"ingredientes" => array(
@@ -761,8 +762,7 @@ class Raciones {
 		),
 		"alergenos"    => array( "huevo" )
 	);
-	*/
-
+	/*
 	public $solomillo_sal = array(
 		"nombre"       => "Solomillo curado a la sal con especias",
 		"imagen"       => "solomillo_sal.jpg",
@@ -778,7 +778,7 @@ class Raciones {
 		"alergenos" => array(),
 		"novedad"   => true
 	);
-
+	*/
 	public $rusos = array(
 		"nombre"       => "Filetes rusos con salsa de tomate",
 		"imagen"       => "rusos.jpg",
