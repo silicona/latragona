@@ -3,7 +3,7 @@
 require_once '../php/tragona.php';
 require_once 'helper.php';
 
-class TragonaTest extends \PHPUnit\Framework\Testcase {
+class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public static $lexico;
 
@@ -336,10 +336,14 @@ class TragonaTest extends \PHPUnit\Framework\Testcase {
 
 	public function test_mostrar_productos_tostas(){
 
-
 		$res = Tragona::mostrar_productos( self::$tostas, self::$lexico );
-
+print_r($res);
 		$this -> assertRegExp( '/<article class="contenido">/', $res );
+	}
+
+
+	public function test_mostrar_productos_raciones(){
+
 	}
 
 }

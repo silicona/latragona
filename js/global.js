@@ -320,22 +320,29 @@ function animarFancy(pagina){
 
 
 /* DONDE ESTAMOS */
-function calcularHorario(){
+function calcularHorario(fecha){
 
-	var fecha = new Date();
+	/* Horario Tragona
+		M-V: 19-00,
+		S: 13-16 // 19-01, 
+		D: 13-17
+	*/
+
 	var dia = fecha.getDay();
 	var hora = fecha.getHours();
 
 	preposicion = mapa_en + " ";
 	apertura = false;
 
-		// M - S
-	if(dia > 1){
+	if( dia > 1 ){
 
-			// M y J Cerrados por la mañana
-		if( dia == 2 || dia == 4){
+		// M - D
 
-			if( hora > 19 && hora < 24 ){
+		// M - V Cerrados por la mañana
+		if( dia != 6 ){
+
+			// Apertura por la tarde
+			if( hora > 18 && hora < 24 ){
 
 				apertura = true;
 
@@ -343,7 +350,7 @@ function calcularHorario(){
 			
 			} else {
 
-				tiempo = 20 - hora;
+				tiempo = 19 - hora;
 
 				tiempo > 1 ? tiempo += " " + mapa_horas + "." : tiempo += " " + mapa_hora + ".";
 				tiempo = preposicion + tiempo;
@@ -352,9 +359,9 @@ function calcularHorario(){
 			}
 
 		}
-			// ABIERTO
-			// 13 - 16 // 20 - 24
-		if((hora > 12 && hora < 16) || (hora > 19 && hora < 24)){
+
+		// S
+		if( (hora >= 13 && hora < 16) || (hora >= 19 && hora < 24) ){
 
 			apertura = true;
 
@@ -363,13 +370,13 @@ function calcularHorario(){
 		} else {
 
 			// CERRADO
-			if(hora < 13){
+			if( hora < 13 ){
 
 				tiempo =  13 - hora;
 
 			} else {
 
-				tiempo = 20 - hora;
+				tiempo = 19 - hora;
 			}
 
 			tiempo > 1 ? tiempo += " " + mapa_horas + "." : tiempo += " " + mapa_hora + ".";
@@ -378,11 +385,10 @@ function calcularHorario(){
 			return apertura, tiempo;
 		}
 
+	} else if( dia == 0 ){
 		// D
-	} else if(dia == 0){
 
-			// Abierto 12-17
-		if(hora > 11 && hora < 17){
+		if(hora > 12 && hora < 17){
 
 			apertura = true;
 
@@ -390,9 +396,9 @@ function calcularHorario(){
 
 		} else {
 
-			if(hora < 12){
+			if( hora < 13 ){
 
-				tiempo =  12 - hora;
+				tiempo =  13 - hora;
 
 			}	else {
 
@@ -418,11 +424,12 @@ function iniciarMapa(){
 
 	ancho_ventana = window.innerWidth || document.body.offsetWidth;
 	var ancho = $('#mapa').css('width').slice(0, 3);
-
-	calcularHorario();
+	var fecha = new Date();
+	
+	calcularHorario(fecha);
 
 	var tragona = { lat: 40.41121079, lng: -3.70549053 };
-	var centro_desktop = { lat: 40.41121079, lng: -3.7063};
+	var centro_desktop = { lat: 40.41121079, lng: -3.7063 };
 
 	if(ancho >= 500){
 
@@ -490,6 +497,8 @@ function iniciarMapa(){
 	});
 
 	marcador.addListener('click', function(){ informacion.open(mapa, marcador);	});
+
+	return informacion;
 }
 
 
@@ -687,7 +696,6 @@ function validarForm(e){
 
 	enviar_mensaje(datos);
 }
-
 
 
 function activarClicks(){

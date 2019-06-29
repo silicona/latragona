@@ -398,7 +398,7 @@ class Raciones {
 	public $berenjena = array(
 		"nombre"       => "Berenjenas rellenas",
 		"imagen"       => "berenjena.jpg",
-		"precio"       => array( "7,5" ),
+		"precio"       => array( "8" ),
 		"descripcion"  => "berenjena",
 		"ingredientes" => array(
 			"berenjena", 
@@ -449,7 +449,7 @@ class Raciones {
 	public $carne_mechada = array(
 		"nombre"       => "Carne mechada",
 		"imagen"       => "carne_mechada.jpg", // imagen de menu
-		"precio"       => array( "7,5" ),
+		"precio"       => array( "8" ),
 		"descripcion"  => "carne_mechada",
 		"ingredientes" => array(
 			"lomo", 
@@ -518,6 +518,49 @@ class Raciones {
 		"alergenos"    => array( "soja" )
 	);
 	*/
+
+	public $ensalada_rusa = array( 
+		"nombre"       => "Ensaladilla rusa",
+		"imagen"       => "ensalada_rusa.jpg",  // Imagen Ajena
+		"precio"       => array( "7" ),
+		"descripcion"  => "ensalada_rusa",
+		"ingredientes" => array(
+			"patata", 
+			"pimiento_rojo", 
+			"aceituna", 
+			"aceite", 
+			"huevo",
+			'atun'
+		),
+		"alergenos"    => array( "pescado" )
+	);
+
+	public $ensalada_sardinas = array( 
+		"nombre"       => "Ensalada de sardinas marinadas caseras, tomate y albahaca",
+		"imagen"       => "ensalada_sardinas.jpg",
+		"precio"       => array( "9" ),
+		"descripcion"  => "ensalada_sardinas",
+		"ingredientes" => array(
+			"sardina", 
+			"tomate", 
+			"albahaca", 
+			"aceite"
+		),
+		"alergenos"    => array( "pescado" )
+	);
+	
+	public $gazpacho = array( 
+		"nombre"       => "Gazpacho",
+		"imagen"       => "gazpacho.jpg",
+		"precio"       => array( "2" ),
+		"descripcion"  => "gazpacho",
+		"ingredientes" => array( 
+			"tomate",
+			"aceite",
+			'pan'
+		),
+		"alergenos"    => array( "pan" )
+	);
 	
 	public $hummus = array(
 		"nombre"       => "Hummus",
@@ -544,7 +587,7 @@ class Raciones {
 	public $lasagna = array(
 		"nombre"       => "Lasagna de setas",
 		"imagen"       => "lasagna_setas.jpg",
-		"precio"       => ["7,5"],
+		"precio"       => ["8"],
 		"descripcion"  => "lasagna",
 		"ingredientes" => ["pasta_trigo", "setas", "harina", "mantequilla", "nuez_moscada", "sal", "pimienta_blanca", "leche", "tomate_frito", "cayena", "ajo", "aceite"],
 		"alergenos"    => []
@@ -572,7 +615,7 @@ class Raciones {
 	public $mousaka = array(
 		"nombre"       => "Mousaka",
 		"imagen"       => "mousaka.jpg", // Imagen Ajena
-		"precio"       => array( "7,5" ),
+		"precio"       => array( "8" ),
 		"descripcion"  => "mousaka",
 		"ingredientes" => array(
 			"carne_picada", 
@@ -661,7 +704,8 @@ class Raciones {
 		),
 		"alergenos"    => array()
 	);
-	*/
+	
+
 	public $patatas_revolconas = array(
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_revolconas.jpg",
@@ -678,10 +722,29 @@ class Raciones {
 		),
 		"alergenos"    => array(),
 	);
-	/*
+	*/
+
+	public $patatas_cabrales = array(
+		"nombre"       => "Patatas revolcadas con cabrales",
+		"imagen"       => "patatas_cabrales.jpg",
+		"precio"       => array( "5" ),
+		"descripcion"  => "patatas_cabrales",
+		"ingredientes" => array(
+			"patata", 
+			"chorizo", 
+			"panceta", 
+			"aceite", 
+			"ajo", 
+			"pimenton", 
+			"sal",
+			'queso'
+		),
+		"alergenos"    => array('lacteo'),
+	);
+	
 	public $pate_shiitake = array(
 		"nombre"       => "Pate de shiitake",
-		"imagen"       => "patatas_revolconas.jpg",
+		"imagen"       => "pate_shiitake.jpg",
 		"precio"       => array(
 			"7",
 			" - ½: 3,5"
@@ -701,8 +764,19 @@ class Raciones {
 		),
 		"novedad"      => true
 	);
-	*/
 
+	public $queso_tietar = array(
+		"nombre"       => "Queso de cabra ecológico del Tietar",
+		"imagen"       => "queso_tietar.jpg",
+		"precio"       => array( '5' ),
+		"descripcion"  => "queso_tietar",
+		"ingredientes" => array(
+			"queso", 
+		),
+		"alergenos"    => array( "lacteo" ),
+		"novedad"      => true
+	);
+	
 	public $ragout = array(
 		"nombre"       => "Ragout de ternera",
 		"imagen"       => "ragout.jpg",
@@ -782,7 +856,7 @@ class Raciones {
 	public $rusos = array(
 		"nombre"       => "Filetes rusos con salsa de tomate",
 		"imagen"       => "rusos.jpg",
-		"precio"       => array( "7,5" ),
+		"precio"       => array( "8" ),
 		"descripcion"  => "rusos",
 		"ingredientes" => array(
 			"carne_picada", 
@@ -797,6 +871,19 @@ class Raciones {
 			"cebolla"
 		),
 		"alergenos" => array( "huevo" )
+	);
+
+	public $tartar_verduras = array(
+		"nombre"       => "Tartar de verduras, quinoa y salsa de aceituna verde",
+		"imagen"       => "tartar_verduras.jpg",
+		"precio"       => array( "8" ),
+		"descripcion"  => "tartar_verduras",
+		"ingredientes" => array(
+			"judias", 
+			"quinoa", 
+			'aceituna'
+		),
+		//"alergenos" => array( "huevo" )
 	);
 
 	public $ventresca = array(

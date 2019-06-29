@@ -1,112 +1,148 @@
 /* Colores */
 body {
   background: url("../media/cabeceras/telefonista.jpg") fixed center center;
-  background-size: cover; }
+  background-size: cover;
+}
 
 #contenedor .wasap {
-  width: 20px; }
+  width: 20px;
+}
 #contenedor .contenido .imagen_lateral {
-  overflow: hidden; }
-  #contenedor .contenido .imagen_lateral img {
-    position: relative; }
+  overflow: hidden;
+}
+#contenedor .contenido .imagen_lateral img {
+  position: relative;
+}
 #contenedor .formulario {
-  margin: 0 auto; }
-  #contenedor .formulario .contenido form {
-    background-color: #FB8F50;
-    border: 2px solid #FB6750;
-    /*margin: 0 5%;*/
-    padding: 1ex;
-    position: relative;
-    width: 90%;
-    clear: both; }
-    #contenedor .formulario .contenido form label {
-      display: block;
-      margin: 0.5ex 0 1ex 1ex;
-      font-size: 0.9em; }
-    #contenedor .formulario .contenido form input {
-      background-color: #FFFFFF;
-      margin: 1ex auto;
-      border: unset;
-      line-height: 1.2em;
-      padding: .5ex;
-      width: calc( 100% - 1ex );
-      display: block; }
-      #contenedor .formulario .contenido form input:hover {
-        background-color: #EEEEEE; }
-    #contenedor .formulario .contenido form #etiqueta_texto {
-      font-size: 1.1em;
-      margin-bottom: 0.5em;
-      display: inline-block; }
-    #contenedor .formulario .contenido form textarea {
-      width: calc( 100% - 1ex );
-      padding: .5ex;
-      margin: 0 auto;
-      display: block; }
-    #contenedor .formulario .contenido form .boton {
-      width: 80%;
-      padding: 10px;
-      border-radius: 10px;
-      transition: .5s all linear;
-      border-bottom: 1px solid #000000;
-      letter-spacing: .2ex;
-      cursor: pointer; }
-      #contenedor .formulario .contenido form .boton:hover {
-        background-color: #FB6750;
-        color: #FFFFFF;
-        box-shadow: 2px 2px 5px #000000; }
-    #contenedor .formulario .contenido form #respuesta_form {
-      text-align: center; }
-      #contenedor .formulario .contenido form #respuesta_form .spinner {
-        border-radius: 50%;
-        animation: esperar_ajax 3s linear 1 forwards; }
-      #contenedor .formulario .contenido form #respuesta_form p {
-        padding: .4ex;
-        font-size: 1.2em;
-        max-width: unset;
-        text-align: center;
-        border-radius: 4px;
-        margin: 0 auto; }
-        #contenedor .formulario .contenido form #respuesta_form p.respuesta_error {
-          color: #F60D0D;
-          background-color: #F0C6C6;
-          border: 2px solid #A91515; }
-        #contenedor .formulario .contenido form #respuesta_form p.respuesta_ok {
-          color: #51C526;
-          background-color: #9CE083;
-          border: 2px solid #51C526; }
+  margin: 0 auto;
+}
+#contenedor .formulario .contenido form {
+  background-color: #FB8F50;
+  border: 2px solid #FB6750;
+  /*margin: 0 5%;*/
+  padding: 1ex;
+  position: relative;
+  width: 90%;
+  clear: both;
+}
+#contenedor .formulario .contenido form label {
+  display: block;
+  margin: 0.5ex 0 1ex 1ex;
+  font-size: 0.9em;
+}
+#contenedor .formulario .contenido form input {
+  background-color: #FFFFFF;
+  margin: 1ex auto;
+  border: unset;
+  line-height: 1.2em;
+  padding: 0.5ex;
+  width: calc( 100% - 1ex );
+  display: block;
+}
+#contenedor .formulario .contenido form input:hover {
+  background-color: #EEEEEE;
+}
+#contenedor .formulario .contenido form #etiqueta_texto {
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+#contenedor .formulario .contenido form textarea {
+  width: calc( 100% - 1ex );
+  padding: 0.5ex;
+  margin: 0 auto;
+  display: block;
+}
+#contenedor .formulario .contenido form .boton {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s all linear;
+  border-bottom: 1px solid #000000;
+  letter-spacing: 0.2ex;
+  cursor: pointer;
+}
+#contenedor .formulario .contenido form .boton:hover {
+  background-color: #FB6750;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 5px #000000;
+}
+#contenedor .formulario .contenido form #respuesta_form {
+  text-align: center;
+}
+#contenedor .formulario .contenido form #respuesta_form .spinner {
+  border-radius: 50%;
+  animation: esperar_ajax 3s linear 1 forwards;
+}
+#contenedor .formulario .contenido form #respuesta_form p {
+  padding: 0.4ex;
+  font-size: 1.2em;
+  max-width: unset;
+  text-align: center;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+#contenedor .formulario .contenido form #respuesta_form p.respuesta_error {
+  color: #F60D0D;
+  background-color: #F0C6C6;
+  border: 2px solid #A91515;
+}
+#contenedor .formulario .contenido form #respuesta_form p.respuesta_ok {
+  color: #51C526;
+  background-color: #9CE083;
+  border: 2px solid #51C526;
+}
 
 #contenedor .texto_planta {
-  display: none; }
+  display: none;
+}
 
 @media screen and (min-device-width: 576px) {
   #contenedor .formulario .contenido form {
-    padding: 2ex; }
-    #contenedor .formulario .contenido form input {
-      width: 90%; }
-    #contenedor .formulario .contenido form #respuesta_form p {
-      width: 80%; } }
+    padding: 2ex;
+  }
+  #contenedor .formulario .contenido form input {
+    width: 90%;
+  }
+  #contenedor .formulario .contenido form #respuesta_form p {
+    width: 80%;
+  }
+}
 @media screen and (min-device-width: 768px) {
   #contenedor .formulario {
-    width: 80%; }
-    #contenedor .formulario .contenido form textarea {
-      width: 80%; }
-    #contenedor .formulario .contenido form .boton {
-      width: 50%; } }
+    width: 80%;
+  }
+  #contenedor .formulario .contenido form textarea {
+    width: 80%;
+  }
+  #contenedor .formulario .contenido form .boton {
+    width: 50%;
+  }
+}
 @media screen and (min-device-width: 992px) {
   #contenedor .texto_planta {
-    display: inline; }
+    display: inline;
+  }
   #contenedor .formulario .contenido form input[type=text] {
-    font: 1.1em/1.2 sans-serif; }
+    font: 1.1em/1.2 sans-serif;
+  }
   #contenedor .formulario .contenido form .etiqueta_texto {
-    font: 1.2em/1.3 sans-serif; } }
+    font: 1.2em/1.3 sans-serif;
+  }
+}
 @media screen and (min-device-width: 1200px) {
   #contenedor .formulario {
     width: 60%;
-    /*.contenido form textarea { width: 60%; }*/ } }
+    /*.contenido form textarea { width: 60%; }*/
+  }
+}
 @media screen and (min-device-width: 1350px) {
   #contenedor .contenido .imagen_lateral {
-    height: 400px; }
-    #contenedor .contenido .imagen_lateral img {
-      top: -15%; } }
+    height: 400px;
+  }
+  #contenedor .contenido .imagen_lateral img {
+    top: -15%;
+  }
+}
 
 /*# sourceMappingURL=contacta.css.map */
