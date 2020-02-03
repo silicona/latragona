@@ -5,7 +5,6 @@ class Tragona {
 	// Test
 	public static function asignar_alergenos($arr_alergenos, $nom_alergenos){
 
-		//$titulo = $GLOBALS['producto']['alergeno'];
 		$aler = '<span class="alergeno">';
 
 		if( !empty($arr_alergenos) ){
@@ -44,31 +43,31 @@ class Tragona {
 		$arr_productos = (array) array_merge_recursive( (array) $tostas, (array) $raciones );
 		$arr_nombres = array_keys($arr_productos);
 
-		$num_elegidos = array();
-		while( count( $num_elegidos ) < 5 ){
+		$arr_nums_elegidos = array();
+		//$contador = 0;
+		while( count($arr_nums_elegidos) < 5 ){
+		//while( $contador != count($arr_nombres) ){
 
-			$num = rand(0, count( $arr_nombres ) - 1 );
+			$num = rand(0, count($arr_nombres) - 1 );
 			
-			if( !in_array($num, $num_elegidos) ){
+			$arr_nums_elegidos = anadir_a_array($arr_nums_elegidos, $num);
 
-				array_push( $num_elegidos, $num );
-			} 
+			//$contador++;
 		}
 
-		$salida = '<div class="camera-wrap" id="tapas">';
-		foreach( $num_elegidos as $elegido){
+		$salida = ['<div class="camera-wrap" id="tapas">'];
+		foreach( $arr_nums_elegidos as $elegido ){
 
 			$producto = $arr_productos[$arr_nombres[$elegido]];
 
-			$salida .= '
-				<div data-src="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '">
-					<div class="camera_caption">' . $nombres[$producto['descripcion']] .	'</div>
-				</div>';
+			$salida[] = '<div data-src="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '">';
+			$salida[] = '<div class="camera_caption">' . $nombres[$producto['descripcion']] .	'</div>';
+			$salida[] = '</div>';
 		}
 
-		$salida .= '</div>';
+		$salida[] = '</div>';
 
-		return $salida;
+		return implode('', $salida);
 	}
 
 	// Test
@@ -79,44 +78,48 @@ class Tragona {
 
 		$arr_cervezas = array_keys( (array)$cervezas );
 		$arr_vinos    = array_keys( (array)$vinos );
-		$num_vinos    = array();
 
+		$num_vinos    = array();
 		while( count( $num_vinos ) < 3 ){
 
-			$num = rand(0, count( $arr_vinos ) -1 );
+			$num = rand(0, count($arr_vinos) - 1 );
 
-			if( !in_array( $num, $num_vinos ) ){
-
-				array_push( $num_vinos, $num );
-			}
+			$num_vinos = anadir_a_array($num_vinos, $num);
 		}
 
 		$num_cerveza = rand(0, count($arr_cervezas) - 1);
-		$pasito      = $arr_cervezas[$num_cerveza];
-		$producto    = $cervezas -> $pasito;
+		$nombre_cerveza = $arr_cervezas[$num_cerveza];
+		$cerveza = $cervezas -> $nombre_cerveza;
 
-		$img_cerveza = '<div style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '\')" title="' . $producto['nombre'] . ' (' . ucfirst($titulos[$producto['tipo']]) . ')" alt="' . $producto['nombre'] . ' (' . ucfirst($titulos[$producto['tipo']]) . ')">';
-
-		$img_cerveza .= '<p>' . $producto['nombre'] . ' (' . ucfirst($titulos[$producto['tipo']]) . ')</p></div>';
+		$img_cerveza = implode('', array(
+			'<div',
+				' style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $cerveza['imagen'] . '\')"',
+				' title="' . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')"',
+				' alt="' . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')">',
+					'<p>',
+						$cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')',
+					'</p>',
+			'</div>'
+		) );
 
 		$injerto_cerveza = rand(0, 2);
 
-		$salida = '<div class="marco_bebida">';
+		$salida = ['<div class="marco_bebida">'];
 		foreach( $num_vinos as $indice => $num ){
 
-			$salida .= $indice == $injerto_cerveza ? $img_cerveza : '';
+			$salida[] = $indice == $injerto_cerveza ? $img_cerveza : '';
 
 			$pasito = $arr_vinos[$num];
 			$product = $vinos -> $pasito;
 
-			$salida .= '<div style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $product['imagen'] . '\')" title="' . $product['nombre'] . ' - ' . ucfirst($bebidas[$product['descripcion']][0]) . '" alt="' . $product['nombre'] . '">';
-			$salida .= '<p>' . $product['nombre'] . '</p></div>';
+			$salida[] = '<div style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $product['imagen'] . '\')" title="' . $product['nombre'] . ' - ' . ucfirst($bebidas[$product['descripcion']][0]) . '" alt="' . $product['nombre'] . '">';
+			$salida[] = '<p>' . $product['nombre'] . '</p></div>';
 		}
 
-		$salida .= '</div>';
+		$salida[] = '</div>';
 		
 
-		return $salida;
+		return implode('', $salida);
 	}
 
 
@@ -221,21 +224,22 @@ class Tragona {
 
 		switch($nombre){
 
-			case "Cervezas":
-				return '<legend>' . $objeto['nombre'] . ' <span class="tipo_cerveza"><sub>(' . $titulos[$objeto['tipo']] . ')</sub></span></legend>';
+			case "Estrella Levante":
+				return '<legend>Cervezas</legend>';
+				//return '<legend>' . $objeto['nombre'] . ' <span class="tipo_cerveza"><sub>(' . $titulos[$objeto['tipo']] . ')</sub></span></legend>';
 				break;
 
 			// Vinos
 			case "7 Puntas (Castilla)":
-				return '<legend>' . $titulos['tinto'] . '</legend>';
+				return '<legend class="clearfix">' . $titulos['tinto'] . '</legend>';
 				break;
 
 			case "Albariño (Cosechero)":
-				return '<legend>' . $titulos['blanco'] . '</legend>';
+				return '<legend class="clearfix">' . $titulos['blanco'] . '</legend>';
 				break;
 
 			case "Vermouth Miro":
-				return '<legend>' . $titulos['vermut'] . '</legend>';
+				return '<legend class="clearfix">' . $titulos['vermut'] . '</legend>';
 				break;
 
 			// Licores
@@ -245,11 +249,11 @@ class Tragona {
 
 			// Comida
 			case "Tostas":
-				return '<legend class="movil">' . $titulos['tostas'] . '</legend><h4 id="aviso_pan">' . $titulos['pan_sin'] . '</h4>';
+				return '<legend class="movil">' . $titulos['tostas'] . '</legend><h4 id="aviso_pan" class="aviso_alergeno">' . $titulos['pan_sin'] . '</h4>';
 				break;
 
 			case "Raciones":
-				return '<legend class="movil">' . $titulos['raciones'] . '</legend><h4 id="aviso_rac">' . $titulos['rac_sin'] . '</h4>';
+				return '<legend class="movil">' . $titulos['raciones'] . '</legend><h4 id="aviso_rac" class="aviso_alergeno">' . $titulos['rac_sin'] . '</h4>';
 				break;
 
 			default:
@@ -300,13 +304,37 @@ class Tragona {
 	// Test
 	public static function formatear_cerveza($producto, $lexico){
 
-		$prod = '<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . '">';
+		$nombre = isset($lexico['bebida'][$producto['nombre']]) ? $lexico['bebida'][$producto['nombre']] : $producto['nombre'];
 
-		$prod .= '<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $producto['nombre'] . '" title="' . $producto['nombre'] . '">';
+		$html = array(
+			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . '">',
 
-		$prod .= '</a><ul>' . Tragona::formatear_precio($producto, $lexico['producto'], 'cerveza') . '</ul></div>';
+				'<div class="div_imagen">',
+					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+					// '<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+				'</div>',
+				'<p>' . $nombre . '</p>',
+			'</a>',
+			'</div></div>',	// interior y articulo
+		);
 
-		return $prod;
+		return implode('', $html);
+	}
+
+	// Test
+	public static function formatear_cerveza_old($producto, $lexico){
+
+		$html = array(
+			'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . '">',
+				'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $producto['nombre'] . '" title="' . $producto['nombre'] . '">',
+			'</a>',
+			'<ul>',
+				Tragona::formatear_precio($producto, $lexico['producto'], 'cerveza'),
+			'</ul>',
+			'</div></div>',	// interior y articulo
+		);
+
+		return implode('', $html);
 	}
 
 	// Test
@@ -316,8 +344,37 @@ class Tragona {
 		//$ver = $lexico['producto']['descripcion'];
 
 		$prod = array(
-			'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $nombre . '">',
-			'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=vino&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+				'<div class="div_imagen">',
+					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+				'</div>',
+				'<p>' . $nombre . '</p>',
+			'</a>',
+
+			//$prod .= '<div class="celda">';
+			//'<p class= "precio">' . Tragona::formatear_precio($producto, $lexico['producto']) . '</p>',
+			// '<p class= "precio">' . Tragona::formatear_precio($producto['precio']) . '</p>',
+
+			//'<span class="descripcion"><a data-fancybox data-src="' . BASE_URL . 'php/guia.php?vino=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['descripcion'] . '</a></span>',
+			//$prod .= '</div>';
+
+			'</div></div>'
+		);
+
+		return implode('', $prod);
+	}
+
+	// Test
+	public static function formatear_vino_old($producto, $lexico){
+
+		$nombre = $producto['nombre'];
+		//$ver = $lexico['producto']['descripcion'];
+
+		$prod = array(
+			//'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $nombre . '">',
+			'<a class="img_fancybox2 data-fancybox data-src="' . BASE_API . 'despensa.php?accion=vino&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+				'<div class="div_imagen">',
+					'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
 			'</a>',
 
 			//$prod .= '<div class="celda">';
@@ -341,7 +398,8 @@ class Tragona {
 
 		$prod = array(
 			'<a href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $licor . '">',
-			'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" alt="' . $licor . '" title="' . $licor . '" class="imagen">',
+				//'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" alt="' . $licor . '" title="' . $licor . '" class="imagen">',
+				'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" alt="' . $licor . '" title="' . $licor . '" class="imagen">',
 			'</a>',
 			'<p>' . $licor . '</p>',
 			'<p class="precio">' . Tragona::formatear_precio($producto, $lexico['producto']) . '</p></div>'
@@ -352,6 +410,44 @@ class Tragona {
 
 	// Test
 	public static function formatear_comida($producto, $lexico, $tosta = false){
+
+		if( $tosta ){
+
+			//$light = "tostas";
+			$title = $lexico['producto']['tosta'];
+
+		} else {
+
+			//$light = 'raciones';	
+			$title = "";
+		}
+
+		$nombre = $lexico['nombre'][$producto['descripcion']];
+
+		$prod = array(
+			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=ingredientes&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+				'<div class="div_imagen">',
+					'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
+				'</div>',
+				'<p>',
+					'<span>' . $nombre . '</span>',
+
+				'</p>',
+			'</a>',
+				//$nombre . ' ' . Tragona::formatear_precio($producto, $lexico['producto'], 'Comida') . '<br>',
+				//'<span class="ingredientes">',
+					//'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['ver'] . '</a>',
+				//'</span>',
+			//'</p>',
+			//Tragona::asignar_alergenos($producto['alergenos'], $lexico['alergenos']),
+			'</div></div>'
+		);
+
+		return implode('', $prod);
+	}
+
+	// Test
+	public static function formatear_comida_old($producto, $lexico, $tosta = false){
 
 		if( $tosta ){
 
@@ -367,12 +463,15 @@ class Tragona {
 		$nombre = $lexico['nombre'][$producto['descripcion']];
 
 		$prod = array(
-			'<a href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">',
-			'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
+			//'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">',
+			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=ingredientes&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+				'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
 			'</a>',
-			'<p>' . $nombre . ' ' . Tragona::formatear_precio($producto, $lexico['producto'], 'Comida') . '<br>',
-			'<span class="ingredientes">',
-			'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['ver'] . '</a></span>',
+			'<p>',
+				$nombre . ' ' . Tragona::formatear_precio($producto, $lexico['producto'], 'Comida') . '<br>',
+				'<span class="ingredientes">',
+					'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['ver'] . '</a>',
+				'</span>',
 			'</p>',
 			Tragona::asignar_alergenos($producto['alergenos'], $lexico['alergenos']) . '</div>'
 		);
@@ -385,10 +484,10 @@ class Tragona {
 
 		if( isset($producto['novedad']) ){
 
-			return '<div class="articulo_novedad"><div class="novedad"><div class="cinta_verde">Novedad</div></div>';
+			return '<div class="articulo articulo_novedad"><div class="novedad"><div class="cinta_verde">Novedad</div></div><div class="interior">';
 		}
 
-		return '<div>';	
+		return '<div class="articulo"><div class="interior">';	
 	}
 
 	// Test
@@ -418,14 +517,14 @@ class Tragona {
 		// Bucle de productos
 		foreach( $obj_productos as $producto ){
 
-			if($material == "Cervezas") {	
+			//if( $material == "Cervezas" ){	
 
-				$lista .= Tragona::formatear_titulo('Cervezas', $titulos, $producto);	
+				//$lista .= Tragona::formatear_titulo('Cervezas', $titulos, $producto);	
 
-			} else { 
+			//} else { 
 
 				$lista .= Tragona::formatear_titulo($producto['nombre'], $titulos); 
-			}
+			//}
 
 			$lista .= Tragona::mostrar_novedad($producto);
 
@@ -440,7 +539,8 @@ class Tragona {
 					break;
 
 				case "Licores":
-					$lista .= Tragona::formatear_licor($producto, $lexico);
+					$lista .= Tragona::formatear_cerveza($producto, $lexico);
+					//$lista .= Tragona::formatear_licor($producto, $lexico);
 					break;
 
 				case "Tostas":
@@ -456,7 +556,7 @@ class Tragona {
 			}
 		}
 
-		$lista .= $compartir;
+		//$lista .= $compartir;
 		$lista .= "</article>";	
 
 		return $lista;

@@ -2,6 +2,7 @@
 //ini_set('display_errors', 1);
 //error_reporting(E_ALL);
 require_once 'lib/spyc/spyc.php';
+require_once 'lib/funciones.php';
 require_once 'lib/despensa.php';
 require_once 'tragona.php';
 
@@ -58,6 +59,7 @@ $base_file = $_SERVER['DOCUMENT_ROOT'] . '/' . INM_CARPETA;
 
 define( 'BASE_FILE', $base_file );
 define( 'BASE_URL', $base_url );
+define( 'BASE_API', $base_url . 'php/api/');
 
 //preg_match( '/(?:\w{2}\/)?(\w+)/', $_SERVER['REQUEST_URI'], $slug);
 $arr_url = explode( '/', $_SERVER['REQUEST_URI'] );

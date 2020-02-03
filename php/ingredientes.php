@@ -62,6 +62,7 @@
 			border-bottom: 1px solid blue;
 			padding-left: 30px;
 		}
+		
 	</style>
 
 </head>
@@ -85,9 +86,8 @@
 			//$com = ($tostas -> $_GET["comida"]) ? $tostas -> $_GET["comida"] : $raciones -> $_GET['comida'];
 			// $cartel -> comer($com['descripcion'], "../media/imagenes/tragar/" . $com['imagen'], $com['ingredientes']);
 
-			$cartel -> preparar_comida( $comida['descripcion'], 
-										BASE_URL . 'media/imagenes/tragar/' . $comida['imagen'], 
-										$comida['ingredientes'] );
+			$url = BASE_URL . 'media/imagenes/tragar/' . $comida['imagen'];
+			$cartel -> preparar_comida( $comida['descripcion'], $url, $comida['ingredientes'] );
 
 			$salida = array(
 				'<section>',

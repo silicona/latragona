@@ -1,0 +1,163 @@
+/* Colores */
+	$rojo: #FB8F50;
+
+	$rojo_oscuro: #FB6750;
+
+	$rojo_claro: #F5B38C;
+
+body {
+	background : url("../media/cabeceras/quienessomos.jpg") fixed center center;
+	background-size : cover;
+}
+
+
+#contenedor {
+	
+	section {
+
+		&.redes {
+			position: relative;
+			padding : 1ex;
+			border  : 2px solid $rojo_oscuro;
+			background-color: $rojo;
+			margin: 0 0 .5em;
+			clear: both;
+
+			h2 {
+				font: 1.2em/1.3em sans-serif;
+				padding: .5ex;
+				border-bottom: 2px solid #000000;
+				margin: 0 auto 1em;
+			}
+
+			p {
+				font: 1em/1.2 sans-serif;
+				margin: 0 auto .5em;
+
+			}
+
+			.panel_redes {
+				position: relative;
+				margin: 0 auto;
+
+				.rrss_tragona {
+					padding-top: 2em;
+
+					li {
+						cursor : pointer;
+						font   : 1em/1.2em sans-serif;
+						padding: .6em .3em;
+						margin-bottom: .6ex;
+						border-radius: 10px;
+						background-color: $rojo_claro;
+
+						img { 
+							width         : 40px; 
+							border-radius : 40px;
+							margin-right  : .3em;
+							vertical-align: middle;
+						}
+					}
+				}
+
+
+				.red {
+					margin: 1.5ex auto;
+					width: calc(100% - 2ex);
+					height: 400px;
+					overflow: auto;
+					border-radius: 5px;
+
+					#frame_facebook {
+						height: inherit;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media screen and (min-device-width: 280px) {}
+
+
+@media screen and (min-device-width: 480px) {
+
+	#contenedor section.redes { 
+		margin: 0 1em 1em;
+
+		.panel_redes .red {	width: 340px;	}
+	}
+}
+
+
+@media screen and (min-device-width: 576px) {
+
+	#contenedor {
+
+		section.redes {
+
+			h2 { font: 1.3em/1.3em sans-serif; }
+
+			p { font: 1.1em/1.2 sans-serif; }
+
+			.panel_redes .red {
+				left: 10%;
+				right: 10%;
+			}
+		}
+	}	
+}
+
+@media screen and (min-device-width: 768px) {
+
+	#contenedor {
+
+		section.redes {
+			width: 80%;
+			margin: 0 auto 1em;
+		}
+	}
+}
+
+@media screen and (min-device-width: 992px) {
+
+	#contenedor {
+
+		section.redes {
+
+			h2, p { width: 80% }
+	
+			.panel_redes {
+				width: 725px;
+
+				.red { 
+					display: inline-block;
+					margin: 1.5ex 10px; 
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-device-width: 1024px) {
+
+	#contenedor .menu { display: none; }
+	
+}
+
+
+@media screen and (min-device-width: 1200px) {
+
+	#contenedor section.contenido .texto {
+
+		> p, .protagonistas {	font: 1.3em/1.4 sans-serif;	}
+
+		.anuncio {
+			/*width: unset;*/
+			/*height: 250px;*/
+		}
+	}
+}
+

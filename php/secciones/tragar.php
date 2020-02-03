@@ -2,7 +2,7 @@
 
 <?php require_once BASE_FILE . 'php/inc/menu_movil.php' ?>
 
-<div id="contenedor">
+<div id="contenedor" class="carta">
 
 	<?php require_once BASE_FILE . 'php/inc/nav_superior_global.php' ?>
 
@@ -17,12 +17,13 @@
 	<header></header>
 
 	<section id="tosta">
-
+		<!--
 		<article class="foto">
 			<a name="tosta"><p id="tos"><?php echo $lexico['lateral']['tostas']; ?></p></a>
 			
-			<div class="cartel_lateral"><?php require_once BASE_FILE . 'php/plantillas/cartel_navidades.php' ?></div>
+			<div class="cartel_lateral"><?php //require_once BASE_FILE . 'php/plantillas/cartel_navidades.php' ?></div>
 		</article>	
+		-->
 
 		<?php echo Tragona::mostrar_productos($tostas, $lexico); ?>
 
@@ -30,9 +31,9 @@
 
 	<section id="racion">
 
-		<article class="foto">
+		<!-- <article class="foto">
 			<a name="racion"><p id="rac"><?php echo $lexico['lateral']['raciones']; ?></p></a>
-		</article>	
+		</article> -->	
 
 		<?php echo Tragona::mostrar_productos($raciones, $lexico); ?>
 
@@ -40,23 +41,24 @@
 	
 	<section id="reservas">
 
-		<article class="foto">
+		<!-- <article class="foto">
 			<a name="reservas"><p id="reser"><?php echo $lexico['foto']['reservas']; ?></p></a>
-		</article>
+		</article> -->
 
 		<article class="contenido">
 
 			<legend class="movil"><?php echo $lexico['lateral']['reservas']; ?></legend>
 			
-			<p class="mitad">
+			<p class="texto_reserva mitad">
 				<?php echo $lexico['form']['reservas']; ?> <img src="<?php echo BASE_URL ?>media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">
-			</p>
+			<!--</p>
 
-			<p class="mitad">
+			<p class="mitad">-->
+				<br>
 				<?php echo $lexico['form']['llevar']; ?>
 			</p>
 
-			<form id="form">
+			<form id="form" class="form_reserva mitad">
 
 				<input type="hidden" name="tipo" value="Reserva en La Tragona">
 

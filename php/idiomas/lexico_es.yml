@@ -192,6 +192,7 @@ ingrediente:
   tomate_frito: Tomate frito
   tomillo: Tomillo
   trigo: Trigo
+  ventresca: Ventresca de atún
   ventresca_atun: Ventresca de atún
   verduras: Verduras
   vinagre: Vinagre
@@ -212,6 +213,9 @@ nombre:
   carpaccio: Carpaccio de Calabacín
   cecina: Cecina de Léón
   ensalada_remo: Ensalada de remolacha con rúcula y queso de cabra eco
+  ensalada_rusa: Ensaladilla rusa
+  ensalada_sardinas: Ensalada de sardinas marinadas caseras, tomate y albahaca
+  gazpacho: Gazpacho
   hummus: Hummus
   lasagna: Lasagna de setas
   lomo: Lomo embuchado
@@ -219,16 +223,24 @@ nombre:
   mousaka: Mousaka
   pastel_salmon: Pastel de salmón
   papas_2mojos: 'Papas arrugas' con 2 mojos
+  patatas_cabrales: Patatas revolcadas con cabrales
   patatas_rellenas: Patatas rellenas
   patatas_revolconas: Patatas revolconas
+  pate_shiitake: Pate de shiitake
+  queso_tietar: Queso de cabra ecológico del Tietar
   roastbeef: Roastbeef
   ragout: Ragout de ternera
   rusos: Filetes rusos con salsa de tomate
+  salmon: Salmón
   solomillo: Solomillo a la cerveza y manzana
   solomillo_sal: Solomillo curado a la sal
+  tartar_verduras: Tartar de verduras, quinoa y salsa de aceituna verde
   tortilla: Tortilla de patata
+  tosta_brandada: Brandada de bacalao
   tosta_cecina: Cecina de Léon
-  salmon: Salmón
+  tosta_hummus: Hummus
+  tosta_roastbeef: Roastbeef
+  tosta_salmon: Salmón
   tosta_ventresca: Ventresca de atún con pimi. de piquillo
   ventresca: Ventresca de atún con pimi. de piquillo
   # Nombres de Menu

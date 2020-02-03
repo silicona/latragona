@@ -1,0 +1,221 @@
+/* Colores */
+	$rojo: #FB8F50;
+
+	$rojo_oscuro: #FB6750;
+
+	$rojo_claro: #F5B38C;
+
+	$verde: #54E31D;
+
+	$verde_claro: #9CE083;
+
+	$verde_oscuro: #51C526;
+
+	$error: #F60D0D;
+
+	$error_claro: #F0C6C6;
+
+	$error_oscuro: #A91515;
+
+/* */
+
+body {
+	background: url("../media/cabeceras/telefonista.jpg") fixed center center;
+	background-size: cover;
+}
+
+#contenedor {
+
+	.wasap { width: 20px;	}
+
+	.contenido {
+
+		.texto .texto_planta {}
+
+		.imagen_lateral {
+			overflow: hidden;
+
+			img { position: relative; }
+		}
+	}
+
+	.formulario {
+
+		margin: 0 auto;
+
+		.contenido form {
+			background-color: $rojo;
+			border: 2px solid $rojo_oscuro;
+			/*margin: 0 5%;*/
+			padding: 1ex;
+			position: relative;
+			width: 90%;
+			clear: both;
+					
+			label {
+				display: block;
+				margin: 0.5ex 0 1ex 1ex;
+				font-size: 0.9em;
+			}
+		
+			input {
+				background-color: #FFFFFF;
+				margin: 1ex auto;
+				border: unset;
+				line-height: 1.2em;
+				padding: .5ex;
+				width: calc( 100% - 1ex );
+				display: block;
+			
+				&:hover {	background-color: #EEEEEE;	}
+			}
+		
+			#etiqueta_texto {
+				font-size: 1.1em;
+				margin-bottom: 0.5em;
+				display: inline-block;
+			}
+
+			textarea {
+				width: calc( 100% - 1ex );
+				padding: .5ex;
+				margin: 0 auto;
+				display: block;
+			}
+		
+			.boton {
+				width: 80%;
+				padding: 10px;
+				border-radius: 10px;
+				transition: .5s all linear;
+				border-bottom: 1px solid #000000;
+				letter-spacing: .2ex;
+				cursor: pointer;
+
+				&:hover {
+					background-color: $rojo_oscuro;
+					color: #FFFFFF;
+					box-shadow: 2px 2px 5px #000000;
+				}
+			}
+	
+			#respuesta_form {
+				text-align: center;
+
+				.spinner { 
+					border-radius: 50%;
+					animation: esperar_ajax 3s linear 1 forwards;
+				}
+
+				p { 
+					padding: .4ex; 
+					font-size: 1.2em;
+					max-width: unset;
+					text-align: center;
+					border-radius: 4px;
+					margin: 0 auto;
+
+					&.respuesta_error {
+						color: $error;
+						background-color: $error_claro;
+						border: 2px solid $error_oscuro;
+						
+					}
+
+					&.respuesta_ok {
+						color: $verde_oscuro;
+						background-color: $verde_claro;
+						border: 2px solid $verde_oscuro;
+					}
+				}
+			}
+		}
+	}
+}
+
+#contenedor {
+
+	.texto_planta { display: none; }
+}
+
+@media screen and (min-device-width: 280px) {}
+
+@media screen and (min-device-width: 576px) {
+
+	#contenedor {
+
+		.formulario {
+
+			.contenido form {
+				padding: 2ex;
+
+				input { width: 90%; }
+
+				#respuesta_form p { width: 80%; }
+			}
+		}
+	}
+}
+
+
+@media screen and (min-device-width: 768px) {
+
+	#contenedor {
+
+		.formulario {
+			width: 80%;
+
+			.contenido form {
+
+				textarea { width: 80%; }
+
+				.boton { width: 50%; }
+			}
+		}
+	}
+}
+
+
+@media screen and (min-device-width: 992px) {
+
+	#contenedor {
+
+		.texto_planta { display: inline; }
+
+		.formulario .contenido form {
+
+			input[type=text] { font: 1.1em/1.2 sans-serif; }
+
+			.etiqueta_texto { font: 1.2em/1.3 sans-serif; }
+		}
+	}
+}
+
+@media screen and (min-device-width: 1024px) {}
+
+@media screen and (min-device-width: 1200px) {
+
+	#contenedor {
+
+		.formulario {
+			width: 60%;
+
+			/*.contenido form textarea { width: 60%; }*/
+		}
+	}
+}
+
+@media screen and (min-device-width: 1350px) {
+
+	#contenedor {
+
+		.contenido .imagen_lateral {
+			height: 400px;
+
+			img { top: -15%; }
+		}
+	}
+}
+
+
+

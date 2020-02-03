@@ -1,6 +1,7 @@
 <?php
 
 require_once '../php/lib/spyc/spyc.php';
+require_once '../php/lib/funciones.php';
 require_once '../php/lib/despensa.php';
 
 
@@ -20,7 +21,7 @@ class Helper {
 		$datos = Spyc::YAMLLoad( $base . 'php/idiomas/lexico_' .  $idioma . '.yml' );
 		return $datos;
 		*/
-		return Spyc::YAMLLoad( $GLOBALS['BASE_FILE'] . 'php/idiomas/lexico_' .  $idioma . '.yml' );
+		return Spyc::YAMLLoad( BASE_FILE . 'php/idiomas/lexico_' .  $idioma . '.yml' );
 	}
 
 

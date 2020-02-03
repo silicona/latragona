@@ -17,16 +17,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         qunit: {
-            //all: ['../plataforma/test_bb/index.html']
-            //all: ['/var/www/html/oclemcalidad/plataforma/test_bb/*.html']
+
             files: {
-                src: ['../plataforma/test_bb/index.html'],
-                //src: ['../plataforma/test_bb/index.htm'], // Error apostado
-                //src: ['/var/www/html/oclemcalidad/plataforma/test_bb/*.html'],
+                src: ['../test_js/index.html'],
+
                 options:{
                     force: true,
                     //inject: '',
-                    // urls: ['../plataforma/test_bb/index.html']
                     // urls: ['http://localhost/oclemcalidad/plataforma/test_bb/']
                 }
             }
@@ -44,7 +41,6 @@ module.exports = function(grunt) {
         jshint: {
             files: {
                 src: ['../js/global.js'],
-                //tests: ['../plataforma/test_bb/**/*.js'], // ¿Sin funcion?
                 options: {
                     '-W041': true, // Use '!==' to compare with '' || Use '!==' to compare with ''
                     '-W099': true, // Mixed spaces and tabs.
@@ -56,7 +52,6 @@ module.exports = function(grunt) {
                     '-W004': true, // 'mensaje_alert' <variable> is already defined.'
                     '-W065': true, // Missing radix parameter.'
                     //immed: false, // This option prohibits the use of immediate function invocations without wrapping them in parentheses. 
-
                 },
             },
 

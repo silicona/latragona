@@ -1,98 +1,76 @@
 
-$rojo: #FB8F50;
 
-$rojo_oscuro: #FB6750;
-
-$rojo_claro: #F5B38C;
-
-$azul: #50EDFB;
-
-$azul_claro: #D7FDFF;
-
-$azul_oscuro: #0398A5;
-
-$morado: #B749DE;
-
-$morado_claro: #F1CFFD;
-
-$morado_oscuro: #881DAE;
-
-$verde: #54E31D;
-
-$verde_claro: #9CE083;
-
-$verde_oscuro: #51C526;
-
-$error: #F60D0D;
-
-$error_claro: #F0C6C6;
-
-$error_oscuro: #A91515;
-
-$naranja_menu: #F4CC70;
-
-
-#contenedor{
+#contenedor {
 	
 
 	header { background: url("../media/cabeceras/empujar_sin.png") 50% 0% no-repeat fixed; }
 
 	section {
 
+		/*
 		&#cerveza {	
 			background: url("../media/imagenes/empujar/fondos/cerveza.jpg") 0 0 no-repeat;
-			/*background-size: cover;*/
+			background-size: cover;
 
 			.contenido { 
 				background-color: $azul_claro;
 				padding-bottom: 6.5em;
 			}
+			
 		}  
 
 		&#vino {
+			/*
 			background: url("../media/imagenes/empujar/fondos/vinos.jpg") 0 0 no-repeat;
-			/*background-size: cover;*/
+			background-size: cover;
 
 			.contenido { 
 				background-color: $rojo_claro;
 				padding-bottom: 6.5em;
 			}
+			
 		}
 
 		&#licores {
+			/*
 			background: url("../media/imagenes/empujar/fondos/licores.jpg") 0 -200px no-repeat;
-			/*background-size: cover;*/
+			background-size: cover;
 
 			.contenido { 
 				background-color: $morado_claro;
 				padding-bottom: 6.5em;
 
 			}
+			
 		}
 
 		&#combinados {
+			/*
 			background: url("../media/imagenes/empujar/fondos/combinados.jpg") 0 0 no-repeat;
-			/*background-size: cover;*/
+			background-size: cover;
 
 			.contenido { background-color: $azul_claro; }
+			
 	
 		}
 
 		&#sin_alcohol {	
+			/*
 			background: url('../media/imagenes/empujar/fondos/sinalcohol.jpg') 0 0;
-			/*background-size: cover;*/
+			background-size: cover;
 
 			.contenido { background-color: $rojo_claro;	}
+			
 		}
 
-
+		/*
 		article {
 
 			&.contenido { 
 				
-				div {
+				.articulo {
 
-					> a {
+					.img_lightbox {
 						padding: 1ex;
 						float: left;
 						vertical-align: middle;
@@ -116,7 +94,6 @@ $naranja_menu: #F4CC70;
 
 						&.lista_izquierda {
 							float: left;
-							/*margin-right: 20px;*/
 						}
 
 						&.lista_derecha { float: left;	}
@@ -135,12 +112,12 @@ $naranja_menu: #F4CC70;
 						}
 					}
 
-						/* Cervezas */
 					ul { font: 1.1em/1.2em sans-serif; }
 
 				}
 			}
 		}
+		*/
 	}
 	
 }
@@ -149,12 +126,12 @@ $naranja_menu: #F4CC70;
 @media screen and (min-device-width: 280px) {}
 
 
-@media screen and (min-device-width: 350px) {
+@media screen and (min-width: 350px) {
 
 	#contenedor {
 
+		/*
 		section article.contenido {
-
 			> div {
 				border-radius: 100px 0 0 100px;
 				
@@ -178,11 +155,12 @@ $naranja_menu: #F4CC70;
 				}
 			}
 		}
+		*/
 	}
 }
 
 /* Salto */
-@media screen and (min-device-width: 576px) {
+@media screen and (min-width: 576px) {
 
 	#contenedor {
 
@@ -199,7 +177,7 @@ $naranja_menu: #F4CC70;
 
 			ul li {	margin: 0 .5ex 0 0;	}
 		}
-
+		/*
 		section {
 
 			article {
@@ -215,16 +193,16 @@ $naranja_menu: #F4CC70;
 				}
 			}
 		}
+		*/
 	}
 }
 
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
 
 	#contenedor {
-
+		/*
 		section {
 
-			
 			article.contenido {
 
 				div {
@@ -239,10 +217,11 @@ $naranja_menu: #F4CC70;
 			}
 
 		}
+		*/
 	}
 }
 
-@media screen and (min-device-width: 992px) {
+@media screen and (min-width: 992px) {
 
 	#contenedor {
 
@@ -270,8 +249,8 @@ $naranja_menu: #F4CC70;
 	}
 }
 
-	/* Salto */
-@media screen and (min-device-width: 1024px) {
+/* Salto */
+@media screen and (min-width: 1024px) {
 
 	#contenedor {
 	
@@ -291,14 +270,14 @@ $naranja_menu: #F4CC70;
 
 			article {
 
-				/*&.foto {	
+				/*
+				&.foto {	
 					width: 50%;			
 
 					p {	font-size: 4em;	}
-				}*/
+				}
 
 				&.contenido {	
-					/*width: 50%;*/	
 
 					div {
 
@@ -311,6 +290,7 @@ $naranja_menu: #F4CC70;
 					}
 				
 				}
+				*/
 			}
 		}
 	}
@@ -324,19 +304,19 @@ $naranja_menu: #F4CC70;
 
 			article {
 				
-				/**&.foto {
+				/*
+				&.foto {
 					.cartel_lateral {
 						
 						img {	margin-left: 0;	}
 
 						p { padding: 2ex; }
 					}
-				}*/
+				}
 
-				/*&.contenido .mitad { width: 50%; float: left;}*/
+				&.contenido .mitad { width: 50%; float: left;}
+				*/
 			}
-
-
 		}
 	}
 }
@@ -349,7 +329,8 @@ $naranja_menu: #F4CC70;
 
 			article {
 
-				/*&.foto .cartel_lateral p { padding: 3em 2em; }
+				/*
+				&.foto .cartel_lateral p { padding: 3em 2em; }
 
 				&.contenido form {
 
@@ -367,10 +348,13 @@ $naranja_menu: #F4CC70;
 						left: 5ex;
 						right: 6ex;
 					}
-				}*/
+				}
+				*/
 			}
 		}
 	}
 }
 
-/*@media screen and (max-device-width: 315px) {	#logo_superior span {	display: none; } }*/
+/*
+@media screen and (max-device-width: 315px) {	#logo_superior span {	display: none; } }
+*/

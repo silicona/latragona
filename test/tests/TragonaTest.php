@@ -1,7 +1,7 @@
 <?php
 
-require_once '../php/tragona.php';
 require_once 'helper.php';
+require_once '../php/tragona.php';
 
 class TragonaTest extends \PHPUnit\Framework\TestCase {
 
@@ -24,7 +24,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		self::$raciones = Helper::suministra_despensa('raciones');
 
 
-		define('BASE_URL', $GLOBALS['BASE_URL']);
+		//define('BASE_URL', $GLOBALS['BASE_URL']);
 	}
 
 	public static function tearDownBeforeClass(){
@@ -32,7 +32,6 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		self::$lexico = null;
 	}
 	
-
 	public function setUp(){}
 
 	public function tearDown(){}
@@ -72,28 +71,34 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 
 		$nombres = self::$lexico['nombre'];
+		$cantidad = 5;
 
 		$tostas = Helper::suministra_despensa('tostas');
 		$raciones = Helper::suministra_despensa('raciones');
 		
-		$res_limpio = Helper::limpiar_saltos( Tragona::crear_pasarela_comida($tostas, $raciones, $nombres) );
+		$res = Tragona::crear_pasarela_comida($tostas, $raciones, $nombres);
+		$res_limpio = Helper::limpiar_saltos($res);
 
 		preg_match_all( '/(<div data-src="[\w\/\:]+\.jpg">)/', $res_limpio, $enlaces );
+		foreach( $enlaces[1] as $i => $enlace ){
+			
+			if( !preg_match('/media\/imagenes\/tragar\/\w+\.(jpg|jpeg|png|gif)/', $enlace) ){
+
+				$this -> fail('Enlace erroneo: ' . $enlace);
+			}
+		}
+
+		$this -> assertSame( $cantidad, count($enlaces[1]), 'Debería tener 5 enlaces.' );
+
 		preg_match_all( '/(<div class=\"camera_caption\">[^<]+<\/div>)/', $res_limpio, $titulos );
 
+		$this -> assertSame( count($enlaces[1]), count($titulos[1]), 'Debería tener los mismos títulos que enlaces.' );
 
-		$this -> assertSame( 5, count($enlaces[1]), 'Debería tener 5 enlaces.' );
-
-		$this -> assertRegExp('/media\/imagenes\/tragar/', $enlaces[1][0], 'Debería tener la url de tragar.');
-
-		$this -> assertSame( 5, count($titulos[1]), 'Debería tener 5 titulos.' );
-
-		$this -> assertRegExp('/>[^<]+<\/div>/', strtolower($titulos[1][0]), 'Debería tener titulo.');
+		$this -> assertSame( $cantidad, count($titulos[1]), 'Debería tener 5 titulos.' );
 	}
 
 
 	public function test_crear_pasarela_bebida(){
-
 
 		$titulos = self::$lexico['titulos'];
 		$bebidas = self::$lexico['bebida'];
@@ -101,66 +106,36 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$cervezas = Helper::suministra_despensa('cervezas');
 		$vinos    = Helper::suministra_despensa('vinos');
 		
-		$res_limpio = Helper::limpiar_saltos( Tragona::crear_pasarela_bebida($cervezas, $vinos, self::$lexico) );
-
-
-		preg_match_all( '/url\(\'[\w\/]+.jpg\'\)/', $res_limpio, $imagenes );
-
-		preg_match_all( '/title="([^\"]+)"\s/i', $res_limpio, $titles );
+		$res = Tragona::crear_pasarela_bebida($cervezas, $vinos, self::$lexico);
 		
-		preg_match_all( '/alt="[\w\s\(\),\-ñÑáéíóú]+"/i', $res_limpio, $alts );
-
-		$arr_cervezas = array();
-		foreach($cervezas as $cerveza){
-
-			foreach($cerveza as $key => $val){
+		preg_match_all( '/(<div style="background\-image: url\(\'[\w\/\:]+\.jpg)/', $res, $imagenes );
+		foreach( $imagenes[1] as $i => $enlace ){
 			
-				if( $key == 'nombre' ){
+			if( !preg_match('/media\/imagenes\/empujar\/\w+\.(jpg|jpeg|png|gif)/', $enlace) ){
 
-					$arr_cervezas[] = $val ;
-				}
+				$this -> fail('Enlace erroneo: ' . $enlace);
 			}
 		}
 
-		$arr_vinos = array();
-		foreach($vinos as $vino){
+		$this -> assertSame( 4, count($imagenes[1]), 'Debería tener 4 enlaces de imagen de fondo.' );
 
-			foreach( $vino as $key => $val){
-				
-				if( $key == 'nombre' ){
+		preg_match_all( '/title="([^\"]+)"/', $res, $titles );
+		foreach( $titles[1] as $i => $enlace ){
+			
+			if( !preg_match('/[\w\-\(\)\s]+/', $enlace) ){
 
-					$arr_vinos[] = $val ;
-				}
+				$this -> fail('Title erroneo: ' . $enlace);
 			}
 		}
+		$this -> assertSame( count($imagenes[1]), count($titles[1]), 'Debería tener los mismos titles que enlaces.' );
 
-		$this -> assertSame( 4, count($imagenes[0]), 'Debería tener 4 enlaces.' );
+		$this -> assertSame( 4, count($titles[1]), 'Debería tener 4 titles de imagen de fondo.' );
 
-		$this -> assertRegExp('/media\/imagenes\/empujar/', $imagenes[0][0], 'Debería tener la url de empujar.');
+		preg_match_all( '/(<p>[^<]+<\/p>)/', $res, $titulos );
 
-		$this -> assertSame( 4, count($alts[0]), 'Debería tener 4 alts.' );
-		
-		$this -> assertSame( 4, count($titles[1]), 'Debería tener 4 titulos.' );
+		$this -> assertSame( count($imagenes[1]), count($titulos[1]), 'Debería tener los mismos títulos que enlaces.' );
 
-		foreach( $titles[1] as $title ){
-
-			$arr_title = explode(' - ', $title);
-
-			if( isset($arr_title[1]) ){
-
-				$res = in_array( trim($arr_title[0]), $arr_vinos );
-
-				$this -> assertTrue( $res, 'Title debería estar entre los vinos: ' . $arr_title[0] );
-
-			} else {
-
-				$tit = explode('(', $title);
-
-				$res = in_array( trim($tit[0]), $arr_cervezas );
-
-				$this -> assertTrue( $res, 'Title debería estar entre las cervezas: ' . $tit[0] );
-			}
-		}
+		$this -> assertSame( 4, count($titulos[1]), 'Debería tener 4 titulos.' );
 	}
 
 
@@ -198,7 +173,23 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 		$res = Tragona::formatear_comida(self::$raciones -> rusos, self::$lexico);
 
-		$respuesta = '<a href="//localhost/tragona/media/imagenes/tragar/rusos.jpg" data-lightbox="raciones" data-title="Filetes rusos con salsa de tomate"><img src="//localhost/tragona/media/imagenes/tragar/minis/rusos.jpg" class="imagen" alt="Filetes rusos con salsa de tomate" title="Filetes rusos con salsa de tomate"></a><p>Filetes rusos con salsa de tomate <sub>(7<sub>&euro;</sub>)</sub><br><span class="ingredientes"><a data-fancybox data-src="//localhost/tragona/php/ingredientes.php?comida=rusos" data-type="iframe" href="javascript:;">Ver los ingredientes</a></span></p><span class="alergeno"><span class="nombre">Alérgenos:</span><img src="//localhost/tragona/media/alergeno/huevo.png" alt="huevo" title="Huevo"></span></div>';
+		$respuesta = implode('', array(
+			'<a href="' . BASE_URL . 'media/imagenes/tragar/rusos.jpg" data-lightbox="raciones" data-title="Filetes rusos con salsa de tomate">',
+				'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/rusos.jpg" class="imagen" alt="Filetes rusos con salsa de tomate" title="Filetes rusos con salsa de tomate">',
+			'</a>',
+			'<p>Filetes rusos con salsa de tomate <sub>(8<sub>&euro;</sub>)</sub><br>',
+				'<span class="ingredientes">',
+					'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=rusos" data-type="iframe" href="javascript:;">',
+						'Ver los ingredientes',
+					'</a>',
+				'</span>',
+			'</p>',
+			'<span class="alergeno">',
+				'<span class="nombre">Alérgenos:</span>',
+				'<img src="' . BASE_URL . 'media/alergeno/huevo.png" alt="huevo" title="Huevo">',
+			'</span>',
+			'</div>'
+		) );
 
 		$this -> assertSame( $respuesta, $res, 'Debería devolver algo.' );
 
@@ -216,11 +207,20 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_formatear_licor(){
 
-		$res = Tragona::formatear_licor(self::$licores -> hierbas, self::$lexico['bebida']);
+		$res = Tragona::formatear_licor(self::$licores -> hierbas, self::$lexico);
 
-		$respuesta = '<a href="//localhost/tragona/media/imagenes/empujar/lic_hierbas.jpg" data-lightbox="example-1" data-title="Orujo de hierbas"><img src="//localhost/tragona/media/imagenes/empujar/minis/lic_hierbas.jpg" alt="Orujo de hierbas" title="Orujo de hierbas" class="imagen"></a><p>Orujo de hierbas</p><p class="precio"><sub>(Chupito: <sub>2&euro;</sub>, Copa: <sub>4&euro;</sub>)</sub></p></div>';
+		$respuesta = implode('', array(
+			'<a href="' . BASE_URL . 'media/imagenes/empujar/lic_hierbas.jpg" data-lightbox="example-1" data-title="Orujo de hierbas">',
+				'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/lic_hierbas.jpg" alt="Orujo de hierbas" title="Orujo de hierbas" class="imagen">',
+			'</a>',
+			'<p>Orujo de hierbas</p>',
+			'<p class="precio">',
+				'<sub>(Chupito: <sub>2&euro;</sub>, Copa: <sub>4&euro;</sub>)</sub>',
+			'</p>',
+			'</div>'
+		) );
 
-		$this -> assertSame( $respuesta, $res);
+		$this -> assertSame( $respuesta, $res, 'Debería ser el mismo html.' );
 	}
 
 
@@ -245,7 +245,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_formatear_precio_cerveza(){
 
-		$res = tragona::formatear_precio(self::$cervezas -> rubia, 'cerveza');
+		$res = tragona::formatear_precio(self::$cervezas -> rubia, self::$lexico['titulos'], 'cerveza');
 
 		$lineas = explode('<li>',$res);
 		array_shift($lineas);
@@ -292,11 +292,26 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 		$vinos = Helper::suministra_despensa('vinos');
 
-		$res = Tragona::formatear_vino( $vinos -> zinio );
+		$res = Tragona::formatear_vino($vinos -> zinio, self::$lexico);
 
-		$respuesta = '<a href="//localhost/tragona/media/imagenes/empujar/zinio.jpg" data-lightbox="example-1" data-title="Zinio (La Rioja)"><img src="//localhost/tragona/media/imagenes/empujar/minis/zinio.jpg" class="imagen" alt="Zinio (La Rioja)" title="Zinio (La Rioja)"></a><p>Zinio (La Rioja)</p><p class= "precio"><sub>(Copa: <sub>1.8&euro;</sub>, botella: <sub>12&euro;</sub>)</sub></p><span class="descripcion"><a data-fancybox data-src="//localhost/tragona/php/guia.php?vino=zinio" data-type="iframe" href="javascript:;">zinio</a></span></div>';
+		$respuesta = implode('', array(
+			'<a href="' . BASE_URL . 'media/imagenes/empujar/zinio.jpg" data-lightbox="example-1" data-title="Zinio (La Rioja)">',
+				'<img src="' . BASE_URL . 'media/imagenes/empujar/minis/zinio.jpg" class="imagen" alt="Zinio (La Rioja)" title="Zinio (La Rioja)">',
+			'</a>',
+			'<p>Zinio (La Rioja)</p>',
+			'<p class= "precio">',
+				'<sub>(Copa: <sub>1.8&euro;</sub>, botella: <sub>12&euro;</sub>)</sub>',
+			'</p>',
+			'<span class="descripcion">',
+				'<a data-fancybox data-src="' . BASE_URL . 'php/guia.php?vino=zinio" data-type="iframe" href="javascript:;">Ver descripción</a>',
+			'</span>',
+			'</div>'
+		) );
 
-		$this -> assertSame($respuesta, $res);
+		$this -> assertTrue(strlen($res) > 0, 'Debería ser el mismo html en caracteres.' );
+		$this -> assertSame(strlen($respuesta), strlen($res), 'Debería ser el mismo html en caracteres.' );
+
+		$this -> assertEquals($respuesta, $res, 'Debería ser el mismo html.' );
 
 		preg_match('/href=".*\.jpg"/', $res, $href);
 
@@ -337,7 +352,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	public function test_mostrar_productos_tostas(){
 
 		$res = Tragona::mostrar_productos( self::$tostas, self::$lexico );
-print_r($res);
+		//print_r($res);
 		$this -> assertRegExp( '/<article class="contenido">/', $res );
 	}
 

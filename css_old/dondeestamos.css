@@ -1,0 +1,85 @@
+body {
+  background: url("../media/cabeceras/exterior_dia.jpg") fixed left center;
+  /*background: url("../media/cabeceras/fachada.jpg") fixed left center;*/
+  background-size: cover;
+}
+
+#contenedor section.contenido #mapa {
+  /*float: left;
+  width: calc(50% - 40px);
+  height: 700px;*/
+  height: 350px;
+  margin: 1ex 2ex;
+}
+#contenedor section.contenido #mapa #aviso {
+  color: #ff0000;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1ex;
+}
+#contenedor section.contenido #mapa #info_cabecera {
+  position: relative;
+  left: -30px;
+}
+#contenedor section.contenido #mapa #info_cabecera #imagen_mapa {
+  width: 70px;
+  margin: 0 10px;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+}
+#contenedor section.contenido #mapa #info_contenido p {
+  width: unset;
+  font-size: 1.5em;
+}
+#contenedor section.contenido #mapa .mapa_marcador {
+  padding: 1ex;
+  background: rgba(255, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 2em;
+}
+#contenedor section.contenido .horario {
+  margin: 2ex auto;
+  width: 90%;
+  display: block;
+}
+
+/* Ocultos desde la version movil */
+#contenedor {
+  /*.imagen_lateral,*/
+  /*.anuncio { display: none; }*/
+}
+
+@media screen and (min-device-width: 768px) {
+  #contenedor section.contenido .horario {
+    width: 70%;
+    /*
+    margin: 10px auto;*/
+  }
+}
+@media screen and (min-device-width: 992px) {
+  #contenedor section.contenido #mapa {
+    float: left;
+    width: calc( 50% - 4ex );
+    height: 400px;
+    /*
+    display: inline-block;
+    */
+  }
+  #contenedor section.contenido .texto {
+    /*padding: 1ex 2ex;*/
+  }
+  #contenedor section.contenido .texto .horario {
+    width: 40%;
+  }
+}
+@media screen and (min-device-width: 1200px) {
+  #contenedor section.contenido #mapa {
+    height: 600px;
+  }
+  #contenedor section.contenido .texto .horario {
+    width: 30%;
+  }
+}
+
+/*# sourceMappingURL=dondeestamos.css.map */

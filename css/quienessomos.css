@@ -1,111 +1,83 @@
 /* Colores */
 body {
   background: url("../media/cabeceras/quienessomos.jpg") fixed center center;
-  background-size: cover;
-}
+  background-size: cover; }
 
 #contenedor section.redes {
   position: relative;
   padding: 1ex;
   border: 2px solid #FB6750;
   background-color: #FB8F50;
-  margin: 0 0 0.5em;
-  clear: both;
-}
-#contenedor section.redes h2 {
-  font: 1.2em/1.3em sans-serif;
-  padding: 0.5ex;
-  border-bottom: 2px solid #000000;
-  margin: 0 auto 1em;
-}
-#contenedor section.redes p {
-  font: 1em/1.2 sans-serif;
-  margin: 0 auto 0.5em;
-}
-#contenedor section.redes .panel_redes {
-  position: relative;
-  margin: 0 auto;
-}
-#contenedor section.redes .panel_redes .rrss_tragona {
-  padding-top: 2em;
-}
-#contenedor section.redes .panel_redes .rrss_tragona li {
-  cursor: pointer;
-  font: 1em/1.2em sans-serif;
-  padding: 0.6em 0.3em;
-  margin-bottom: 0.6ex;
-  border-radius: 10px;
-  background-color: #F5B38C;
-}
-#contenedor section.redes .panel_redes .rrss_tragona li img {
-  width: 40px;
-  border-radius: 40px;
-  margin-right: 0.3em;
-  vertical-align: middle;
-}
-#contenedor section.redes .panel_redes .red {
-  margin: 1.5ex auto;
-  width: calc(100% - 2ex);
-  height: 400px;
-  overflow: auto;
-  border-radius: 5px;
-}
-#contenedor section.redes .panel_redes .red #frame_facebook {
-  height: inherit;
-  width: 100%;
-}
+  margin: 0 0 .5em;
+  clear: both; }
+  #contenedor section.redes h2 {
+    font: 1.2em/1.3em sans-serif;
+    padding: .5ex;
+    border-bottom: 2px solid #000000;
+    margin: 0 auto 1em; }
+  #contenedor section.redes p {
+    font: 1em/1.2 sans-serif;
+    margin: 0 auto .5em; }
+  #contenedor section.redes .panel_redes {
+    position: relative;
+    margin: 0 auto; }
+    #contenedor section.redes .panel_redes .rrss_tragona {
+      padding-top: 2em; }
+      #contenedor section.redes .panel_redes .rrss_tragona li {
+        cursor: pointer;
+        font: 1em/1.2em sans-serif;
+        padding: .6em .3em;
+        margin-bottom: .6ex;
+        border-radius: 10px;
+        background-color: #F5B38C; }
+        #contenedor section.redes .panel_redes .rrss_tragona li img {
+          width: 40px;
+          border-radius: 40px;
+          margin-right: .3em;
+          vertical-align: middle; }
+    #contenedor section.redes .panel_redes .red {
+      margin: 1.5ex auto;
+      width: calc(100% - 2ex);
+      height: 400px;
+      overflow: auto;
+      border-radius: 5px; }
+      #contenedor section.redes .panel_redes .red #frame_facebook {
+        height: inherit;
+        width: 100%; }
 
 @media screen and (min-device-width: 480px) {
   #contenedor section.redes {
-    margin: 0 1em 1em;
-  }
-  #contenedor section.redes .panel_redes .red {
-    width: 340px;
-  }
-}
+    margin: 0 1em 1em; }
+    #contenedor section.redes .panel_redes .red {
+      width: 340px; } }
 @media screen and (min-device-width: 576px) {
   #contenedor section.redes h2 {
-    font: 1.3em/1.3em sans-serif;
-  }
+    font: 1.3em/1.3em sans-serif; }
   #contenedor section.redes p {
-    font: 1.1em/1.2 sans-serif;
-  }
+    font: 1.1em/1.2 sans-serif; }
   #contenedor section.redes .panel_redes .red {
     left: 10%;
-    right: 10%;
-  }
-}
+    right: 10%; } }
 @media screen and (min-device-width: 768px) {
   #contenedor section.redes {
     width: 80%;
-    margin: 0 auto 1em;
-  }
-}
+    margin: 0 auto 1em; } }
 @media screen and (min-device-width: 992px) {
   #contenedor section.redes h2, #contenedor section.redes p {
-    width: 80%;
-  }
+    width: 80%; }
   #contenedor section.redes .panel_redes {
-    width: 725px;
-  }
-  #contenedor section.redes .panel_redes .red {
-    display: inline-block;
-    margin: 1.5ex 10px;
-  }
-}
+    width: 725px; }
+    #contenedor section.redes .panel_redes .red {
+      display: inline-block;
+      margin: 1.5ex 10px; } }
 @media screen and (min-device-width: 1024px) {
   #contenedor .menu {
-    display: none;
-  }
-}
+    display: none; } }
 @media screen and (min-device-width: 1200px) {
   #contenedor section.contenido .texto > p, #contenedor section.contenido .texto .protagonistas {
-    font: 1.3em/1.4 sans-serif;
-  }
+    font: 1.3em/1.4 sans-serif; }
   #contenedor section.contenido .texto .anuncio {
     /*width: unset;*/
-    /*height: 250px;*/
-  }
-}
+    /*height: 250px;*/ } }
 
 /*# sourceMappingURL=quienessomos.css.map */

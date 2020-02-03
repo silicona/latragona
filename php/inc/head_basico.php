@@ -17,6 +17,8 @@
 <link rel="stylesheet" type="text/css" href="<?php  echo BASE_URL ?>css/lib/jquery.fancybox.min.css">
 <link rel="stylesheet" type="text/css" href="<?php  echo BASE_URL ?>css/lib/camera.min.css">
 
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css">
+
 
 <script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/jquery.fancybox.min.js"></script>
@@ -41,15 +43,16 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/lightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/tcal.min.css">
+
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/lightbox.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/tcal.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/carta.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/carta.min.css"> -->
 
 <?php } else { ?>
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css"> -->
 
 <?php } ?>
 
