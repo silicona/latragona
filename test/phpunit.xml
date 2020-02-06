@@ -14,6 +14,7 @@
 	<php>
 
 		<const name='BASE_URL' value='//localhost/latragona/'/>
+		<const name='BASE_API' value='//localhost/latragona/php/api/'/>
 		<const name='BASE_FILE' value='/Applications/xampp/htdocs/latragona/'/>
 
 		<!--

@@ -123,6 +123,21 @@ class Tragona {
 	}
 
 
+	public static function devuelve_carta_actual($tipo){
+
+		$carta_actual = file_get_contents(BASE_FILE . 'php/lib/carta.txt');
+
+		preg_match_all('/(\w+)\-([\d,]+)/', $carta_actual, $datos);
+
+		$arr_salida = array();
+		for( $i = 0; $i < count($datos[1]); $i++ ){
+
+			$arr_salida[$datos[1][$i]] = explode(',', $datos[2][$i]);
+		}
+
+		return $arr_salida[$tipo];
+	}
+
 	public function enviar_email($email, $nombre, $asunto, $mensaje, $idioma, $telefono = ''){
 
 		$idioma = comprobar_entrada( $_POST['idioma'] );
@@ -504,6 +519,8 @@ class Tragona {
 
 		$material = get_class($obj_productos);
 
+		$productos_en_carta = Tragona::devuelve_carta_actual($material);
+		//print_r($productos_en_carta);
 		// titulo del contenido
 		if( $material == "Tostas" ){ 
 
@@ -516,15 +533,21 @@ class Tragona {
 
 		// Bucle de productos
 		foreach( $obj_productos as $producto ){
-
-			//if( $material == "Cervezas" ){	
+			
+			/*
+			if( $material == "Cervezas" ){	
 
 				//$lista .= Tragona::formatear_titulo('Cervezas', $titulos, $producto);	
 
-			//} else { 
+			} else { 
 
 				$lista .= Tragona::formatear_titulo($producto['nombre'], $titulos); 
-			//}
+			}
+			*/
+
+			if( !in_array($producto['id'], $productos_en_carta) ){ continue; }
+
+			$lista .= Tragona::formatear_titulo($producto['nombre'], $titulos); 
 
 			$lista .= Tragona::mostrar_novedad($producto);
 

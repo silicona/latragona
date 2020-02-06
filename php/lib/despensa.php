@@ -260,7 +260,7 @@ class Licores {
 	);
 
 	public $licor_cafe = array(
-		"id"		  => "5",
+		"id"		  => "4",
 		"nombre" 	  => "licor_cafe",
 		"imagen" 	  => "lic_cafe.jpg",
 		"precio" 	  => array(
@@ -270,7 +270,7 @@ class Licores {
 	);
 
 	public $pacharan = array(
-		"id"		  => "6",
+		"id"		  => "5",
 		"nombre" 	  => "pacharan",
 		"imagen" 	  => "lic_pacharan.jpg",
 		"precio"      => array(
@@ -280,7 +280,7 @@ class Licores {
 	);
 
 	public $crema_orujo = array(
-		"id"		  => "7",
+		"id"		  => "6",
 		"nombre" 	  => "crema_orujo",
 		"imagen" 	  => "lic_crema_orujo.jpg",
 		"precio"	  => array(
@@ -290,7 +290,7 @@ class Licores {
 	);
 
 	public $crema_chocolate = array(
-		"id"		  => "8",
+		"id"		  => "7",
 		"nombre" 	  => "crema_chocolate",
 		"imagen" 	  => "lic_choco.jpg",
 		"precio" 	  => array(
@@ -300,7 +300,7 @@ class Licores {
 	);
 
 	public $crema_cafe = array(
-		"id"		  => "9",
+		"id"		  => "8",
 		"nombre" 	  => "crema_cafe",
 		"imagen" 	  => "lic_crem_cafe.jpg",
 		"precio" 	  => array(
@@ -688,7 +688,7 @@ class Raciones {
 	);
 	/*
 	public $judiones = array(
-		"id"		=> "15",
+		"id"		=> "14",
 		"nombre"       => "Judiones con compango",
 		"imagen"       => "judiones.jpg",
 		"precio"       => array("8"),
@@ -699,7 +699,7 @@ class Raciones {
 	*/
 
 	public $lasagna = array(
-		"id"		=> "16",
+		"id"		=> "15",
 		"nombre"	=> "Lasagna de setas",
 		"imagen"	=> "lasagna_setas.jpg",
 		"precio"	=> ["8"],
@@ -723,7 +723,7 @@ class Raciones {
 
 	/*
 	public $lomo = array(
-		"id"		=> "17",
+		"id"		=> "16",
 		"nombre"       => "Lomo embuchado",
 		"imagen"       => "lomo.jpg",	// Imagen Ajena
 		"precio"       => ["7", " - ½: 3,5"],
@@ -734,7 +734,7 @@ class Raciones {
 	*/
 
 	public $migas = array(
-		"id"		=> "18",
+		"id"		=> "17",
 		"nombre"	=> "Migas",
 		"imagen"	=> "migas.jpg",
 		"precio"	=> ["6,5"],
@@ -753,7 +753,7 @@ class Raciones {
 	);
 
 	public $mousaka = array(
-		"id"		=> "19",
+		"id"		=> "18",
 		"nombre"	=> "Mousaka",
 		"imagen"	=> "mousaka.jpg", // Imagen Ajena
 		"precio"	=> array( "8" ),
@@ -775,7 +775,7 @@ class Raciones {
 	);
 
 	public $papas_2mojos = array(
-		"id"		=> "20",
+		"id"		=> "19",
 		"nombre"	=> "'Papas arrugás' con 2 mojos",
 		"imagen"	=> "racion_papa_mojo.jpg",
 		"precio"	=> array("6,5"),
@@ -797,7 +797,7 @@ class Raciones {
 
 	/*
 	public $pastel_salmon = array(
-		"id"		=> "21",
+		"id"		=> "20",
 		"nombre"       => "Pastel de salmón",
 		"imagen"       => "pastel_salmon.jpg",
 		"precio"       => array("7"),
@@ -816,7 +816,7 @@ class Raciones {
 	);
 	
 	public $patatas_cabrales = array(
-		"id"		=> "22",
+		"id"		=> "21",
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_cabrales.jpg",
 		"precio"       => array( "5" ),
@@ -834,7 +834,7 @@ class Raciones {
 	);
 	
 	public $patatas_rellenas = array(
-		"id"		=> "23",
+		"id"		=> "22",
 		"nombre"       => "Patatas rellenas de pisto o cabrales",
 		"imagen"       => "racion_patata_rellena.jpg",
 		"precio"       => array( "5" ),
@@ -853,7 +853,7 @@ class Raciones {
 	
 
 	public $patatas_revolconas = array(
-		"id"		=> "24",
+		"id"		=> "23",
 		"nombre"       => "Patatas revolconas",
 		"imagen"       => "patatas_revolconas.jpg",
 		"precio"       => array( "7" ),
@@ -872,7 +872,7 @@ class Raciones {
 	*/
 
 	public $patatas_cabrales = array(
-		"id"		=> "25",
+		"id"		=> "24",
 		"nombre"	=> "Patatas revolcadas con cabrales",
 		"imagen"	=> "patatas_cabrales.jpg",
 		"precio"	=> array( "5" ),
@@ -891,7 +891,7 @@ class Raciones {
 	);
 	
 	public $pate_shiitake = array(
-		"id"		=> "26",
+		"id"		=> "25",
 		"nombre"	=> "Pate de shiitake",
 		"imagen"	=> "pate_shiitake.jpg",
 		"precio"	=> array(
@@ -915,7 +915,7 @@ class Raciones {
 	);
 
 	public $queso_tietar = array(
-		"id"		=> "27",
+		"id"		=> "26",
 		"nombre"	=> "Queso de cabra ecológico del Tietar",
 		"imagen"	=> "queso_tietar.jpg",
 		"precio"	=> array( '5' ),
@@ -928,7 +928,7 @@ class Raciones {
 	);
 	
 	public $ragout = array(
-		"id"		=> "28",
+		"id"		=> "27",
 		"nombre"	=> "Ragout de ternera",
 		"imagen"	=> "ragout.jpg",
 		"precio"	=> array(
@@ -953,7 +953,7 @@ class Raciones {
 
 	/*
 	public $solomillo = array(
-		"id"		=> "29",
+		"id"		=> "28",
 		"nombre"       => "Solomillo con 2 salsas (cerveza y manzana)",
 		"imagen"       => "solomillo.jpg",
 		"precio"       => array( "7" ),
@@ -972,7 +972,7 @@ class Raciones {
 	*/
 
 	public $solomillo_aji = array(
-		"id"		=> "30",
+		"id"		=> "29",
 		"nombre"	=> "Solomillo al aji amarillo",
 		"imagen"	=> "solomillo.jpg",
 		//"imagen"	=> "solomillo_aji.jpg",
@@ -993,7 +993,7 @@ class Raciones {
 	);
 	/*
 	public $solomillo_sal = array(
-		"id"		=> "31",
+		"id"		=> "30",
 		"nombre"       => "Solomillo curado a la sal con especias",
 		"imagen"       => "solomillo_sal.jpg",
 		"precio"       => array( '8' ),
@@ -1010,7 +1010,7 @@ class Raciones {
 	);
 	*/
 	public $rusos = array(
-		"id"		=> "32",
+		"id"		=> "31",
 		"nombre"	=> "Filetes rusos con salsa de tomate",
 		"imagen"	=> "rusos.jpg",
 		"precio"	=> array("8"),
@@ -1031,7 +1031,7 @@ class Raciones {
 	);
 
 	public $tartar_verduras = array(
-		"id"		=> "33",
+		"id"		=> "32",
 		"nombre"       => "Tartar de verduras, quinoa y salsa de aceituna verde",
 		"imagen"       => "tartar_verduras.jpg",
 		"precio"       => array("8"),
@@ -1045,7 +1045,7 @@ class Raciones {
 	);
 
 	public $ventresca = array(
-		"id"		=> "34",
+		"id"		=> "33",
 		"nombre"	=> "Ensalada de ventresca con p. del piquillo",
 		"imagen"	=> "ensalada_ventresca.jpg",
 		"precio"	=> [

@@ -139,6 +139,15 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
+	public function test_devuelve_carta_actual(){
+
+		$tipo = 'Cerveza';
+		$res = Tragona::devuelve_carta_actual($tipo);
+
+		print_r($res);
+	}
+
+
 	public function test_formatear_cerveza(){
 
 		$res = Tragona::formatear_cerveza( self::$cervezas -> rubia );
@@ -352,8 +361,15 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	public function test_mostrar_productos_tostas(){
 
 		$res = Tragona::mostrar_productos( self::$tostas, self::$lexico );
+		
 		//print_r($res);
 		$this -> assertRegExp( '/<article class="contenido">/', $res );
+
+		//preg_match_all('/(<div class="articulo.*<\/div><\/div>(?<=<div class="articulo"))/', $res, $datos);
+
+		//print_r($datos);
+
+
 	}
 
 
