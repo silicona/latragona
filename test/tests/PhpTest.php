@@ -49,6 +49,16 @@ class PhpTest extends \PHPUnit\Framework\TestCase {
 		//print_r($res);
 	}
 
+	public function test_preg_match_lazy(){
+
+		$str = '<article class="contenido"><legend class="movil">Tostas</legend><h4 id="aviso_pan" class="aviso_alergeno">¡¡Tenemos pan sin gluten. Pídelo!!</h4><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_brandada" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_brandada.jpg" class="imagen" alt="Tosta de Brandada de bacalao" title="Tosta de Brandada de bacalao"></div><p><span>Brandada de bacalao</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_cecina" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_cecina.jpg" class="imagen" alt="Tosta de Cecina de Léon" title="Tosta de Cecina de Léon"></div><p><span>Cecina de Léon</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_hummus" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_hummus.jpg" class="imagen" alt="Tosta de Hummus" title="Tosta de Hummus"></div><p><span>Hummus</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_roastbeef" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_roastbeef.jpg" class="imagen" alt="Tosta de Roastbeef" title="Tosta de Roastbeef"></div><p><span>Roastbeef</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_salmon" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_salmon.jpg" class="imagen" alt="Tosta de Salmón" title="Tosta de Salmón"></div><p><span>Salmón</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_ventresca" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_ventresca.jpg" class="imagen" alt="Tosta de Ventresca de atún con pimi. de piquillo" title="Tosta de Ventresca de atún con pimi. de piquillo"></div><p><span>Ventresca de atún con pimi. de piquillo</span></p></a></div></div></article>';
+
+		preg_match_all( '/(<div class="articulo.*?<\/div><\/div>)/', $str, $arr_articulos );
+
+		$this -> assertSame( 6, count($arr_articulos[1]), 'Debería tener 5 elementos.' );
+		print_r($arr_articulos);
+	}
+
 	public function test_preg_match_lookahead(){
 
 		// Coincidencia - x seguido de y
@@ -56,13 +66,17 @@ class PhpTest extends \PHPUnit\Framework\TestCase {
 		$str = '<article class="contenido"><legend class="movil">Tostas</legend><h4 id="aviso_pan" class="aviso_alergeno">¡¡Tenemos pan sin gluten. Pídelo!!</h4><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_brandada" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_brandada.jpg" class="imagen" alt="Tosta de Brandada de bacalao" title="Tosta de Brandada de bacalao"></div><p><span>Brandada de bacalao</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_cecina" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_cecina.jpg" class="imagen" alt="Tosta de Cecina de Léon" title="Tosta de Cecina de Léon"></div><p><span>Cecina de Léon</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_hummus" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_hummus.jpg" class="imagen" alt="Tosta de Hummus" title="Tosta de Hummus"></div><p><span>Hummus</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_roastbeef" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_roastbeef.jpg" class="imagen" alt="Tosta de Roastbeef" title="Tosta de Roastbeef"></div><p><span>Roastbeef</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_salmon" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_salmon.jpg" class="imagen" alt="Tosta de Salmón" title="Tosta de Salmón"></div><p><span>Salmón</span></p></a></div></div><div class="articulo"><div class="interior"><a class="img_fancybox" data-fancybox data-src="//localhost/latragona/php/api/despensa.php?accion=ingredientes&solicitud=tosta_ventresca" data-type="iframe" href="javascript:;"><div class="div_imagen"><img src="//localhost/latragona/media/imagenes/tragar/minis/tosta_ventresca.jpg" class="imagen" alt="Tosta de Ventresca de atún con pimi. de piquillo" title="Tosta de Ventresca de atún con pimi. de piquillo"></div><p><span>Ventresca de atún con pimi. de piquillo</span></p></a></div></div></article>';
 		
 		//preg_match_all( '/(<div class="articulo.*<\/div><\/div>)/', $str, $arr_articulos );
-		preg_match_all( '/(<div class="articulo.*<\/div><\/div>)(?:<div class="articulo|<\/article)/', $str, $arr_articulos );
+		//preg_match( '/((?:<div class="articulo)[^\2]+<\/div><\/div>)/', $str, $arr_articulos );
+		/*preg_match( '/(<div class="articulo.*<\/div><\/div>)(?><div class="articulo|<\/article)/', $str, $arr_articulos );*/
+		//preg_match( '/(<div class="articulo.*?<\/div><\/div)/', $str, $arr_articulos );
+
+		preg_match_all( '/(<div class="articulo.*?<\/div><\/div>)/', $str, $arr_articulos );
+		print_r($arr_articulos);
 		//preg_match_all( '/((?<=<div class="articulo")<div class="articulo.*<\/div><\/div>)/', $str, $arr_articulos );
-		preg_match_all( '/(<div class="articulo.*<\/div><\/div>(?))/', $arr_articulos[1], $art );
+		//preg_match_all( '/(<div class="articulo.*<\/div><\/div>(?))/', $arr_articulos[1], $art );
 		# preg_match_all( '/(<div class="articulo.*<\/div><\/div>)/', $arr_articulos[1], $art );
 
-		print_r($art);
-		// print_r($arr_articulos);
+		//print_r($art);
 
 		//$this -> assertRegExp('/^adId=\d+&$/', $adId[1], 'Debería tener la adId de la url.' );
 
@@ -74,6 +88,20 @@ class PhpTest extends \PHPUnit\Framework\TestCase {
 
 		//print_r($res);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 ?>

@@ -99,7 +99,9 @@ bebida:
 
 ingrediente:
   aceite: Aceite de oliva
+  aceituna: Aceituna
   ajo: Ajo
+  albahaca: Albahaca
   almendra: Almendras
   alubia_carilla: Alubia carilla
   atun: Atún
@@ -125,10 +127,11 @@ ingrediente:
   garbanzo: Garbanzo
   guisante: Guisante
   harina: Harina
-  huevos: Huevos
-  huevo_duro: Huevo duro
-  judia_blanca: Judia blanca
-  judia_pinta: Judia pinta
+  huevo: Huevo
+  huevo_duro: Huevo cocido
+  judia_blanca: Judía blanca
+  judia_pinta: Judía pinta
+  judia_verde: Judía verde
   judion: Judión
   ketchup: Ketchup
   laurel: Laurel
@@ -183,6 +186,7 @@ ingrediente:
   salsa_soja: Salsa de soja
   salsa_tomate: Salsa de tomate
   salsa_tomate_casera: Salsa de tomate casera
+  sardina: Sardina
   sesamo: Sésamo
   setas: Setas
   solomillo: Solomillo de cerdo
@@ -233,6 +237,7 @@ nombre:
   rusos: Filetes rusos con salsa de tomate
   salmon: Salmón
   solomillo: Solomillo a la cerveza y manzana
+  solomillo_aji: Solomillo al ají amarillo
   solomillo_sal: Solomillo curado a la sal
   tartar_verduras: Tartar de verduras, quinoa y salsa de aceituna verde
   tortilla: Tortilla de patata
@@ -463,6 +468,9 @@ empujar:
   aquarius: "Aquarius"
   nestea: "Nestea"
   
+despensa:
+  title: "Despensa"
+
 dondeestamos:
   title: "Encuentra La Tragona"
   leer: "Encuéntranos"

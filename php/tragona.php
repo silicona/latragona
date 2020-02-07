@@ -122,8 +122,10 @@ class Tragona {
 		return implode('', $salida);
 	}
 
-
+	// Test
 	public static function devuelve_carta_actual($tipo){
+
+		$tipo = strtolower($tipo);
 
 		$carta_actual = file_get_contents(BASE_FILE . 'php/lib/carta.txt');
 
@@ -132,8 +134,14 @@ class Tragona {
 		$arr_salida = array();
 		for( $i = 0; $i < count($datos[1]); $i++ ){
 
-			$arr_salida[$datos[1][$i]] = explode(',', $datos[2][$i]);
+			$clave = strtolower($datos[1][$i]);
+
+			$arr_salida[$clave] = explode(',', $datos[2][$i]);
 		}
+
+		$tipos = array_keys($arr_salida);
+
+		if( !in_array($tipo, $tipos) ){ return false; }
 
 		return $arr_salida[$tipo];
 	}
@@ -321,11 +329,15 @@ class Tragona {
 
 		$nombre = isset($lexico['bebida'][$producto['nombre']]) ? $lexico['bebida'][$producto['nombre']] : $producto['nombre'];
 
+
+
+		$precio = ' - ' . array_shift($producto['precio']) . 'euros';
+
 		$html = array(
-			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . '">',
+			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . $precio . '">',
 
 				'<div class="div_imagen">',
-					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre  . '">',
 					// '<img src="' . BASE_URL . 'media/imagenes/empujar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
 				'</div>',
 				'<p>' . $nombre . '</p>',
@@ -426,35 +438,21 @@ class Tragona {
 	// Test
 	public static function formatear_comida($producto, $lexico, $tosta = false){
 
-		if( $tosta ){
+		$nombre = $tosta ? $lexico['producto']['tosta'] : '';
+		
+		$nombre .= $lexico['nombre'][$producto['descripcion']];
 
-			//$light = "tostas";
-			$title = $lexico['producto']['tosta'];
-
-		} else {
-
-			//$light = 'raciones';	
-			$title = "";
-		}
-
-		$nombre = $lexico['nombre'][$producto['descripcion']];
+		$clase_largo = strlen($nombre) > 35 ? 'largo' : '';
 
 		$prod = array(
 			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=ingredientes&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
 				'<div class="div_imagen">',
-					'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
+					'<img src="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
 				'</div>',
-				'<p>',
+				'<p class="' . $clase_largo . '">',
 					'<span>' . $nombre . '</span>',
-
 				'</p>',
 			'</a>',
-				//$nombre . ' ' . Tragona::formatear_precio($producto, $lexico['producto'], 'Comida') . '<br>',
-				//'<span class="ingredientes">',
-					//'<a data-fancybox data-src="' . BASE_URL . 'php/ingredientes.php?comida=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">' . $lexico['producto']['ver'] . '</a>',
-				//'</span>',
-			//'</p>',
-			//Tragona::asignar_alergenos($producto['alergenos'], $lexico['alergenos']),
 			'</div></div>'
 		);
 
@@ -478,8 +476,7 @@ class Tragona {
 		$nombre = $lexico['nombre'][$producto['descripcion']];
 
 		$prod = array(
-			//'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">',
-			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=ingredientes&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/tragar/' . $producto['imagen'] . '" data-lightbox="' . $light . '" data-title="' . $title . $nombre . '">',
 				'<img src="' . BASE_URL . 'media/imagenes/tragar/minis/' . $producto['imagen'] . '" class="imagen" alt="' . $title . $nombre . '" title="' . $title . $nombre . '">',
 			'</a>',
 			'<p>',
@@ -494,15 +491,78 @@ class Tragona {
 		return implode('', $prod);
 	}
 
+	public static function mostrar_despensa($despensa){
+
+		$arr_html = array('<article class="contenido">');
+
+		$arr_fotos_ko = array(
+			"ensalada_sardinas",
+			"ensalada_remo",
+			"estrella_sin",
+		);
+
+		foreach( $despensa as $tipo => $productos ){
+
+			$carta = Tragona::devuelve_carta_actual($tipo);
+
+			$arr_html[] = '<h2 class="titulo_despensa">' . ucfirst($tipo) . '</h2>';
+
+			$arr_html[] = '<table class="despensa ' . $tipo . '">';
+			$arr_html[] = '<thead><tr>';
+			$arr_html[] = '<th class="nombre">Nombre</th>';
+			$arr_html[] = '<th style="width: 100px;">Precio</th>';
+			$arr_html[] = '<th>En carta</th>';
+			$arr_html[] = '<th>Novedad</th>';
+			$arr_html[] = '<th>Imagen</th>';
+			$arr_html[] = '</tr></thead>';
+			$arr_html[] = '<tbody>';
+
+			foreach( $productos as $i => $producto ){
+
+				$arr_html[] = '<tr>';
+				$arr_html[] = '<td>' . $producto['nombre'] . '</td>';
+
+				$precio = implode('<br>', $producto['precio']);
+				$precio = str_replace(' - ', '', $precio);
+				$arr_html[] = '<td class="centrado">' . $precio . '</td>';
+
+				$en_carta = in_array($producto['id'], $carta) ? 'Sí' : 'No';
+				$arr_html[] = '<td class="centrado">' . $en_carta . '</td>';
+				//$arr_html[] = '<td class="en_carta">' . $tipo . '</td>';
+
+				$novedad = $producto['novedad'] ? 'Sí' : 'No';
+				$arr_html[] = '<td class="centrado">' . $novedad . '</td>';
+
+				$ok_foto = in_array($producto['descripcion'], $arr_fotos_ko) ? 'No OK' : 'OK';
+
+				$arr_html[] = '<td class="centrado">' . $ok_foto . '</td>';
+				$arr_html[] = '</tr>';
+
+			}
+
+			$arr_html[] = '</tbody></table>';
+		}
+
+		$arr_html[] = '</article>';
+
+		return implode('', $arr_html);
+	}
+
 	// Test
 	public static function mostrar_novedad($producto){
 
-		if( isset($producto['novedad']) ){
+		$str = '<div class="articulo" data-id_producto="' . $producto['id'] . '">';
+		$str .= '<div class="interior">';
 
-			return '<div class="articulo articulo_novedad"><div class="novedad"><div class="cinta_verde">Novedad</div></div><div class="interior">';
+		if( $producto['novedad'] ){
+
+			$str = '<div class="articulo articulo_novedad" data-id_producto="' . $producto['id'] . '">';
+			$str .= '<div class="interior">';
+			$str .= '<div class="novedad"><div class="cinta_verde">Novedad</div></div>';
 		}
 
-		return '<div class="articulo"><div class="interior">';	
+
+		return $str;	
 	}
 
 	// Test

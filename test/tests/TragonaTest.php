@@ -141,10 +141,18 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_devuelve_carta_actual(){
 
-		$tipo = 'Cerveza';
+		$tipo = 'Cervezas';
 		$res = Tragona::devuelve_carta_actual($tipo);
 
-		print_r($res);
+		$this -> assertTrue( count($res) > 0, 'Debería tener más de 0 elementos.' );
+	}
+
+	public function test_devuelve_carta_actual_ko(){
+
+		$tipo = 'invalido';
+		$res = Tragona::devuelve_carta_actual($tipo);
+
+		$this -> assertFalse( $res, 'Debería ser false.' );
 	}
 
 
@@ -288,7 +296,6 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$this -> assertSame( '<legend>Tintos</legend>', $res, 'Debería devolver la leyenda de Tintos.' );
 	}
 
-
 	public function test_formatear_titulo_ko(){
 
 		$res = Tragona::formatear_titulo('nombre_erroneo', self::$lexico['titulos']);
@@ -336,7 +343,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_mostrar_novedad_si(){
+	public function ESPERA_test_mostrar_novedad_si(){
 
 		$producto = Helper::suministra_novedad(self::$cervezas, true);
 
@@ -347,8 +354,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$this -> assertSame( $div_novedad, $res, 'Debería devolver el div de novedad.' );
 	}
 
-
-	public function test_mostrar_novedad_no(){
+	public function ESPERA_test_mostrar_novedad_no(){
 
 		$producto = Helper::suministra_novedad(self::$cervezas);
 
@@ -360,21 +366,77 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_mostrar_productos_tostas(){
 
+		$carta = Tragona::devuelve_carta_actual('tostas');
+
 		$res = Tragona::mostrar_productos( self::$tostas, self::$lexico );
-		
-		//print_r($res);
+
 		$this -> assertRegExp( '/<article class="contenido">/', $res );
 
-		//preg_match_all('/(<div class="articulo.*<\/div><\/div>(?<=<div class="articulo"))/', $res, $datos);
+		preg_match_all('/(<div class="articulo.*?<\/a><\/div><\/div>)/', $res, $datos);
+		
+		$this -> assertSame( count($carta), count($datos[1]), 'Debería tener los elementos de la carta.' );
 
-		//print_r($datos);
+		$base_url = str_replace('/', '\/', BASE_URL);
+		$base_api = str_replace('/', '\/', BASE_API);
 
+		foreach( $datos[1] as $i => $prod ){
 
+			preg_match('/data\-id_producto="(\d+)"/', $prod, $arr_id);
+			
+			$this -> assertGreaterThan( 0, $arr_id[1], 'Debería tener id_producto.' );
+
+			$this -> assertTrue( in_array($arr_id[1], $carta), 'Debería estar en la carta.' );
+
+			$ind = array_search($arr_id[1], $carta);
+			unset($carta[$ind]);
+			
+			$reg_data_src = '/data\-src="' . $base_api . 'despensa\.php\?accion=ingredientes&solicitud=/';
+			$this -> assertRegexp($reg_data_src, $prod, 'Debería tener url de fancybox.' );
+
+			$reg_img_src = '/img src="' . $base_url . 'media\/imagenes\/tragar/';
+			$this -> assertRegexp($reg_img_src, $prod, 'Debería tener url de imagen.' );
+
+			$reg_img_title = '/title="Tosta de [\w\s]+/';
+			$this -> assertRegexp('/title="Tosta de [\w\s]+/', $prod, 'Debería tener title de imagen de tosta.' );
+		}
+
+		$this -> assertTrue( count($carta) == 0, 'No deberían quedar tostas sin mostrar de la carta.' );
 	}
-
 
 	public function test_mostrar_productos_raciones(){
 
+		$carta = Tragona::devuelve_carta_actual('raciones');
+
+		$res = Tragona::mostrar_productos( self::$raciones, self::$lexico );
+
+		$this -> assertRegExp( '/<article class="contenido">/', $res );
+
+		preg_match_all('/(<div class="articulo.*?<\/a><\/div><\/div>)/', $res, $datos);
+
+		$base_url = str_replace('/', '\/', BASE_URL);
+		$base_api = str_replace('/', '\/', BASE_API);
+
+		foreach( $datos[1] as $i => $prod ){
+		
+			preg_match('/data\-id_producto="(\d+)"/', $prod, $arr_id);
+
+			$this -> assertGreaterThan( 0, $arr_id[1], 'Debería tener id_producto.' );
+
+			$this -> assertTrue( in_array($arr_id[1], $carta), 'Debería estar en la carta.' );
+
+			$ind = array_search($arr_id[1], $carta);
+			unset($carta[$ind]);
+
+			$reg_data_src = '/data\-src="' . $base_api . 'despensa\.php\?accion=ingredientes&solicitud=/';
+			$this -> assertRegexp($reg_data_src, $prod, 'Debería tener url de fancybox.' );
+
+			$reg_img_src = '/img src="' . $base_url . 'media\/imagenes\/tragar/';
+			$this -> assertRegexp($reg_img_src, $prod, 'Debería tener url de imagen.' );
+			
+			$this -> assertNotRegexp('/title="Tosta de [\w\s]+/', $prod, 'No debería tener title de imagen de tosta.' );
+		}
+
+		$this -> assertTrue( count($carta) == 0, 'No deberían quedar raciones sin mostrar de la carta.' );
 	}
 
 }
