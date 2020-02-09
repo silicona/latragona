@@ -17,13 +17,6 @@
 	<header></header>
 
 	<section id="tosta">
-		<!--
-		<article class="foto">
-			<a name="tosta"><p id="tos"><?php echo $lexico['lateral']['tostas']; ?></p></a>
-			
-			<div class="cartel_lateral"><?php //require_once BASE_FILE . 'php/plantillas/cartel_navidades.php' ?></div>
-		</article>	
-		-->
 
 		<?php echo Tragona::mostrar_productos($tostas, $lexico); ?>
 
@@ -31,19 +24,11 @@
 
 	<section id="racion">
 
-		<!-- <article class="foto">
-			<a name="racion"><p id="rac"><?php echo $lexico['lateral']['raciones']; ?></p></a>
-		</article> -->	
-
 		<?php echo Tragona::mostrar_productos($raciones, $lexico); ?>
 
 	</section>	
 	
 	<section id="reservas">
-
-		<!-- <article class="foto">
-			<a name="reservas"><p id="reser"><?php echo $lexico['foto']['reservas']; ?></p></a>
-		</article> -->
 
 		<article class="contenido">
 
@@ -51,9 +36,6 @@
 			
 			<p class="texto_reserva mitad">
 				<?php echo $lexico['form']['reservas']; ?> <img src="<?php echo BASE_URL ?>media/iconos/wasap.png" alt="wasap" title="Envianos un wasap" id="wasap">
-			<!--</p>
-
-			<p class="mitad">-->
 				<br>
 				<?php echo $lexico['form']['llevar']; ?>
 			</p>

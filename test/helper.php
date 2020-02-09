@@ -2,10 +2,40 @@
 
 require_once '../php/lib/spyc/spyc.php';
 require_once '../php/lib/funciones.php';
+require_once '../php/lib/formularios.php';
 require_once '../php/lib/despensa.php';
 
 
 class Helper {
+
+	public function devuelve_json_post( $url, $params = array() ){
+
+		// Hace una llamada CURL a la API y envia $params por POST
+
+		$ch = curl_init();
+
+		curl_setopt($ch, CURLOPT_URL, $url );
+		//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		// get headers too with this line
+		// curl_setopt($ch, CURLOPT_HEADER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Ignore SSL
+		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:37.0) Gecko/20100101 Firefox/37.0');
+		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		curl_setopt($ch, CURLOPT_VERBOSE, 0);
+		//curl_setopt($ch, CURLOPT_VERBOSE, 1);
+
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+		$resultado = curl_exec($ch);
+
+		curl_close($ch);
+
+		return $resultado;
+	}
+
 
 	public function limpiar_saltos($string){
 

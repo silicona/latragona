@@ -1,4 +1,129 @@
+/* Funciones */
+function bs_alert(mensaje, clase, titulo){
+
+	mensaje = mensaje || '';
+	clase   = clase   || 'exito';
+	titulo  = titulo ? titulo : false;
+	
+	var icono = 'warning',
+		color = 'bg-red';
+
+	if( clase == 'exito' ){ 
+			
+		icono = 'check';
+		color = 'bg-green';
+
+		if( titulo ){ titulo = '<h4 class="alert-title">' + titulo + '</h4>' }
+	}
+
+	if( clase == 'aviso' ){ 
+		icono = 'warning';
+		color = 'bg-orange';
+		
+		if( titulo ){ titulo = '<h4 class="alert-title">Atención: ' + titulo + '</h4>' }
+	}
+
+	if( clase == 'error' ){ 
+		icono = 'warning';
+		color = 'bg-red';
+		
+		if( titulo ){ titulo = '<h4 class="alert-title">Error: ' + titulo + '</h4>' }
+	}
+
+	/*
+	if(clase == 'info') { 
+		icono = 'info';
+		color = 'bg-blue';
+		
+		if(titulo == ''){
+			titulo = 'Información:';
+		}
+	}
+	*/
+
+	var arr_html = [
+		'<div class="alert alert-', clase, '">',
+
+			'<a href="#" class="close" data-dismiss="alert" aria-label="close" onClick="cerrar_alert(this)">&times;</a>',
+			
+			//'<div class="' + color + ' alert-icon"><i class="fa fa-' + icono + '"></i></div>',
+			
+			'<div class="alert-content">',
+				titulo || '',
+				mensaje, 
+			'</div>',
+
+		'</div>'
+	];
+
+	return arr_html.join('')
+}
+
+function cerrar_alert(esto){
+
+	console.log('jar', eesto);
+
+	var padre = $(esto).parent();
+		
+	console.log('jar', padre);
+
+	padre.remove();
+
+	return false;
+}
+
+
 /* GENERAL */
+
+function animarFancy(pagina){
+
+	//if( !( JSON.stringify( $('#aviso_pan') ) == '{}' ) ){
+	if( pagina == 'tragar' ){
+
+		$('[data-fancybox]').fancybox({
+			toolbar  : false,
+			smallBtn : true,
+			iframe : {
+				preload : false,
+				css: { 
+					width : "400px",
+					height: "430px" 
+				}
+			}
+		});
+
+	} else if( pagina == 'empujar' ){
+		// Empujar
+		$('[data-fancybox]').fancybox({
+			toolbar  : false,
+			smallBtn : true,
+			iframe : {
+				preload : false,
+				css: { 
+					width : "400px",
+					height: "550px" 
+				}
+			}
+		});
+
+	} else {
+
+		$('[data-fancybox="comida"], [data-fancybox="vinos"]').fancybox({
+		// $('[data-fancybox="comida", data-fancybox="vinos"]').fancybox({
+			toolbar  : false,
+			smallBtn : true,
+			iframe : {
+				preload : false,
+				css: { 
+					width : "400px",
+					height: "550px" 
+				}
+			}
+		});
+	}
+}
+
+
 function mostrarIdiomas(){
 
 	if( !semaforo ){ mostrarMenu(); }
@@ -124,9 +249,10 @@ function desvanecerLeer(){
 
 	if(!d.getElementById(id)){
 		js=d.createElement(s);
-		js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+		js.id=id;js.src=p + "://platform.twitter.com/widgets.js";
 		fjs.parentNode.insertBefore(js,fjs);
 	}
+	
 }(document,"script","twitter-wjs");
 
 
@@ -275,39 +401,6 @@ function mostrarLateral(){
 }
 
 
-function animarFancy(pagina){
-
-	//if( !( JSON.stringify( $('#aviso_pan') ) == '{}' ) ){
-	if( pagina == 'tragar' ){
-
-		$('[data-fancybox]').fancybox({
-			toolbar  : false,
-			smallBtn : true,
-			iframe : {
-				preload : false,
-				css: { 
-					width : "400px",
-					height: "430px" 
-				}
-			}
-		});
-
-	} else {
-		// Empujar
-		$('[data-fancybox]').fancybox({
-			toolbar  : false,
-			smallBtn : true,
-			iframe : {
-				preload : false,
-				css: { 
-					width : "400px",
-					height: "550px" 
-				}
-			}
-		});
-
-	}
-}
 
 
 // // if( !(JSON.stringify( $('#lateral') ) == '{}') ){
@@ -556,6 +649,110 @@ function permite(elEvento, permitidos) {
 	return permitidos.indexOf(caracter) != -1 || tecla_especial;
 }
 
+
+/* DESPENSA */
+function anadir_eliminar_de_carta(esto){
+
+	var tipo_producto = $(esto).attr('data-tipo'),
+		id_producto = $(esto).attr('data-id_producto'),
+		pre_checked = $(esto).prop('checked'),
+		pre_accion = pre_checked ? 'anadir_a' : 'eliminar_de';
+
+	var resp = $.ajax({
+		type: 'POST',
+		url:  Config.base_api + 'despensa.php',
+		data: {
+			accion: pre_accion + '_carta',
+			hash: window.localStorage.getItem('tragona'),
+			tipo_producto: tipo_producto,
+			id_producto: id_producto
+		}
+	});
+
+	resp.done( function(json){
+
+		if( json != '' ){
+
+			var obj_json = $.parseJSON(json);
+
+			if( obj_json.status == 'ko' ){
+
+				$(esto).prop('checked', pre_checked);
+			}
+		}
+	})
+	return false;
+}
+
+function check_login(usuario, password){
+	
+	var resp = $.ajax({
+		type: 'POST',
+		url: Config.base_api + 'formulario.php',
+		data: {
+			accion: 'check_login',
+			usuario: usuario,
+			password: password
+		}
+	});
+
+	resp.done( function(json){
+
+		if( json != '' ){
+
+			var obj_json = $.parseJSON(json);
+
+			if( obj_json != null ){
+
+				if( obj_json.status == 'ok' ){
+
+					window.localStorage.setItem('tragona', obj_json.hash);
+
+					$('#marco_despensa').html(obj_json.html);
+
+					animarFancy();
+
+				} else {
+
+					$('#form_login .res_form').html( bs_alert(obj_json.error, 'error') );
+				}
+			}
+		}
+	});
+}
+
+function enviar_hash(){
+
+	var hash = window.localStorage.getItem('tragona');
+
+	var resp = $.ajax({
+		type: 'POST',
+		url: Config.base_api + 'formulario.php',
+		data: {
+			accion: 'check_hash',
+			hash: 	hash,
+		}
+	});
+
+	resp.done( function(json){
+
+		if( json != '' ){
+
+			var obj_json = $.parseJSON(json);
+
+			if( obj_json != null ){
+
+				if( obj_json.status == 'ok' ){
+
+					$('#marco_despensa').html(obj_json.html);
+
+					animarFancy();
+				}
+			}
+		}
+	});
+}
+
 	
 (function($) {
 
@@ -567,6 +764,7 @@ function permite(elEvento, permitidos) {
 							replace( /<![\s\S]*?--[ \t\n\r]*>/gi, '' );
 		return salida;
 	};
+
 })(jQuery);
 
 
@@ -595,7 +793,8 @@ function enviar_mensaje(datos){
 
 		dataType: 'json',
 		type: 'POST',
-		url: BASE_URL + '/php/formulario.php',
+		//url: BASE_URL + '/php/formulario.php',
+		url: Config.base_url + '/php/formulario.php',
 		data: datos,
 		context: $formulario,
 
@@ -725,8 +924,28 @@ function activarClicks(){
 		e.preventDefault();
 
 		validarForm(e);
+	});
 
-	});	
+	$('#form_login .boton').click( function(e){
+		
+		console.log('jir')
+
+		e.preventDefault();
+
+		var usuario = $('#usuario').val(),
+			password = $('#password').val();
+
+		if( usuario.length < 4 || password.length < 4 ){
+
+			$('#form_login .res_form').html( bs_alert('Credenciales incorrecta', 'error') );
+			
+			console.log('jir')
+
+			return false;
+		}
+
+		check_login(usuario, password);
+	});
 }
 
 
@@ -743,7 +962,10 @@ function iniciar(){
 	semaforo = true;
 	lengua = true;
 	pagina = detectar_pagina();
+
 	activarClicks();
+	
+	//animarFancy(pagina);
 
 	// if( !(JSON.stringify( $('#lateral') ) == '{}') ){
 	if( pagina == 'tragar' || pagina == 'empujar' ){
@@ -751,6 +973,11 @@ function iniciar(){
 		animarFancy(pagina);
 
 		window.onscroll = mostrarLateral;
+	}
+
+	if( pagina == 'despensa' ){
+
+		enviar_hash();
 	}
 
 }

@@ -6,6 +6,7 @@
 require_once 'lib/spyc/spyc.php';
 
 	function comprobar_entrada($dato){
+		
 		$dato = trim($dato);
 		$dato = stripslashes($dato);
 		$dato = htmlspecialchars($dato);

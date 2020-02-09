@@ -1,4 +1,4 @@
- <?php	
+<?php 
 
 class Cervezas {
 
@@ -21,9 +21,9 @@ class Cervezas {
 		"id" 	 => "2",
 		"nombre" => "Estrella sin alcohol",
 		"imagen" => "estrella_sin.jpg", // Imagen Ajena
-		"descripcion" => "estrela_sin",
+		"descripcion" => "estrella_sin",
 		"tipo"   => "sin",
-		"precio" => array( "botellin" => "1.5" ),
+		"precio" => array("botellin" => "1.5"),
 		"novedad"   => false
 	);
 
@@ -51,7 +51,6 @@ class Cervezas {
 		"novedad" => true
 	);
 }
-
 
 class Vinos {
 
@@ -248,7 +247,6 @@ class Vinos {
 	);
 }
 
-
 class Licores {
 
 	public $hierbas = array(
@@ -347,7 +345,6 @@ class Licores {
 		"novedad"   => false
 	);
 }
-
 
 class Tostas {
 
@@ -489,7 +486,6 @@ class Tostas {
 		"novedad"   => false
 	);
 }
-
 
 class Raciones {
 
@@ -1108,7 +1104,6 @@ class Raciones {
 	);
 }
 
-
 $cervezas = new Cervezas;
 
 $vinos    = new Vinos;
@@ -1118,7 +1113,5 @@ $licores  = new Licores;
 $tostas   = new Tostas;
 
 $raciones = new Raciones;
-
-
 
 ?>

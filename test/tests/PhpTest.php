@@ -56,10 +56,12 @@ class PhpTest extends \PHPUnit\Framework\TestCase {
 		preg_match_all( '/(<div class="articulo.*?<\/div><\/div>)/', $str, $arr_articulos );
 
 		$this -> assertSame( 6, count($arr_articulos[1]), 'Debería tener 5 elementos.' );
-		print_r($arr_articulos);
+		//print_r($arr_articulos);
 	}
 
 	public function test_preg_match_lookahead(){
+
+		$this -> markTestIncomplete();
 
 		// Coincidencia - x seguido de y
 
@@ -71,7 +73,7 @@ class PhpTest extends \PHPUnit\Framework\TestCase {
 		//preg_match( '/(<div class="articulo.*?<\/div><\/div)/', $str, $arr_articulos );
 
 		preg_match_all( '/(<div class="articulo.*?<\/div><\/div>)/', $str, $arr_articulos );
-		print_r($arr_articulos);
+		//print_r($arr_articulos);
 		//preg_match_all( '/((?<=<div class="articulo")<div class="articulo.*<\/div><\/div>)/', $str, $arr_articulos );
 		//preg_match_all( '/(<div class="articulo.*<\/div><\/div>(?))/', $arr_articulos[1], $art );
 		# preg_match_all( '/(<div class="articulo.*<\/div><\/div>)/', $arr_articulos[1], $art );

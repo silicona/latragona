@@ -142,39 +142,40 @@ class Cartel {
 					}
 				</style></head><body>';
 
-			//$url = BASE_URL . 'media/imagenes/tragar/' . $comida['imagen'];
-			$this -> preparar_comida($comida);
-			// $this -> preparar_comida( $comida['descripcion'], $url, $comida['ingredientes'] );
+		//$str = quitar_espacios($str);
 
-			$interior = array(
-				'<div class="modal_despensa">',
-					'<img src="' . $this -> imagen . '" alt="imagen de ' . $this -> nombre . '">',
-					'<h2>' . $this -> nombre . '</h2>',
-					'<ul>',
-						'<legend>Ingredientes:</legend>',
-			);
+		$this -> preparar_comida($comida);
 
-			foreach( $this -> ingredientes as $linea ){ 
+		$interior = array(
+			'<div class="modal_despensa">',
+				'<img src="' . $this -> imagen . '" alt="imagen de ' . $this -> nombre . '">',
+				'<h2>' . $this -> nombre . '</h2>',
+				'<ul>',
+					'<legend>Ingredientes:</legend>',
+		);
 
-				$interior[] = '<li>' . $linea . '</li>'; 
-			}
-			
-			$interior[] = '</ul>';
-			$interior[] = '<ul><legend>Alérgenos:</legend>';
+		foreach( $this -> ingredientes as $linea ){ 
 
-			foreach( $this -> alergenos as $linea ){ 
+			$interior[] = '<li>' . $linea . '</li>'; 
+		}
+		
+		$interior[] = '</ul>';
+		$interior[] = '<ul><legend>Alérgenos:</legend>';
 
-				$interior[] = '<li>' . $linea . '</li>'; 
-			}
-			$interior[] = '</ul>';
-			$interior[] = '<p>Precio: ' . $this -> precio . '</p>';
+		foreach( $this -> alergenos as $linea ){ 
 
-			$interior[] = '</div>';
+			$interior[] = '<li>' . $linea . '</li>'; 
+		}
+		$interior[] = '</ul>';
+		$interior[] = '<p>Precio: ' . $this -> precio . '</p>';
 
-			$str .= implode('', $interior);
-			$str .= '</body></html>';
+		$interior[] = '</div>';
 
-			return $str;
+		$str .= implode('', $interior);
+
+		$str .= '</body></html>';
+
+		return $str;
 	}
 
 	private function traducirNombre($nombre){

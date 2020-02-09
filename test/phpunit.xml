@@ -13,14 +13,12 @@
 
 	<php>
 
-		<const name='BASE_URL' value='//localhost/latragona/'/>
-		<const name='BASE_API' value='//localhost/latragona/php/api/'/>
+		<const name='BASE_URL' value='http://localhost/latragona/'/>
+		<const name='BASE_API' value='http://localhost/latragona/php/api/'/>
 		<const name='BASE_FILE' value='/Applications/xampp/htdocs/latragona/'/>
 
-		<!--
-		<const name = 'BASE_URL' value = '//localhost/tragona/'/>
-		<const name = 'BASE_FILE' value = '/var/www/html/tragona/'/>
-		-->
+		<const name='BASE_CARTA' value='/Applications/xampp/htdocs/latragona/php/lib/carta_test.txt'/>
+		<const name='ADMIN_HASH' value='$2fr5)unjck'/>
 
 	</php>
 

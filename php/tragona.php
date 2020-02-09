@@ -2,6 +2,84 @@
 
 class Tragona {
 
+	public static function anadir_a_carta($tipo_producto, $id_producto, $archivo = false){
+
+		if( !$archivo ){ $archivo = BASE_FILE . 'php/lib/carta.txt'; }
+
+		$carta = file_get_contents($archivo);
+		$arr_salida = array();
+
+		preg_match_all('/([^\n]+)/', $carta, $arr_carta);
+
+		foreach( $arr_carta[1] as $i => $dato ){
+
+			$arr_dato = explode('-', $dato);
+			$arr_ids = explode(',', $arr_dato[1]);
+
+			if( $arr_dato[0] == $tipo_producto ){
+
+				$arr_ids = anadir_a_array($arr_ids, $id_producto);
+			}
+
+			$arr_salida[] = $arr_dato[0] . '-' . implode(',', $arr_ids);
+		}
+
+		$res_bytes = file_put_contents( $archivo, implode("\n", $arr_salida), LOCK_EX );
+
+		if( $res_bytes > 0 ){
+
+			return array( 'status' => 'ok' );
+			
+		} else {
+
+			file_put_contents( $archivo, $carta, LOCK_EX );
+
+			return array(
+				'status' => 'ko',
+				'error' => 'Error: el producto no se ha añadido a la carta.'
+			);
+		}
+	}
+
+	public static function eliminar_de_carta($tipo_producto, $id_producto, $archivo = false){
+		
+		if( !$archivo ){ $archivo = BASE_FILE . 'php/lib/carta.txt'; }
+
+		$carta = file_get_contents($archivo);
+		$arr_salida = array();
+
+		preg_match_all('/([^\n]+)/', $carta, $arr_carta);
+
+		foreach( $arr_carta[1] as $i => $dato ){
+
+			$arr_dato = explode('-', $dato);
+			$arr_ids = explode(',', $arr_dato[1]);
+
+			if( $arr_dato[0] == $tipo_producto ){
+
+				$arr_ids = eliminar_de_array($arr_ids, $id_producto);
+			}
+
+			$arr_salida[] = $arr_dato[0] . '-' . implode(',', $arr_ids);
+		}
+
+		$res_bytes = file_put_contents( $archivo, implode("\n", $arr_salida), LOCK_EX );
+
+		if( $res_bytes > 0 ){
+
+			return array( 'status' => 'ok' );
+			
+		} else {
+
+			file_put_contents( $archivo, $carta, LOCK_EX );
+
+			return array(
+				'status' => 'ko',
+				'error' => 'Error: el producto no se ha eliminado de la carta.'
+			);
+		}
+	}
+
 	// Test
 	public static function asignar_alergenos($arr_alergenos, $nom_alergenos){
 
@@ -146,7 +224,300 @@ class Tragona {
 		return $arr_salida[$tipo];
 	}
 
-	public function enviar_email($email, $nombre, $asunto, $mensaje, $idioma, $telefono = ''){
+
+	public static function devuelve_html_despensa($despensa){
+
+		$arr_html = array('<section id="catalogo"><article class="contenido">');
+
+		$arr_fotos_ko = array(
+			"ensalada_sardinas",
+			"ensalada_remo",
+			"estrella_sin",
+		);
+
+		foreach( $despensa as $tipo => $productos ){
+
+			$carta = Tragona::devuelve_carta_actual($tipo);
+
+			$arr_html[] = '<h2 class="titulo_despensa">' . ucfirst($tipo) . '</h2>';
+
+			$arr_html[] = '<table class="despensa ' . $tipo . '">';
+			$arr_html[] = '<thead><tr>';
+			$arr_html[] = '<th class="nombre">Nombre</th>';
+			$arr_html[] = '<th style="width: 100px;">Precio</th>';
+			$arr_html[] = '<th>En carta</th>';
+			$arr_html[] = '<th>Novedad</th>';
+			$arr_html[] = '<th>Imagen</th>';
+			//$arr_html[] = '<th>Acciones</th>';
+			$arr_html[] = '</tr></thead>';
+			$arr_html[] = '<tbody>';
+
+			foreach( $productos as $i => $producto ){
+
+				$arr_html[] = '<tr>';
+				$arr_html[] = '<td>' . $producto['nombre'] . '</td>';
+
+				$precio = implode('<br>', $producto['precio']);
+				$precio = str_replace(' - ', '', $precio);
+				$arr_html[] = '<td class="centrado">' . $precio . '</td>';
+				
+
+				$en_carta = in_array($producto['id'], $carta) ? '1' : '0';
+				$boton_en_carta = form_check( array(
+					'label' 	=> '',
+					'id' 		=> $tipo . $producto['id'],
+					'checked' 	=> $en_carta,
+					'clase' 	=> '',
+					'valor' 	=> '1',
+					//input_group: 'false',
+					'col_bs_input' 	=> 'pestana',
+					'col_bs_group' 	=> '',
+					'atributos' => array(
+						'data-tipo' => $tipo,
+						'data-id_producto' => $producto['id'],
+						'onClick' => 'anadir_eliminar_de_carta(this)'
+					),
+				) );
+
+				$arr_html[] = '<td class="centrado mi_form">' . $boton_en_carta . '</td>';
+				//$arr_html[] = '<td class="en_carta">' . $tipo . '</td>';
+
+				$novedad = $producto['novedad'] ? 'Sí' : 'No';
+				$arr_html[] = '<td class="centrado">' . $novedad . '</td>';
+
+				if( !in_array($producto['descripcion'], $arr_fotos_ko) ){
+
+					$imagen_label = 'OK';
+					$imagen_clase = 'btn_exito';
+
+				} else {
+					
+					$imagen_label = 'Ajena';
+					$imagen_clase = 'btn_aviso';
+				}
+
+				$cont = 0;
+				$suf_importe = '';
+				foreach( $producto['precio'] as $clase => $valor ){
+
+					if( $cont == 0 ){ 
+
+						$importe = $producto['precio'][$clase];
+
+					} else {
+
+						$suf_importe = ' - ' . $valor;
+					}
+
+					$cont++;
+				}
+				$importe .= $suf_importe;
+
+				if( $tipo == 'cervezas' || $tipo == 'licores' ){
+
+					$boton_imagen = form_boton(array(
+						'label' => $imagen_label,
+						'id'	=> '',
+						'clase' => $imagen_clase,
+						'icono' => 'ver',
+						'href'	=> BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'],
+						'input_group' => 'false',
+						'atributos' => array(
+							'data-lightbox' => $tipo,
+							'data-title' => $producto['nombre'] . ' (' . $importe . ' euros)'
+						),
+					));
+
+				} else {
+
+					$fancy = 'comida';
+					$accion = 'ingredientes';
+
+					if( $tipo == 'vinos' ){
+
+						$fancy = 'vinos';
+						$accion = 'vino';
+					}
+
+					$boton_imagen = form_boton(array(
+						'label' => $imagen_label,
+						'id'	=> '',
+						'clase' => $imagen_clase,
+						'icono' => 'ver',
+						'href'	=> '',
+						'input_group' => 'false',
+						'atributos' => array(
+							'data-fancybox' => $fancy,
+							'data-src'  => BASE_API . 'despensa.php?accion=' . $accion . '&solicitud=' . $producto['descripcion'],
+							'data-type' => 'iframe'
+						),
+					));
+				}
+
+				$arr_html[] = '<td class="centrado">' . $boton_imagen . '</td>';
+				$arr_html[] = '</tr>';
+
+			}
+
+			$arr_html[] = '</tbody></table>';
+		}
+
+		$arr_html[] = '</article></section>';
+
+		return implode('', $arr_html);
+	}
+
+	// Sin Test
+	public static function devuelve_html_productos($obj_productos, $lexico){
+
+		$titulos = $lexico['titulos'];
+		$material = get_class($obj_productos);
+		$productos_en_carta = Tragona::devuelve_carta_actual($material);
+
+		$lista 	 = '<article class="contenido">';
+		if( $material == "Tostas" ){ 
+
+			$lista .= Tragona::formatear_titulo('Tostas', $titulos);	
+
+		} elseif( $material == "Raciones" ) {	
+
+			$lista .= Tragona::formatear_titulo('Raciones', $titulos); 
+		}
+
+		// Bucle de productos
+		foreach( $obj_productos as $producto ){
+
+			if( !in_array($producto['id'], $productos_en_carta) ){ continue; }
+
+			$lista .= Tragona::formatear_titulo($producto['nombre'], $titulos); 
+
+			$lista .= Tragona::mostrar_novedad($producto);
+
+ 			switch( $material ){
+
+				case "Cervezas":
+					$lista .= Tragona::formatear_cerveza($producto, $lexico);
+					break;
+
+				case "Vinos":	
+					$lista .= Tragona::devuelve_html_vino($producto, $lexico);
+					//$lista .= Tragona::formatear_vino($producto, $lexico);
+					break;
+
+				case "Licores":
+					$lista .= Tragona::formatear_cerveza($producto, $lexico);
+					//$lista .= Tragona::formatear_licor($producto, $lexico);
+					break;
+
+				case "Tostas":
+					$lista .= Tragona::formatear_comida($producto, $lexico, true);
+					break;
+
+				case "Raciones":
+					$lista .= Tragona::formatear_comida($producto, $lexico);
+					break;
+
+ 				default:
+					break;
+			}
+		}
+
+		$lista .= "</article>";	
+
+		return $lista;
+	}
+
+	// Sin Test
+	public static function devuelve_html_vino($producto, $lexico){
+
+		$nombre = $producto['nombre'];
+
+		$prod = array(
+			'<a class="img_fancybox" data-fancybox data-src="' . BASE_API . 'despensa.php?accion=vino&solicitud=' . $producto['descripcion'] . '" data-type="iframe" href="javascript:;">',
+				'<div class="div_imagen">',
+					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre . '">',
+				'</div>',
+				'<p>' . $nombre . '</p>',
+			'</a>',
+			'</div></div>'
+		);
+
+		return implode('', $prod);
+	}
+	
+
+	public function enviar_email($email_comentario, $nombre, $asunto, $mensaje, $idioma, $telefono = ''){
+
+		$datos = Spyc::YAMLLoad( 'idiomas/lexico_' .  $idioma . '.yml' );
+
+		$destinatario = "latragonalavapies@gmail.com";
+		$contacto = 'Sin datos';
+		$h2 	 = 'Mensaje de la web';
+		$reserva = false;
+
+		$headers = "MIME-Version: 1.0\r\nContent-type: text/html; charset=UTF-8 \r\n";
+
+		$headers .= "Cco: alejoizquierdomartinez@gmail.com";
+
+		if( $asunto == "Reserva en La Tragona" ){	
+
+			$h2 = 'Reserva de: '  . $nombre;
+
+			$destinatario = "reservas@latragona.com";
+			$headers .= "Cc: latragonalavapies@gmail.com@gmail.com";
+			$reserva = true;
+
+		} elseif( $asunto == "Comentarios para La Tragona" ){
+
+			$h2 = 'Comentario de: '. $nombre;
+
+			$destinatario = "contactanos@latragona.com";
+			$headers .= "Cc: latragonalavapies@gmail.com@gmail.com";
+		}
+
+		if( strlen($telefono) > 4 ){
+
+			$headers .= "From: reservas@latragona.com\r\n";
+
+			$contacto = 'Telefono - ' . $telefono;
+
+		} elseif( $email != '' ){
+
+			$headers .= 'From: ' . $email_comentario . "\r\n";
+
+			$contacto = 'Email - ' . $email_comentario;
+		}
+
+		$arr_html = array(
+			'<h2>' . $h2 . '</h2>',
+			'<p>Datos de contacto: ' . $contacto . '</p>',
+			'<p>Mensaje:<br>' . $mensaje . '</p>',
+			'<br>',
+			'<p>Saludos.</p>',
+		);
+
+		$cuerpo = implode('', $arr_html);
+
+		$envio = mail($destinatario, $asunto, $cuerpo, $headers);
+
+		if( $envio ){
+			
+			$mensaje = $reserva ? $datos['form']['reserva_ok'] : $datos['form']['comentario_ok'];
+
+			return array(
+				'status' => 'ok',
+				'mensaje' => $mensaje,
+			);
+
+		}
+
+		return array(
+			'status' => 'ko',
+			'mensaje' => $datos['form']['respuesta_error'],
+		);
+	}
+	
+	public function enviar_email_old($email, $nombre, $asunto, $mensaje, $idioma, $telefono = ''){
 
 		$idioma = comprobar_entrada( $_POST['idioma'] );
 		$datos = Spyc::YAMLLoad( 'idiomas/lexico_' .  $idioma . '.yml' );
@@ -241,6 +612,7 @@ class Tragona {
 			}
 		}
 	}
+	
 
 	// Test
 	public static function formatear_titulo($nombre, $titulos, $objeto = ['nombre' => 'nil', "tipo" => 'nil']){
@@ -327,14 +699,25 @@ class Tragona {
 	// Test
 	public static function formatear_cerveza($producto, $lexico){
 
-		$nombre = isset($lexico['bebida'][$producto['nombre']]) ? $lexico['bebida'][$producto['nombre']] : $producto['nombre'];
+		//$clase_lightbox = getclass($producto);
+		$nombre = isset($lexico['bebida'][$producto['nombre']]) ? $nombre = $lexico['bebida'][$producto['nombre']] : $producto['nombre'];
+		if( isset($lexico['bebida'][$producto['nombre']]) ){
 
+			$nombre = $lexico['bebida'][$producto['nombre']];
+			$clase_lightbox = 'cervezas';
+
+
+		} else {
+
+			$nombre = $producto['nombre'];
+			$clase_lightbox = 'vinos';
+		}
 
 
 		$precio = ' - ' . array_shift($producto['precio']) . 'euros';
 
 		$html = array(
-			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="example-1" data-title="' . $producto['nombre'] . $precio . '">',
+			'<a class="img_lightbox" href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" data-lightbox="' . $clase_lightbox . '" data-title="' . $producto['nombre'] . ' ' . $precio . '">',
 
 				'<div class="div_imagen">',
 					'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" class="imagen" alt="' . $nombre . '" title="' . $nombre  . '">',
@@ -491,9 +874,10 @@ class Tragona {
 		return implode('', $prod);
 	}
 
+	// Para borrar
 	public static function mostrar_despensa($despensa){
 
-		$arr_html = array('<article class="contenido">');
+		$arr_html = array('<section id="despensa"><article class="contenido">');
 
 		$arr_fotos_ko = array(
 			"ensalada_sardinas",
@@ -543,7 +927,7 @@ class Tragona {
 			$arr_html[] = '</tbody></table>';
 		}
 
-		$arr_html[] = '</article>';
+		$arr_html[] = '</article></section>';
 
 		return implode('', $arr_html);
 	}

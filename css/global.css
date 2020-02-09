@@ -1,4 +1,16 @@
+@charset "UTF-8";
 /* Colores */
+/* rbg(41, 49, 51) */
+/* olds
+$morado_claro: #F1CFFD;
+$morado: #B749DE;
+$morado_oscuro: #881DAE;
+*/
+/*$verde: #2ECC71;*/
+/*$verde_oscuro: #51C526;*/
+:root {
+  --fondo-app: #ffffff; }
+
 /* Animaciones */
 @-webkit-keyframes colorearFondo {
   from {
@@ -80,6 +92,57 @@ body {
     top: 2ex; }
     body > header img {
       transform: scale(0.8); }
+  body a {
+    color: #0398A5; }
+  body .alert {
+    padding: .3ex;
+    border: 3px solid;
+    border-radius: 5px; }
+    body .alert::after, body .alert::before {
+      content: '';
+      display: block;
+      clear: both; }
+    body .alert .close {
+      float: right;
+      color: #ffffff; }
+    body .alert .alert-title,
+    body .alert .alert-content {
+      /*float: left;*/
+      clear: both; }
+  body .alert-aviso {
+    background-color: #FFFBC5;
+    border-color: #FFEE00;
+    color: #293133; }
+  body .alert-exito {
+    background-color: #9CE083;
+    border-color: #2AC176;
+    color: #293133; }
+  body .alert-error {
+    background-color: #FB8F50;
+    border-color: #FB6750;
+    color: #293133; }
+  body .btn {
+    padding: 6px 12px;
+    border: none;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #293133; }
+  body .btn_aviso {
+    background-color: #FFEE00;
+    /*color: $blanco;*/ }
+    body .btn_aviso:hover {
+      background-color: #807700; }
+  body .btn_exito {
+    background-color: #2AC176;
+    color: #ffffff; }
+    body .btn_exito:hover {
+      background-color: #006600; }
+  body .btn_error {
+    background-color: #FB8F50;
+    color: #ffffff; }
+    body .btn_error:hover {
+      background-color: #FB6750; }
   body .clearfix::after, body .clearfix::before {
     content: '';
     display: block;
@@ -89,6 +152,121 @@ body {
   body .fancybox-container .fancybox-iframe {
     border-radius: 20px;
     padding: 1ex; }
+  body .mi_form .form-group {
+    margin-bottom: 30px; }
+    body .mi_form .form-group .control-label {
+      display: inline-block;
+      margin-bottom: .5ex; }
+    body .mi_form .form-group .form-control {
+      display: inline-block;
+      width: 100%;
+      line-height: 1.3em; }
+      body .mi_form .form-group .form-control:focus {
+        /*outline: 0;*/ }
+  body .mi_form .form-check .pestana {
+    position: relative;
+    padding: 5px 0px;
+    display: block;
+    width: 150px; }
+    body .mi_form .form-check .pestana input {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      visibility: hidden;
+      position: absolute;
+      right: 0; }
+      body .mi_form .form-check .pestana input + i {
+        background: #FB8F50;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 0px;
+        margin-left: 1ex;
+        width: 52px;
+        height: 30px;
+        border-radius: 15px; }
+        body .mi_form .form-check .pestana input + i:before {
+          content: '';
+          width: 26px;
+          height: 26px;
+          border-radius: 50%;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          top: 0;
+          -webkit-box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2); }
+        body .mi_form .form-check .pestana input + i:after {
+          content: 'NO';
+          position: absolute;
+          font-size: 10px;
+          color: rgba(255, 255, 255, 0.6);
+          top: 6px;
+          right: 4px;
+          /*opacity: 0;*/
+          transition: all .25s ease .25s; }
+      body .mi_form .form-check .pestana input:checked + i {
+        background: #2AC176; }
+        body .mi_form .form-check .pestana input:checked + i:before {
+          left: 22px;
+          -webkit-box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.2); }
+        body .mi_form .form-check .pestana input:checked + i:after {
+          content: 'SI';
+          left: 4px;
+          right: initial;
+          /*opacity: 1;*/ }
+      body .mi_form .form-check .pestana input:disabled + i {
+        cursor: not-allowed; }
+  body .mi_form .form-check input {
+    margin: 0 1ex; }
+  body .mi_form .form_check_circulo {
+    position: relative;
+    /*margin-bottom: 30px;*/
+    padding: 5px 0 5px 60px;
+    /* El elemento <i> va en el espacio de 60px */
+    display: block;
+    /*height: 55px;*/ }
+    body .mi_form .form_check_circulo label {
+      width: 100%;
+      text-align: left; }
+    body .mi_form .form_check_circulo input {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      visibility: hidden;
+      position: absolute;
+      right: 0; }
+    body .mi_form .form_check_circulo input + i {
+      /* Todos los <i> después de un input */
+      background: #f0f0f0;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      left: 15px; }
+      body .mi_form .form_check_circulo input + i:before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: red;
+        border-radius: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        background: #2AC176;
+        transition: all .25s ease;
+        transform: scale(0);
+        opacity: 0; }
+    body .mi_form .form_check_circulo input:checked + i:before {
+      transform: scale(1);
+      opacity: 1; }
+    body .mi_form .form_check_circulo:hover input:not(:checked) + i {
+      background: #B1E8CD; }
   body .mitad {
     padding: 0 0 1ex 0;
     line-height: 1.3em;
@@ -101,6 +279,8 @@ body {
       clear: both; }
     body .mitad #wasap {
       width: 20px; }
+  body .text-center {
+    text-align: center; }
 
 #menumovil {
   position: fixed;
@@ -110,7 +290,7 @@ body {
   width: 100%;
   color: #FFFFFF;
   border: 6px double #9CE083;
-  background-color: #51C526;
+  background-color: #006600;
   border-radius: 0 0 20px 20px;
   display: none;
   opacity: 0; }
@@ -119,15 +299,17 @@ body {
     /*margin-left: 2em;*/
     font: 1.3em/1.4 sans-serif;
     text-align: right; }
+    #menumovil ul li a {
+      color: #9CE083; }
 
 #menuidiomas {
   position: fixed;
   top: 45px;
   z-index: 5;
-  width: calc(100% - 12px);
-  color: #FFFFFF;
-  border: 6px double #F1CFFD;
-  background-color: #881DAE;
+  /*width : calc(100% - 12px);*/
+  width: 100%;
+  border: 6px double #e580ff;
+  background-color: #660080;
   border-radius: 0 0 20px 20px;
   opacity: 0;
   display: none; }
@@ -138,7 +320,8 @@ body {
     #menuidiomas ul span {
       position: relative;
       top: -0.25ex;
-      margin-left: 1em; }
+      margin-left: 1em;
+      color: #ffffff; }
 
 #leer {
   position: absolute;
@@ -238,9 +421,8 @@ body {
   #contenedor section {
     width: 100%;
     float: left;
-    padding: 0 1ex; }
-    #contenedor section a {
-      color: #000088; }
+    padding: 0 1ex;
+    /*a { color: #000088; }*/ }
     #contenedor section.contenido .imagen_lateral {
       float: right;
       width: 50%;
@@ -296,7 +478,7 @@ body {
           color: #000088; }
     #contenedor section.compartir {
       /* FB y TW */
-      background-color: #54E31D;
+      background-color: #2AC176;
       padding: 1.6ex 0 1.2ex; }
       #contenedor section.compartir div {
         width: 100%;
@@ -352,6 +534,8 @@ body {
         background-color: #dfdfdf; }
       #contenedor table tbody tr td {
         padding: 1ex; }
+        #contenedor table tbody tr td .btn {
+          white-space: nowrap; }
   #contenedor.carta {
     padding: 0; }
     #contenedor.carta > header {
@@ -641,9 +825,9 @@ body {
                   background-color: #F0C6C6;
                   border: 2px solid #A91515; }
                 #contenedor.carta section article.contenido .form_reserva #respuesta_form p.respuesta_ok {
-                  color: #51C526;
+                  color: #006600;
                   background-color: #9CE083;
-                  border: 2px solid #51C526; }
+                  border: 2px solid #006600; }
       #contenedor.carta section#reservas {
         /*background: url('../media/imagenes/tragar/fondos/foto_reserva.jpg') 80% 80%; 	/* Imagen Ajena */ }
         #contenedor.carta section#reservas .contenido {
@@ -665,7 +849,8 @@ body {
       line-height: 1.3em; }
 
 .empujar #contenedor.carta section article.contenido .articulo.articulo_novedad .novedad {
-  right: 80px; }
+  right: 20%;
+  /*right: 80px;*/ }
 
 .despensa .titulo_despensa {
   font-size: 1.3em;
@@ -734,7 +919,9 @@ body {
       #contenedor.carta section article.contenido .articulo .interior .img_fancybox p {
         font: 1.2em/1.2 sans-serif; }
         #contenedor.carta section article.contenido .articulo .interior .img_fancybox p.largo {
-          font: 1.1em/1.1 sans-serif; } }
+          font: 1.1em/1.1 sans-serif; }
+    #contenedor.cont_despensa .marco #login .form_login {
+      width: 350px; } }
 @media screen and (min-width: 768px) {
   body header {
     font-size: 3em; }

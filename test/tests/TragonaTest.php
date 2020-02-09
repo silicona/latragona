@@ -56,7 +56,6 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		}
 	}
 
-
 	public function test_asignar_alergenos_no(){
 
 		$producto = Helper::suministra_producto_alergenos(self::$raciones);
@@ -156,7 +155,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_cerveza(){
+	public function DISEÑANDO_test_formatear_cerveza(){
 
 		$res = Tragona::formatear_cerveza( self::$cervezas -> rubia );
 
@@ -166,7 +165,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_comida_tosta(){
+	public function DISEÑANDO_test_formatear_comida_tosta(){
 
 		$res = Tragona::formatear_comida(self::$tostas -> brandada, self::$lexico, true);
 
@@ -186,7 +185,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_comida_raciones(){
+	public function DISEÑANDO_test_formatear_comida_raciones(){
 
 		$res = Tragona::formatear_comida(self::$raciones -> rusos, self::$lexico);
 
@@ -222,7 +221,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_licor(){
+	public function DISEÑANDO_test_formatear_licor(){
 
 		$res = Tragona::formatear_licor(self::$licores -> hierbas, self::$lexico);
 
@@ -241,7 +240,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_precio_vino(){
+	public function DISEÑANDO_test_formatear_precio_vino(){
 
 		$res = Tragona::formatear_precio(self::$vinos -> zinio);
 		$lineas = explode(',',$res);
@@ -260,7 +259,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_precio_cerveza(){
+	public function DISEÑANDO_test_formatear_precio_cerveza(){
 
 		$res = tragona::formatear_precio(self::$cervezas -> rubia, self::$lexico['titulos'], 'cerveza');
 
@@ -281,7 +280,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_titulo(){
+	public function DISEÑANDO_test_formatear_titulo(){
 
 		$cervezas = Helper::suministra_despensa('cervezas');
 		//print_r($cervezas);
@@ -296,7 +295,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$this -> assertSame( '<legend>Tintos</legend>', $res, 'Debería devolver la leyenda de Tintos.' );
 	}
 
-	public function test_formatear_titulo_ko(){
+	public function DISEÑANDO_test_formatear_titulo_ko(){
 
 		$res = Tragona::formatear_titulo('nombre_erroneo', self::$lexico['titulos']);
 
@@ -304,7 +303,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 	}
 
 
-	public function test_formatear_vino(){
+	public function DISEÑANDO_test_formatear_vino(){
 
 		$vinos = Helper::suministra_despensa('vinos');
 

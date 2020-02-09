@@ -23,11 +23,8 @@
 		<article class="texto">
 
 			<p>
-				<?php
-				//echo $seccion . '<br>';
-				echo $lexico[$seccion]['p1']; 
 
-				?>
+				<?php echo $lexico[$seccion]['p1']; ?>
 				<a href="tragar" alt="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>" title="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>">
 					<?php echo $lexico[$seccion]['p12']; ?>
 				</a>
@@ -35,25 +32,31 @@
 				<a href="empujar" alt="<?php echo $nav_ir . $lexico['nav']['empujar']; ?>" title="<?php echo $nav_ir . $lexico['nav']['empujar']; ?>">
 					<?php echo $lexico[$seccion]['p14']; ?>
 				</a>
-				<br>
-				<br>
+
+				<br><br>
+
 				<?php echo $lexico[$seccion]['p2']; ?>
 
 				<a href="dondeestamos" alt="Donde Estamos" title="Donde estamos">
 					<?php echo $lexico[$seccion]['p21']; ?>
 				</a>
-				<br>
-				<br>
+
+				<br><br>
+
 				<?php echo $lexico[$seccion]['p3']; ?>
+
 				<a href="quienessomos" alt="<?php echo $nav_ir . $lexico['nav']['quienes']; ?>" title="<?php echo $nav_ir . $lexico['nav']['quienes']; ?>">
 					<?php echo $lexico[$seccion]['p31']; ?>
 				</a>.
-				<br>
-				<br>
+
+				<br><br>
+
 				<?php echo $lexico[$seccion]['p4']; ?>
+
 				<a href="contacta" alt="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>" title="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>">
 					La Tragona
 				</a>.
+
 			</p>
 
 		</article>
@@ -68,9 +71,7 @@
 				<?php echo $lexico[$seccion]['pasarela1']; ?><a href="<?php echo BASE_URL . $idioma[0] ?>tragar" alt="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>" title="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>"><?php echo $lexico[$seccion]['pasarela12']; ?></a>
 			</h2>
 
-			<?php
-				echo Tragona::crear_pasarela_comida($tostas, $raciones, $lexico['nombre']); 
-			?>
+			<?php echo Tragona::crear_pasarela_comida($tostas, $raciones, $lexico['nombre']); ?>
 
 		</article>
 

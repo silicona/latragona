@@ -17,6 +17,8 @@
 <link rel="stylesheet" type="text/css" href="<?php  echo BASE_URL ?>css/lib/jquery.fancybox.min.css">
 <link rel="stylesheet" type="text/css" href="<?php  echo BASE_URL ?>css/lib/camera.min.css">
 
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css">
 
 
@@ -29,6 +31,14 @@
 
 
 <script type="text/javascript">
+
+	var Config = {
+		base_url: "<?php echo BASE_URL ?>",
+		base_api: "<?php echo BASE_API ?>",
+		base_file: "<?php echo BASE_FILE ?>",
+		idioma: "<?php echo $idioma[0] ?>",
+	}
+	
 	BASE_URL = "<?php echo BASE_URL ?>";
 	BASE_FILE = "<?php echo BASE_FILE ?>";
 	idioma = "<?php echo $idioma[0] ?>";
@@ -36,25 +46,19 @@
  
 <?php 
 
-	$idioma[0] = $idioma[0] == 'es' ? '' : $idioma[0] . '/';
+$idioma[0] = $idioma[0] == 'es' ? '' : $idioma[0] . '/';
 
-	if( $seccion == 'tragar' || $seccion == 'empujar' ){
+if( $seccion == 'tragar' || $seccion == 'empujar' || $seccion == 'despensa' ){
+
 ?>
-
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/lightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/tcal.min.css">
 
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/lightbox.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/tcal.js"></script>
 
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/carta.min.css"> -->
-
-<?php } else { ?>
-
-
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css"> -->
-
 <?php } ?>
+
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'css/' . $seccion . '.min.css' ?>">
 

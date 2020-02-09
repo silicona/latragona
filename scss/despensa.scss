@@ -1,0 +1,234 @@
+/* Colores */
+
+	$rojo: #FB8F50;
+
+	$rojo_oscuro: #FB6750;
+
+	$rojo_claro: #F5B38C;
+
+/* Mixin */
+
+	@mixin clearfix {
+
+		&::after,
+		&::before {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+
+/* Seccion */
+	#contenedor {
+		
+		header {
+
+			padding-top: 50px;
+			height: 0 !important;
+			/*background: url("../media/cabeceras/empujar_sin.png") 50% 0% no-repeat fixed; */
+
+		}
+
+		h1 {
+			padding-top: 0;
+			margin: 1rem 0;
+		}
+
+		.marco {
+
+			@include clearfix;
+
+			margin-bottom: 1em;
+		
+
+			section {
+
+				padding: 0 15px;
+				position: relative;
+			}
+
+			#login {
+
+				/*
+				background: url("../media/imagenes/ataque_tragona");
+				*/
+				height: 500px;
+				/*max-height: 1000px;*/
+
+				.div_imagen {
+					
+					overflow: hidden;
+					position: relative;
+					height: 100%;
+					max-height: inherit;
+
+					.imagen {
+						
+						height: 100%;
+						/*
+						width: 100%;
+						*/
+
+						position: absolute;
+						top: 0px;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+
+				.form_login {
+
+					width: 250px;
+					margin: 0 auto;
+					padding: 1em 1ex;
+					background-color: $rojo_claro;
+					/*background-color: rgba(255, 0, 255, .7);*/
+					border: 3px solid $rojo;
+					border-radius: 15px;
+
+					
+					position: absolute;
+					top: 50px;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				/*background: url("../media/imagenes/empujar/fondos/cerveza.jpg") 0 0 no-repeat;
+				background-size: cover;
+
+				.contenido { 
+					background-color: $azul_claro;
+					padding-bottom: 6.5em;
+				}*/
+				
+			} 
+
+			#catalogo {
+
+				.form-check .pestana {
+
+					width: 50px;
+					left: 0;
+				}
+			} 
+
+			
+		}
+		
+	}
+
+/* Medias */
+@media screen and (min-device-width: 280px) {}
+
+
+@media screen and (min-width: 400px) {
+
+	#contenedor {
+
+		.marco {
+
+			#login {
+
+				/*height: auto;*/
+
+				.div_imagen .imagen { 
+					/*height: auto;*/
+					/*width: 100%;*/
+				}
+
+
+			}
+		}
+	}
+}
+
+/* Salto */
+@media screen and (min-width: 576px) {
+
+	#contenedor {
+
+		.marco {
+
+			#login {
+
+				.form_login {
+
+					width: 400px;
+				}
+			}
+		}
+
+	}
+}
+
+@media screen and (min-width: 768px) {
+
+	#contenedor {
+
+		.marco {
+
+			#login {
+
+				height: auto;
+
+				.div_imagen .imagen {
+					
+					position: static;
+					transform: none;
+					height: auto;
+					width: 100%;	
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+
+	#contenedor {
+
+		section {}
+
+	}
+}
+
+/* Salto */
+@media screen and (min-width: 1024px) {
+
+	#contenedor {
+	
+		header {				
+			/*
+			height: 240px;
+			background: url("../media/cabeceras/empujar.gif") 50% 45px no-repeat fixed;
+			*/
+		}
+
+		section {
+
+			article {}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	#contenedor {
+
+		section {
+
+			article {}
+		}
+	}
+}
+
+@media screen and (min-width: 1400px) {
+
+	#contenedor {
+
+		section {
+
+			article {}
+		}
+	}
+}
+
