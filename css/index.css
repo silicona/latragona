@@ -16,31 +16,11 @@ html body {
   float: right;
   width: 45%;
   margin: 10px 20px; }
-  #contenedor section.contenido .imagen_lateral img {
-    width: 100%; }
-  #contenedor section.contenido .imagen_lateral p {
-    background: rgba(255, 255, 255, 0.7);
-    display: inline-block;
-    border-radius: 10pt;
-    position: absolute;
-    top: 5%;
-    left: 10%;
-    right: 10%;
-    bottom: 5%; }
-    #contenedor section.contenido .imagen_lateral p a {
-      color: #008; }
-#contenedor section.pasarelas:after {
-  content: '';
-  display: block;
-  clear: both; }
 #contenedor section.pasarelas article {
   padding: 1ex 0;
   margin: 0 auto;
-  width: 100%; }
-  #contenedor section.pasarelas article:after {
-    content: '';
-    display: block;
-    clear: both; }
+  width: 100%;
+  float: left; }
   #contenedor section.pasarelas article h2 {
     font: 1.1em/1.2 sans-serif;
     padding: 0 1ex 1ex;
@@ -87,20 +67,16 @@ html body {
 #contenedor .imagen_lateral {
   display: none; }
 
-@media screen and (min-device-width: 576px) {
+@media screen and (min-width: 576px) {
   #contenedor section.contenido > p {
     font-size: 1.2em;
     line-height: 1.2em; }
-  #contenedor section.contenido .imagen_lateral {
-    display: block; }
-    #contenedor section.contenido .imagen_lateral img {
-      height: 400px; }
-    #contenedor section.contenido .imagen_lateral p {
-      font-size: 1.1em; }
-  #contenedor section.pasarelas article > div {
-    width: 80%;
-    height: 300px; } }
-@media screen and (min-device-width: 768px) {
+  #contenedor section.pasarelas article {
+    /*width: 50%;*/ }
+    #contenedor section.pasarelas article > div {
+      width: 70%;
+      /*height: 300px;*/ } }
+@media screen and (min-width: 768px) {
   #contenedor section.contenido > p {
     font-size: 1.4em; }
   #contenedor section.contenido .imagen_lateral {
@@ -110,39 +86,51 @@ html body {
     width: calc( 100% - 2ex ); }
     #contenedor section.pasarelas article h2 {
       font: 1.4em/1.5 sans-serif; } }
-@media screen and (min-device-width: 992px) {
-  #contenedor section.contenido .imagen_lateral {
-    height: 400px; } }
-@media screen and (min-device-width: 1024px) {
+@media screen and (min-width: 992px) {
+  #contenedor section {
+    			/*
+    			&.pasarelas article { 
+    
+    
+    				> div { 
+    					width: 70%;
+    				}
+    			}*/ }
+    #contenedor section.contenido .imagen_lateral {
+      height: 400px; } }
+@media screen and (min-width: 1024px) {
   #contenedor section.contenido .imagen_lateral p {
     padding: 1em;
     line-height: 1.5em; }
   #contenedor section.pasarelas article {
     width: 48%;
-    float: left; }
+    /*
+    float: left;*/
+    			/*> div {
+    				height: 200px !important;
+    				width: 90%;
+    
+    			}*/ }
     #contenedor section.pasarelas article:last-of-type {
       float: right; }
     #contenedor section.pasarelas article h2 {
       font: 1.3em/1.3 sans-serif; }
-    #contenedor section.pasarelas article > div {
-      height: 200px !important;
-      width: 90%; }
     #contenedor section.pasarelas article:last-of-type .bebida {
       text-align: right; }
     #contenedor section.pasarelas article:last-of-type .marco_bebida > div:hover p {
       height: 2em; }
     #contenedor section.pasarelas article:last-of-type .marco_bebida > div p {
       font: 1.3em/2 sans-serif; } }
-@media screen and (min-device-width: 1200px) {
-  #contenedor section.contenido .imagen_lateral {
-    margin: 20px 2ex 20px 20px;
-    height: unset; }
-    #contenedor section.contenido .imagen_lateral p {
-      padding: 1.5em 2em; }
-  #contenedor section.pasarelas article > div {
-    height: 250px !important; } }
-@media screen and (min-device-width: 1350px) {
-  #contenedor section.pasarelas article > div {
-    height: 300px !important; } }
+@media screen and (min-width: 1200px) {
+  #contenedor {
+    /*section.pasarelas article > div {	height: 250px !important; }*/ }
+    #contenedor section.contenido .imagen_lateral {
+      margin: 20px 2ex 20px 20px;
+      height: unset; }
+      #contenedor section.contenido .imagen_lateral p {
+        padding: 1.5em 2em; } }
+@media screen and (min-width: 1350px) {
+  #contenedor {
+    /*section.pasarelas article > div {	height: 300px !important; }*/ } }
 
 /*# sourceMappingURL=index.css.map */
