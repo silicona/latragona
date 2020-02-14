@@ -88,13 +88,13 @@ bebida:
     - "En boca se manifiesta vivo, fresco y frutal, con taninos maduros que aportan cuerpo y estructura en su elegante final."
     - "Contiene sulfitos."
   #licor
-  hierbas: Orujo de hierbas
-  blanco: Orujo blanco
-  tostado: Orujo tostado
-  licor_cafe: Licor de café
+  lic_hierbas: Orujo de hierbas
+  lic_blanco: Orujo blanco
+  lic_tostado: Orujo tostado
+  lic_cafe: Licor de café
   pacharan: Pacharán
   crema_orujo: Crema de orujo
-  crema_chocolate: Crema de chocolate con cerezas
+  crema_choco: Crema de chocolate con cerezas
   crema_cafe: Crema de café
 
 ingrediente:
@@ -221,6 +221,7 @@ nombre:
   ensalada_sardinas: Ensalada de sardinas marinadas caseras, tomate y albahaca
   gazpacho: Gazpacho
   hummus: Hummus
+  judiones: "Judiones"
   lasagna: Lasagna de setas
   lomo: Lomo embuchado
   migas: Migas
@@ -271,15 +272,18 @@ nombre:
   rusos_arroz: Filetes rusos con arroz blanco
 
 producto:
-  alergeno: Alérgenos
-  descripcion: Ver descripción
+  alergeno: "Alérgenos"
+  descripcion: "Ver descripción"
+  imagen_de: "Imagen de "
+  ingredientes: "Ingredientes"
+  precio: "Precio"
   tosta: "Tosta de "
   sin_aler: Sin alérgenos
   ver: Ver los ingredientes
   # Bebidas
   botella: Botella
   botellin: Botellín
-  caña: Caña
+  cana: Caña
   chupito: Chupito
   copa: Copa
   doble: Doble
@@ -287,18 +291,20 @@ producto:
   tercio: Tercio
 
 titulos:
-  rubia: Rubia
-  sin: Sin alcohol
-  tostada: Tostada
-  sin_glu: sin gluten
-  tinto: Tintos
   blanco: Blancos
-  vermut: Vermút
+  cervezas: Cervezas
   licor: Licor artesanal
   pan_sin: "¡¡Tenemos pan sin gluten. Pídelo!!"
+  novedad: "Novedad"
   rac_sin: "¡Nuestras raciones son SIN gluten!"
-  tostas: Tostas
   raciones: Raciones
+  rubia: Rubia
+  sin: Sin alcohol
+  sin_glu: sin gluten
+  tinto: Tintos
+  tostada: Tostada
+  tostas: Tostas
+  vermut: Vermút
 
 tapas:
   arroz_zamorana: Arroz a la zamorana

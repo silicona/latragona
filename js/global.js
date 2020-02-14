@@ -61,11 +61,11 @@ function bs_alert(mensaje, clase, titulo){
 
 function cerrar_alert(esto){
 
-	console.log('jar', eesto);
+	//console.log('jar', eesto);
 
 	var padre = $(esto).parent();
 		
-	console.log('jar', padre);
+	//console.log('jar', padre);
 
 	padre.remove();
 
@@ -74,10 +74,8 @@ function cerrar_alert(esto){
 
 
 /* GENERAL */
-
 function animarFancy(pagina){
 
-	//if( !( JSON.stringify( $('#aviso_pan') ) == '{}' ) ){
 	if( pagina == 'tragar' ){
 
 		$('[data-fancybox]').fancybox({
@@ -86,8 +84,8 @@ function animarFancy(pagina){
 			iframe : {
 				preload : false,
 				css: { 
-					width : "400px",
-					height: "430px" 
+					/*width : "400px",
+					height: "430px" */
 				}
 			}
 		});
@@ -100,7 +98,7 @@ function animarFancy(pagina){
 			iframe : {
 				preload : false,
 				css: { 
-					width : "400px",
+					//width : "400px",
 					height: "550px" 
 				}
 			}
@@ -115,12 +113,17 @@ function animarFancy(pagina){
 			iframe : {
 				preload : false,
 				css: { 
-					width : "400px",
-					height: "550px" 
+					/*width : "400px",
+					height: "550px" */
 				}
 			}
 		});
 	}
+}
+
+function cerrar_menus(){
+
+	$('.menu_abierto').click();
 }
 
 
@@ -130,12 +133,15 @@ function mostrarIdiomas(){
 	
 	if( lengua ){
 
+		$('#menuidiomas').addClass('menu_abierto');
 		$('#menuidiomas').css('display', "block");
 		$('#menuidiomas').animate({opacity: 1}, 1000);
 
 		lengua = false;
 	
 	} else {
+			
+		$('#menuidiomas').removeClass('menu_abierto');
 
 		$('#menuidiomas').animate({opacity: 0}, 1000, function (){
 
@@ -147,7 +153,7 @@ function mostrarIdiomas(){
 }
 
 
-function mostrarMenu(){
+function mostrarMenu(e){
 
 	if( !lengua ){ mostrarIdiomas(); }
 
@@ -163,6 +169,7 @@ function mostrarMenu(){
 
 		if(semaforo){
 
+			$(this).addClass('menu_abierto');
 			$('#menumovil').css('display', "block");
 
 			$(function(){ $('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) });
@@ -172,6 +179,9 @@ function mostrarMenu(){
 			semaforo = false;
 
 		}	else {
+
+			$(this).removeClass('menu_abierto');
+
 
 			$(function(){ $('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) });
 
@@ -185,7 +195,9 @@ function mostrarMenu(){
 
 	} else {
 
-		if(semaforo){
+		if( semaforo ){
+
+			$(this).addClass('menu_abierto');
 
 			$('#menumovil').css('display', "block");
 			$('#menumovil').animate({opacity: 1}, 1000);
@@ -193,6 +205,8 @@ function mostrarMenu(){
 			semaforo = false;
 
 		} else {
+
+			$(this).removeClass('menu_abierto');
 
 			$('#menumovil').animate({opacity: 0}, 1000, function(){
 
@@ -399,8 +413,6 @@ function mostrarLateral(){
 
 	iluminarLateral(scroll_top, raciones);
 }
-
-
 
 
 // // if( !(JSON.stringify( $('#lateral') ) == '{}') ){
@@ -904,9 +916,9 @@ function activarClicks(){
 		$('html, body').animate({ scrollTop: $('#contenedor').offset().top + 3 }, 1500)
 	});
 
-	$('.menu').click( function(){	mostrarMenu(); });
+	$('.menu').click( function(e){	mostrarMenu(e); });
 
-	$('#multi').click( function(){	mostrarIdiomas(); });
+	$('#multi').click( function(e){	mostrarIdiomas(e); });
 	
 	$('.boton', '#lateral').click(function(e){
 
@@ -972,7 +984,13 @@ function iniciar(){
 
 		animarFancy(pagina);
 
-		window.onscroll = mostrarLateral;
+		//window.onscroll = mostrarLateral;
+		window.onscroll = function(){
+
+			mostrarLateral();
+
+			cerrar_menus();
+		}
 	}
 
 	if( pagina == 'despensa' ){

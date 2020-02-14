@@ -36,6 +36,290 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function tearDown(){}
 
+	public function test_check_despensa_comida(){
+
+		//$tostas = Helper::suministra_despensa('tostas');
+		//$raciones = Helper::suministra_despensa('raciones');
+
+		$arr_productos = (array) array_merge_recursive( (array) self::$tostas, (array) self::$raciones );
+		
+		$arr_nombres = array_keys(self::$lexico['nombre']);
+		$arr_ingredientes = array_keys(self::$lexico['ingrediente']);
+		$arr_alergenos = array_keys(self::$lexico['alergenos']);
+		$arr_imagenes = scandir(BASE_FILE . 'media/imagenes/tragar');
+
+		$arr_error = array();
+		foreach( $arr_productos as $producto ){
+
+			$desc = $producto['descripcion'];
+
+			if( !in_array($desc, $arr_nombres) ){ $arr_error[] = 'Descripcion ausente de $lexico[nombre]: ' . $desc; }
+
+			if( !in_array($producto['imagen'], $arr_imagenes) ){ $arr_error[] = 'Imagen ausente ' . $producto['imagen'] . ' de ' . $desc . '.'; }
+			
+			foreach( $producto['ingredientes'] as $i => $ingre ){
+
+				if( !in_array($ingre, $arr_ingredientes) ){ $arr_error[] = 'Ingrediente ausente de $lexico[ingrediente]: ' . $ingre . '(' . $desc . ')'; }
+			}
+
+			foreach( $producto['alergenos'] as $i => $aler ){
+
+				if( !in_array($aler, $arr_alergenos) ){ $arr_error[] = 'Alergeno ausente de $lexico[alergeno]: ' . $aler . '(' . $desc . ')'; }
+			}
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores:\n" . implode("\n", $arr_error) );
+
+
+	}
+
+	public function test_check_despensa_vinos(){
+
+		$arr_bebidas = array_keys(self::$lexico['bebida']);
+		$arr_imagenes = scandir(BASE_FILE . 'media/imagenes/empujar');
+
+		$arr_error = array();
+		foreach( self::$vinos as $nombre => $producto ){
+
+			$desc = $producto['descripcion'];
+
+			if( !in_array($desc, $arr_bebidas) ){ $arr_error[] = 'Descripción ausente de $lexico[bebida]: ' . $desc; }
+
+			if( gettype(self::$lexico['bebida'][$desc]) != 'array' ){ $arr_error[] = 'Descripción incorrecta de $lexico[bebida]: ' . $desc; }
+			
+			if( count(self::$lexico['bebida'][$desc]) == 0 ){ $arr_error[] = 'Descripción sin contenido de $lexico[bebida]: ' . $desc; }
+			
+			if( count($producto['precio']) <= 0 ){ $arr_error[] = 'Precio incorrecto: ' . $desc; }
+		
+			if( !in_array($producto['imagen'], $arr_imagenes) ){ $arr_error[] = 'Imagen ausente ' . $producto['imagen'] . ' de ' . $desc . '.'; }
+
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores:\n" . implode("\n", $arr_error) );
+	}
+
+	public function test_check_despensa_cervezas(){
+
+		$arr_productos = (array) array_merge_recursive( (array) self::$cervezas, (array) self::$licores );
+
+		$arr_bebidas = array_keys(self::$lexico['bebida']);
+		$arr_imagenes = scandir(BASE_FILE . 'media/imagenes/empujar');
+
+		$arr_error = array();
+		foreach( self::$cervezas as $nombre => $producto ){
+
+			$desc = $producto['descripcion'];
+
+			//if( !in_array($desc, $arr_bebidas) ){ $arr_error[] = 'Descripción ausente de $lexico[bebida]: ' . $desc; }
+
+			//if( gettype(self::$lexico['bebida'][$desc]) != 'array' ){ $arr_error[] = 'Descripción incorrecta de $lexico[bebida]: ' . $desc; }
+			
+			if( gettype($producto['precio']) != 'array' ){ $arr_error[] = 'Precio incorrecto: ' . $desc; }
+			
+			if( count($producto['precio']) == 0 ){ $arr_error[] = 'Precio sin contenido: ' . $desc; }
+		
+			if( !in_array($producto['imagen'], $arr_imagenes) ){ $arr_error[] = 'Imagen ausente ' . $producto['imagen'] . ': ' . $desc . '.'; }
+
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores:\n" . implode("\n", $arr_error) );
+	}
+
+	public function test_check_despensa_licores(){
+
+		$arr_bebidas = array_keys(self::$lexico['bebida']);
+		$arr_imagenes = scandir(BASE_FILE . 'media/imagenes/empujar');
+
+		$arr_error = array();
+		foreach( self::$licores as $nombre => $producto ){
+
+			$desc = $producto['descripcion'];
+
+			if( !in_array($desc, $arr_bebidas) ){ $arr_error[] = 'Descripción ausente de $lexico[bebida]: ' . $desc; }
+
+			if( gettype(self::$lexico['bebida'][$desc]) != 'string' ){ $arr_error[] = 'Descripción incorrecta de $lexico[bebida]: ' . $desc; }
+			
+			if( gettype($producto['precio']) != 'array' ){ $arr_error[] = 'Precio incorrecto: ' . $desc; }
+			
+			if( count($producto['precio']) == 0 ){ $arr_error[] = 'Precio sin contenido: ' . $desc; }
+		
+			if( !in_array($producto['imagen'], $arr_imagenes) ){ $arr_error[] = 'Imagen ausente ' . $producto['imagen'] . ': ' . $desc . '.'; }
+
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores:\n" . implode("\n", $arr_error) );
+	}
+
+	public function test_comparar_idiomas_es_en(){
+
+		$lex_uno = Helper::suministra_lexico('es');
+		$lex_dos = Helper::suministra_lexico('en');
+
+		$arr_error = array();
+
+		foreach( $lex_uno as $sec => $datos ){
+
+			if( $sec == 'despensa' ){ continue; }
+
+			if( gettype($lex_dos[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Inglés:\n" . implode("\n", $arr_error) ); 
+
+		foreach( $lex_dos as $sec => $datos ){
+
+			if( gettype($lex_uno[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Castellano sobre Inglés:\n" . implode("\n", $arr_error) ); 
+	}
+
+	public function test_comparar_idiomas_es_fr(){
+
+		$lex_uno = Helper::suministra_lexico('es');
+		$lex_dos = Helper::suministra_lexico('fr');
+
+		foreach( $lex_uno as $sec => $datos ){
+
+			if( $sec == 'despensa' ){ continue; }
+
+			if( gettype($lex_dos[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+		
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Francés:\n" . implode("\n", $arr_error) ); 
+
+		foreach( $lex_dos as $sec => $datos ){
+
+			if( gettype($lex_uno[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Castellano sobre Francés:\n" . implode("\n", $arr_error) ); 
+	}
+
+	public function test_comparar_idiomas_es_it(){
+
+		$lex_uno = Helper::suministra_lexico('es');
+		$lex_dos = Helper::suministra_lexico('it');
+
+		foreach( $lex_uno as $sec => $datos ){
+
+			if( $sec == 'despensa' ){ continue; }
+
+			if( gettype($lex_dos[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+		
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Italiano:\n" . implode("\n", $arr_error) ); 
+
+		foreach( $lex_dos as $sec => $datos ){
+
+			if( gettype($lex_uno[$sec]) != 'array' ){ $arr_error[] = 'Sección ' . $sec . 'desaparecida.'; }
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo_uno = gettype($valor);
+				$tipo_dos = gettype($lex_dos[$sec][$clave]);
+				if( ($tipo_dos != 'string' && $tipo_dos != 'array') || $tipo_uno != $tipo_dos ){
+					
+					$arr_error[] = 'Elemento ' . $clave . ' incorrecto de sección ' . $sec . '.';
+				}
+			}
+		}
+
+		$this -> assertTrue( count($arr_error) == 0, "Errores del Castellano sobre Italiano:\n" . implode("\n", $arr_error) ); 
+	}
+
+
+	public function PARA_DESPUES_test_comparar_idiomas_es_de(){
+
+		$lex_uno = Helper::suministra_lexico('es');
+		$lex_dos = Helper::suministra_lexico('de');
+
+		foreach( $lex_uno as $sec => $datos ){
+
+			if( gettype($lex_dos[$sec]) != 'array' ){
+
+				$this -> fail('Léxico Italiano no tiene sección ' . $sec);
+			}
+
+			foreach( $datos as $clave => $valor ){
+
+				$tipo = gettype($lex_dos[$sec][$clave]);
+				if( $tipo != 'string' && $tipo != 'array' ){
+					
+					$this -> fail('Léxico Italiano no tiene ' . $clave . ' de la sección ' . $sec . ': tipo ' . $tipo);
+				}
+			}
+		}
+
+		foreach( $lex_dos as $sec => $datos ){
+
+			if( gettype($lex_uno[$sec]) != 'array' ){
+
+				$this -> fail('Léxico Castellano no tiene sección ' . $sec);
+			}
+
+			foreach( $datos as $clave => $valor ){
+
+				if( gettype($lex_uno[$sec][$clave]) != 'string' ){
+					
+					$this -> fail('Léxico Castellano no tiene ' . $clave . ' de la sección ' . $sec);
+				}
+			}
+		}
+	}
 
 	public function test_asignar_alergenos_si(){
 

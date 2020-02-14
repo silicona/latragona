@@ -87,18 +87,20 @@ bebida:
     - "Initial sensation in the mouth is one of lively, fresh fruits that gives way to a warmer roundness characterized by ripe round tannins that fill out the palate as the wine leaves."
     - "Contains sulfites."
   #licor
-  hierbas: Herbal marc
-  blanco: White marc
-  tostado: Toast marc
-  licor_cafe: Coffee liquor
+  lic_hierbas: Herbal marc
+  lic_blanco: White marc
+  lic_tostado: Toast marc
+  lic_cafe: Coffee liquor
   pacharan: Pacharan
   crema_orujo: Marc cream
-  crema_chocolate: Chocolate cream with cherries
+  crema_choco: Chocolate cream with cherries
   crema_cafe: Coffee cream
 
 ingrediente:
   aceite: Olive oil
+  aceituna: Olive
   ajo: Garlic
+  albahaca: Basil
   almendra: Almond
   alubia_carilla: Bean sprout
   atun: Tuna
@@ -124,10 +126,11 @@ ingrediente:
   garbanzo: Chickpea
   guisante: Pea
   harina: Flour
-  huevos: Eggs
+  huevo: Egg
   huevo_duro: Hard-boiled egg
   judia_blanca: White bean
   judia_pinta: Pinto bean
+  judia_verde: Green bean
   judion: Judo
   ketchup: Ketchup
   laurel: Laurel
@@ -182,6 +185,7 @@ ingrediente:
   salsa_soja: Soy sauce
   salsa_tomate: Tomato sauce
   salsa_tomate_casera: Homemade tomato sauce
+  sardina: Sardine
   sesamo: Sesame
   setas: Arrows
   solomillo: Pork tenderloin
@@ -191,6 +195,7 @@ ingrediente:
   tomate_frito: Fried tomato
   tomillo: Thyme
   trigo: Wheat
+  ventresca: Tuna ventresca
   ventresca_atun: Tuna ventresca
   verduras: Vegetables
   vinagre: Vinegar
@@ -211,22 +216,35 @@ nombre:
   carpaccio: Zuchinni carpaccio
   cecina: Smoked beef from León
   ensalada_remo: Beet salad with arugula and goat cheese eco
+  ensalada_rusa: Russian salad
+  ensalada_sardinas: Sardines salad
+  gazpacho: Gazpacho
   hummus: Hummus
+  judiones: Judions
   lasagna: Arrows lasagna
   lomo: Pork loin
   migas: Crumbs
   mousaka: Mousaka
   pastel_salmon: Salmon cake
   papas_2mojos: 'Papas arrugas' with 2 mojos
+  patatas_cabrales: Potatoes with cabrales
   patatas_rellenas: Stuffed potatoes
   patatas_revolconas: Revolcons potatoes
+  pate_shiitake: Shiitake pate
+  queso_tietar: Tietar´s cheese
   roastbeef: Roastbeef
   ragout: Veal ragout
   rusos: Russian steaks with tomato sauce
   solomillo: Sirloin with beer and apple
+  solomillo_aji: Sirloin with chili pepper
   solomillo_sal: Sirloin cured with salt with spices
+  tartar_verduras: Vegetable tartare
   tortilla: Potatoes omelette
+  tosta_brandada: Brandade of cod
   tosta_cecina: Smoked beef from León
+  tosta_hummus: Hummus
+  tosta_roastbeef: Roastbeef
+  tosta_salmon: Salmon
   salmon: Salmon
   tosta_ventresca: Tuna belly with piquillo pepper
   ventresca: Tuna belly with piquillo pepper
@@ -253,15 +271,18 @@ nombre:
   rusos_arroz: Russian steaks with white rice
 
 producto:
-  alergeno: Allergens
-  descripcion: See description
+  alergeno: "Allergens"
+  descripcion: "See description"
+  imagen_de: "Image of "
+  ingredientes: "Ingredients"
+  precio: "Price"
   tosta: "Toast "
   sin_aler: "No allergens"
-  ver: See ingredients
+  ver: "See ingredients"
   # Bebidas
   botella: Bottle
   botellin: Bottle 1/4
-  caña: Caña
+  cana: Caña
   chupito: Shot
   copa: Glass
   doble: Double
@@ -269,18 +290,20 @@ producto:
   tercio: Bottle 1/3
 
 titulos:
-  rubia: Lager
-  sin: Alcohol free
-  tostada: Ale
-  sin_glu: Gluten free
-  tinto: Reds
   blanco: Whites
-  vermut: Vermouth
+  cervezas: "Beers"
   licor: Craft liquor
   pan_sin: "We have gluten-free bread. Ask us!!"
+  novedad: "New"
   rac_sin: "Our portions are without Gluten"
-  tostas: Toasts
   raciones: Portions
+  rubia: Lager
+  sin: Alcohol free
+  sin_glu: Gluten free
+  tinto: Reds
+  tostada: Ale
+  tostas: Toasts
+  vermut: Vermouth
 
 tapas:
   arroz_zamorana: Arroz a la zamorana

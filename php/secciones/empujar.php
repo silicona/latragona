@@ -1,8 +1,4 @@
 
-<?php
-
-?>
-
 <?php require_once BASE_FILE . 'php/inc/menu_movil.php'; ?>
 
 <div id="contenedor" class="carta">
@@ -33,27 +29,30 @@
 		</article>
 			-->
 
-		<?php echo Tragona::mostrar_productos($cervezas, $lexico); ?>
+		<?php //echo Tragona::mostrar_productos($cervezas, $lexico); ?>
+		<?php echo Tragona::devuelve_html_productos($cervezas, $lexico); ?>
 
 	</section>
 
 	<section id="vino">
 		<!--
 		<article class="foto">
-			<a name="vino"><p id="uva"><?php echo $lexico['foto']['vino'] ?></p></a>
+			<a name="vino"><p id="uva"><?php //echo $lexico['foto']['vino'] ?></p></a>
 		</article>	
 		-->
-		<?php echo Tragona::mostrar_productos($vinos, $lexico);	?>
+		<?php //echo Tragona::mostrar_productos($vinos, $lexico);	?>
+		<?php echo Tragona::devuelve_html_productos($vinos, $lexico);	?>
 
 	</section>	
 
 	<section id="licores">
 
 		<!-- <article class="foto">
-			<a name="licor"><p id="aguardiente"><?php echo $lexico['foto']['licor'] ?></p></a>
+			<a name="licor"><p id="aguardiente"><?php //echo $lexico['foto']['licor'] ?></p></a>
 		</article> -->
 
-		<?php echo Tragona::mostrar_productos($licores, $lexico) ?>
+		<?php //echo Tragona::mostrar_productos($licores, $lexico) ?>
+		<?php echo Tragona::devuelve_html_productos($licores, $lexico) ?>
 
 	</section>
 
@@ -68,14 +67,17 @@
 			<div class="mitad">
 
 				<legend><?php echo $lexico[$seccion]['combi_claro'] ?></legend>
-				<!-- <legend><?php echo $lexico[$seccion]['combi_claro'] ?> <sub>(6&euro;)</sub></legend> -->
+
 				<div class="articulo final">
+
 					<div class="interior">
-						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/combi_claro.jpg" data-lightbox="example-1" data-title="<?php echo $lexico[$seccion]['combi_claro'] ?>">
+
+						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/combi_claro.jpg" data-lightbox="combinados" data-title="<?php echo $lexico[$seccion]['combi_claro'] ?>">
 							<div class="div_imagen">
 								<img src="<?php echo BASE_URL ?>media/imagenes/empujar/combi_claro.jpg"  alt="<?php echo $lexico[$seccion]['combi_claro'] ?>" title="<?php echo $lexico[$seccion]['combi_claro'] ?>" class="imagen">
 							</div>
 						</a>
+
 						<p class="lista_izquierda">
 							Seagram<br>
 							Larios<br>
@@ -86,7 +88,9 @@
 							Stolichnaya<br>
 							Dryzaguirre<br>
 						</p>
+
 					</div>
+
 				</div>
 
 			</div>
@@ -96,12 +100,17 @@
 				<!-- <legend><?php echo $lexico[$seccion]['combi_oscuro'] ?> <sub>(6&euro;)</sub></legend> -->
 				<legend><?php echo $lexico[$seccion]['combi_oscuro'] ?></legend>
 				<div class="articulo final">
+
 					<div class="interior">
-						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/combi_oscu.jpg" data-lightbox="example-1" data-title="<?php echo $lexico[$seccion]['combi_oscuro'] ?>">
+
+						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/combi_oscu.jpg" data-lightbox="combinados" data-title="<?php echo $lexico[$seccion]['combi_oscuro'] ?>">
+
 							<div class="div_imagen">
 								<img src="<?php echo BASE_URL ?>media/imagenes/empujar/combi_oscu.jpg" alt="<?php echo $lexico[$seccion]['combi_oscuro'] ?>" title="<?php echo $lexico[$seccion]['combi_oscuro'] ?>" class="imagen">
 							</div>
+
 						</a>
+
 						<p class="lista_izquierda">
 							Brugal<br>
 							Cacique<br>
@@ -111,7 +120,9 @@
 							JB<br>
 							Ballantines
 						</p>
+
 					</div>
+
 				</div>
 
 			</div>
@@ -133,19 +144,26 @@
 				<legend><?php echo $lexico[$seccion]['zum_org'] ?></legend>
 				<!-- <legend><?php echo $lexico[$seccion]['zum_org'] ?> <sub>(2.5&euro;)</sub></legend> -->
 				<div class="articulo final">
+
 					<div class="interior">
-						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/zumos_org.jpg" data-lightbox="example-1" data-title="<?php echo $lexico[$seccion]['zum_org'] ?>">
+
+						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/zumos_org.jpg" data-lightbox="sin" data-title="<?php echo $lexico[$seccion]['zum_org'] ?>">
+
 							<div class="div_imagen zumos">
 								<img src="<?php echo BASE_URL ?>media/imagenes/empujar/zumos_org.jpg" alt="<?php echo $lexico[$seccion]['zum_org'] ?>" title="<?php echo $lexico[$seccion]['zum_org'] ?>" class="imagen">
 							</div>
+
 						</a>
+
 						<p>
 							<?php echo $lexico[$seccion]['mandarina'] ?><br>
 							<?php echo $lexico[$seccion]['limonada'] ?><br>
 							<?php echo $lexico[$seccion]['pera_pim'] ?><br>
 							<?php echo $lexico[$seccion]['tom_was'] ?><br>
 						</p>
+
 					</div>
+
 				</div>
 
 			</div>
@@ -155,19 +173,26 @@
 				<legend><?php echo $lexico[$seccion]['zum'] ?></legend>
 				<!-- <legend><?php echo $lexico[$seccion]['zum'] ?> <sub>(2&euro;)</sub></legend> -->
 				<div class="articulo final">
+
 					<div class="interior">
-						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/zumo.jpg" data-lightbox="example-1" data-title="<?php echo $lexico[$seccion]['zum'] ?>">
+
+						<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/zumo.jpg" data-lightbox="sin" data-title="<?php echo $lexico[$seccion]['zum'] ?>">
+
 							<div class="div_imagen">
 								<img src="<?php echo BASE_URL ?>media/imagenes/empujar/zumo.jpg" alt="<?php echo $lexico[$seccion]['zum'] ?>" title="<?php echo $lexico[$seccion]['zum'] ?>" class="imagen">
 							</div>
+
 						</a>
+
 						<p>
 							<?php echo $lexico[$seccion]['melocoton'] ?><br>
 							<?php echo $lexico[$seccion]['naranja'] ?><br>
 							<?php echo $lexico[$seccion]['pina'] ?><br>
 							<?php echo $lexico[$seccion]['tomate'] ?><br>
 						</p>
+
 					</div>
+
 				</div>
 
 			</div>
@@ -175,13 +200,18 @@
 			<legend><?php echo $lexico[$seccion]['refresco'] ?></legend>
 			<!-- <legend><?php echo $lexico[$seccion]['refresco'] ?> <sub>(2&euro;)</sub></legend> -->
 			<div class="articulo final">
+
 				<div class="interior">
-					<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/refresco.jpg" data-lightbox="example-1" data-title="<?php echo $lexico[$seccion]['refresco'] ?>">
+
+					<a class="img_lightbox" href="<?php echo BASE_URL ?>media/imagenes/empujar/refresco.jpg" data-lightbox="sin" data-title="<?php echo $lexico[$seccion]['refresco'] ?>">
+
 						<div class="div_imagen">
 							<img src="<?php echo BASE_URL ?>media/imagenes/empujar/refresco.jpg" alt="<?php echo $lexico[$seccion]['refresco'] ?>" title="<?php echo $lexico[$seccion]['refresco'] ?>" class="imagen">
 						</div>
 					</a>
+
 					<p class="lista_doble">
+
 						<span class="mitad">
 							<?php echo $lexico[$seccion]['frixen'] ?><br>
 							<?php echo $lexico[$seccion]['naranja'] ?><br>
@@ -195,8 +225,11 @@
 							<?php echo $lexico[$seccion]['aquarius'] ?><br>
 							<?php echo $lexico[$seccion]['nestea'] ?><br>
 						</span>
+
 					</p>
+
 				</div>
+				
 			</div>
 
 		</article>

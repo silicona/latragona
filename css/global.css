@@ -81,6 +81,7 @@ body {
   min-width: 300px;
   font-family: verdana, helvetica, sans-serif;
   font-size: 14pt;
+  font-weight: 300;
   background-color: #000000; }
   body > header {
     padding: 1ex;
@@ -148,7 +149,9 @@ body {
     display: block;
     clear: both; }
   body .fancybox-container .fancybox-content {
-    border-radius: 20px; }
+    border-radius: 20px;
+    width: 400px;
+    height: 430px; }
   body .fancybox-container .fancybox-iframe {
     border-radius: 20px;
     padding: 1ex; }
@@ -285,7 +288,7 @@ body {
 #menumovil {
   position: fixed;
   top: 45px;
-  z-index: 5;
+  z-index: 105;
   /*width: calc(100% - 12px);*/
   width: 100%;
   color: #FFFFFF;
@@ -305,7 +308,7 @@ body {
 #menuidiomas {
   position: fixed;
   top: 45px;
-  z-index: 5;
+  z-index: 105;
   /*width : calc(100% - 12px);*/
   width: 100%;
   border: 6px double #e580ff;
@@ -906,9 +909,7 @@ body {
   body > header {
     font-size: 2.5em; }
 
-  #menumovil {
-    position: absolute; }
-
+  /*#menumovil { position: absolute; }*/
   #leer {
     left: 35%; }
 

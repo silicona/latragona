@@ -18,13 +18,15 @@
 
 	<section id="tosta">
 
-		<?php echo Tragona::mostrar_productos($tostas, $lexico); ?>
+		<?php //echo Tragona::mostrar_productos($tostas, $lexico); ?>
+		<?php echo Tragona::devuelve_html_productos($tostas, $lexico); ?>
 
 	</section>
 
 	<section id="racion">
 
-		<?php echo Tragona::mostrar_productos($raciones, $lexico); ?>
+		<?php //echo Tragona::mostrar_productos($raciones, $lexico); ?>
+		<?php echo Tragona::devuelve_html_productos($raciones, $lexico); ?>
 
 	</section>	
 	

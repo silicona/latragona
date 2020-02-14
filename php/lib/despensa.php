@@ -242,7 +242,9 @@ class Vinos {
 		"nombre"	=> "Vermouth Miro",
 		"imagen"	=> "vermouth.jpg",
 		"descripcion" => "vermouth",
-		"precio"	=> array("copa" => "2"),
+		"precio"	=> array(
+			"copa" => "2"
+		),
 		"novedad"   => false
 	);
 }
@@ -325,7 +327,7 @@ class Licores {
 		"id"		=> "7",
 		"nombre"	=> "Crema de chocolate",
 		"imagen"	=> "lic_choco.jpg",
-		"descripcion" => "lic_choco",
+		"descripcion" => "crema_choco",
 		"precio"	=> array(
 			"chupito" => "2", 
 			"copa"    => "4"
@@ -450,7 +452,7 @@ class Tostas {
 	public $tosta_shiitake = array(
 		"id"		=> "6",
 		"nombre"	=> "Pate de shiitake",
-		"imagen"	=> "patatas_revolconas.jpg",
+		"imagen"	=> "tosta_shiitake.jpg",
 		"precio"	=> array("4,5"),
 		"descripcion"  => "tosta_shiitake",
 		"ingredientes" => array(
@@ -462,7 +464,7 @@ class Tostas {
 			"pimenton", 
 			"sal"
 		),
-		"alergenos"	=> array("gluten", "soja"),
+		"alergenos"	=> array("soja"),
 		"novedad"	=> true
 	);
 	*/
@@ -511,7 +513,7 @@ class Raciones {
 		"imagen"	=> "babaganoush.jpg",
 		"precio"	=> array(
 			"6", 
-			" - ½: 3"
+			"3"
 		),
 		"descripcion"  => "babaganoush",
 		"ingredientes" => array(
@@ -638,7 +640,7 @@ class Raciones {
 		"imagen"	=> "racion_cecina.jpg",
 		"precio"	=> array(
 			"9", 
-			" - ½: 4.5"
+			"4.5"
 		),
 		"descripcion"  => "cecina",
 		"ingredientes" => array(
@@ -671,7 +673,7 @@ class Raciones {
 		"id"		=> "10",
 		"nombre"	=> "Ensaladilla rusa",
 		"imagen"	=> "ensaladilla_rusa.jpg",
-		"precio"	=> array( "7" ),
+		"precio"	=> array("7"),
 		"descripcion"  => "ensalada_rusa",
 		"ingredientes" => array(
 			"patata", 
@@ -692,7 +694,7 @@ class Raciones {
 		"id"		=> "11",
 		"nombre"	=> "Ensalada de sardinas marinadas caseras, tomate y albahaca",
 		"imagen"	=> "ensalada_sardinas.jpg",
-		"precio"	=> array( "9" ),
+		"precio"	=> array("9"),
 		"descripcion"  => "ensalada_sardinas",	// Imagen ajena
 		"ingredientes" => array(
 			"sardina", 
@@ -725,7 +727,7 @@ class Raciones {
 		"imagen"	=> "racion_hummus.jpg",
 		"precio"	=> array(
 			"6",
-			" - ½: 3"
+			"3"
 		),
 		"descripcion"  => "hummus",
 		"ingredientes" => [
@@ -747,7 +749,15 @@ class Raciones {
 		"imagen"       => "judiones.jpg",
 		"precio"       => array("8"),
 		"descripcion"  => "judiones",
-		"ingredientes" => ["judias", "ajo", "comino", "sal", "aceite", "zumo_limon", "pimenton"],
+		"ingredientes" => [
+			"judia_pinta",
+			"ajo", 
+			"comino",
+			"sal", 
+			"aceite",
+			"zumo_limon",
+			"pimenton"
+		],
 		"alergenos"    => [],
 		"novedad"   => false
 	);
@@ -780,7 +790,10 @@ class Raciones {
 		"id"		=> "16",
 		"nombre"       => "Lomo embuchado",
 		"imagen"       => "lomo.jpg",	// Imagen Ajena
-		"precio"       => ["7", " - ½: 3,5"],
+		"precio"       => [
+			"7",
+			"3,5"
+		],
 		"descripcion"  => "lomo",
 		"ingredientes" => ["lomo_embuchado"],
 		"alergenos"    => [],
@@ -810,7 +823,7 @@ class Raciones {
 		"id"		=> "18",
 		"nombre"	=> "Mousaka",
 		"imagen"	=> "mousaka.jpg", // Imagen Ajena
-		"precio"	=> array( "8" ),
+		"precio"	=> array("8"),
 		"descripcion"  => "mousaka",
 		"ingredientes" => array(
 			"carne_picada", 
@@ -872,9 +885,9 @@ class Raciones {
 
 	public $patatas_cabrales = array(
 		"id"		=> "21",
-		"nombre"       => "Patatas revolconas",
+		"nombre"       => "Patatas con queso cabrales",
 		"imagen"       => "patatas_cabrales.jpg",
-		"precio"       => array( "5" ),
+		"precio"       => array("5"),
 		"descripcion"  => "patatas_cabrales",
 		"ingredientes" => array(
 			"patata", 
@@ -910,9 +923,9 @@ class Raciones {
 	
 	public $patatas_revolconas = array(
 		"id"		=> "23",
-		"nombre"       => "Patatas revolconas",
-		"imagen"       => "patatas_revolconas.jpg",
-		"precio"       => array( "7" ),
+		"nombre"	=> "Patatas revolconas",
+		"imagen"	=> "patatas_revolconas.jpg",
+		"precio"	=> array("7"),
 		"descripcion"  => "patatas_revolconas",
 		"ingredientes" => array(
 			"patata", 
@@ -933,7 +946,7 @@ class Raciones {
 		"imagen"	=> "pate_shiitake.jpg",
 		"precio"	=> array(
 			"7",
-			" - ½: 3,5"
+			"3,5"
 		),
 		"descripcion"  => "pate_shiitake",
 		"ingredientes" => array(
@@ -955,7 +968,7 @@ class Raciones {
 		"id"		=> "26",
 		"nombre"	=> "Queso de cabra ecológico del Tietar",
 		"imagen"	=> "queso_tietar.jpg",
-		"precio"	=> array( '5' ),
+		"precio"	=> array('5'),
 		"descripcion"  => "queso_tietar",
 		"ingredientes" => array(
 			"queso", 
@@ -993,7 +1006,7 @@ class Raciones {
 		"id"		=> "28",
 		"nombre"       => "Solomillo con 2 salsas (cerveza y manzana)",
 		"imagen"       => "solomillo.jpg",
-		"precio"       => array( "7" ),
+		"precio"       => array("7"),
 		"descripcion"  => "solomillo",
 		"ingredientes" => array(
 			"solomillo", 
@@ -1034,7 +1047,7 @@ class Raciones {
 		"id"		=> "30",
 		"nombre"       => "Solomillo curado a la sal con especias",
 		"imagen"       => "solomillo_sal.jpg",
-		"precio"       => array( '8' ),
+		"precio"       => array('8'),
 		"descripcion"  => "solomillo_sal",
 		"ingredientes" => array(
 			"solomillo", 
@@ -1090,7 +1103,7 @@ class Raciones {
 		"imagen"	=> "ensalada_ventresca.jpg",
 		"precio"	=> [
 			"9",
-			" - ½: 4,5"
+			"4,5"
 		],
 		"descripcion"  => "ventresca",
 		"ingredientes" => [
