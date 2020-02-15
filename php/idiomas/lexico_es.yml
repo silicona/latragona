@@ -231,7 +231,7 @@ nombre:
   patatas_cabrales: Patatas revolcadas con cabrales
   patatas_rellenas: Patatas rellenas
   patatas_revolconas: Patatas revolconas
-  pate_shiitake: Pate de shiitake
+  pate_shiitake: Paté de shiitake
   queso_tietar: Queso de cabra ecológico del Tietar
   roastbeef: Roastbeef
   ragout: Ragout de ternera
@@ -295,6 +295,8 @@ titulos:
   cervezas: Cervezas
   licor: Licor artesanal
   pan_sin: "¡¡Tenemos pan sin gluten. Pídelo!!"
+  prueba_un: "Prueba un "
+  prueba_una: "Prueba una "
   novedad: "Novedad"
   rac_sin: "¡Nuestras raciones son SIN gluten!"
   raciones: Raciones
@@ -418,6 +420,8 @@ form:
   respuesta_error: "Hubo un error que impidió enviar tu mensaje."
   reserva_ok: "Tu reserva ha sido enviada."
   comentario_ok: "Tu comentario ha sido enviado."
+  acceso_ko: 'Lo siento, tu llave no abre esta puerta.'
+  error_contacto: 'Faltan datos para enviar el mensaje.'
 
 legal:
   desktop: " Se autoriza la difusión y copia del contenido de este sitio web, manteniendo la autoría del mismo."

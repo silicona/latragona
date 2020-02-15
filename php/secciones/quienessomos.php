@@ -50,29 +50,33 @@
 
 	</section>
 
-	<section class="redes">
-	
-		<h2><?php echo $lexico[$seccion]['redes']; ?></h2>
+	<section class="seccion_redes">
 
-		<p><?php echo $lexico[$seccion]['redes_p']; ?>:</p>
+		<div class="redes">
+		
+			<h2><?php echo $lexico[$seccion]['redes']; ?></h2>
 
-		<article class="panel_redes">
+			<p><?php echo $lexico[$seccion]['redes_p']; ?>:</p>
 
-			<div id="tw" class="red">
+			<article class="panel_redes">
 
-				<a class="twitter-timeline" href="https://twitter.com/tragonabar"></a>
+				<div id="tw" class="red">
 
-				<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a class="twitter-timeline" href="https://twitter.com/tragonabar"></a>
 
-			</div>
+					<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-			<div id="fb" class="red">
+				</div>
 
-				<iframe id="frame_facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flatragonalavapies%2F&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+				<div id="fb" class="red">
 
-			</div>
+					<iframe id="frame_facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Flatragonalavapies%2F&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 
-		</article>
+				</div>
+
+			</article>
+			
+		</div>
 		
 	</section>
 

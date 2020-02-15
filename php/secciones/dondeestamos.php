@@ -35,10 +35,7 @@
 			<p>
 				<?php echo $lexico[$seccion]['p1']; ?>
 
-				<img src  = "<?php echo BASE_URL ?>media/horario.jpg" 
-					alt   = "<?php echo $lexico[$seccion]['horario']; ?>" 
-					title = "<?php echo $lexico[$seccion]['horario']; ?>" 
-					class = "horario">
+				<!-- <img src="<?php echo BASE_URL ?>media/horario.jpg" alt="<?php echo $lexico[$seccion]['horario']; ?>" title="<?php echo $lexico[$seccion]['horario']; ?>" class="horario"> -->
 
 				<?php echo $lexico[$seccion]['p3']; ?>
 			</p>

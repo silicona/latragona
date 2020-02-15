@@ -216,20 +216,29 @@ nombre:
   carpaccio: Courgette carpaccio
   cecina: Viande séchée de León
   ensalada_remo: Salade de betteraves à la roquette et au fromage de chèvre eco
+  ensalada_rusa: Salade russe
+  ensalada_sardinas: Sardines marinées maison, salade de tomates et basilic
+  gazpacho: "Gazpacho"
   hummus: Hummus
+  judiones: "Jugements"
   lasagna: Lasagnes aux champignons
   lomo: Longe de porc guéri
   migas: Miettes
   mousaka: Mousaka
   pastel_salmon: Gâteau de saumon
   papas_2mojos: 'Papas arrugas' avec deux Mojos
+  patatas_cabrales: "Pommes de terre roulées avec cabrales"
   patatas_rellenas: Pommes de terre farcies
   patatas_revolconas: Pommes de terre revolcons
+  pate_shiitake: Pâté Shiitake
+  queso_tietar: Fromage de chèvre bio du Tietar
   roastbeef: Roastbeef
   ragout: Ragoût de veau
   rusos: Steak de Russie avec sauce tomate
   solomillo: Bière surlonge et pomme
+  solomillo_aji: Surlonge au poivre jaune
   solomillo_sal: Surlonge traitée avec du sel et des épices
+  tartar_verduras: "Tartare de légumes, quinoa et sauce aux olives vertes"
   tortilla: Omelette de pomme de terre
   salmon: Saumon
   tosta_brandada: Brandade de morue
@@ -286,6 +295,8 @@ titulos:
   licor: Liqueur artisanale
   novedad: "Nouveauté"
   pan_sin: "Nous avons du pain sans gluten. Demandez-nous!!"
+  prueba_un: "Essayez un"
+  prueba_una: "Essayez-en un"
   rac_sin: "Nos rations n'ont pas de gluten"
   raciones: Portions
   rubia: Blonde
@@ -408,6 +419,8 @@ form:
   respuesta_error: "Une erreur vous a empêché d'envoyer votre message."
   reserva_ok: "Votre réservation a été envoyée."
   comentario_ok: "Votre commentaire a été envoyé."
+  acceso_ko: "Nous sommes désolés. Votre clé n'ouvre pas cette porte."
+  error_contacto: "Données manquantes pour envoyer votre message."
 
 legal:
   desktop: " Autorisation de diffuser et de copier le contenu de ce site, La paternité de la même."

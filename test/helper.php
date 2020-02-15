@@ -45,6 +45,31 @@ class Helper {
 	}
 
 
+	// Test
+	public static function suministra_carta_actual($tipo){
+
+		$tipo = strtolower($tipo);
+
+		$carta_actual = file_get_contents(BASE_FILE . 'php/lib/carta.txt');
+
+		preg_match_all('/(\w+)\-([\d,]+)/', $carta_actual, $datos);
+
+		$arr_salida = array();
+		for( $i = 0; $i < count($datos[1]); $i++ ){
+
+			$clave = strtolower($datos[1][$i]);
+
+			$arr_salida[$clave] = explode(',', $datos[2][$i]);
+		}
+
+		$tipos = array_keys($arr_salida);
+
+		if( !in_array($tipo, $tipos) ){ return false; }
+
+		return $arr_salida[$tipo];
+	}
+
+
 	public function suministra_lexico($idioma){
 		
 		/*
@@ -62,6 +87,40 @@ class Helper {
 		return new $tipo;
 	}
 
+
+	public function suministra_producto($obj_productos, $tipo){
+
+		$material = get_class($obj_productos);
+
+		foreach( $obj_productos as $producto ){
+
+			if( $tipo == 'alergia' ){
+
+				if( !empty($producto['alergenos']) ){ return $producto; }
+			} 
+
+			if( $tipo == 'fuera_carta' ){
+
+				$carta = Helper::suministra_carta_actual($material);
+
+				if( !in_array($producto['id'], $carta) ){ return $producto; }
+			}
+
+			if( $tipo == 'dentro_carta' ){
+
+				$carta = Helper::suministra_carta_actual($material);
+
+				if( in_array($producto['id'], $carta) ){ return $producto; }
+			}
+
+			if( $tipo == 'novedad' ){
+
+				if( $producto['novedad'] ){ return $producto; }
+			}
+		}
+
+		return false;
+	}
 
 	public function suministra_producto_alergenos($obj_productos, $alergia = false){
 

@@ -18,7 +18,7 @@ class ApiDespensaTest extends \PHPUnit\Framework\TestCase {
 	public function tearDown(){}
 
 
-	public function test_accion_login(){
+	public function ghfcghfctest_accion_login(){
 
 		$params = array(
 			'accion' => 'check_login',
@@ -35,7 +35,7 @@ class ApiDespensaTest extends \PHPUnit\Framework\TestCase {
 		$this -> assertRegExp( '/^<section id="despensa"><article class="contenido">/', $res -> html, 'Debería ser el html de la despensa.' );
 	}
 
-	public function test_accion_login_ko(){
+	public function hgfcghfctest_accion_login_ko(){
 
 		$params = array(
 			'accion' => 'check_login',

@@ -73,6 +73,10 @@ html {
   height: 100%; }
   html.despensa, html.empujar, html.tragar {
     height: auto; }
+    html.despensa #menumovil, html.empujar #menumovil, html.tragar #menumovil {
+      position: fixed;
+      top: 45px;
+      border-radius: 0 0 20px 20px; }
 
 body {
   overflow-x: hidden;
@@ -286,15 +290,14 @@ body {
     text-align: center; }
 
 #menumovil {
-  position: fixed;
-  top: 45px;
+  position: absolute;
   z-index: 105;
   /*width: calc(100% - 12px);*/
   width: 100%;
   color: #FFFFFF;
   border: 6px double #9CE083;
   background-color: #006600;
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px 20px 0 0;
   display: none;
   opacity: 0; }
   #menumovil ul {
@@ -361,11 +364,13 @@ body {
     color: #FFFFFF;
     font-size: 1.2em;
     background-color: #000000;
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0;
     right: 0;
     z-index: 2; }
+    #contenedor .superior.carta {
+      position: fixed; }
     #contenedor .superior li {
       padding: 10px;
       float: right; }
@@ -407,7 +412,7 @@ body {
     left: 0;
     top: 45px;
     text-align: center;
-    background-color: #9CE083; }
+    background-color: #FFA366; }
     #contenedor #lateral ul {
       padding: .3ex; }
       #contenedor #lateral ul li {
@@ -416,6 +421,8 @@ body {
         font-size: 1.2em;
         border-radius: 5px;
         cursor: pointer; }
+        #contenedor #lateral ul li.selected {
+          background-color: #ffffff; }
   #contenedor h1 {
     margin: .5em 0 0;
     padding-top: 55px;
@@ -504,7 +511,7 @@ body {
           color: #000088; }
     #contenedor section.compartir {
       /* FB y TW */
-      background-color: #2AC176;
+      /*background-color: $verde;*/
       padding: 1.6ex 0 1.2ex; }
       #contenedor section.compartir div {
         width: 100%;
@@ -523,13 +530,12 @@ body {
         #contenedor section.rrss li:first-of-type {
           float: unset;
           margin: 0; }
-        #contenedor section.rrss li:last-of-type {
-          margin-left: 2ex; }
         #contenedor section.rrss li a {
           display: block;
           border-radius: 5px;
           transition: .5s all linear;
-          padding: .4ex .6ex 0; }
+          padding: .4ex .6ex 0;
+          font-size: .8em; }
           #contenedor section.rrss li a img {
             width: 50px;
             margin: 0 5px;
@@ -576,7 +582,7 @@ body {
       #contenedor.carta section legend {
         margin: 10px;
         margin-left: 20px;
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-decoration: underline; }
       #contenedor.carta section article {
         float: left;
@@ -640,12 +646,13 @@ body {
                 #contenedor.carta section article.contenido .articulo .interior .img_fancybox p,
                 #contenedor.carta section article.contenido .articulo .interior .img_lightbox p {
                   font-size: 1em;
-                  /*line-height: 1em;*/
                   vertical-align: top;
                   position: relative;
                   hyphens: auto;
-                  height: 2em;
-                  									/*&:before{
+                  height: 2.5em;
+                  /*min-height: 2em;*/
+                  									/*
+                  									&:before{
                   										content: '';
                   										display: table-cell;
                   									}
@@ -793,12 +800,15 @@ body {
                 -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
                 box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); }
           #contenedor.carta section article.contenido .texto_reserva {
-            padding: 0 1ex; }
+            padding: 0 1ex;
+            text-align: left;
+            margin-bottom: 1em; }
           #contenedor.carta section article.contenido .form_reserva {
             background-color: #FB8F50;
             border: 2px solid #FB6750;
             padding: 1ex;
-            position: relative; }
+            position: relative;
+            margin-bottom: 1em; }
             #contenedor.carta section article.contenido .form_reserva label {
               display: block;
               margin: 0.5ex 0 1ex 1ex;
@@ -874,15 +884,16 @@ body {
     #contenedor .legal p {
       line-height: 1.3em; }
 
-.empujar #contenedor.carta section article.contenido .articulo.articulo_novedad .novedad {
-  right: 20%;
-  /*right: 80px;*/ }
-
+/* Secciones */
 .despensa .titulo_despensa {
   font-size: 1.3em;
   text-align: left;
   padding-left: 2ex;
   margin: 20px 0; }
+
+.empujar #contenedor.carta section article.contenido .articulo.articulo_novedad .novedad {
+  right: 20%;
+  /*right: 80px;*/ }
 
 /* Ocultos desde la version movil */
 #contenedor #lateral, #contenedor.carta .foto,
@@ -904,7 +915,9 @@ body {
   #contenedor {
     /*#lateral ul li { margin: 0 .5ex; }*/ }
     #contenedor.carta section article.contenido .articulo.final .interior .img_lightbox {
-      display: block; } }
+      display: block; }
+    #contenedor.carta section article.contenido .articulo.final .interior .img_fancybox {
+      /*p { font-size: 1.2em; }*/ } }
 @media screen and (min-width: 576px) {
   body > header {
     font-size: 2.5em; }
@@ -928,7 +941,7 @@ body {
     #contenedor #lateral {
       background-color: transparent; }
       #contenedor #lateral ul {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: #FFA366;
         border-radius: 0 15px 15px 0; }
     #contenedor section.contenido .imagen_lateral {
       display: block; }

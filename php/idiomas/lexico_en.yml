@@ -294,6 +294,8 @@ titulos:
   cervezas: "Beers"
   licor: Craft liquor
   pan_sin: "We have gluten-free bread. Ask us!!"
+  prueba_un: "Taste a "
+  prueba_una: "Taste a "
   novedad: "New"
   rac_sin: "Our portions are without Gluten"
   raciones: Portions
@@ -417,6 +419,8 @@ form:
   respuesta_error: "There was an error that prevented you from sending your message."
   reserva_ok: "Your reservation has been sent."
   comentario_ok: "Your comment has been sent."
+  acceso_ko: "We are sorry. Your key don´t open this door."
+  error_contacto: "We need more data for deliver your message."
 
 legal:
   desktop: " Authorization to disseminate and copy the content of this website, The authorship of the same."

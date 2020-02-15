@@ -160,19 +160,30 @@ function mostrarMenu(e){
 	var ancho = $(window).width();
 
 	var pag_global = JSON.stringify( $('#lateral') ) == '{}';
-	//console.log('ancho', ancho);
+	///console.dir('ancho', ancho);
 
-	if( (ancho >= 576 && ancho <= 1024) && pag_global ){
+	if( pag_global ){
+
+
+	}
+
+	// Ipad
+	if( pag_global ){
+	// if( (ancho >= 576 && ancho <= 1024) && pag_global ){
 
 		var top_contenedor = $('#contenedor').offset().top;
-		$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() + 5);
+		//$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() + 5);
+		$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() - 6);
 
-		if(semaforo){
+		if( semaforo ){
 
 			$(this).addClass('menu_abierto');
 			$('#menumovil').css('display', "block");
 
-			$(function(){ $('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) });
+			//$(function(){ 
+
+				$('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) 
+			//});
 
 			$('#menumovil').animate({ opacity: 1 }, 1000);
 
@@ -182,8 +193,9 @@ function mostrarMenu(e){
 
 			$(this).removeClass('menu_abierto');
 
-
-			$(function(){ $('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) });
+			//$(function(){ 
+				$('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) 
+			//});
 
 			$('#menumovil').animate({opacity: 0}, 1000, function(){
 
@@ -216,6 +228,116 @@ function mostrarMenu(e){
 			semaforo = true	
 		}
 	}
+}
+
+function mostrarMenu_old(e){
+
+	if( !lengua ){ mostrarIdiomas(); }
+
+	var ancho = $(window).width();
+
+	var pag_global = JSON.stringify( $('#lateral') ) == '{}';
+	console.dir('ancho', ancho);
+
+	// Ipad
+	if( (ancho >= 576 && ancho <= 1024) && pag_global ){
+
+		var top_contenedor = $('#contenedor').offset().top;
+		$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() + 5);
+
+		if( semaforo ){
+
+			$(this).addClass('menu_abierto');
+			$('#menumovil').css('display', "block");
+
+			//$(function(){ 
+
+				$('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) 
+			//});
+
+			$('#menumovil').animate({ opacity: 1 }, 1000);
+
+			semaforo = false;
+
+		}	else {
+
+			$(this).removeClass('menu_abierto');
+
+			//$(function(){ 
+				$('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) 
+			//});
+
+			$('#menumovil').animate({opacity: 0}, 1000, function(){
+
+				$('#menumovil').css('display', "none");
+			});
+
+			semaforo = true;
+		}
+
+	} else {
+
+		if( semaforo ){
+
+			$(this).addClass('menu_abierto');
+
+			$('#menumovil').css('display', "block");
+			$('#menumovil').animate({opacity: 1}, 1000);
+
+			semaforo = false;
+
+		} else {
+
+			$(this).removeClass('menu_abierto');
+
+			$('#menumovil').animate({opacity: 0}, 1000, function(){
+
+				$('#menumovil').css('display', "none");
+			});
+
+			semaforo = true	
+		}
+	}
+}
+
+/* Test */
+function permite(e, tipo) {
+
+	console.log('codigo');
+	var permitidos = "0123456789",
+		caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ_.@",
+		evento = e || window.event,
+		codigo = evento.charCode || evento.keyCode,	// < Ie8: keyCode
+		caracter = String.fromCharCode(codigo),
+		tecla_especial = false;
+		teclas_especiales = [
+			8,	// BackSpace
+			37, // Izq
+			39, // Der
+			40, // (
+			41, // )
+			//43, // +
+			46	// Supr
+		]; 
+
+	if( tipo == 'char' ){ permitidos = caracteres; }
+
+	if( tipo == 'num_char' ){ permitidos += caracteres; }		 
+
+	// Comprobar si la tecla pulsada es alguna de las teclas especiales
+	/*for( var i in teclas_especiales ){
+
+		if( codigo == teclas_especiales[i] ) {
+
+			tecla_especial = true;
+			break;
+		}
+	}*/
+
+	tecla_especial = teclas_especiales.indexOf(codigo) != -1;
+	
+	// Comprobar si la tecla pulsada se encuentra en los caracteres permitidos o si es una tecla especial
+	return permitidos.indexOf(caracter) != -1 || tecla_especial;
 }
 
 
@@ -273,7 +395,7 @@ function desvanecerLeer(){
 /* TRAGAR - EMPUJAR */
 function encender_comidas(){
 
-	if(ancho_ventana >= 576){
+	if( ancho_ventana >= 576 ){
 
 		altura_aviso_rac = $('#aviso_rac').offset().top - 44;
 		altura_reservas = $('#reservas').offset().top - 44;
@@ -282,33 +404,28 @@ function encender_comidas(){
 
 		altura_aviso_rac = $('#aviso_rac').offset().top - ( 44 + altura_lateral );
 		altura_reservas = $('#reservas').offset().top - ( 44 + altura_lateral );
-
 	}
 
-	switch(true){
+	switch( true ){
 
 		case ( scroll_top >= altura_reservas ) || ( scroll_top + $(window).height() == $(document).height() ):
-		marcadores[2].style.backgroundColor = "#000000";
-		marcadores[2].style.color = "#FFFFFF";
-		break;
+			$('#lateral li').eq(2).addClass('selected');
+			break;
 
 		case ( scroll_top >= altura_aviso_rac ) && ( scroll_top < altura_reservas ):
-		marcadores[1].style.backgroundColor = "#000000";
-		marcadores[1].style.color = "#FFFFFF";
-		break;
+			$('#lateral li').eq(1).addClass('selected');
+			break;
 
 		case scroll_top < altura_aviso_rac:
-		marcadores[0].style.backgroundColor = "#000000";
-		marcadores[0].style.color = "#FFFFFF";				
-		break;
+			$('#lateral li').eq(0).addClass('selected');			
+			break;
 
 	}
 }
 
-
 function encender_bebidas(){
 
-	if(ancho_ventana >= 576){
+	if( ancho_ventana >= 576 ){
 
 		altura_cerveza = $('#cerveza').offset().top - 44;
 		altura_vino    = $('#vino').offset().top - 44;
@@ -328,44 +445,42 @@ function encender_bebidas(){
 	switch(true){
 
 		case ( scroll_top >= altura_sin ) || ( scroll_top + $(window).height() == $(document).height() ):
-			marcadores[4].style.backgroundColor = "#000000";
-			marcadores[4].style.color = "#FFFFFF";
+			$('#lateral li').eq(4).addClass('selected');
+			//marcadores[4].style.backgroundColor = "#000000";
+			//marcadores[4].style.color = "#FFFFFF";
 			break;
 
 		case ( scroll_top >= altura_combi ) && ( scroll_top < altura_sin ):
-			marcadores[3].style.backgroundColor = "#000000";
-			marcadores[3].style.color = "#FFFFFF";
+			$('#lateral li').eq(3).addClass('selected');
+			//marcadores[3].style.backgroundColor = "#000000";
+			//marcadores[3].style.color = "#FFFFFF";
 			break;
 
 		case ( scroll_top >= altura_licor ) && ( scroll_top < altura_combi ):
-			marcadores[2].style.backgroundColor = "#000000";
-			marcadores[2].style.color = "#FFFFFF";
+			$('#lateral li').eq(2).addClass('selected');
+			//marcadores[2].style.backgroundColor = "#000000";
+			//marcadores[2].style.color = "#FFFFFF";
 			break;
 
 		case ( scroll_top >= altura_vino ) && ( scroll_top < altura_licor ):
-			marcadores[1].style.backgroundColor = "#000000";
-			marcadores[1].style.color = "#FFFFFF";
+			$('#lateral li').eq(1).addClass('selected');
+			//marcadores[1].style.backgroundColor = "#000000";
+			//marcadores[1].style.color = "#FFFFFF";
 			break;
 
 		case scroll_top < altura_vino:
-			marcadores[0].style.backgroundColor = "#000000";
-			marcadores[0].style.color = "#FFFFFF";				
+			$('#lateral li').eq(0).addClass('selected');
+			//marcadores[0].style.backgroundColor = "#000000";
+			//marcadores[0].style.color = "#FFFFFF";				
 			break;
 	}
 }
 
-
 function iluminarLateral( scroll_top, raciones ){
 
 	raciones = raciones || '';
-	marcadores = document.getElementById('lateral').getElementsByTagName('li');
 
-	for(a=0; a < marcadores.length; a++){
-
-		marcadores[a].style.backgroundColor = "initial";
-		marcadores[a].style.color = "#000";
-
-	}
+	$('#lateral li').removeClass('selected');
 
 	raciones ? encender_comidas() :	encender_bebidas();
 }
@@ -425,6 +540,7 @@ function mostrarLateral(){
 
 
 /* DONDE ESTAMOS */
+/* Test */
 function calcularHorario(fecha){
 
 	/* Horario Tragona
@@ -433,8 +549,8 @@ function calcularHorario(fecha){
 		D: 13-17
 	*/
 
-	var dia = fecha.getDay();
-	var hora = fecha.getHours();
+	var dia = fecha.getDay(),
+		hora = fecha.getHours();
 
 	preposicion = mapa_en + " ";
 	apertura = false;
@@ -525,18 +641,19 @@ function calcularHorario(fecha){
 	}
 }
 
+/* Test - Solo inicio */
 function iniciarMapa(){
 
 	ancho_ventana = window.innerWidth || document.body.offsetWidth;
-	var ancho = $('#mapa').css('width').slice(0, 3);
-	var fecha = new Date();
+
+	var ancho = $('#mapa').css('width').slice(0, 3),
+		fecha = new Date(),
+		tragona = { lat: 40.41121079, lng: -3.70549053 },
+		centro_desktop = { lat: 40.41121079, lng: -3.7063 };
 	
 	calcularHorario(fecha);
 
-	var tragona = { lat: 40.41121079, lng: -3.70549053 };
-	var centro_desktop = { lat: 40.41121079, lng: -3.7063 };
-
-	if(ancho >= 500){
+	if( ancho >= 500 ){
 
 		centro_mapa = centro_desktop;
 
@@ -608,7 +725,7 @@ function iniciarMapa(){
 
 
 /* CONTACTAR - Formulario*/
-function permite(elEvento, permitidos) {
+function permite_old(elEvento, permitidos) {
 
 	var numeros = "0123456789";
 	var caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ_.@";
@@ -925,10 +1042,10 @@ function activarClicks(){
 		e.preventDefault();
 
 		var posicion = $($(this).attr('data_seccion')).offset().top - 43;
-	  $(document).width() < 576 ? posicion -= $('#lateral').height() : '';
 
-	  $("html, body").animate({	scrollTop: posicion	}, 2000);
+		$(document).width() < 576 ? posicion -= $('#lateral').height() : '';
 
+		$("html, body").animate({	scrollTop: posicion	}, 2000);
 	});
 
 	$('.boton', '#form').click( function(e){
@@ -978,11 +1095,13 @@ function iniciar(){
 	activarClicks();
 	
 	//animarFancy(pagina);
+	animarFancy(pagina);
 
 	// if( !(JSON.stringify( $('#lateral') ) == '{}') ){
 	if( pagina == 'tragar' || pagina == 'empujar' ){
 
-		animarFancy(pagina);
+		//animarFancy(pagina);
+		mostrarLateral();
 
 		//window.onscroll = mostrarLateral;
 		window.onscroll = function(){
@@ -1001,6 +1120,11 @@ function iniciar(){
 }
 
 window.onscroll = desvanecerLeer;
-window.onload = iniciar;
+//window.onload = iniciar;
+
+$(function(){
+
+	iniciar();
+});
 
 

@@ -70,13 +70,13 @@ body {
 	/*.anuncio { display: none; }*/
 }
 
-@media screen and (min-device-width: 280px) {}
+@media screen and (min-width: 280px) {}
 
 
-@media screen and (min-device-width: 576px) {}
+@media screen and (min-width: 576px) {}
 
 
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
 
 	#contenedor section.contenido .horario {
 		width: 70%; 
@@ -87,7 +87,7 @@ body {
 }
 
 
-@media screen and (min-device-width: 992px) {
+@media screen and (min-width: 992px) {
 
 	#contenedor section.contenido {
 
@@ -112,10 +112,10 @@ body {
 }
 
 
-@media screen and (min-device-width: 1024px) {}
+@media screen and (min-width: 1024px) {}
 
 
-@media screen and (min-device-width: 1200px) {
+@media screen and (min-width: 1200px) {
 
 	#contenedor section.contenido {
 

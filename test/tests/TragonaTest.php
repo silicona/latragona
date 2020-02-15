@@ -38,9 +38,6 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_check_despensa_comida(){
 
-		//$tostas = Helper::suministra_despensa('tostas');
-		//$raciones = Helper::suministra_despensa('raciones');
-
 		$arr_productos = (array) array_merge_recursive( (array) self::$tostas, (array) self::$raciones );
 		
 		$arr_nombres = array_keys(self::$lexico['nombre']);
@@ -69,8 +66,6 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		}
 
 		$this -> assertTrue( count($arr_error) == 0, "Errores:\n" . implode("\n", $arr_error) );
-
-
 	}
 
 	public function test_check_despensa_vinos(){
@@ -200,6 +195,8 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$lex_uno = Helper::suministra_lexico('es');
 		$lex_dos = Helper::suministra_lexico('fr');
 
+		$arr_error = array();
+
 		foreach( $lex_uno as $sec => $datos ){
 
 			if( $sec == 'despensa' ){ continue; }
@@ -242,6 +239,8 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 		$lex_uno = Helper::suministra_lexico('es');
 		$lex_dos = Helper::suministra_lexico('it');
+
+		$arr_error = array();
 
 		foreach( $lex_uno as $sec => $datos ){
 
@@ -352,17 +351,9 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_crear_pasarela_comida(){
 
+		$res = Tragona::crear_pasarela_comida(self::$tostas, self::$raciones, self::$lexico['nombre']);
 
-		$nombres = self::$lexico['nombre'];
-		$cantidad = 5;
-
-		$tostas = Helper::suministra_despensa('tostas');
-		$raciones = Helper::suministra_despensa('raciones');
-		
-		$res = Tragona::crear_pasarela_comida($tostas, $raciones, $nombres);
-		$res_limpio = Helper::limpiar_saltos($res);
-
-		preg_match_all( '/(<div data-src="[\w\/\:]+\.jpg">)/', $res_limpio, $enlaces );
+		preg_match_all( '/(<div data-src="[\w\/\:]+\.jpg">)/', $res, $enlaces );
 		foreach( $enlaces[1] as $i => $enlace ){
 			
 			if( !preg_match('/media\/imagenes\/tragar\/\w+\.(jpg|jpeg|png|gif)/', $enlace) ){
@@ -371,13 +362,13 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 			}
 		}
 
-		$this -> assertSame( $cantidad, count($enlaces[1]), 'Debería tener 5 enlaces.' );
+		$this -> assertSame( 5, count($enlaces[1]), 'Debería tener 5 enlaces.' );
 
-		preg_match_all( '/(<div class=\"camera_caption\">[^<]+<\/div>)/', $res_limpio, $titulos );
+		preg_match_all( '/(<div class=\"camera_caption\">[^<]+<\/div>)/', $res, $titulos );
 
 		$this -> assertSame( count($enlaces[1]), count($titulos[1]), 'Debería tener los mismos títulos que enlaces.' );
 
-		$this -> assertSame( $cantidad, count($titulos[1]), 'Debería tener 5 titulos.' );
+		$this -> assertSame( 5, count($titulos[1]), 'Debería tener 5 titulos.' );
 	}
 
 
@@ -386,12 +377,9 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$titulos = self::$lexico['titulos'];
 		$bebidas = self::$lexico['bebida'];
 		
-		$cervezas = Helper::suministra_despensa('cervezas');
-		$vinos    = Helper::suministra_despensa('vinos');
+		$res = Tragona::crear_pasarela_bebida(self::$cervezas, self::$vinos, self::$lexico);
 		
-		$res = Tragona::crear_pasarela_bebida($cervezas, $vinos, self::$lexico);
-		
-		preg_match_all( '/(<div style="background\-image: url\(\'[\w\/\:]+\.jpg)/', $res, $imagenes );
+		preg_match_all( '/(style="background\-image: url\(\'[\w\/\:]+\.jpg)/', $res, $imagenes );
 		foreach( $imagenes[1] as $i => $enlace ){
 			
 			if( !preg_match('/media\/imagenes\/empujar\/\w+\.(jpg|jpeg|png|gif)/', $enlace) ){
@@ -402,7 +390,7 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 
 		$this -> assertSame( 4, count($imagenes[1]), 'Debería tener 4 enlaces de imagen de fondo.' );
 
-		preg_match_all( '/title="([^\"]+)"/', $res, $titles );
+		preg_match_all( '/\stitle="([^\"]+)"/', $res, $titles );
 		foreach( $titles[1] as $i => $enlace ){
 			
 			if( !preg_match('/[\w\-\(\)\s]+/', $enlace) ){
@@ -436,6 +424,26 @@ class TragonaTest extends \PHPUnit\Framework\TestCase {
 		$res = Tragona::devuelve_carta_actual($tipo);
 
 		$this -> assertFalse( $res, 'Debería ser false.' );
+	}
+
+
+	public function test_devuelve_arr_productos_en_carta(){
+
+		$res = Tragona::devuelve_arr_productos_en_carta(self::$raciones);
+
+		$fuera = Helper::suministra_producto(self::$raciones, 'fuera_carta');
+
+		$racs_en_carta = Tragona::devuelve_carta_actual('raciones');
+
+		$arr_error = array();
+		foreach( $res as $nombre => $producto ){
+
+			if( !in_array($producto['id'], $racs_en_carta) ){ $arr_error[] = 'Producto incorrecto: ' . $nombre; }
+			
+			if( $producto['id'] == $fuera['id'] ){ $arr_error[] = 'Producto fuera de carta!! ' . $nombre; }
+		}
+
+		$this -> assertSame( 0, count($arr_error), 'Debería tener 0 productos fuera de carta.' );
 	}
 
 

@@ -118,22 +118,46 @@ class Tragona {
 	// Test
 	public static function crear_pasarela_comida($tostas, $raciones, $nombres){
 
-		$arr_productos = (array) array_merge_recursive( (array) $tostas, (array) $raciones );
-		$arr_nombres = array_keys($arr_productos);
+		$tostas_en_carta = Tragona::devuelve_arr_productos_en_carta($tostas);
+		$racs_en_carta = Tragona::devuelve_arr_productos_en_carta($raciones);
 
+		/*
+		$tostas_en_carta = Tragona::devuelve_carta_actual('tostas');
+		$racs_en_carta = Tragona::devuelve_carta_actual('raciones');
+
+		$arr_productos = array();
+
+		foreach( $tostas as $nombre => $producto ){
+
+			if( in_array($producto['id'], $tostas_en_carta) ){
+
+				//$arr_nombres[] = $nombre;
+				$arr_productos[$nombre] = (array) $tostas -> $nombre;
+			}
+		}
+
+		foreach( $raciones as $nombre => $producto ){
+
+			if( in_array($producto['id'], $racs_en_carta) ){
+
+				//$arr_nombres[] = $nombre;
+				$arr_productos[$nombre] = (array) $raciones -> $nombre;
+			}
+		}
+		*/
+
+		$arr_productos = array_merge_recursive( $tostas_en_carta, $racs_en_carta );
+		$arr_nombres = array_keys($arr_productos);
 		$arr_nums_elegidos = array();
-		//$contador = 0;
+
 		while( count($arr_nums_elegidos) < 5 ){
-		//while( $contador != count($arr_nombres) ){
 
 			$num = rand(0, count($arr_nombres) - 1 );
 			
 			$arr_nums_elegidos = anadir_a_array($arr_nums_elegidos, $num);
-
-			//$contador++;
 		}
 
-		$salida = ['<div class="camera-wrap" id="tapas">'];
+		$salida = ['<div class="camera-wrap marco_pasarela" id="tapas">'];
 		foreach( $arr_nums_elegidos as $elegido ){
 
 			$producto = $arr_productos[$arr_nombres[$elegido]];
@@ -154,8 +178,11 @@ class Tragona {
 		$titulos = $lexico['titulos'];
 		$bebidas = $lexico['bebida'];
 
-		$arr_cervezas = array_keys( (array)$cervezas );
-		$arr_vinos    = array_keys( (array)$vinos );
+		$cervezas = Tragona::devuelve_arr_productos_en_carta($cervezas);
+		$vinos = Tragona::devuelve_arr_productos_en_carta($vinos);
+
+		$arr_cervezas = array_keys($cervezas);
+		$arr_vinos    = array_keys($vinos);
 
 		$num_vinos    = array();
 		while( count( $num_vinos ) < 3 ){
@@ -166,38 +193,86 @@ class Tragona {
 		}
 
 		$num_cerveza = rand(0, count($arr_cervezas) - 1);
-		$nombre_cerveza = $arr_cervezas[$num_cerveza];
-		$cerveza = $cervezas -> $nombre_cerveza;
+		$cerveza = $cervezas[$arr_cervezas[$num_cerveza]];
+
+		$cont = 0;
+		$suf_importe = '';
+		foreach( $cerveza['precio'] as $clase => $valor ){
+
+			if( $cont == 0 ){ $importe = $cerveza['precio'][$clase]; } 
+			
+			else { $suf_importe = ' - ' . $valor;	}
+
+			$cont++;
+		}
+		$importe .= $suf_importe;
 
 		$img_cerveza = implode('', array(
-			'<div',
-				' style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $cerveza['imagen'] . '\')"',
-				' title="' . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')"',
-				' alt="' . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')">',
-					'<p>',
-						$cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')',
-					'</p>',
+			'<div class="bebida_pas"',
+				'style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $cerveza['imagen'] . '\')" ',
+				'title="' . $titulos['prueba_una'] . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')" ',
+				'alt="' . $lexico['producto']['imagen_de'] . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')">',
+					
+				'<a class="link_modal" ',
+					'href="' . BASE_URL . 'media/imagenes/empujar/' . $cerveza['imagen'] . '" ',
+					'data-lightbox="ex" ',
+					'data-title="' . $cerveza['nombre'] . ' ' . $importe . '€"></a>',
+
+				'<p>' . $cerveza['nombre'] . ' (' . ucfirst($titulos[$cerveza['tipo']]) . ')</p>',
 			'</div>'
 		) );
 
 		$injerto_cerveza = rand(0, 2);
 
-		$salida = ['<div class="marco_bebida">'];
+		$salida = ['<div class="marco_pasarela">'];
 		foreach( $num_vinos as $indice => $num ){
 
 			$salida[] = $indice == $injerto_cerveza ? $img_cerveza : '';
 
-			$pasito = $arr_vinos[$num];
-			$product = $vinos -> $pasito;
+			$vino = $vinos[$arr_vinos[$num]];
 
-			$salida[] = '<div style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $product['imagen'] . '\')" title="' . $product['nombre'] . ' - ' . ucfirst($bebidas[$product['descripcion']][0]) . '" alt="' . $product['nombre'] . '">';
-			$salida[] = '<p>' . $product['nombre'] . '</p></div>';
+			$html_vino = array(
+				'<div class="bebida_pas" ', 
+					'style="background-image: url(\'' . BASE_URL . 'media/imagenes/empujar/' . $vino['imagen'] . '\')" ',
+					'title="' . $titulos['prueba_un'] . $vino['nombre'] . ' - ' . ucfirst($bebidas[$vino['descripcion']][0]) . '" ',
+					'alt="' . $lexico['producto']['imagen_de'] . $vino['nombre'] . '">',
+					
+					'<a class="link_modal" ',
+						'data-fancybox="vinos" ',
+						'data-src="' . BASE_API . 'despensa.php?accion=vino&solicitud=' . $vino['descripcion'] . '" ',
+						'data-type="iframe" ',
+						'href="javascript:;"></a>',
+
+					'<p>' . $vino['nombre'] . '</p>',
+				'</div>'
+			);
+			$salida[] = implode('', $html_vino);
 		}
 
 		$salida[] = '</div>';
 		
 
 		return implode('', $salida);
+	}
+
+	// Test
+	public static function devuelve_arr_productos_en_carta($productos){
+
+		$material = get_class($productos);
+
+		$prods_en_carta = Tragona::devuelve_carta_actual($material);
+
+		$arr_productos = array();
+
+		foreach( $productos as $nombre => $producto ){
+
+			if( in_array($producto['id'], $prods_en_carta) ){
+
+				$arr_productos[$nombre] = $productos -> $nombre;
+			}
+		}
+
+		return $arr_productos;
 	}
 
 	// Test
@@ -260,7 +335,7 @@ class Tragona {
 				'<a class="img_lightbox" ',
 					'href="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" ',
 					'data-lightbox="' . $clase_lightbox . '" ',
-					'data-title="' . $producto['nombre'] . ' ' . $importe . '€">',
+					'data-title="' . $nombre . ' ' . $importe . '€">',
 
 					'<div class="div_imagen">',
 						'<img src="' . BASE_URL . 'media/imagenes/empujar/' . $producto['imagen'] . '" ',
@@ -564,9 +639,7 @@ class Tragona {
 	}
 	
 
-	public function enviar_email($email_comentario, $nombre, $asunto, $mensaje, $idioma, $telefono = ''){
-
-		$datos = Spyc::YAMLLoad( 'idiomas/lexico_' .  $idioma . '.yml' );
+	public function enviar_email($email_comentario, $nombre, $asunto, $mensaje, $lex_form, $telefono = ''){
 
 		$destinatario = "latragonalavapies@gmail.com";
 		$contacto = 'Sin datos';
@@ -599,7 +672,7 @@ class Tragona {
 
 			$contacto = 'Telefono - ' . $telefono;
 
-		} elseif( $email != '' ){
+		} elseif( $email_comentario != '' ){
 
 			$headers .= 'From: ' . $email_comentario . "\r\n";
 
@@ -616,11 +689,11 @@ class Tragona {
 
 		$cuerpo = implode('', $arr_html);
 
-		$envio = mail($destinatario, $asunto, $cuerpo, $headers);
+		$envio = INM_ENTORNO == 'produccion' ? mail($destinatario, $asunto, $cuerpo, $headers) : true;
 
 		if( $envio ){
 			
-			$mensaje = $reserva ? $datos['form']['reserva_ok'] : $datos['form']['comentario_ok'];
+			$mensaje = $reserva ? $lex_form['reserva_ok'] : $lex_form['comentario_ok'];
 
 			return array(
 				'status' => 'ok',
@@ -631,7 +704,7 @@ class Tragona {
 
 		return array(
 			'status' => 'ko',
-			'mensaje' => $datos['form']['respuesta_error'],
+			'mensaje' => $lex_form['respuesta_error'],
 		);
 	}
 	

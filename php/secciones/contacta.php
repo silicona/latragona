@@ -1,7 +1,4 @@
 
-
-<!-- <div id="fb-root"></div> -->
-
 <?php 
 
 	require_once BASE_FILE . 'php/inc/menu_movil.php';
@@ -37,13 +34,13 @@
 
 	</section>
 
-	<section class="formulario">
+	<section class="seccion_formulario">
 
-		<article class="contenido">
+		<article class="formulario">
 
 			<a name="formulario"></a>
 
-			<form id="form">
+			<form id="form" class="form_contacto">
 
 				<input type="hidden" name="tipo" value="Comentarios para La Tragona">
 
@@ -81,7 +78,7 @@
 						id="enviar" 
 						value="<?php echo $lexico['form']['boton']; ?>">
 				
-				<div id="respuesta_form"></div>						
+				<div id="respuesta_form" class="res_form"></div>						
 
 			</form>
 

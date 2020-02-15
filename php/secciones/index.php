@@ -53,9 +53,7 @@
 
 				<?php echo $lexico[$seccion]['p4']; ?>
 
-				<a href="contacta" alt="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>" title="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>">
-					La Tragona
-				</a>.
+				<a href="contacta" alt="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>" title="<?php echo $nav_ir . $lexico['nav']['contacto']; ?>">La Tragona</a>.
 
 			</p>
 
@@ -65,7 +63,7 @@
 
 	<section class="pasarelas">
 
-		<article>
+		<article class="marco_comida">
 			
 			<h2>
 				<?php echo $lexico[$seccion]['pasarela1']; ?><a href="<?php echo BASE_URL . $idioma[0] ?>tragar" alt="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>" title="<?php echo $nav_ir . $lexico['nav']['tragar']; ?>"><?php echo $lexico[$seccion]['pasarela12']; ?></a>
@@ -75,7 +73,7 @@
 
 		</article>
 
-		<article>
+		<article class="marco_bebida">
 
 			<h2 class="bebida">
 				<?php echo $lexico[$seccion]['pasarela2']; ?><a href="<?php echo BASE_URL . $idioma[0] ?>empujar" alt="Ir a Raciones y Tapas" title="Ir a Raciones y Tapas"><?php echo $lexico[$seccion]['pasarela22']; ?></a>

@@ -50,9 +50,10 @@ html {
 					margin: 0 0 1em;
 				}
 
-				> div { 
+				.marco_pasarela { 
 					width: 100%;
 					height: 200px;
+					max-height: 200px;
 					margin: 0 auto;
 					float: none;
 
@@ -60,44 +61,50 @@ html {
 						font: 1.1em/1.4 sans-serif;	
 
 						> div { padding: 10px; }
-
 					}
 				}
+			}
 
-				&:last-of-type {
+			.marco_bebida {
 
-					.marco_bebida {
+				.marco_pasarela {
+
+					overflow: hidden;
+					position: relative;
+
+					.bebida_pas {
+
 						overflow: hidden;
-						position: relative;
+						height: inherit;
+						width: 25%;
+						height: 100%;
+						display: inline-block;
+						background-position: 45% 60%;
+						background-repeat: no-repeat;
 
-						> div {
-							overflow: hidden;
-							height: inherit;
-							width: 25%;
+						&:hover p {	height: 1.4em; }
+
+						.link_modal {
+
+							display: block;
 							height: 100%;
-							display: inline-block;
-							background-position: 45% 60%;
-							background-repeat: no-repeat;
+						}
 
-							&:hover p {	height: 1.4em; }
+						p { 
+							font: 1.1em/1.4 sans-serif;
 
-							p { 
-								font: 1.1em/1.4 sans-serif;
+							position: absolute;
+							bottom: 0em;
+							left: 0;
+							z-index: 10;
 
-								position: absolute;
-								bottom: 0em;
-								left: 0;
-								z-index: 10;
+							background-color: #000000;
+							color: #FFFFFF;
+							width: 100%;
+							height: 0;
+							padding-left: .4em;
 
-								background-color: #000000;
-								color: #FFFFFF;
-								width: 100%;
-								height: 0;
-								padding-left: .4em;
-
-								transition: 1s linear all;
-
-							}
+							transition: 1s linear all;
 						}
 					}
 				}
@@ -107,7 +114,7 @@ html {
 }
 
 
-	/* Ocultos desde la version movil */
+/* Ocultos desde la version movil */
 #contenedor {
 	.imagen_lateral { display: none; }
 }
@@ -133,9 +140,10 @@ html {
 
 				/*width: 50%;*/
 
-				> div { 
+				.marco_pasarela { 
 					width: 70%;
-					/*height: 300px;*/
+					height: 250px;
+					max-height: 250px;
 				}
 			}
 		}
@@ -174,14 +182,14 @@ html {
 
 				.imagen_lateral { height: 400px; }
 			}
-			/*
+			
 			&.pasarelas article { 
 
-
-				> div { 
-					width: 70%;
+				.marco_pasarela { 
+					height: 300px;
+					max-height: 300px;
 				}
-			}*/
+			}
 		}
 	}
 }
@@ -196,31 +204,36 @@ html {
 			line-height: 1.5em;
 		}
 
-		section.pasarelas article {	
-			width: 48%;
-			/*
-			float: left;*/
+		section.pasarelas {
 
-			&:last-of-type { float: right; }
+			article {
 
-			h2 { font: 1.3em/1.3 sans-serif; }
+				width: 48%;
 
-			/*> div {
-				height: 200px !important;
-				width: 90%;
+				h2 { font: 1.3em/1.3 sans-serif; }
 
-			}*/
+				.marco_pasarela {
 
-			&:last-of-type {
+					height: 200px;
+					max-height: 200px;
+				}
+			}
 
+			.marco_bebida {
+				
+				float: right;
+				
 				.bebida { text-align: right; }
 
-				.marco_bebida > div {
+				.marco_pasarela {
+
+					.bebida_pas {
 				
-					&:hover p { height: 2em; }
+						&:hover p { height: 2em; }
 
-					p { font: 1.3em/2 sans-serif; }
+						p { font: 1.3em/2 sans-serif; }
 
+					}
 				}
 			}
 		}
@@ -232,6 +245,7 @@ html {
 	#contenedor {
 
 		section.contenido .imagen_lateral { 
+			
 			margin: 20px 2ex 20px 20px;
 			height: unset;
 

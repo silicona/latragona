@@ -41,12 +41,12 @@ body {
   /*.imagen_lateral,*/
   /*.anuncio { display: none; }*/ }
 
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
   #contenedor section.contenido .horario {
     width: 70%;
     /*
     margin: 10px auto;*/ } }
-@media screen and (min-device-width: 992px) {
+@media screen and (min-width: 992px) {
   #contenedor section.contenido #mapa {
     float: left;
     width: calc( 50% - 4ex );
@@ -58,7 +58,7 @@ body {
     /*padding: 1ex 2ex;*/ }
     #contenedor section.contenido .texto .horario {
       width: 40%; } }
-@media screen and (min-device-width: 1200px) {
+@media screen and (min-width: 1200px) {
   #contenedor section.contenido #mapa {
     height: 600px; }
   #contenedor section.contenido .texto .horario {

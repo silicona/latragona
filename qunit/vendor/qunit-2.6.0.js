@@ -3580,6 +3580,36 @@
   		    checked,
   		    html = "";
 
+      var quitar_acentos = function(str){
+
+        if( typeof (str) == 'undefined' ){ return ''; }
+
+        return str 
+          .replace( /\n/g, ' ' )
+          .replace( /[áàäâ]/g, 'a' )
+          .replace( /[éèëê]/g, 'e' )
+          .replace( /[íìïî]/g, 'i' )
+          .replace( /[óòöô]/g, 'o' )
+          .replace( /[úùüû]/g, 'u' )
+          .replace( /[Á]/g, 'A' )
+          .replace( /[É]/g, 'E' )
+          .replace( /[Í]/g, 'I' )
+          .replace( /[Ó]/g, 'O' )
+          .replace( /[Ú]/g, 'U' );
+      };
+
+      config.modules.sort( function(a, b){
+
+        a = quitar_acentos(a.name);
+        b = quitar_acentos(b.name);
+
+        if( a > b ){ return 1; }
+
+        if( a < b ){ return -1; }
+
+        return 0;
+      });
+
   		for (i = 0; i < config.modules.length; i++) {
   			if (config.modules[i].name !== "") {
   				checked = config.moduleId.indexOf(config.modules[i].moduleId) > -1;

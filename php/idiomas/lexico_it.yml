@@ -87,18 +87,20 @@ bebida:
     - "Si manifesta in bocca dal vivo, fresco e fruttato, con tannini maturi che forniscono la struttura nel vostro corpo e finiture eleganti."
     - "Contiene solfiti."
   #licor
-  hierbas: Herbal marc
-  blanco: White marc
-  tostado: Toast marc
-  licor_cafe: Coffee liquor
-  pacharan: Pacharan
-  crema_orujo: Marc cream
-  crema_chocolate: Chocolate cream with cherries
-  crema_cafe: Coffee cream
+  lic_hierbas: "Liquore all'aringa Marc"
+  lic_blanco: "Liquore bianco Marc"
+  lic_tostado: "Liquore Marc arrosto"
+  lic_cafe: "Liquore al caffè Marc"
+  pacharan: "Sarà pacha"
+  crema_orujo: Crema di vinacce
+  crema_choco: Crema al cioccolato
+  crema_cafe: "Crema al caffè"
 
 ingrediente:
   aceite: Olio d'oliva
+  aceituna: Oliva
   ajo: Aglio
+  albahaca: "Basilico"
   almendra: Mandorla
   alubia_carilla: Germogli di fagioli
   atun: Tonno
@@ -124,10 +126,11 @@ ingrediente:
   garbanzo: Cece
   guisante: Pisello
   harina: Farina
-  huevos: Uova
+  huevo: Uova
   huevo_duro: Uovo sodo
   judia_blanca: Fagiolo bianco
   judia_pinta: Pinte ebraica
+  judia_verde: Fagiolo verde
   judion: Judion
   ketchup: Ketchup
   laurel: Alloro
@@ -182,6 +185,7 @@ ingrediente:
   salsa_soja: Salsa di soia
   salsa_tomate: Salsa di pomodoro
   salsa_tomate_casera: Salsa di pomodoro fatta in casa
+  sardina: "Sardina"
   sesamo: Sesamo
   setas: Funghi
   solomillo: Filetto di maiale
@@ -191,6 +195,7 @@ ingrediente:
   tomate_frito: Salsa di pomodoro
   tomillo: Timo
   trigo: Grano
+  ventresca: Ventresca di tonno
   ventresca_atun: Ventresca di tonno
   verduras: Verdure
   vinagre: Aceto
@@ -211,22 +216,35 @@ nombre:
   carpaccio: Zucchini carpaccio
   cecina: Carne secca da León
   ensalada_remo: Insalata di barbabietola con rucola e formaggio di capra eco
+  ensalada_rusa: Insalata russa
+  ensalada_sardinas: Sardine marinate fatte in casa, insalata di pomodori e basilico
+  gazpacho: Gazpacho
   hummus: Hummus
+  judiones: "Judiones"
   lasagna: Fungo lasagne
   lomo: Lombo
   migas: Migas
   mousaka: Mousaka
   pastel_salmon: Torta di salmone
   papas_2mojos: 'Papas arrugas' con due mojos
+  patatas_cabrales: "Patate arrotolate con cabrales"
   patatas_rellenas: Patate ripiene
   patatas_revolconas: Revolcons le patate
+  pate_shiitake: Patè di Shiitake
+  queso_tietar: Formaggio di capra biologico di Tietar
   roastbeef: Roastbeef
   ragout: Ragù di vitello
   rusos: Bistecche russe con salsa di pomodoro
   solomillo: Controfiletto birra e mele
+  solomillo_aji: Controfiletto con peperone giallo
   solomillo_sal: Controfiletto curato con sale e spezie
+  tartar_verduras: "Tartare di verdure, quinoa e salsa alle olive verdi"
   tortilla: Frittata
+  tosta_brandada: Brandade di merluzzo bianco
   tosta_cecina: Carne secca da León
+  tosta_hummus: Hummus
+  tosta_roastbeef: Roastbeef
+  tosta_salmon: Salmone
   salmon: Salmone
   tosta_ventresca: Ventresca di tonno con peperoni
   ventresca: Ventresca di tonno con peperoni
@@ -255,13 +273,16 @@ nombre:
 producto:
   alergeno: Allergeni
   descripcion: Vedi descrizione
+  imagen_de: "Immagine di"
+  ingredientes: "Ingredienti"
+  precio: "Prezzo"
   tosta: "Toast di "
   sin_aler: "Senza allergeni"
   ver: Vedi gli ingredienti
   # Bebidas
   botella: Bottiglia
   botellin: Bottiglia 1/4
-  caña: Caña
+  cana: Caña
   chupito: Chupito
   copa: Tazza
   doble: Doppio
@@ -269,18 +290,22 @@ producto:
   tercio: Bottiglia 1/3
 
 titulos:
+  blanco: Bianchi
+  cervezas: "Birre"
+  licor: "Liquore artigianale"
+  novedad: "Novità"
+  pan_sin: "Abbiamo pane senza glutine. Chiedeteci!!"
+  prueba_un: "Prova a "
+  prueba_una: "Provane uno "
+  raciones: Porzioni
+  rac_sin: "Le nostre razioni non hanno glutine"
   rubia: Bionda
   sin: Senza alchol
-  tostada: Tostata
   sin_glu: Senza glutine
   tinto: Rosso
-  blanco: Bianchi
-  vermut: Vermú
-  licor: Liquore artigianale
-  pan_sin: "Abbiamo pane senza glutine. Chiedeteci!!"
-  rac_sin: "Le nostre razioni non hanno glutine"
+  tostada: Tostata
   tostas: Tostas
-  raciones: Porzioni
+  vermut: Vermú
   
 tapas:
   arroz_zamorana: Arroz a la zamorana
@@ -394,6 +419,8 @@ form:
   respuesta_error: "Si è verificato un errore che ti ha impedito di inviare il tuo messaggio."
   reserva_ok: "La tua prenotazione è stata inviata."
   comentario_ok: "Il tuo commento è stato inviato."
+  acceso_ko: "Scusi. La tua chiave non apre questa porta."
+  error_contacto: "Dati mancanti per inviare il tuo messaggio"
 
 legal:
   desktop: " Autorizzazione per diffondere e copiare il contenuto di Questo sito web, la paternità dello stesso."

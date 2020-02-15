@@ -19,6 +19,9 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/lightbox.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/lib/tcal.min.css">
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL ?>css/global.min.css">
 
 
@@ -27,7 +30,10 @@
 
 <script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/camera.min.js"></script>
 <script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/jquery.mobile.customized.min.js"></script>
+<!-- <script type="text/javascript" src="<?php  echo BASE_URL ?>js/libs/jquery.mobile.customized.min.js"></script> -->
+
+<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/lightbox.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/tcal.js"></script>
 
 
 <script type="text/javascript">
@@ -42,12 +48,14 @@
 	BASE_URL = "<?php echo BASE_URL ?>";
 	BASE_FILE = "<?php echo BASE_FILE ?>";
 	idioma = "<?php echo $idioma[0] ?>";
+	
 </script>
  
 <?php 
 
 $idioma[0] = $idioma[0] == 'es' ? '' : $idioma[0] . '/';
 
+/*
 if( $seccion == 'tragar' || $seccion == 'empujar' || $seccion == 'despensa' ){
 
 ?>
@@ -57,7 +65,9 @@ if( $seccion == 'tragar' || $seccion == 'empujar' || $seccion == 'despensa' ){
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/lightbox.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE_URL ?>js/libs/tcal.js"></script>
 
-<?php } ?>
+<?php } */
+
+?>
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'css/' . $seccion . '.min.css' ?>">
