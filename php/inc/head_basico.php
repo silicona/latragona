@@ -43,6 +43,7 @@
 		base_api: "<?php echo BASE_API ?>",
 		base_file: "<?php echo BASE_FILE ?>",
 		idioma: "<?php echo $idioma[0] ?>",
+		seccion: "<?php echo $seccion ?>"
 	}
 	
 	BASE_URL = "<?php echo BASE_URL ?>";

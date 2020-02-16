@@ -74,6 +74,57 @@ function cerrar_alert(esto){
 
 
 /* GENERAL */
+function activarClicks(){
+
+	$('#leer').click( function(){
+
+		$('html, body').animate({ scrollTop: $('#contenedor').offset().top + 3 }, 1500)
+	});
+
+	$('.menu').click( function(e){	mostrarMenu(e); });
+
+	$('#multi').click( function(e){	mostrarIdiomas(e); });
+	
+	$('.boton', '#lateral').click(function(e){
+
+		e.preventDefault();
+
+		var posicion = $($(this).attr('data_seccion')).offset().top - 43;
+
+		$(document).width() < 576 ? posicion -= $('#lateral').height() : '';
+
+		$("html, body").animate({	scrollTop: posicion	}, 2000);
+	});
+
+	$('.boton', '#form').click( function(e){
+
+		e.preventDefault();
+
+		validarForm(e);
+	});
+
+	$('#form_login .boton').click( function(e){
+		
+		console.log('jir')
+
+		e.preventDefault();
+
+		var usuario = $('#usuario').val(),
+			password = $('#password').val();
+
+		if( usuario.length < 4 || password.length < 4 ){
+
+			$('#form_login .res_form').html( bs_alert('Credenciales incorrecta', 'error') );
+			
+			console.log('jir')
+
+			return false;
+		}
+
+		check_login(usuario, password);
+	});
+}
+
 function animarFancy(pagina){
 
 	if( pagina == 'tragar' ){
@@ -126,8 +177,70 @@ function cerrar_menus(){
 	$('.menu_abierto').click();
 }
 
+function mostrarIdiomas(e){
 
-function mostrarIdiomas(){
+	if( !semaforo ){ mostrarMenu(); }
+	
+	var ancho = $(window).width(),
+		pag_global = JSON.stringify( $('#lateral') ) == '{}';
+
+	if( pag_global && Config.seccion != 'despensa' ){
+
+		var top_contenedor = $('#contenedor').offset().top;
+
+		$('#menuidiomas').css( 'top', top_contenedor - $('#menuidiomas').height() - 6);
+
+		if( lengua ){
+
+			$(this).addClass('menu_abierto');
+			$('#menuidiomas').css('display', "block");
+
+			$('html, body').animate({ scrollTop: $('#menuidiomas').offset().top + 3 }, 1000) 
+
+			$('#menuidiomas').animate({ opacity: 1 }, 1000);
+
+			lengua = false;
+
+		} else {
+
+			$(this).removeClass('menu_abierto');
+
+			$('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) 
+
+			$('#menuidiomas').animate({opacity: 0}, 1000, function(){
+
+				$('#menuidiomas').css('display', "none");
+			});
+
+			lengua = true;
+		}
+
+	} else {
+
+		if( lengua ){
+
+			$(this).addClass('menu_abierto');
+
+			$('#menuidiomas').css('display', "block");
+			$('#menuidiomas').animate({opacity: 1}, 1000);
+
+			lengua = false;
+		
+		} else {
+				
+			$(this).removeClass('menu_abierto');
+
+			$('#menuidiomas').animate({opacity: 0}, 1000, function(){
+
+				$('#menuidiomas').css('display', "none");
+			});
+
+			lengua = true;			
+		}	
+	}
+}
+
+function mostrarIdiomas_old(){
 
 	if( !semaforo ){ mostrarMenu(); }
 	
@@ -157,22 +270,13 @@ function mostrarMenu(e){
 
 	if( !lengua ){ mostrarIdiomas(); }
 
-	var ancho = $(window).width();
+	var ancho = $(window).width(),
+		pag_global = JSON.stringify( $('#lateral') ) == '{}';
 
-	var pag_global = JSON.stringify( $('#lateral') ) == '{}';
-	///console.dir('ancho', ancho);
-
-	if( pag_global ){
-
-
-	}
-
-	// Ipad
-	if( pag_global ){
-	// if( (ancho >= 576 && ancho <= 1024) && pag_global ){
+	if( pag_global && Config.seccion != 'despensa' ){
 
 		var top_contenedor = $('#contenedor').offset().top;
-		//$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() + 5);
+
 		$('#menumovil').css( 'top', top_contenedor - $('#menumovil').height() - 6);
 
 		if( semaforo ){
@@ -180,10 +284,7 @@ function mostrarMenu(e){
 			$(this).addClass('menu_abierto');
 			$('#menumovil').css('display', "block");
 
-			//$(function(){ 
-
-				$('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) 
-			//});
+			$('html, body').animate({ scrollTop: $('#menumovil').offset().top + 3 }, 1000) 
 
 			$('#menumovil').animate({ opacity: 1 }, 1000);
 
@@ -193,9 +294,7 @@ function mostrarMenu(e){
 
 			$(this).removeClass('menu_abierto');
 
-			//$(function(){ 
-				$('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) 
-			//});
+			$('html, body').animate({ scrollTop: top_contenedor + 3 }, 1000) 
 
 			$('#menumovil').animate({opacity: 0}, 1000, function(){
 
@@ -1025,57 +1124,6 @@ function validarForm(e){
 	enviar_mensaje(datos);
 }
 
-
-function activarClicks(){
-
-	$('#leer').click( function(){
-
-		$('html, body').animate({ scrollTop: $('#contenedor').offset().top + 3 }, 1500)
-	});
-
-	$('.menu').click( function(e){	mostrarMenu(e); });
-
-	$('#multi').click( function(e){	mostrarIdiomas(e); });
-	
-	$('.boton', '#lateral').click(function(e){
-
-		e.preventDefault();
-
-		var posicion = $($(this).attr('data_seccion')).offset().top - 43;
-
-		$(document).width() < 576 ? posicion -= $('#lateral').height() : '';
-
-		$("html, body").animate({	scrollTop: posicion	}, 2000);
-	});
-
-	$('.boton', '#form').click( function(e){
-
-		e.preventDefault();
-
-		validarForm(e);
-	});
-
-	$('#form_login .boton').click( function(e){
-		
-		console.log('jir')
-
-		e.preventDefault();
-
-		var usuario = $('#usuario').val(),
-			password = $('#password').val();
-
-		if( usuario.length < 4 || password.length < 4 ){
-
-			$('#form_login .res_form').html( bs_alert('Credenciales incorrecta', 'error') );
-			
-			console.log('jir')
-
-			return false;
-		}
-
-		check_login(usuario, password);
-	});
-}
 
 
 function detectar_pagina(){

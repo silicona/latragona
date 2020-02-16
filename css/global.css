@@ -73,7 +73,10 @@ html {
   height: 100%; }
   html.despensa, html.empujar, html.tragar {
     height: auto; }
-    html.despensa #menumovil, html.empujar #menumovil, html.tragar #menumovil {
+    html.despensa #menumovil,
+    html.despensa #menuidiomas, html.empujar #menumovil,
+    html.empujar #menuidiomas, html.tragar #menumovil,
+    html.tragar #menuidiomas {
       position: fixed;
       top: 45px;
       border-radius: 0 0 20px 20px; }
@@ -289,45 +292,36 @@ body {
   body .text-center {
     text-align: center; }
 
-#menumovil {
+#menumovil,
+#menuidiomas {
   position: absolute;
   z-index: 105;
-  /*width: calc(100% - 12px);*/
   width: 100%;
-  color: #FFFFFF;
   border: 6px double #9CE083;
   background-color: #006600;
   border-radius: 20px 20px 0 0;
-  display: none;
-  opacity: 0; }
-  #menumovil ul {
-    margin: 1ex;
-    /*margin-left: 2em;*/
-    font: 1.3em/1.4 sans-serif;
-    text-align: right; }
-    #menumovil ul li a {
-      color: #9CE083; }
-
-#menuidiomas {
-  position: fixed;
-  top: 45px;
-  z-index: 105;
-  /*width : calc(100% - 12px);*/
-  width: 100%;
-  border: 6px double #e580ff;
-  background-color: #660080;
-  border-radius: 0 0 20px 20px;
   opacity: 0;
   display: none; }
+  #menumovil ul,
   #menuidiomas ul {
-    margin: 1em;
-    margin-left: 2em;
+    margin: 1ex;
     font: 1.3em/1.4 sans-serif; }
+
+#menumovil ul {
+  text-align: right; }
+  #menumovil ul li a {
+    color: #9CE083; }
+
+#menuidiomas {
+  border: 6px double #e580ff;
+  background-color: #660080; }
+  #menuidiomas ul {
+    margin-left: 2em; }
     #menuidiomas ul span {
       position: relative;
       top: -0.25ex;
       margin-left: 1em;
-      color: #ffffff; }
+      color: #e580ff; }
 
 #leer {
   position: absolute;
@@ -912,19 +906,16 @@ body {
     #contenedor.carta section article.contenido .articulo .interior .img_fancybox p {
       /*font-size: 1.1em; */ } }
 @media screen and (min-width: 450px) {
-  #contenedor {
-    /*#lateral ul li { margin: 0 .5ex; }*/ }
+  #contenedor.carta section article.contenido .articulo.final .interior {
+    /*.img_fancybox {	p { font-size: 1.2em; }	}*/ }
     #contenedor.carta section article.contenido .articulo.final .interior .img_lightbox {
-      display: block; }
-    #contenedor.carta section article.contenido .articulo.final .interior .img_fancybox {
-      /*p { font-size: 1.2em; }*/ } }
+      display: block; } }
 @media screen and (min-width: 576px) {
   body > header {
     font-size: 2.5em; }
 
-  /*#menumovil { position: absolute; }*/
   #leer {
-    left: 35%; }
+    left: 100px; }
 
   #contenedor {
     padding: 20px; }
