@@ -46,13 +46,13 @@
 
 				<input type="hidden" name="tipo" value="Reserva en La Tragona">
 
-				<input type="text" data_error="<?php echo $lexico['form']['error_nombre']; ?>" name="nombre" id="nombre" size="25" onkeypress="return permite(event, 'car');">
+				<input type="text" data_error="<?php echo $lexico['form']['error_nombre']; ?>" name="nombre" id="nombre" size="25" onkeypress="return permite(event, 'char');">
 				<label for="nombre" class="impar"><?php echo $lexico['form']['nombre']; ?></label>
 
-				<input type="text" name="telefono" id="telefono" data_error="<?php echo $lexico['form']['error_telefono']; ?>" value="(+34)" size="25" onkeypress="return permite(event, 'num');">
+				<input type="text" name="telefono" id="telefono" data_error="<?php echo $lexico['form']['error_telefono']; ?>" value="(+34)" size="25" onkeypress="return permite(event);">
 				<label for="telefono" class="impar"><?php echo $lexico['form']['telefono']; ?></label>
 
-				<input type="text" name="fecha" id="fecha" class="tcal" placeholder="<?php echo $lexico['form']['fecha_place']; ?>">
+				<input type="text" name="fecha" id="fecha" class="tcal" placeholder="<?php echo $lexico['form']['fecha_place']; ?>" onkeypress="return permite(event);">
 				<label for="fecha"><?php echo $lexico['form']['fecha']; ?></label>
 
 				<label for="mensaje" id="etiquetaTexto"><?php echo $lexico['form']['mensaje']; ?></label>
@@ -60,7 +60,7 @@
 
 				<input type="button" class="boton" name="enviar" id="enviar" value="<?php echo $lexico['form']['boton']; ?>">
 				
-				<div id="respuesta_form"></div>						
+				<div id="respuesta_form" class="res_form"></div>						
 
 			</form>
 

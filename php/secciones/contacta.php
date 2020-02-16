@@ -44,39 +44,20 @@
 
 				<input type="hidden" name="tipo" value="Comentarios para La Tragona">
 
-				<input type="text" 
-						data_error="<?php echo $lexico['form']['error_nombre']; ?>" 
-						name="nombre" 
-						id="nombre" 
-						size="25" 
-						onkeypress="return permite(event, 'car');">
+				<input type="text" data_error="<?php echo $lexico['form']['error_nombre']; ?>" name="nombre" id="nombre" size="25" onkeypress="return permite(event, 'char');">
 
 				<label for="nombre"><?php echo $lexico['form']['nombre']; ?></label>
 
-				<input type="email" 
-						name="email" 
-						id="email" 
-						data_error="<?php echo $lexico['form']['error_email']; ?>" 
-						placeholder="<?php echo $lexico['form']['email_place']; ?>" 
-						size="25" 
-						onkeypress="return permite(event, 'num_car');">
+				<input type="email" name="email" id="email" data_error="<?php echo $lexico['form']['error_email']; ?>" placeholder="<?php echo $lexico['form']['email_place']; ?>" size="25" onkeypress="return permite(event, 'num_char');">
 
 				<label for="email"><?php echo $lexico['form']['email']; ?></label>
 
 				
 				<label for="mensaje" class="etiqueta_texto"><?php echo $lexico['form']['comentario']; ?></label>
 
-				<textarea id="mensaje" 
-							name="mensaje" 
-							columns="50" 
-							rows="8" 
-							data_error="<?php echo $lexico['form']['error_mensaje']; ?>"></textarea>
+				<textarea id="mensaje" name="mensaje" columns="50" rows="8" data_error="<?php echo $lexico['form']['error_mensaje']; ?>" onkeypress="return permite(event, 'num_char');"></textarea>
 
-				<input type="button" 
-						class="boton" 
-						name="enviar" 
-						id="enviar" 
-						value="<?php echo $lexico['form']['boton']; ?>">
+				<input type="button" class="boton" name="enviar" id="enviar" value="<?php echo $lexico['form']['boton']; ?>">
 				
 				<div id="respuesta_form" class="res_form"></div>						
 

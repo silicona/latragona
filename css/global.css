@@ -839,22 +839,22 @@ body {
                 background-color: #FB6750;
                 color: #FFFFFF;
                 box-shadow: 2px 2px 5px #000000; }
-            #contenedor.carta section article.contenido .form_reserva #respuesta_form {
+            #contenedor.carta section article.contenido .form_reserva .res_form {
               text-align: center; }
-              #contenedor.carta section article.contenido .form_reserva #respuesta_form .spinner {
+              #contenedor.carta section article.contenido .form_reserva .res_form .spinner {
                 border-radius: 50%;
                 animation: esperar_ajax 3s linear 1 forwards; }
-              #contenedor.carta section article.contenido .form_reserva #respuesta_form p {
+              #contenedor.carta section article.contenido .form_reserva .res_form p {
                 padding: .4ex;
                 font-size: 1.2em;
                 max-width: unset;
                 text-align: center;
                 border-radius: 4px; }
-                #contenedor.carta section article.contenido .form_reserva #respuesta_form p.respuesta_error {
+                #contenedor.carta section article.contenido .form_reserva .res_form p.respuesta_error {
                   color: #F60D0D;
                   background-color: #F0C6C6;
                   border: 2px solid #A91515; }
-                #contenedor.carta section article.contenido .form_reserva #respuesta_form p.respuesta_ok {
+                #contenedor.carta section article.contenido .form_reserva .res_form p.respuesta_ok {
                   color: #006600;
                   background-color: #9CE083;
                   border: 2px solid #006600; }
@@ -979,7 +979,10 @@ body {
       font: 1.3em/1.3 sans-serif;
       height: 60px; }
     #contenedor.carta section article.contenido .articulo.final .interior .img_lightbox {
-      /*.div_imagen { height: 150px; }*/ } }
+      /*.div_imagen { height: 150px; }*/ }
+  #contenedor.carta section#reservas .form_reserva .res_form p {
+    width: 100%;
+    padding: .4ex; } }
 @media screen and (min-width: 992px) {
   body > header img {
     transform: scale(1); }

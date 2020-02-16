@@ -157,6 +157,8 @@ function animarFancy(pagina){
 
 	} else {
 
+		if( /qunit/.test(pagina) ){ return true; }
+
 		$('[data-fancybox="comida"], [data-fancybox="vinos"]').fancybox({
 		// $('[data-fancybox="comida", data-fancybox="vinos"]').fancybox({
 			toolbar  : false,
@@ -402,7 +404,6 @@ function mostrarMenu_old(e){
 /* Test */
 function permite(e, tipo) {
 
-	console.log('codigo');
 	var permitidos = "0123456789",
 		caracteres = " abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ_.@",
 		evento = e || window.event,
@@ -416,22 +417,13 @@ function permite(e, tipo) {
 			40, // (
 			41, // )
 			//43, // +
-			46	// Supr
+			46,	// Supr
+			47,	// /
 		]; 
 
 	if( tipo == 'char' ){ permitidos = caracteres; }
 
-	if( tipo == 'num_char' ){ permitidos += caracteres; }		 
-
-	// Comprobar si la tecla pulsada es alguna de las teclas especiales
-	/*for( var i in teclas_especiales ){
-
-		if( codigo == teclas_especiales[i] ) {
-
-			tecla_especial = true;
-			break;
-		}
-	}*/
+	if( tipo == 'num_char' ){ permitidos += caracteres; }
 
 	tecla_especial = teclas_especiales.indexOf(codigo) != -1;
 	
@@ -1012,7 +1004,7 @@ function limpiarFormulario(formulario){
 
 function enviar_mensaje(datos){
 
-	imagen = '<img class="spinner" src="' + BASE_FILE + 'media/la_tragona_logo.png" width="50">';
+	imagen = '<img class="spinner" src="' + Config.base_url + 'media/la_tragona_logo.png" width="50">';
 	$respuesta_form.html( imagen );
 
 	datos['idioma'] = idioma;
